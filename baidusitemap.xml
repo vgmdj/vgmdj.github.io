@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+    
+    
+    
+    
+  <url>
+    <loc>http://blog.vgmdj.cn/2018/03/02/hello-world/</loc>
+    <lastmod>2018-03-05T08:23:50.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 使用指南</title>
+        <pubTime>2018-03-02T08:23:50.000Z</pubTime>
+        
+        <tag>github</tag>
+         
+        <tag>blog</tag>
+         
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="站点建设" url="http://blog.vgmdj.cn/categories/%E7%AB%99%E7%82%B9%E5%BB%BA%E8%AE%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.vgmdj.cn/2018/03/02/github-blog-%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</loc>
+    <lastmod>2018-03-02T08:23:50.000Z</lastmod>
+    <data>
+        <display>
+        <title>github blog 搭建过程</title>
+        <pubTime>2018-03-02T08:23:50.000Z</pubTime>
+        
+        <tag>github</tag>
+         
+        <tag>blog</tag>
+         
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="站点建设" url="http://blog.vgmdj.cn/categories/%E7%AB%99%E7%82%B9%E5%BB%BA%E8%AE%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+</urlset>
