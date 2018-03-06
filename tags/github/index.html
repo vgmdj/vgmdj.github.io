@@ -227,6 +227,12 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />简介</a>
+        </li>
+      
+        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
@@ -242,12 +248,6 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
         </li>
       
         
@@ -322,6 +322,62 @@
         <h2>github<small>标签</small>
         </h2>
       </div>
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2018/03/05/github-hexo-blog-搭建过程-二-：配置/" itemprop="url">
+              
+                <span itemprop="name">github+hexo blog 搭建过程（二）：配置</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-03-05T22:34:39+08:00"
+              content="2018-03-05" >
+          03-05
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2018/03/04/github-blog-搭建过程/" itemprop="url">
+              
+                <span itemprop="name">github+hexo blog 搭建过程(一)：准备</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-03-04T16:23:50+08:00"
+              content="2018-03-04" >
+          03-04
+        </time>
+      </div>
+
+    </header>
+  </article>
+
 
       
         
@@ -440,9 +496,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -527,7 +581,7 @@
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">vgmdj</span>    
   <a href="http://www.miitbeian.gov.cn/">京ICP备17066444号</a> 
@@ -540,7 +594,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">1k</span>
+    <span title="站点总字数">7k</span>
   
 
   
@@ -551,7 +605,7 @@
     
       <span class="post-meta-item-text">站点总阅读时长&#58;</span>
     
-    <span title="站点总阅读时长">0:01</span>
+    <span title="站点总阅读时长">0:07</span>
   
 </div>
 
@@ -1117,11 +1171,11 @@
             counter.fetchWhenSave(true);
             counter.increment("time");
             
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.get('time'));
+            
             counter.save(null, {
               success: function(counter) {
-                
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
                 
               },
               error: function(counter, error) {

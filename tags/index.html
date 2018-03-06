@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="keep thinking">
 <meta property="og:description" content="vgmdj&apos;s Blog">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-05T10:30:58.068Z">
+<meta property="og:updated_time" content="2018-03-06T02:21:14.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="标签">
 <meta name="twitter:description" content="vgmdj&apos;s Blog">
@@ -228,6 +228,12 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />简介</a>
+        </li>
+      
+        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
@@ -243,12 +249,6 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
         </li>
       
         
@@ -354,14 +354,10 @@
                     
                   
                 
-                  
-                    
-                  
-                
-                目前共计 4 个标签
+                目前共计 3 个标签
             </div>
             <div class="tag-cloud-tags">
-              <a href="/tags/blog/" style="font-size: 30px; color: #111">blog</a> <a href="/tags/github/" style="font-size: 12px; color: #ccc">github</a> <a href="/tags/github-page/" style="font-size: 21px; color: #6f6f6f">github page</a> <a href="/tags/hexo/" style="font-size: 30px; color: #111">hexo</a>
+              <a href="/tags/blog/" style="font-size: 12px; color: #ccc">blog</a> <a href="/tags/github/" style="font-size: 12px; color: #ccc">github</a> <a href="/tags/hexo/" style="font-size: 12px; color: #ccc">hexo</a>
             </div>
           </div>
         
@@ -382,15 +378,6 @@
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-      <div id="SOHUCS"></div>
-    </div>
-
-  
-
-
 
         </div>
         
@@ -467,9 +454,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -554,7 +539,7 @@
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">vgmdj</span>    
   <a href="http://www.miitbeian.gov.cn/">京ICP备17066444号</a> 
@@ -567,7 +552,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">1k</span>
+    <span title="站点总字数">7k</span>
   
 
   
@@ -578,7 +563,7 @@
     
       <span class="post-meta-item-text">站点总阅读时长&#58;</span>
     
-    <span title="站点总阅读时长">0:01</span>
+    <span title="站点总阅读时长">0:07</span>
   
 </div>
 
@@ -1148,11 +1133,11 @@
             counter.fetchWhenSave(true);
             counter.increment("time");
             
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.get('time'));
+            
             counter.save(null, {
               success: function(counter) {
-                
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
                 
               },
               error: function(counter, error) {

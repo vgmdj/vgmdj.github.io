@@ -228,6 +228,12 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />简介</a>
+        </li>
+      
+        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
@@ -243,12 +249,6 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
         </li>
       
         
@@ -348,7 +348,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/05/github-hexo-blog-搭建过程-二-：配置/" itemprop="url">github+hexo blog 搭建过程(二)：配置</a></h2>
+                <a class="post-title-link" href="/2018/03/05/github-hexo-blog-搭建过程-二-：配置/" itemprop="url">github+hexo blog 搭建过程（二）：配置</a></h2>
         
 
         <div class="post-meta">
@@ -381,7 +381,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-05T22:59:31+08:00">2018-03-05</time>
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-06T16:23:50+08:00">2018-03-06</time>
             
           </span>
 
@@ -422,7 +422,7 @@
 
           
           
-             <span id="/2018/03/05/github-hexo-blog-搭建过程-二-：配置/" class="leancloud_visitors" data-flag-title="github+hexo blog 搭建过程(二)：配置">
+             <span id="/2018/03/05/github-hexo-blog-搭建过程-二-：配置/" class="leancloud_visitors" data-flag-title="github+hexo blog 搭建过程（二）：配置">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -447,7 +447,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">0</span>
+                <span title="字数统计">5.5k</span>
               
 
               
@@ -461,7 +461,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:01</span>
+                <span title="阅读时长">0:05</span>
               
             </div>
           
@@ -482,9 +482,7 @@
 
       
         
-          
-          
-          
+          <h2 id="站点配置文件-config-yml修改"><a href="#站点配置文件-config-yml修改" class="headerlink" title="站点配置文件_config.yml修改"></a>站点配置文件_config.yml修改</h2><p>主体可参考<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">hexo next使用文档</a>，下面对其进行补充。<br></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/05/github-hexo-blog-搭建过程-二-：配置/#more" rel="contents">
@@ -661,7 +659,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">761</span>
+                <span title="字数统计">850</span>
               
 
               
@@ -696,38 +694,7 @@
 
       
         
-          
-          前言一直都有记录的习惯，但内容大多都分散在各个网站，现结合github，使用hexo来搭建一个个人博客，将点滴的记录都聚合在一起，下面是一些关键的搭建过程，一方面作为分享，一方面作为备忘，仅供参考，如有问题请留言通知，谢谢支持！ps: 准备过程基本没多少变化，不过多记录
-基本环境准备下载安装nodejs和git，我的搭建环境win10 64，可在git bash下运行如下命令测试环境：
-
-node -v
-npm -v
-git –version
-
-安装Hexo安装过程不再叙述，hexo的安装与使用一直没有什么变化，可自行搜索，安装成功可运行测试命令：1hexo -v
-大致命令集如下：
-
-npm -g hexo-cli
-cd /c/Users/`whoami`
-mkdir blog
-cd blog
-hexo init
-npm install
-hexo g
-hexo s
-
-如果一切顺利的话，打开浏览器，访问 http://localhost:4000/ 便可看到hexo生成的默认主题页面
-准备主题以next主题为例，github地址在blog根目录执行：1git clone https://github.com/theme-next/hexo-theme-next themes/next
-现在我们的blog文件夹内就有了三个配置文件
-
-站点配置文件$addr/blog/_config.yml
-next主题配置文件$addr/blog/themes/next/_config.yml
-default主题配置文件$addr/blog/themes/landscape/_config.yml
-
-修改站点配置文件，即可更换主题，后面我们再详细介绍
-hexo 操作指令hexo 常用操作可见于：Hexo 使用指南 
-
-          
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一直都有记录的习惯，但内容大多都分散在各个网站，现结合github，使用hexo来搭建一个个人博客，将点滴的记录都聚合在一起，下面是一些关键的搭建过程，一方面作为分享，一方面作为备忘，仅供参考，如有问题请留言通知，谢谢支持！<br>ps: 准备过程和搜索内容没多少变化，不过多记录<br></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/04/github-blog-搭建过程/#more" rel="contents">
@@ -904,7 +871,7 @@ hexo 操作指令hexo 常用操作可见于：Hexo 使用指南
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">430</span>
+                <span title="字数统计">609</span>
               
 
               
@@ -939,18 +906,9 @@ hexo 操作指令hexo 常用操作可见于：Hexo 使用指南
 
       
         
-          
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More info: Server
-Generate static files1$ hexo generate
-More info: Generating
-Deploy to remote sites1$ hexo deploy
-More info: Deployment
-
-          
+          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a><br></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/02/Hexo-introduction/#more" rel="contents">
@@ -1077,9 +1035,7 @@ More info: Deployment
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1164,7 +1120,7 @@ More info: Deployment
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">vgmdj</span>    
   <a href="http://www.miitbeian.gov.cn/">京ICP备17066444号</a> 
@@ -1177,7 +1133,7 @@ More info: Deployment
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">1k</span>
+    <span title="站点总字数">7k</span>
   
 
   
@@ -1188,7 +1144,7 @@ More info: Deployment
     
       <span class="post-meta-item-text">站点总阅读时长&#58;</span>
     
-    <span title="站点总阅读时长">0:01</span>
+    <span title="站点总阅读时长">0:07</span>
   
 </div>
 
@@ -1743,11 +1699,11 @@ More info: Deployment
             counter.fetchWhenSave(true);
             counter.increment("time");
             
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.get('time'));
+            
             counter.save(null, {
               success: function(counter) {
-                
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
                 
               },
               error: function(counter, error) {
