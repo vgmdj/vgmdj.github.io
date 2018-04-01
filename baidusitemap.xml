@@ -114,6 +114,28 @@
 
     
   <url>
+    <loc>https://blog.vgmdj.cn/2018/03/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E4%BA%8C-%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2018-03-08T06:39:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>计算机网络学习(二)-协议分析</title>
+        <pubTime>2018-03-08T05:40:56.000Z</pubTime>
+        
+        <tag>学习</tag>
+         
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="计算机网络" url="https://blog.vgmdj.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.vgmdj.cn/2018/03/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E5%9B%9B-%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B/</loc>
     <lastmod>2018-03-08T06:39:52.000Z</lastmod>
     <data>
@@ -142,28 +164,6 @@
         <display>
         <title>计算机网络学习(一)-测试通信</title>
         <pubTime>2018-03-08T05:39:52.000Z</pubTime>
-        
-        <tag>学习</tag>
-         
-        <tag>计算机网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="计算机网络" url="https://blog.vgmdj.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.vgmdj.cn/2018/03/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E4%BA%8C-%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2018-03-08T06:39:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>计算机网络学习(二)-协议分析</title>
-        <pubTime>2018-03-08T05:40:56.000Z</pubTime>
         
         <tag>学习</tag>
          
@@ -251,12 +251,12 @@
     
     
   <url>
-    <loc>https://blog.vgmdj.cn/2018/03/02/Hexo-introduction/</loc>
+    <loc>https://blog.vgmdj.cn/2018/03/04/github-blog-%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</loc>
     <lastmod>2018-03-05T08:23:50.000Z</lastmod>
     <data>
         <display>
-        <title>Hexo 使用指南</title>
-        <pubTime>2018-03-02T08:23:50.000Z</pubTime>
+        <title>github+hexo blog 搭建过程(一)：准备</title>
+        <pubTime>2018-03-04T08:23:50.000Z</pubTime>
         
         <tag>github</tag>
          
@@ -275,12 +275,12 @@
 
     
   <url>
-    <loc>https://blog.vgmdj.cn/2018/03/04/github-blog-%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</loc>
+    <loc>https://blog.vgmdj.cn/2018/03/02/Hexo-introduction/</loc>
     <lastmod>2018-03-05T08:23:50.000Z</lastmod>
     <data>
         <display>
-        <title>github+hexo blog 搭建过程(一)：准备</title>
-        <pubTime>2018-03-04T08:23:50.000Z</pubTime>
+        <title>Hexo 使用指南</title>
+        <pubTime>2018-03-02T08:23:50.000Z</pubTime>
         
         <tag>github</tag>
          
@@ -369,6 +369,26 @@
         <display>
         <title>设计模式学习-策略模式</title>
         <pubTime>2017-07-04T08:25:23.000Z</pubTime>
+        
+        <tag>学习，设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="https://blog.vgmdj.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.vgmdj.cn/2017/07/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2017-07-03T08:30:50.000Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式学习-抽象工厂模式</title>
+        <pubTime>2017-07-03T08:25:23.000Z</pubTime>
         
         <tag>学习，设计模式</tag>
          
