@@ -477,7 +477,7 @@
 <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>全局共享同一个实例对象（数据库连接等）<br>某一处对此对象的更新全局可见</p>
 <h2 id="golang-实现"><a href="#golang-实现" class="headerlink" title="golang 实现"></a>golang 实现</h2><p>在go中可以使用这么一种机制来保证代码只执行一次，而且不需要我们手工去加锁解锁。<br>那就是sync包里的Once函数，它有一个Do方法，在它中的函数go会只保证仅仅调用一次</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import (</span><br><span class="line">  &quot;sync&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">type singleton struct &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var instance *singleton</span><br><span class="line">var once sync.Once</span><br><span class="line"></span><br><span class="line">func GetInstance() *singleton &#123;</span><br><span class="line">  once.Do(func() &#123;</span><br><span class="line">      instance = &amp;singleton&#123;&#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  return instance</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="sync-Once解析"><a href="#sync-Once解析" class="headerlink" title="sync.Once解析"></a>sync.Once解析</h2><p>可见于 <a href="/2017/08/02/go语言学习-map"><strong>go语言学习-sync包</strong></a> </p>
+<h2 id="sync-Once解析"><a href="#sync-Once解析" class="headerlink" title="sync.Once解析"></a>sync.Once解析</h2><p>可见于 <a href="/2017/08/02/go语言学习-sync"><strong>go语言学习-sync包</strong></a> </p>
 
       
     </div>
@@ -525,8 +525,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/02/设计模式学习-工厂方法模式/" rel="next" title="设计模式学习-工厂方法模式">
-                <i class="fa fa-chevron-left"></i> 设计模式学习-工厂方法模式
+              <a href="/2017/07/04/设计模式学习-策略模式/" rel="next" title="设计模式学习-策略模式">
+                <i class="fa fa-chevron-left"></i> 设计模式学习-策略模式
               </a>
             
           </div>
@@ -622,7 +622,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -811,7 +811,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">43k</span>
+    <span title="站点总字数">45k</span>
   
 
   
@@ -822,7 +822,7 @@
     
       <span class="post-meta-item-text">站点总阅读时长&#58;</span>
     
-    <span title="站点总阅读时长">0:43</span>
+    <span title="站点总阅读时长">0:45</span>
   
 </div>
 

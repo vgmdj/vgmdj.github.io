@@ -114,34 +114,12 @@
 
     
   <url>
-    <loc>https://blog.vgmdj.cn/2018/03/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E4%B8%89-socket%E5%A5%97%E6%8E%A5%E5%AD%97%E5%88%86%E6%9E%90/</loc>
+    <loc>https://blog.vgmdj.cn/2018/03/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E5%9B%9B-%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B/</loc>
     <lastmod>2018-03-08T06:39:52.000Z</lastmod>
     <data>
         <display>
-        <title>计算机网络学习(三)-socket套接字分析</title>
-        <pubTime>2018-03-08T05:42:05.000Z</pubTime>
-        
-        <tag>学习</tag>
-         
-        <tag>计算机网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="计算机网络" url="https://blog.vgmdj.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.vgmdj.cn/2018/03/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E4%BA%8C-%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2018-03-08T06:39:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>计算机网络学习(二)-协议分析</title>
-        <pubTime>2018-03-08T05:40:56.000Z</pubTime>
+        <title>计算机网络学习(四)-页面的请求过程</title>
+        <pubTime>2018-03-08T05:42:29.000Z</pubTime>
         
         <tag>学习</tag>
          
@@ -180,12 +158,34 @@
 
     
   <url>
-    <loc>https://blog.vgmdj.cn/2018/03/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E5%9B%9B-%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B/</loc>
+    <loc>https://blog.vgmdj.cn/2018/03/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E4%BA%8C-%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/</loc>
     <lastmod>2018-03-08T06:39:52.000Z</lastmod>
     <data>
         <display>
-        <title>计算机网络学习(四)-页面的请求过程</title>
-        <pubTime>2018-03-08T05:42:29.000Z</pubTime>
+        <title>计算机网络学习(二)-协议分析</title>
+        <pubTime>2018-03-08T05:40:56.000Z</pubTime>
+        
+        <tag>学习</tag>
+         
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="计算机网络" url="https://blog.vgmdj.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.vgmdj.cn/2018/03/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E4%B8%89-socket%E5%A5%97%E6%8E%A5%E5%AD%97%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2018-03-08T06:39:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>计算机网络学习(三)-socket套接字分析</title>
+        <pubTime>2018-03-08T05:42:05.000Z</pubTime>
         
         <tag>学习</tag>
          
@@ -349,6 +349,26 @@
         <display>
         <title>设计模式学习-单例模式</title>
         <pubTime>2017-07-05T08:25:23.000Z</pubTime>
+        
+        <tag>学习，设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="https://blog.vgmdj.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.vgmdj.cn/2017/07/04/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2017-07-04T08:30:50.000Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式学习-策略模式</title>
+        <pubTime>2017-07-04T08:25:23.000Z</pubTime>
         
         <tag>学习，设计模式</tag>
          

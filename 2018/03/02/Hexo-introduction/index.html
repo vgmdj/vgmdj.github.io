@@ -436,7 +436,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">609</span>
+                <span title="字数统计">752</span>
               
 
               
@@ -482,6 +482,8 @@
 <h2 id="Trouble-Shooting"><a href="#Trouble-Shooting" class="headerlink" title="Trouble Shooting"></a>Trouble Shooting</h2><h3 id="首页显示排版混乱"><a href="#首页显示排版混乱" class="headerlink" title="首页显示排版混乱"></a>首页显示排版混乱</h3><p>在每个需要的地方，加上</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
 <p>例如，在一级标题和二级标题间截断<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">xxxxxxx</span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line">## 二级标题</span><br><span class="line">xxxxxxxx</span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line">## 二级标题</span><br><span class="line">xxxxxxxx</span><br><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="标签和分类数量不正确"><a href="#标签和分类数量不正确" class="headerlink" title="标签和分类数量不正确"></a>标签和分类数量不正确</h3><p>删除.deploy_git文件夹和db.json，再删除public文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
+<p>这里g执行两次是为了防止小机率的页面渲染不充分的问题<br>s是预览，可以先查看一下有没有什么问题<br>再次部署后，问题解决</p>
 
       
     </div>
@@ -630,7 +632,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -784,7 +786,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trouble-Shooting"><span class="nav-number">2.</span> <span class="nav-text">Trouble Shooting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#首页显示排版混乱"><span class="nav-number">2.1.</span> <span class="nav-text">首页显示排版混乱</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trouble-Shooting"><span class="nav-number">2.</span> <span class="nav-text">Trouble Shooting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#首页显示排版混乱"><span class="nav-number">2.1.</span> <span class="nav-text">首页显示排版混乱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标签和分类数量不正确"><span class="nav-number">2.2.</span> <span class="nav-text">标签和分类数量不正确</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -819,7 +821,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">43k</span>
+    <span title="站点总字数">45k</span>
   
 
   
@@ -830,7 +832,7 @@
     
       <span class="post-meta-item-text">站点总阅读时长&#58;</span>
     
-    <span title="站点总阅读时长">0:43</span>
+    <span title="站点总阅读时长">0:45</span>
   
 </div>
 
