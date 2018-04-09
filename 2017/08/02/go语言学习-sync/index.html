@@ -103,18 +103,18 @@
   <meta name="keywords" content="Golang,学习," />
 
 
-<meta name="description" content="sync包介绍sync包是go提供的实现锁机制的集合 sync.Once可用此函数实现单例模式详情可见于 https://blog.vgmdj.cn/tags/设计模式/">
+<meta name="description" content="sync包介绍sync包是go提供的实现锁机制的集合 sync.Mutexsync.Mutex是互斥锁，它的作用是守护在临界区入口来确保同一时间只能有一个线程进入临界区。 sync.RWMutexsync.RWMutex是读写锁，它的作用是允许同一时间多个线程对变量进行读操作，但是只能一个线程进行写操作，常用于读操作远远多于写操作的场景下1l := new(sync.RWMutex)  l.RLo">
 <meta name="keywords" content="Golang,学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="go语言学习-sync">
 <meta property="og:url" content="https://blog.vgmdj.cn/2017/08/02/go语言学习-sync/index.html">
 <meta property="og:site_name" content="keep thinking">
-<meta property="og:description" content="sync包介绍sync包是go提供的实现锁机制的集合 sync.Once可用此函数实现单例模式详情可见于 https://blog.vgmdj.cn/tags/设计模式/">
+<meta property="og:description" content="sync包介绍sync包是go提供的实现锁机制的集合 sync.Mutexsync.Mutex是互斥锁，它的作用是守护在临界区入口来确保同一时间只能有一个线程进入临界区。 sync.RWMutexsync.RWMutex是读写锁，它的作用是允许同一时间多个线程对变量进行读操作，但是只能一个线程进行写操作，常用于读操作远远多于写操作的场景下1l := new(sync.RWMutex)  l.RLo">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-02T07:23:58.000Z">
+<meta property="og:updated_time" content="2018-04-06T07:23:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="go语言学习-sync">
-<meta name="twitter:description" content="sync包介绍sync包是go提供的实现锁机制的集合 sync.Once可用此函数实现单例模式详情可见于 https://blog.vgmdj.cn/tags/设计模式/">
+<meta name="twitter:description" content="sync包介绍sync包是go提供的实现锁机制的集合 sync.Mutexsync.Mutex是互斥锁，它的作用是守护在临界区入口来确保同一时间只能有一个线程进入临界区。 sync.RWMutexsync.RWMutex是读写锁，它的作用是允许同一时间多个线程对变量进行读操作，但是只能一个线程进行写操作，常用于读操作远远多于写操作的场景下1l := new(sync.RWMutex)  l.RLo">
 
 
 
@@ -370,7 +370,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-08-02T15:23:58+08:00">2017-08-02</time>
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-06T15:23:58+08:00">2018-04-06</time>
             
           </span>
 
@@ -436,7 +436,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">512</span>
+                <span title="字数统计">4.6k</span>
               
 
               
@@ -450,7 +450,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:01</span>
+                <span title="阅读时长">0:05</span>
               
             </div>
           
@@ -471,9 +471,45 @@
 
       
         <h2 id="sync包介绍"><a href="#sync包介绍" class="headerlink" title="sync包介绍"></a>sync包介绍</h2><p>sync包是go提供的实现锁机制的集合</p>
-<h2 id="sync-Once"><a href="#sync-Once" class="headerlink" title="sync.Once"></a>sync.Once</h2><p>可用此函数实现单例模式<br>详情可见于 <a href="https://blog.vgmdj.cn/tags/设计模式/">https://blog.vgmdj.cn/tags/设计模式/</a><br><a id="more"></a></p>
-<h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">  // Once is an object that will perform exactly one action.</span><br><span class="line">  type Once struct &#123;</span><br><span class="line">  m    Mutex</span><br><span class="line">  done uint32</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  func (o *Once) Do(f func()) &#123;</span><br><span class="line">	if atomic.LoadUint32(&amp;o.done) == 1 &#123;</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	// Slow-path.</span><br><span class="line">	o.m.Lock()</span><br><span class="line">	defer o.m.Unlock()</span><br><span class="line">	if o.done == 0 &#123;</span><br><span class="line">		defer atomic.StoreUint32(&amp;o.done, 1)</span><br><span class="line">		f()</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="sync-Mutex"><a href="#sync-Mutex" class="headerlink" title="sync.Mutex"></a>sync.Mutex</h2><p>sync.Mutex是互斥锁，它的作用是守护在临界区入口来确保同一时间只能有一个线程进入临界区。</p>
+<h2 id="sync-RWMutex"><a href="#sync-RWMutex" class="headerlink" title="sync.RWMutex"></a>sync.RWMutex</h2><p>sync.RWMutex是读写锁，它的作用是允许同一时间多个线程对变量进行读操作，但是只能一个线程进行写操作，常用于读操作远远多于写操作的场景下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l := new(sync.RWMutex)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>l.RLock 读锁<br>当有写锁时，无法加载读锁，当只有读锁或者没有锁时，可以加载多个读锁，所有适合读多写少的场景</p>
+</li>
+<li><p>l.RUnlock 读解锁<br>对之前加的读锁进行解锁，需要注意的是，一旦没有读锁，而进行解锁，就会引发一个运行时错误</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// RUnlock undoes a single RLock call;</span><br><span class="line">// it does not affect other simultaneous readers.</span><br><span class="line">// It is a run-time error if rw is not locked for reading</span><br><span class="line">// on entry to RUnlock.</span><br><span class="line">func (rw *RWMutex) RUnlock() &#123;</span><br><span class="line">	if race.Enabled &#123;</span><br><span class="line">		_ = rw.w.state</span><br><span class="line">		race.ReleaseMerge(unsafe.Pointer(&amp;rw.writerSem))</span><br><span class="line">		race.Disable()</span><br><span class="line">	&#125;</span><br><span class="line">	if r := atomic.AddInt32(&amp;rw.readerCount, -1); r &lt; 0 &#123;</span><br><span class="line">		if r+1 == 0 || r+1 == -rwmutexMaxReaders &#123;</span><br><span class="line">			race.Enable()</span><br><span class="line">			throw(&quot;sync: RUnlock of unlocked RWMutex&quot;)</span><br><span class="line">		&#125;</span><br><span class="line">		// A writer is pending.</span><br><span class="line">		if atomic.AddInt32(&amp;rw.readerWait, -1) == 0 &#123;</span><br><span class="line">			// The last reader unblocks the writer.</span><br><span class="line">			runtime_Semrelease(&amp;rw.writerSem, false)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if race.Enabled &#123;</span><br><span class="line">		race.Enable()</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>readerCount是读锁的计数，一旦读解锁比加锁多，则readerCount小于0，会抛出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">throw(&quot;sync: RUnlock of unlocked RWMutex&quot;)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>l.Lock 写锁<br>当有读锁时，写锁会等待读锁解锁后，再进行加锁，即同一变量加读锁后再加写锁，写锁会阻塞</li>
+</ul>
+<ul>
+<li>死锁<br>写锁等待读锁解锁，读锁解锁等待加写锁，引发死锁。当然，go的并发编程里还有别的情况会引发死锁，比如channel, WaitGroup等<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> l := new(sync.RWMutex)</span><br><span class="line">l.RLock()</span><br><span class="line">l.Lock()</span><br><span class="line">l.RUnlock()</span><br><span class="line">l.Unlock()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="sync-WaitGroup"><a href="#sync-WaitGroup" class="headerlink" title="sync.WaitGroup"></a>sync.WaitGroup</h2><p>WaitGroup用于等待一组goroutine执行完成，主线程调用Add方法来设置要等待的goroutine数量，每个goroutine运行后会调用Done方法，同时Wait方法会一直堵塞直到所有goroutine执行完成。包含三个函数Add(), Done(), Wait()</p>
+<ul>
+<li><p>Add(delta int)<br>使计数器加delta</p>
+</li>
+<li><p>Done()<br>使计数器减1</p>
+</li>
+<li><p>Wait()<br>等待计数器变为0</p>
+</li>
+<li><p>并发的输出0-4</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;log&quot;</span><br><span class="line">	&quot;sync&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	wg := &amp;sync.WaitGroup&#123;&#125;</span><br><span class="line"></span><br><span class="line">	for i := 0; i &lt; 5; i++ &#123;</span><br><span class="line">		wg.Add(1)</span><br><span class="line">		go func(i int) &#123;</span><br><span class="line">			defer wg.Done()</span><br><span class="line">			log.Printf(&quot;i:%d&quot;, i)</span><br><span class="line">		&#125;(i)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	wg.Wait()</span><br><span class="line"></span><br><span class="line">	log.Println(&quot;exit&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="sync-Cond"><a href="#sync-Cond" class="headerlink" title="sync.Cond"></a>sync.Cond</h2><p>sync.Cond是用来控制某个条件下，goroutine进入等待时期，等待信号到来，然后重新启动。比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">    &quot;fmt&quot;</span><br><span class="line">    &quot;sync&quot;</span><br><span class="line">    &quot;time&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">    locker := new(sync.Mutex)</span><br><span class="line">    cond := sync.NewCond(locker)</span><br><span class="line">    done := false</span><br><span class="line"></span><br><span class="line">    cond.L.Lock()</span><br><span class="line"></span><br><span class="line">    go func() &#123;</span><br><span class="line">        time.Sleep(2e9)</span><br><span class="line">        done = true</span><br><span class="line">        cond.Signal()</span><br><span class="line">    &#125;()</span><br><span class="line"></span><br><span class="line">    if (!done) &#123;</span><br><span class="line">        cond.Wait()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fmt.Println(&quot;now done is &quot;, done);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里当主goroutine进入cond.Wait的时候，就会进入等待，当从goroutine发出信号之后，主goroutine才会继续往下面走。</p>
+<p>sync.Cond还有一个BroadCast方法，用来通知唤醒所有等待的gouroutine。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">    &quot;fmt&quot;</span><br><span class="line">    &quot;sync&quot;</span><br><span class="line">    &quot;time&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">var locker = new(sync.Mutex)</span><br><span class="line">var cond = sync.NewCond(locker)</span><br><span class="line"></span><br><span class="line">func test(x int) &#123;</span><br><span class="line"></span><br><span class="line">    cond.L.Lock() // 获取锁</span><br><span class="line">    cond.Wait()   // 等待通知  暂时阻塞</span><br><span class="line">    fmt.Println(x)</span><br><span class="line">    time.Sleep(time.Second * 1)</span><br><span class="line">    cond.L.Unlock() // 释放锁，不释放的话将只会有一次输出</span><br><span class="line">&#125;</span><br><span class="line">func main() &#123;</span><br><span class="line">    for i := 0; i &lt; 40; i++ &#123;</span><br><span class="line">        go test(i)</span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(&quot;start all&quot;)</span><br><span class="line">    cond.Broadcast() //  下发广播给所有等待的goroutine</span><br><span class="line">    time.Sleep(time.Second * 60)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>主gouroutine开启后，可以创建多个从gouroutine，从gouroutine获取锁后，进入cond.Wait状态，当主gouroutine执行完任务后，通过BroadCast广播信号。<br>处于cond.Wait状态的所有gouroutine收到信号后将全部被唤醒并往下执行。需要注意的是，从gouroutine执行完任务后，需要通过cond.L.Unlock释放锁， 否则其它被唤醒的gouroutine将没法继续执行。<br>通过查看cond.Wait 的源码就明白为什么需要需要释放锁了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">func (c *Cond) Wait() &#123;</span><br><span class="line">    c.checker.check()</span><br><span class="line">    if raceenabled &#123;</span><br><span class="line">        raceDisable()</span><br><span class="line">    &#125;</span><br><span class="line">    atomic.AddUint32(&amp;c.waiters, 1)</span><br><span class="line">    if raceenabled &#123;</span><br><span class="line">        raceEnable()</span><br><span class="line">    &#125;</span><br><span class="line">    c.L.Unlock()</span><br><span class="line">    runtime_Syncsemacquire(&amp;c.sema)</span><br><span class="line">    c.L.Lock()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Cond.Wait会自动释放锁等待信号的到来，当信号到来后，第一个获取到信号的Wait将继续往下执行并从新上锁，如果不释放锁， 其它收到信号的gouroutine将阻塞无法继续执行。<br>由于各个Wait收到信号的时间是不确定的，因此每次的输出顺序也都是随机的。</p>
+<h2 id="sync-Once"><a href="#sync-Once" class="headerlink" title="sync.Once"></a>sync.Once</h2><p>可用此函数实现单例模式<br>详情可见于 <a href="https://blog.vgmdj.cn/tags/设计模式/">https://blog.vgmdj.cn/tags/设计模式/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">  // Once is an object that will perform exactly one action.</span><br><span class="line">  type Once struct &#123;</span><br><span class="line">  m    Mutex</span><br><span class="line">  done uint32</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  func (o *Once) Do(f func()) &#123;</span><br><span class="line">	if atomic.LoadUint32(&amp;o.done) == 1 &#123;</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	// Slow-path.</span><br><span class="line">	o.m.Lock()</span><br><span class="line">	defer o.m.Unlock()</span><br><span class="line">	if o.done == 0 &#123;</span><br><span class="line">		defer atomic.StoreUint32(&amp;o.done, 1)</span><br><span class="line">		f()</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>对于Once的实例 o ，如果其done为1，即已经完成do操作，则直接返回，否则加锁更新为1，并执行函数f</p>
+<h2 id="sync-Pool"><a href="#sync-Pool" class="headerlink" title="sync.Pool"></a>sync.Pool</h2><p>临时对象池，当多个goroutine都需要创建同一个对象的时候，如果goroutine过多，可能导致对象的创建数目剧增。 而对象又是占用内存的，进而导致的就是内存回收的GC压力徒增。造成“并发大－占用内存大－GC缓慢－处理并发能力降低－并发更大”这样的恶性循环。 在这个时候，我们非常迫切需要有一个对象池，每个goroutine不再自己单独创建对象，而是从对象池中获取出一个对象（如果池中已经有的话）。 这就是sync.Pool出现的目的了。<br>sync.Pool的使用非常简单，提供两个方法:Get和Put 和一个初始化回调函数New。</p>
 
       
     </div>
@@ -620,7 +656,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -772,7 +808,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sync包介绍"><span class="nav-number">1.</span> <span class="nav-text">sync包介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sync-Once"><span class="nav-number">2.</span> <span class="nav-text">sync.Once</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#源码"><span class="nav-number">2.1.</span> <span class="nav-text">源码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sync包介绍"><span class="nav-number">1.</span> <span class="nav-text">sync包介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sync-Mutex"><span class="nav-number">2.</span> <span class="nav-text">sync.Mutex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sync-RWMutex"><span class="nav-number">3.</span> <span class="nav-text">sync.RWMutex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sync-WaitGroup"><span class="nav-number">4.</span> <span class="nav-text">sync.WaitGroup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sync-Cond"><span class="nav-number">5.</span> <span class="nav-text">sync.Cond</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sync-Once"><span class="nav-number">6.</span> <span class="nav-text">sync.Once</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sync-Pool"><span class="nav-number">7.</span> <span class="nav-text">sync.Pool</span></a></li></ol></div>
             
 
           </div>
@@ -807,7 +843,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">47k</span>
+    <span title="站点总字数">56k</span>
   
 
   
@@ -818,7 +854,7 @@
     
       <span class="post-meta-item-text">站点总阅读时长&#58;</span>
     
-    <span title="站点总阅读时长">0:47</span>
+    <span title="站点总阅读时长">0:56</span>
   
 </div>
 

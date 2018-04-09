@@ -371,7 +371,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-03-31T23:53:58+08:00">2017-03-31</time>
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-31T23:53:58+08:00">2018-03-31</time>
             
           </span>
 
@@ -437,7 +437,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">473</span>
+                <span title="字数统计">557</span>
               
 
               
@@ -472,7 +472,7 @@
 
       
         
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>要想快速进步，一个明确的大目标和一个个细化的小目标是必不可少的，经历了一段时间的探索，目前来讲，职业发展的规划很简单，紧抱google大腿，以go为开发语言，在后端领域扑腾。<br>那么要提升的东西也就很明确了<br></p>
+          <h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1 前言"></a>1 前言</h1><p>要想快速进步，一个明确的大目标和一个个细化的小目标是必不可少的，经历了一段时间的探索，目前来讲，个人职业发展的规划很简单，紧抱google大腿，以go为主开发语言，在后端领域扑腾，专注web开发100年。<br>那么修炼之路也就很明确了。<br></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/31/程序员进化之路-技术提升/#more" rel="contents">
@@ -861,7 +861,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">1.4k</span>
+                <span title="字数统计">1.7k</span>
               
 
               
@@ -875,7 +875,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:01</span>
+                <span title="阅读时长">0:02</span>
               
             </div>
           
@@ -896,7 +896,8 @@
 
       
         
-          <h2 id="服务器安全"><a href="#服务器安全" class="headerlink" title="服务器安全"></a>服务器安全</h2><p>一段时间没去打理我的服务器，只是搭个ss，当科学工具用，今天忽然收到服务商的电话，说是服务器上存在不合法行为，还吓我一跳，觉着现在都查这么严格了吗，实际后面上管理平台一看，才知道是服务器被当成肉鸡，不停的攻击别的机器，总计被监测到400多万次行为，看来当真是有挺长一段时间没管理了。。。<br></p>
+          <h2 id="服务器安全"><a href="#服务器安全" class="headerlink" title="服务器安全"></a>服务器安全</h2><p>一段时间没去打理我的服务器，只是搭个ss，当科学工具用，今天忽然收到服务商的电话，说是服务器上存在不合法行为，还吓我一跳，觉着现在都查这么严格，自建梯子都不行了。实际在管理平台上一看日志，才知道说是服务器存在安全问题，应该是已经被黑掉，在不停的试探别的ip的22端口，总计被监测到400多万次行为，看来当真是有挺长一段时间没管理了。。。</p>
+<h2 id="主要被攻击方式"><a href="#主要被攻击方式" class="headerlink" title="主要被攻击方式"></a>主要被攻击方式</h2><p>从日志中可以看到，应该主要是扫描加暴力破解的方式，所以理所当然的应对手段就是，开启防火墙，改ssh端口，改mysql端口，开启安全组，之前是觉着被攻击的机率太低了，现在看来，再低机率也不应该懈怠<br></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/27/服务器安全防护/#more" rel="contents">
@@ -1073,7 +1074,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">3.3k</span>
+                <span title="字数统计">3.8k</span>
               
 
               
@@ -1087,7 +1088,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:03</span>
+                <span title="阅读时长">0:04</span>
               
             </div>
           
@@ -1108,7 +1109,15 @@
 
       
         
-          <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>事务(transaction)是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位。同时，事务也是恢复和并发控制的基本单位。<br></p>
+          <h1 id="1-定义"><a href="#1-定义" class="headerlink" title="1 定义"></a>1 定义</h1><p>事务(transaction)是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位。同时，事务也是恢复和并发控制的基本单位。</p>
+<h1 id="2-事务特性-acid"><a href="#2-事务特性-acid" class="headerlink" title="2 事务特性(acid)"></a>2 事务特性(acid)</h1><h2 id="2-1-四大特性"><a href="#2-1-四大特性" class="headerlink" title="2.1 四大特性"></a>2.1 四大特性</h2><ul>
+<li><p>原子性(atomicity)<br>　原子性是指事务包含的所有操作要么全部操作，要么全部不做，事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。</p>
+</li>
+<li><p>一致性(consistency)<br>一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。<br>　拿转账来说，假设用户A和用户B两者的钱加起来一共是5000，那么不管A和B之间如何转账，转几次账，事务结束后两个用户的钱相加起来应该还得是5000，这就是事务的一致性</p>
+</li>
+<li><p>隔离性(isolation)<br>隔离性是当多个用户并发访问数据库时，比如操作同一张表时，数据库为每一个用户开启的事务，不能被其他事务的操作所干扰，多个并发事务之间要相互隔离。<br>　即要达到这么一种效果：对于任意两个并发的事务T1和T2，在事务T1看来，T2要么在T1开始之前就已经结束，要么在T1结束之后才开始，这样每个事务都感觉不到有其他事务在并发地执行。</p>
+</li>
+<li><p>持久性(durability)<br>持久性是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，即便是在数据库系统遇到故障的情况下也不会丢失提交事务的操作。</p></li></ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/22/mysql学习-事务/#more" rel="contents">
@@ -1285,7 +1294,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">554</span>
+                <span title="字数统计">608</span>
               
 
               
@@ -1320,10 +1329,272 @@
 
       
         
-          <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>数据库(Database,简称DB): 长期存储在计算机内、有组织的、可共享的大量数据的集合<br>数据库管理系统(Database Management System，简称DBMS)： 位于用户与操作系统之间的一层数据管理软件，是一个大型复杂的软件系统，mysql就是一个开源的RDBMS<br></p>
+          <h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>数据库(Database,简称DB): 长期存储在计算机内、有组织的、可共享的大量数据的集合<br>数据库管理系统(Database Management System，简称DBMS)： 位于用户与操作系统之间的一层数据管理软件，是一个大型复杂的软件系统，mysql就是一个开源的RDBMS<br>因所有的关系型数据库操作及功能都很类似，所以深入研究Mysql，可知识迁移到其他数据库中</p>
+<h2 id="书籍推荐："><a href="#书籍推荐：" class="headerlink" title="书籍推荐："></a>书籍推荐：</h2><p>《高性能mysql》、《深入浅出MYSQL》、《MySQL性能调优与架构设计》<br></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/21/mysql学习-总览/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/03/20/数据库学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="vgmdj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="keep thinking">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/20/数据库学习/" itemprop="url">数据库学习</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-20T00:23:50+08:00">2018-03-20</time>
+            
+
+            
+            
+              
+                
+              
+            
+
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-20T00:23:50+08:00">2018-03-20</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/database/" itemprop="url" rel="index"><span itemprop="name">database</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/03/20/数据库学习/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::https://blog.vgmdj.cn/2018/03/20/数据库学习/" class="cy_cmt_count" data-xid="2018/03/20/数据库学习/" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2018/03/20/数据库学习/" class="leancloud_visitors" data-flag-title="数据库学习">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">1.9k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">0:02</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          1. 定义数据库(Database,简称DB): 长期存储在计算机内、有组织的、可共享的大量数据的集合数据库管理系统(Database Management System，简称DBMS)： 位于用户与操作系统之间的一层数据管理软件，是一个大型复杂的软件系统，mysql就是一个开源的RDBMS
+2. 介绍
+2.1 关系型数据库2.1.1 简介虽然网状数据库和层次数据库已经很好的解决了数据的集中和共享问题，但是在数据库独立性和抽象级别上扔有很大欠缺。用户在对这两种数据库进行存取时，仍然需要明确数据的存储结构，指出存取路径。而关系型数据库就可以较好的解决这些问题。
+关系型数据库模型是把复杂的数据结构归结为简单的二元关系（即二维表格形式）。在关系型数据库中，对数据的操作几乎全部建立在一个或多个关系表格上，通过对这些关联的表格分类、合并、连接或选取等运算来实现数据库的管理。
+关系型数据库诞生40多年了，从理论产生发展到现实产品，例如：Oracle和MySQL，Oracle在数据库领域上升到霸主地位，形成每年高达数百亿美元的庞大产业市场。
+2.2.2 主流数据库
+Mysql
+Oracle
+Access
+SqlServer
+PostgreSql
+
+2.2 非关系型数据库2.2.1 简介NoSQL，泛指非关系型的数据库。随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，特别是超大规模和高并发的SNS类型的web2.0纯动态网站已经显得力不从心，暴露了很多难以克服的问题，而非关系型的数据库则由于其本身的特点得到了非常迅速的发展。NoSql数据库在特定的场景下可以发挥出难以想象的高效率和高性能，它是作为对传统关系型数据库的一个有效的补充。
+NoSQL(NoSQL = Not Only SQL )，意即“不仅仅是SQL”，是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。
+2.2.2 分类
+键值存储数据库键值数据库就类似传统语言中使用的哈希表。可以通过key来添加、查询或者删除数据库，因为使用key主键访问，所以会获得很高的性能及扩展性。
+
+键值数据库主要使用一个哈希表，这个表中有一个特定的键和一个指针指向特定的数据。Key/value模型对于IT系统来说的优势在于简单、易部署、高并发。
+典型产品：Memcached、Redis
+
+文档存储数据库文档型数据库的灵感是来自于Lotus Notes办公软件，而且它同第一种键值数据库类似。该类型的数据模型是版本化的文档，半结构化的文档以特定的格式存储，比如JSON。文档型数据库可以看作是键值数据库的升级版，允许之间嵌套键值。而且文档型数据库比键值数据库的查询效率更高。
+
+面向文档数据库会将数据以文档形式存储。每个文档都是自包含的数据单元，是一系列数据项的集合。每个数据项都有一个名词与对应值，值既可以是简单的数据类型，如字符串、数字和日期等；也可以是复杂的类型，如有序列表和关联对象。数据存储的最小单位是文档，同一个表中存储的文档属性可以是不同的，数据可以使用XML、JSON或JSONB等多种形式存储。
+典型产品：MongoDB、CouchDB
+
+列存储数据库列存储数据库将数据存储在列族中，一个列族存储经常被一起查询的相关数据，比如人类，我们经常会查询某个人的姓名和年龄，而不是薪资。这种情况下姓名和年龄会被放到一个列族中，薪资会被放到另一个列族中。
+
+这种数据库通常用来应对分布式存储海量数据。
+典型产品：Cassandra、HBase
+
+图型数据库图形数据库允许我们将数据以图的方式存储。实体会被作为顶点，而实体之间的关系则会被作为边。比如我们有三个实体，Steve Jobs、Apple和Next，则会有两个“Founded by”的边将Apple和Next连接到Steve Jobs。
+
+典型产品：Neo4J、InforGrid
+3. 学习计划
+关系型数据库以Mysql为代表
+非关系型数据库中键值存储型以Redis为代表
+非关系型数据库中文档存储型以MongoDB为代表
+非关系型数据库中列存储型以Hbase为代表
+
+4. 本文参考文章https://www.jianshu.com/p/107c6b045245
+5. 学习过程参考书籍
+《Redis实战》
+《MongoDB权威指南》
+《大数据存储MongoDB实战指南》
+《高性能Mysql》
+《深入浅出Mysql》
+
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/20/数据库学习/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1921,7 +2192,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">3.5k</span>
+                <span title="字数统计">5.3k</span>
               
 
               
@@ -1935,7 +2206,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:03</span>
+                <span title="阅读时长">0:05</span>
               
             </div>
           
@@ -1956,7 +2227,7 @@
 
       
         
-          <h2 id="协议分层"><a href="#协议分层" class="headerlink" title="协议分层"></a>协议分层</h2><p>互联网协议分为五层，各层的所有协议被称为协议栈。一般采用自顶向下的方法，首先处理应用层，然后向下进行处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">应用层</span><br><span class="line">运输层</span><br><span class="line">网络层</span><br><span class="line">链路层</span><br><span class="line">物理层</span><br></pre></td></tr></table></figure></p>
+          <h2 id="1-协议分层"><a href="#1-协议分层" class="headerlink" title="1 协议分层"></a>1 协议分层</h2><p>互联网协议分为五层，各层的所有协议被称为协议栈。一般采用自顶向下的方法，首先处理应用层，然后向下进行处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">应用层</span><br><span class="line">运输层</span><br><span class="line">网络层</span><br><span class="line">链路层</span><br><span class="line">物理层</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/08/计算机网络学习-二-协议分析/#more" rel="contents">
@@ -2212,218 +2483,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/03/07/linux常用命令/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="vgmdj">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="keep thinking">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/07/linux常用命令/" itemprop="url">linux 常用命令</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T15:23:50+08:00">2018-03-07</time>
-            
-
-            
-            
-              
-                
-              
-            
-
-            
-              
-              <span class="post-meta-divider">|</span>
-              
-
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-07T17:23:50+08:00">2018-03-07</time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2018/03/07/linux常用命令/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::https://blog.vgmdj.cn/2018/03/07/linux常用命令/" class="cy_cmt_count" data-xid="2018/03/07/linux常用命令/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-             <span id="/2018/03/07/linux常用命令/" class="leancloud_visitors" data-flag-title="linux 常用命令">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">743</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">0:01</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>记录一下时不时就会遇到，但就是记不住的几个命令<br></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/07/linux常用命令/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2477,7 +2536,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2648,7 +2707,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">47k</span>
+    <span title="站点总字数">56k</span>
   
 
   
@@ -2659,7 +2718,7 @@
     
       <span class="post-meta-item-text">站点总阅读时长&#58;</span>
     
-    <span title="站点总阅读时长">0:47</span>
+    <span title="站点总阅读时长">0:56</span>
   
 </div>
 
