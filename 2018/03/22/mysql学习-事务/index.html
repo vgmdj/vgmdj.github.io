@@ -103,18 +103,18 @@
   <meta name="keywords" content="database,mysql," />
 
 
-<meta name="description" content="1 定义事务(transaction)是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位。同时，事务也是恢复和并发控制的基本单位。 2 事务特性(acid)2.1 四大特性 原子性(atomicity)　原子性是指事务包含的所有操作要么全部操作，要么全部不做，事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。  一致性(consi">
+<meta name="description" content="1. 定义事务(transaction)是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位。同时，事务也是恢复和并发控制的基本单位。 2. 事务特性(acid)2.1. 四大特性 原子性(atomicity)　原子性是指事务包含的所有操作要么全部操作，要么全部不做，事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。  一致性(co">
 <meta name="keywords" content="database,mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql学习-事务">
 <meta property="og:url" content="https://blog.vgmdj.cn/2018/03/22/mysql学习-事务/index.html">
 <meta property="og:site_name" content="keep thinking">
-<meta property="og:description" content="1 定义事务(transaction)是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位。同时，事务也是恢复和并发控制的基本单位。 2 事务特性(acid)2.1 四大特性 原子性(atomicity)　原子性是指事务包含的所有操作要么全部操作，要么全部不做，事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。  一致性(consi">
+<meta property="og:description" content="1. 定义事务(transaction)是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位。同时，事务也是恢复和并发控制的基本单位。 2. 事务特性(acid)2.1. 四大特性 原子性(atomicity)　原子性是指事务包含的所有操作要么全部操作，要么全部不做，事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。  一致性(co">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-03-22T09:23:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql学习-事务">
-<meta name="twitter:description" content="1 定义事务(transaction)是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位。同时，事务也是恢复和并发控制的基本单位。 2 事务特性(acid)2.1 四大特性 原子性(atomicity)　原子性是指事务包含的所有操作要么全部操作，要么全部不做，事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。  一致性(consi">
+<meta name="twitter:description" content="1. 定义事务(transaction)是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位。同时，事务也是恢复和并发控制的基本单位。 2. 事务特性(acid)2.1. 四大特性 原子性(atomicity)　原子性是指事务包含的所有操作要么全部操作，要么全部不做，事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。  一致性(co">
 
 
 
@@ -436,7 +436,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">3.8k</span>
+                <span title="字数统计">3.9k</span>
               
 
               
@@ -470,8 +470,8 @@
       
 
       
-        <h1 id="1-定义"><a href="#1-定义" class="headerlink" title="1 定义"></a>1 定义</h1><p>事务(transaction)是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位。同时，事务也是恢复和并发控制的基本单位。</p>
-<h1 id="2-事务特性-acid"><a href="#2-事务特性-acid" class="headerlink" title="2 事务特性(acid)"></a>2 事务特性(acid)</h1><h2 id="2-1-四大特性"><a href="#2-1-四大特性" class="headerlink" title="2.1 四大特性"></a>2.1 四大特性</h2><ul>
+        <h1 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h1><p>事务(transaction)是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位。同时，事务也是恢复和并发控制的基本单位。</p>
+<h1 id="2-事务特性-acid"><a href="#2-事务特性-acid" class="headerlink" title="2. 事务特性(acid)"></a>2. 事务特性(acid)</h1><h2 id="2-1-四大特性"><a href="#2-1-四大特性" class="headerlink" title="2.1. 四大特性"></a>2.1. 四大特性</h2><ul>
 <li><p>原子性(atomicity)<br>　原子性是指事务包含的所有操作要么全部操作，要么全部不做，事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。</p>
 </li>
 <li><p>一致性(consistency)<br>一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。<br>　拿转账来说，假设用户A和用户B两者的钱加起来一共是5000，那么不管A和B之间如何转账，转几次账，事务结束后两个用户的钱相加起来应该还得是5000，这就是事务的一致性</p>
@@ -482,9 +482,9 @@
 <a id="more"></a>
 </li>
 </ul>
-<h2 id="2-2-区分数据库的原子性和一致性"><a href="#2-2-区分数据库的原子性和一致性" class="headerlink" title="2.2 区分数据库的原子性和一致性"></a>2.2 区分数据库的原子性和一致性</h2><p>如果从逻辑设计上，A转账给B 1000元，那么A扣1000,B加1000，这个转账操作起码要有两个事务：<br>1、查A现有账户，然后扣1000,更新A账户（A=A-1000）<br>2、查B现有账户，然后加1000,更新B账户 (B=B+1000)</p>
+<h2 id="2-2-区分数据库的原子性和一致性"><a href="#2-2-区分数据库的原子性和一致性" class="headerlink" title="2.2. 区分数据库的原子性和一致性"></a>2.2. 区分数据库的原子性和一致性</h2><p>如果从逻辑设计上，A转账给B 1000元，那么A扣1000,B加1000，这个转账操作起码要有两个事务：<br>1、查A现有账户，然后扣1000,更新A账户（A=A-1000）<br>2、查B现有账户，然后加1000,更新B账户 (B=B+1000)</p>
 <p>原子性是说，如果提交时，1,2都操作了，要么成功，要么失败回滚<br>一致性是说，如果操作了，但没有提交时系统崩溃，此时原子性满足了，但处于不一致的状态（只有事务的开始，没有事务的结束），所以要进行回滚，回退到上一个一致性的状态</p>
-<h1 id="3-事务隔离"><a href="#3-事务隔离" class="headerlink" title="3 事务隔离"></a>3 事务隔离</h1><h2 id="3-1-事务的四大隔离等级"><a href="#3-1-事务的四大隔离等级" class="headerlink" title="3.1 事务的四大隔离等级"></a>3.1 事务的四大隔离等级</h2><ul>
+<h1 id="3-事务隔离"><a href="#3-事务隔离" class="headerlink" title="3. 事务隔离"></a>3. 事务隔离</h1><h2 id="3-1-事务的四大隔离等级"><a href="#3-1-事务的四大隔离等级" class="headerlink" title="3.1. 事务的四大隔离等级"></a>3.1. 事务的四大隔离等级</h2><ul>
 <li><p>Read uncommitted (未提交读)：最低级别，任何情况都无法保证<br>如果一个事务已经开始写数据，则另外一个事务不能同时进行写操作，但允许其他事务读此行数据。即事务中的修改，即使没有提交，对其他事务也都是可见的。<br>这样就避免了更新丢失，却可能出现脏读，因为修改的事务也许在提交前还会有其他的很多修改，所以另一个事务的数据读取会错乱。<br>从性能上讲，read uncommitted并没有比其他的三个级别好太多，但却缺少其他隔离级别带来的好处，所以除非是有真的要使用的理由，在实际应用中一般不使用。</p>
 </li>
 <li><p>Read committed (提交读)：可避免脏读的发生<br>一个事务开始时，只能读到已经提交的事务所做的修改。即，一个事务从开始到提交之前所做的修改，对其他事务而言，都是不可见的。<br>该隔离级别避免了脏读，但是却可能出现不可重复读，即两个事务同时开启，事务A读取数据后，事务B对数据进行修改后提交，事务A再次读取，会发现跟前一次读取的内容不一样了<br>read committed, 也被称为 unrepeatable read是大多数数据库默认的隔离级别</p>
@@ -494,7 +494,7 @@
 <li><p>Serializable (串行化)：可避免脏读、不可重复读、幻读的发生<br>两个事务完全独立，其中一个事务做的操作，对于另外一个事务不产生任何影响<br>数据库事务加了锁，所有事务串行执行，避免了上述所有问题，但是性能上影响很大</p>
 </li>
 </ul>
-<h2 id="3-2-并发下事务可能出现的问题"><a href="#3-2-并发下事务可能出现的问题" class="headerlink" title="3.2 并发下事务可能出现的问题"></a>3.2 并发下事务可能出现的问题</h2><p>在多个事务并发做数据库操作的时候，如果没有有效的避免机制，就会出现种种问题。</p>
+<h2 id="3-2-并发下事务可能出现的问题"><a href="#3-2-并发下事务可能出现的问题" class="headerlink" title="3.2. 并发下事务可能出现的问题"></a>3.2. 并发下事务可能出现的问题</h2><p>在多个事务并发做数据库操作的时候，如果没有有效的避免机制，就会出现种种问题。</p>
 <ul>
 <li><p>1、丢失更新<br>两个不同事务同时获得相同数据，然后在各自事务中同时修改了该数据，那么先提交的事务更新会被后提交事务的更新给覆盖掉，那么先提交的更新就会被丢失掉</p>
 </li>
@@ -505,7 +505,7 @@
 <li><p>4 幻读（Phantom Read）<br>事务A读的时候读出了15条记录，事务B在事务A执行的过程中增加了1条，事务A再读的时候就变成了16条，这种情况就叫做幻影读。<br>幻读和不可重复读都是读取了另一条已经提交的事务（这点就脏读不同），所不同的是不可重复读查询的都是同一个数据项，而幻读针对的是一批数据整体（比如数据的个数）。</p>
 </li>
 </ul>
-<h2 id="3-3-隔离级别的例子"><a href="#3-3-隔离级别的例子" class="headerlink" title="3.3 隔离级别的例子"></a>3.3 隔离级别的例子</h2><p>现在有一个数据项X，执行以下操作<br>1、事务B一直对其进行读操作<br>2、事务A将其从1依次改到10<br>3、事务C将其从10依次改到20<br>4、事务B结束读操作</p>
+<h2 id="3-3-隔离级别的例子"><a href="#3-3-隔离级别的例子" class="headerlink" title="3.3. 隔离级别的例子"></a>3.3. 隔离级别的例子</h2><p>现在有一个数据项X，执行以下操作<br>1、事务B一直对其进行读操作<br>2、事务A将其从1依次改到10<br>3、事务C将其从10依次改到20<br>4、事务B结束读操作</p>
 <p>那么不同隔离级别下，去除重复值后，B所能看到的为：</p>
 <ul>
 <li>read uncommitted下： 1～20</li>
@@ -514,11 +514,11 @@
 <li>serializable下： 因B操作未提交，所以无法按照以上顺序执行</li>
 </ul>
 <p>总的来说，事务隔离级别越高，越能保证数据的完整性和一致性，但是付出的代价却是并发的性能</p>
-<h1 id="4-锁"><a href="#4-锁" class="headerlink" title="4 锁"></a>4 锁</h1><h2 id="4-1-共享锁"><a href="#4-1-共享锁" class="headerlink" title="4.1 共享锁"></a>4.1 共享锁</h2><p>被加锁的对象可以被持锁事务读取，但是不能被修改，其他事务也可以在上面再加共享锁。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table where ? lock in share mode</span><br></pre></td></tr></table></figure></p>
+<h1 id="4-锁"><a href="#4-锁" class="headerlink" title="4. 锁"></a>4. 锁</h1><h2 id="4-1-共享锁"><a href="#4-1-共享锁" class="headerlink" title="4.1. 共享锁"></a>4.1. 共享锁</h2><p>被加锁的对象可以被持锁事务读取，但是不能被修改，其他事务也可以在上面再加共享锁。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table where ? lock in share mode</span><br></pre></td></tr></table></figure></p>
 <h2 id="4-2-互斥锁"><a href="#4-2-互斥锁" class="headerlink" title="4.2 互斥锁"></a>4.2 互斥锁</h2><p>被加锁的对象只能被持有锁的事务读取和修改，其他事务无法在该对象上加其他锁，也不能读取和修改该对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select * from table where ? for update;</span><br><span class="line">insert into table values (…);</span><br><span class="line">update table set ? where ?;</span><br><span class="line">delete from table where ?;</span><br></pre></td></tr></table></figure></p>
 <p>对于增删改也是用的互斥锁是因为，MySQL Server会根据where条件，读取第一条满足条件的记录，然后InnoDB引擎会将第一条记录返回，并加锁 (current read)。待MySQL Server收到这条加锁的记录之后，会再发起一个Update请求，更新这条记录。一条记录操作完成，再读取下一条记录，直至没有满足条件的记录为止。因此，Update操作内部，就包含了一个当前读。同理，Delete操作也一样。Insert操作会稍微有些不同，简单来说，就是Insert操作可能会触发Unique Key的冲突检查，也会进行一个当前读。</p>
-<h2 id="4-3-悲观锁"><a href="#4-3-悲观锁" class="headerlink" title="4.3 悲观锁"></a>4.3 悲观锁</h2><p>应用层面的并发控制方式<br>每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁，这样别人想拿这个数据就会block直到它拿到锁。传统的关系型数据库里边就用到了很多这种锁机制，比如行锁，表锁等，读锁，写锁等，都是在做操作之前先上锁</p>
-<h2 id="4-4-乐观锁"><a href="#4-4-乐观锁" class="headerlink" title="4.4 乐观锁"></a>4.4 乐观锁</h2><p>应用层面的并发控制方式<br>每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间别人有没有去更新这个数据，可以使用版本号等机制。乐观锁适用于多读的应用类型，这样可以提高吞吐量，像数据库如果提供类似于write_condition机制的其实都是提供的乐观锁</p>
+<h2 id="4-3-悲观锁"><a href="#4-3-悲观锁" class="headerlink" title="4.3. 悲观锁"></a>4.3. 悲观锁</h2><p>应用层面的并发控制方式<br>每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁，这样别人想拿这个数据就会block直到它拿到锁。传统的关系型数据库里边就用到了很多这种锁机制，比如行锁，表锁等，读锁，写锁等，都是在做操作之前先上锁</p>
+<h2 id="4-4-乐观锁"><a href="#4-4-乐观锁" class="headerlink" title="4.4. 乐观锁"></a>4.4. 乐观锁</h2><p>应用层面的并发控制方式<br>每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间别人有没有去更新这个数据，可以使用版本号等机制。乐观锁适用于多读的应用类型，这样可以提高吞吐量，像数据库如果提供类似于write_condition机制的其实都是提供的乐观锁</p>
 <p>两种锁各有优缺点，不可认为一种好于另一种，像乐观锁适用于写比较少的情况下，即冲突真的很少发生的时候，这样可以省去了锁的开销，加大了系统的整个吞吐量。但如果经常产生冲突，上层应用会不断的进行retry，这样反倒是降低了性能，所以这种情况下用悲观锁就比较合适</p>
 <h2 id="4-5-mvcc"><a href="#4-5-mvcc" class="headerlink" title="4.5 mvcc"></a>4.5 mvcc</h2><p>Multiversion concurrency control 即多版本并发控制，乐观锁的一种实现，一般使用时间戳或版本号来标识一次修改，在修改时，验证之前是否已有其他修改提交</p>
 <table>
@@ -863,7 +863,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-定义"><span class="nav-number">1.</span> <span class="nav-text">1 定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-事务特性-acid"><span class="nav-number">2.</span> <span class="nav-text">2 事务特性(acid)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-四大特性"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 四大特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-区分数据库的原子性和一致性"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 区分数据库的原子性和一致性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-事务隔离"><span class="nav-number">3.</span> <span class="nav-text">3 事务隔离</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-事务的四大隔离等级"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 事务的四大隔离等级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-并发下事务可能出现的问题"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 并发下事务可能出现的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-隔离级别的例子"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 隔离级别的例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-锁"><span class="nav-number">4.</span> <span class="nav-text">4 锁</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-共享锁"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 共享锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-互斥锁"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 互斥锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-悲观锁"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 悲观锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-乐观锁"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 乐观锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-mvcc"><span class="nav-number">4.5.</span> <span class="nav-text">4.5 mvcc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-死锁"><span class="nav-number">4.6.</span> <span class="nav-text">4.6 死锁</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-定义"><span class="nav-number">1.</span> <span class="nav-text">1. 定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-事务特性-acid"><span class="nav-number">2.</span> <span class="nav-text">2. 事务特性(acid)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-四大特性"><span class="nav-number">2.1.</span> <span class="nav-text">2.1. 四大特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-区分数据库的原子性和一致性"><span class="nav-number">2.2.</span> <span class="nav-text">2.2. 区分数据库的原子性和一致性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-事务隔离"><span class="nav-number">3.</span> <span class="nav-text">3. 事务隔离</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-事务的四大隔离等级"><span class="nav-number">3.1.</span> <span class="nav-text">3.1. 事务的四大隔离等级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-并发下事务可能出现的问题"><span class="nav-number">3.2.</span> <span class="nav-text">3.2. 并发下事务可能出现的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-隔离级别的例子"><span class="nav-number">3.3.</span> <span class="nav-text">3.3. 隔离级别的例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-锁"><span class="nav-number">4.</span> <span class="nav-text">4. 锁</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-共享锁"><span class="nav-number">4.1.</span> <span class="nav-text">4.1. 共享锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-互斥锁"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 互斥锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-悲观锁"><span class="nav-number">4.3.</span> <span class="nav-text">4.3. 悲观锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-乐观锁"><span class="nav-number">4.4.</span> <span class="nav-text">4.4. 乐观锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-mvcc"><span class="nav-number">4.5.</span> <span class="nav-text">4.5 mvcc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-死锁"><span class="nav-number">4.6.</span> <span class="nav-text">4.6 死锁</span></a></li></ol></li></ol></div>
             
 
           </div>
