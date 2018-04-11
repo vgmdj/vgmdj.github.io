@@ -103,18 +103,18 @@
   <meta name="keywords" content="Golang,学习," />
 
 
-<meta name="description" content="环境go版本 1.10">
+<meta name="description" content="环境go版本 1.10 HashMap和HashTable线性表中，数组查询方便，链表插入、删除方便，而HashTable则是结合了两者的优点，使得在所有操作上都是 O(1) 的时间复杂度，效率非常高HashMap是基于HashTable的 Map 接口的实现，其去掉了线程同步的操作，因而效率要更高一些，所以说HashTable是线程安全的，而HashMap则非线程安全。go语言中的map类型就是">
 <meta name="keywords" content="Golang,学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="go语言学习-map">
 <meta property="og:url" content="https://blog.vgmdj.cn/2018/03/30/go语言学习-map/index.html">
 <meta property="og:site_name" content="keep thinking">
-<meta property="og:description" content="环境go版本 1.10">
+<meta property="og:description" content="环境go版本 1.10 HashMap和HashTable线性表中，数组查询方便，链表插入、删除方便，而HashTable则是结合了两者的优点，使得在所有操作上都是 O(1) 的时间复杂度，效率非常高HashMap是基于HashTable的 Map 接口的实现，其去掉了线程同步的操作，因而效率要更高一些，所以说HashTable是线程安全的，而HashMap则非线程安全。go语言中的map类型就是">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-03-30T07:23:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="go语言学习-map">
-<meta name="twitter:description" content="环境go版本 1.10">
+<meta name="twitter:description" content="环境go版本 1.10 HashMap和HashTable线性表中，数组查询方便，链表插入、删除方便，而HashTable则是结合了两者的优点，使得在所有操作上都是 O(1) 的时间复杂度，效率非常高HashMap是基于HashTable的 Map 接口的实现，其去掉了线程同步的操作，因而效率要更高一些，所以说HashTable是线程安全的，而HashMap则非线程安全。go语言中的map类型就是">
 
 
 
@@ -470,8 +470,8 @@
       
 
       
-        <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>go版本 1.10<br><a id="more"></a></p>
-<h2 id="HashMap和HashTable"><a href="#HashMap和HashTable" class="headerlink" title="HashMap和HashTable"></a>HashMap和HashTable</h2><p>线性表中，数组查询方便，链表插入、删除方便，而HashTable则是结合了两者的优点，使得在所有操作上都是 O(1) 的时间复杂度，效率非常高<br>HashMap是基于HashTable的 Map 接口的实现，其去掉了线程同步的操作，因而效率要更高一些，所以说HashTable是线程安全的，而HashMap则非线程安全。<br>go语言中的map类型就是使用的HashMap,即go中的map非线程安全，不能放在多个goroutine中，只能自己维护线程安全<br><!--more--></p>
+        <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>go版本 1.10</p>
+<h2 id="HashMap和HashTable"><a href="#HashMap和HashTable" class="headerlink" title="HashMap和HashTable"></a>HashMap和HashTable</h2><p>线性表中，数组查询方便，链表插入、删除方便，而HashTable则是结合了两者的优点，使得在所有操作上都是 O(1) 的时间复杂度，效率非常高<br>HashMap是基于HashTable的 Map 接口的实现，其去掉了线程同步的操作，因而效率要更高一些，所以说HashTable是线程安全的，而HashMap则非线程安全。<br>go语言中的map类型就是使用的HashMap,即go中的map非线程安全，不能放在多个goroutine中，只能自己维护线程安全<br><a id="more"></a></p>
 <h2 id="go-map一般操作"><a href="#go-map一般操作" class="headerlink" title="go map一般操作"></a>go map一般操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//创建map</span><br><span class="line">a := make(map[string]string)</span><br><span class="line">//存入</span><br><span class="line">a[&quot;first&quot;] = &quot;first&quot;</span><br><span class="line">//读取</span><br><span class="line">fmt.Println(a[&quot;first&quot;])</span><br></pre></td></tr></table></figure>
 <p>需要注意的是，并不是所有的类型都可以作为key值，在Go的语言规范中已精确定义，只有能比较是否相等的类型才可以作为key值，key的类型可以是：</p>
 <ul>

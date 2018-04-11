@@ -103,18 +103,18 @@
   <meta name="keywords" content=",," />
 
 
-<meta name="description" content="1 数据库优化数据库优化必要性，主要方式 2 explain分析3 语句优化4 索引5 分区6 分库分表http://blog.51yip.com/mysql/1029.html 7 总结https://blog.csdn.net/a724888/article/details/60879893">
+<meta name="description" content="数据库优化数据库优化必要性，主要方式 explain分析使用explain非常简单，只需要在查询语句前加上explain即可，但是需要注意的是，如果语句包含开销较大的子查询或使用临时表算法的视图，实际上会给服务器带来大量工作。在MySQL5.6之后，允许解释非SELECT语句，如果使用的是5.6之前的版本，需要将语句改写成接近的SELECT语句后再进行分析。 explain列 id列标识SELEC">
 <meta name="keywords" content="database,mysql">
 <meta property="og:type" content="website">
 <meta property="og:title" content="mysql学习-优化">
 <meta property="og:url" content="https://blog.vgmdj.cn/temp/mysql学习-优化.html">
 <meta property="og:site_name" content="keep thinking">
-<meta property="og:description" content="1 数据库优化数据库优化必要性，主要方式 2 explain分析3 语句优化4 索引5 分区6 分库分表http://blog.51yip.com/mysql/1029.html 7 总结https://blog.csdn.net/a724888/article/details/60879893">
+<meta property="og:description" content="数据库优化数据库优化必要性，主要方式 explain分析使用explain非常简单，只需要在查询语句前加上explain即可，但是需要注意的是，如果语句包含开销较大的子查询或使用临时表算法的视图，实际上会给服务器带来大量工作。在MySQL5.6之后，允许解释非SELECT语句，如果使用的是5.6之前的版本，需要将语句改写成接近的SELECT语句后再进行分析。 explain列 id列标识SELEC">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-04-02T14:23:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql学习-优化">
-<meta name="twitter:description" content="1 数据库优化数据库优化必要性，主要方式 2 explain分析3 语句优化4 索引5 分区6 分库分表http://blog.51yip.com/mysql/1029.html 7 总结https://blog.csdn.net/a724888/article/details/60879893">
+<meta name="twitter:description" content="数据库优化数据库优化必要性，主要方式 explain分析使用explain非常简单，只需要在查询语句前加上explain即可，但是需要注意的是，如果语句包含开销较大的子查询或使用临时表算法的视图，实际上会给服务器带来大量工作。在MySQL5.6之后，允许解释非SELECT语句，如果使用的是5.6之前的版本，需要将语句改写成接近的SELECT语句后再进行分析。 explain列 id列标识SELEC">
 
 
 
@@ -329,9 +329,33 @@
       <div class="post-body">
         
         
-          <h1 id="1-数据库优化"><a href="#1-数据库优化" class="headerlink" title="1 数据库优化"></a>1 数据库优化</h1><p>数据库优化必要性，主要方式</p>
-<h1 id="2-explain分析"><a href="#2-explain分析" class="headerlink" title="2 explain分析"></a>2 explain分析</h1><h1 id="3-语句优化"><a href="#3-语句优化" class="headerlink" title="3 语句优化"></a>3 语句优化</h1><h1 id="4-索引"><a href="#4-索引" class="headerlink" title="4 索引"></a>4 索引</h1><h1 id="5-分区"><a href="#5-分区" class="headerlink" title="5 分区"></a>5 分区</h1><h1 id="6-分库分表"><a href="#6-分库分表" class="headerlink" title="6 分库分表"></a>6 分库分表</h1><p><a href="http://blog.51yip.com/mysql/1029.html" target="_blank" rel="noopener">http://blog.51yip.com/mysql/1029.html</a></p>
-<h1 id="7-总结"><a href="#7-总结" class="headerlink" title="7 总结"></a>7 总结</h1><p><a href="https://blog.csdn.net/a724888/article/details/60879893" target="_blank" rel="noopener">https://blog.csdn.net/a724888/article/details/60879893</a></p>
+          <h1 id="数据库优化"><a href="#数据库优化" class="headerlink" title="数据库优化"></a>数据库优化</h1><p>数据库优化必要性，主要方式</p>
+<h1 id="explain分析"><a href="#explain分析" class="headerlink" title="explain分析"></a>explain分析</h1><p>使用explain非常简单，只需要在查询语句前加上explain即可，但是需要注意的是，如果语句包含开销较大的子查询或使用临时表算法的视图，实际上会给服务器带来大量工作。<br>在MySQL5.6之后，允许解释非SELECT语句，如果使用的是5.6之前的版本，需要将语句改写成接近的SELECT语句后再进行分析。</p>
+<h2 id="explain列"><a href="#explain列" class="headerlink" title="explain列"></a>explain列</h2><ul>
+<li><p>id列<br>标识SELECT查询的序列号</p>
+</li>
+<li><p>select_type列<br>这一列显示了对应行是简单还是复杂的操作</p>
+</li>
+<li><p>table列<br>这一列显示了访问的对应表</p>
+</li>
+<li><p>type列<br>这一列很重要，显示了访问类型——简单讲就是MySQL决定如何查找表中的行。</p>
+<ul>
+<li>ALL 全表扫描，性能最差</li>
+<li>index 跟全表扫描类似，只是扫描表时按索引次序进行而不是行。主要优点就是避免了排序，主要缺点就是要承担按索引次序读取整个表的开销。这通常意味着若是按随机次序访问行，开销将会非常大。如果在Extra列中看到“Using index”，说明MySQL正在使用覆盖索引，它只扫描索引的数据，而不是按索引次序的每一行。它比按索引次序全表扫描的开销要少很多。</li>
+<li>range 范围扫描，一个有限制的索引扫描，开始于索引里的某一点，返回匹配这个值域的行，这比全索引扫描好一些。</li>
+</ul>
+</li>
+<li><p>possible_keys列</p>
+</li>
+<li>key列</li>
+<li>key_len列</li>
+<li>ref列</li>
+<li>rows列</li>
+<li>filtered列</li>
+<li>extra列</li>
+</ul>
+<h1 id="语句优化"><a href="#语句优化" class="headerlink" title="语句优化"></a>语句优化</h1><h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><h1 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h1><h1 id="分库分表"><a href="#分库分表" class="headerlink" title="分库分表"></a>分库分表</h1><p><a href="http://blog.51yip.com/mysql/1029.html" target="_blank" rel="noopener">http://blog.51yip.com/mysql/1029.html</a></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><a href="https://blog.csdn.net/a724888/article/details/60879893" target="_blank" rel="noopener">https://blog.csdn.net/a724888/article/details/60879893</a></p>
 
         
       </div>
@@ -563,7 +587,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-数据库优化"><span class="nav-number">1.</span> <span class="nav-text">1 数据库优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-explain分析"><span class="nav-number">2.</span> <span class="nav-text">2 explain分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-语句优化"><span class="nav-number">3.</span> <span class="nav-text">3 语句优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-索引"><span class="nav-number">4.</span> <span class="nav-text">4 索引</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-分区"><span class="nav-number">5.</span> <span class="nav-text">5 分区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-分库分表"><span class="nav-number">6.</span> <span class="nav-text">6 分库分表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-总结"><span class="nav-number">7.</span> <span class="nav-text">7 总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库优化"><span class="nav-number">1.</span> <span class="nav-text">数据库优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#explain分析"><span class="nav-number">2.</span> <span class="nav-text">explain分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#explain列"><span class="nav-number">2.1.</span> <span class="nav-text">explain列</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语句优化"><span class="nav-number">3.</span> <span class="nav-text">语句优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引"><span class="nav-number">4.</span> <span class="nav-text">索引</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分区"><span class="nav-number">5.</span> <span class="nav-text">分区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分库分表"><span class="nav-number">6.</span> <span class="nav-text">分库分表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>

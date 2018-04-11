@@ -100,28 +100,27 @@
 
 
   
-  <meta name="keywords" content=",," />
+  <meta name="keywords" content="vgmdj,keep thinking,生命不止 思考不息" />
 
 
-<meta name="description" content="简述Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。现阶段其主要的应用场景是作为缓存使用 特点Redis 与其他 key - value 缓存产品有以下三个特点：  Redis支持数据的持久化，可以将内存中的数据保持在磁盘中，重启的时候可以再次加载进行使用。 Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash">
-<meta name="keywords" content="database,redis">
+<meta name="description" content="索引命中问题原sql1where app_id - 1 = app_id&amp;apos; 应改为1where app_id = app_id&amp;apos; - 1 查询条件中放入函数1where TO_DAYS(NOW()) - TO_DAYS(app_time) = 1 应改为1where app_time &amp;lt; DATE(NOW()) AND app_time &amp;gt; DATE(NOW())">
 <meta property="og:type" content="website">
-<meta property="og:title" content="redis学习-总览">
-<meta property="og:url" content="https://blog.vgmdj.cn/temp/redis学习-总览.html">
+<meta property="og:title" content="keep thinking">
+<meta property="og:url" content="https://blog.vgmdj.cn/temp/mysql学习-优化实例.html">
 <meta property="og:site_name" content="keep thinking">
-<meta property="og:description" content="简述Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。现阶段其主要的应用场景是作为缓存使用 特点Redis 与其他 key - value 缓存产品有以下三个特点：  Redis支持数据的持久化，可以将内存中的数据保持在磁盘中，重启的时候可以再次加载进行使用。 Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash">
+<meta property="og:description" content="索引命中问题原sql1where app_id - 1 = app_id&amp;apos; 应改为1where app_id = app_id&amp;apos; - 1 查询条件中放入函数1where TO_DAYS(NOW()) - TO_DAYS(app_time) = 1 应改为1where app_time &amp;lt; DATE(NOW()) AND app_time &amp;gt; DATE(NOW())">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-02T09:23:50.000Z">
+<meta property="og:updated_time" content="2018-04-11T02:36:20.541Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="redis学习-总览">
-<meta name="twitter:description" content="简述Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。现阶段其主要的应用场景是作为缓存使用 特点Redis 与其他 key - value 缓存产品有以下三个特点：  Redis支持数据的持久化，可以将内存中的数据保持在磁盘中，重启的时候可以再次加载进行使用。 Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash">
+<meta name="twitter:title" content="keep thinking">
+<meta name="twitter:description" content="索引命中问题原sql1where app_id - 1 = app_id&amp;apos; 应改为1where app_id = app_id&amp;apos; - 1 查询条件中放入函数1where TO_DAYS(NOW()) - TO_DAYS(app_time) = 1 应改为1where app_time &amp;lt; DATE(NOW()) AND app_time &amp;gt; DATE(NOW())">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.vgmdj.cn/temp/redis学习-总览.html"/>
+  <link rel="canonical" href="https://blog.vgmdj.cn/temp/mysql学习-优化实例.html"/>
 
 
 
@@ -130,7 +129,7 @@
     sidebar: "",
   };
 </script>
-  <title>redis学习-总览 | keep thinking</title>
+  <title> | keep thinking</title>
   
 
 
@@ -311,7 +310,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-<h2 class="post-title" itemprop="name headline">redis学习-总览</h2>
+<h2 class="post-title" itemprop="name headline"></h2>
 
 <div class="post-meta">
   
@@ -329,13 +328,11 @@
       <div class="post-body">
         
         
-          <h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。<br>现阶段其主要的应用场景是作为缓存使用</p>
-<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><p>Redis 与其他 key - value 缓存产品有以下三个特点：</p>
-<ul>
-<li>Redis支持数据的持久化，可以将内存中的数据保持在磁盘中，重启的时候可以再次加载进行使用。</li>
-<li>Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储。</li>
-<li>Redis支持数据的备份，即master-slave模式的数据备份。</li>
-</ul>
+          <h1 id="索引命中问题"><a href="#索引命中问题" class="headerlink" title="索引命中问题"></a>索引命中问题</h1><p>原sql<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where app_id - 1 = app_id&apos;</span><br></pre></td></tr></table></figure></p>
+<p>应改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where app_id = app_id&apos; - 1</span><br></pre></td></tr></table></figure></p>
+<h1 id="查询条件中放入函数"><a href="#查询条件中放入函数" class="headerlink" title="查询条件中放入函数"></a>查询条件中放入函数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where TO_DAYS(NOW()) - TO_DAYS(app_time) = 1</span><br></pre></td></tr></table></figure>
+<p>应改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where app_time &lt; DATE(NOW()) AND app_time &gt; DATE(NOW()) - 1</span><br></pre></td></tr></table></figure></p>
+<p>修改后，索引得以命中，且去掉了大量不必要函数运算</p>
 
         
       </div>
@@ -567,7 +564,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简述"><span class="nav-number">1.</span> <span class="nav-text">简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特点"><span class="nav-number">2.</span> <span class="nav-text">特点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#索引命中问题"><span class="nav-number">1.</span> <span class="nav-text">索引命中问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查询条件中放入函数"><span class="nav-number">2.</span> <span class="nav-text">查询条件中放入函数</span></a></li></ol></div>
             
 
           </div>
