@@ -100,18 +100,18 @@
 
 
   
-  <meta name="keywords" content=",," />
+  <meta name="keywords" content="database,mysql," />
 
 
 <meta name="description" content="索引索引是存储引擎找到记录的一种数据结构，而索引优化是对查询性能优化最有效的手段。其类似于一本书的目录部分，如果想在一本书中找到某个特定主题，一般会先看书中的“索引部分”，找到对应的页码。在MySQL中，存储引擎用类似的方法使用索引，其先在索引中找到对应值，然后根据匹配的索引记录找到对应的数据行。索引可以包含一个或多个列的值，如果索引包含多个列，那么列的顺序也十分重要，因为MySQL只能高效地使用">
 <meta name="keywords" content="database,mysql">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:title" content="mysql学习-索引">
-<meta property="og:url" content="https://blog.vgmdj.cn/temp/mysql学习-索引.html">
+<meta property="og:url" content="https://blog.vgmdj.cn/2018/04/06/mysql学习-索引/index.html">
 <meta property="og:site_name" content="keep thinking">
 <meta property="og:description" content="索引索引是存储引擎找到记录的一种数据结构，而索引优化是对查询性能优化最有效的手段。其类似于一本书的目录部分，如果想在一本书中找到某个特定主题，一般会先看书中的“索引部分”，找到对应的页码。在MySQL中，存储引擎用类似的方法使用索引，其先在索引中找到对应值，然后根据匹配的索引记录找到对应的数据行。索引可以包含一个或多个列的值，如果索引包含多个列，那么列的顺序也十分重要，因为MySQL只能高效地使用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-07T09:45:31.000Z">
+<meta property="og:updated_time" content="2018-04-17T09:45:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql学习-索引">
 <meta name="twitter:description" content="索引索引是存储引擎找到记录的一种数据结构，而索引优化是对查询性能优化最有效的手段。其类似于一本书的目录部分，如果想在一本书中找到某个特定主题，一般会先看书中的“索引部分”，找到对应的页码。在MySQL中，存储引擎用类似的方法使用索引，其先在索引中找到对应值，然后根据匹配的索引记录找到对应的数据行。索引可以包含一个或多个列的值，如果索引包含多个列，那么列的顺序也十分重要，因为MySQL只能高效地使用">
@@ -121,7 +121,7 @@
 
 
 
-  <link rel="canonical" href="https://blog.vgmdj.cn/temp/mysql学习-索引.html"/>
+  <link rel="canonical" href="https://blog.vgmdj.cn/2018/04/06/mysql学习-索引/"/>
 
 
 
@@ -306,30 +306,171 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/04/06/mysql学习-索引/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="vgmdj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="keep thinking">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h2 class="post-title" itemprop="name headline">mysql学习-索引</h2>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>索引是存储引擎找到记录的一种数据结构，而索引优化是对查询性能优化最有效的手段。其类似于一本书的目录部分，如果想在一本书中找到某个特定主题，一般会先看书中的“索引部分”，找到对应的页码。<br>在MySQL中，存储引擎用类似的方法使用索引，其先在索引中找到对应值，然后根据匹配的索引记录找到对应的数据行。<br>索引可以包含一个或多个列的值，如果索引包含多个列，那么列的顺序也十分重要，因为MySQL只能高效地使用索引的最左前缀列。创建一个包含两个列的索引，和创建两个只包含一列的索引是大不相同的。<br><a id="more"></a></p>
+          <h2 class="post-title" itemprop="name headline">mysql学习-索引</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-06T10:00:49+08:00">2018-04-06</time>
+            
+
+            
+            
+              
+                
+              
+            
+
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-17T17:45:31+08:00">2018-04-17</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/database/" itemprop="url" rel="index"><span itemprop="name">database</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/04/06/mysql学习-索引/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/04/06/mysql学习-索引/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2018/04/06/mysql学习-索引/" class="leancloud_visitors" data-flag-title="mysql学习-索引">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">7.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">0:07</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>索引是存储引擎找到记录的一种数据结构，而索引优化是对查询性能优化最有效的手段。其类似于一本书的目录部分，如果想在一本书中找到某个特定主题，一般会先看书中的“索引部分”，找到对应的页码。<br>在MySQL中，存储引擎用类似的方法使用索引，其先在索引中找到对应值，然后根据匹配的索引记录找到对应的数据行。<br>索引可以包含一个或多个列的值，如果索引包含多个列，那么列的顺序也十分重要，因为MySQL只能高效地使用索引的最左前缀列。创建一个包含两个列的索引，和创建两个只包含一列的索引是大不相同的。<br><a id="more"></a></p>
 <h1 id="索引类型"><a href="#索引类型" class="headerlink" title="索引类型"></a>索引类型</h1><h2 id="根据功能划分"><a href="#根据功能划分" class="headerlink" title="根据功能划分"></a>根据功能划分</h2><ul>
 <li><p>UNIQUE<br>唯一索引，不可以出现相同值，但是可以有NULL值</p>
 </li>
@@ -428,15 +569,37 @@
 <li>排序和分组情况</li>
 </ul>
 <p>选取 <a href="https://segmentfault.com/q/1010000000342176" target="_blank" rel="noopener">https://segmentfault.com/q/1010000000342176</a> 中的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">对于联合索引（a,b,c)</span><br><span class="line"></span><br><span class="line">优: select * from test where a=10 and b&gt;50 差: select * from test where</span><br><span class="line">a50</span><br><span class="line"></span><br><span class="line">优: select * from test order by a 差: select * from test order by b 差:</span><br><span class="line">select * from test order by c</span><br><span class="line"></span><br><span class="line">优: select * from test where a=10 order by a 优: select * from test</span><br><span class="line">where a=10 order by b 差: select * from test where a=10 order by c</span><br><span class="line"></span><br><span class="line">优: select * from test where a&gt;10 order by a 差: select * from test</span><br><span class="line">where a&gt;10 order by b 差: select * from test where a&gt;10 order by c</span><br><span class="line"></span><br><span class="line">优: select * from test where a=10 and b=10 order by a 优: select * from</span><br><span class="line">test where a=10 and b=10 order by b 优: select * from test where a=10</span><br><span class="line">and b=10 order by c</span><br><span class="line"></span><br><span class="line">优: select * from test where a=10 and b=10 order by a 优: select * from</span><br><span class="line">test where a=10 and b&gt;10 order by b 差: select * from test where a=10</span><br><span class="line">and b&gt;10 order by c</span><br></pre></td></tr></table></figure></p>
-<h2 id="聚簇索引"><a href="#聚簇索引" class="headerlink" title="聚簇索引"></a>聚簇索引</h2><p>聚簇索引并不是一种单独的索引类型，而是一种数据的存储方式，它的数据行实际上存放在索引的叶子页（leaf page）中，术语“聚簇”表示数据行和相邻的键值紧凑地存储在一起。因为无法把数据行存放在两个不同的地方，所以一个表只能有一个聚簇索引。</p>
+<h2 id="聚簇索引"><a href="#聚簇索引" class="headerlink" title="聚簇索引"></a>聚簇索引</h2><p>聚簇索引并不是一种单独的索引类型，而是一种数据的存储方式，它的数据行实际上存放在索引的叶子页（leaf page）中，术语“聚簇”表示数据行和相邻的键值紧凑地存储在一起。因为无法把数据行存放在两个不同的地方，所以一个表只能有一个聚簇索引，除此之外的表上的每个非聚簇索引都是二级索引，又叫辅助索引（secondary indexes）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">以InnoDB来说，每个InnoDB表具有一个特殊的索引称为聚集索引。如果您的表上定义有主键，该主键索引是聚集索引。</span><br><span class="line">如果你不定义为您的表的主键时，MySQL取第一个唯一索引（unique）而且只含非空列（NOT NULL）作为主键，InnoDB使用它作为聚集索引。</span><br><span class="line">如果没有这样的列，InnoDB就自己产生一个这样的ID值，它有六个字节，而且是隐藏的，使其作为聚簇索引。</span><br></pre></td></tr></table></figure></p>
 <p>聚簇索引的使用优点：</p>
 <ul>
 <li>可以把相关数据保存在一起。因为数据和索引存放在一起，所以在读取时，只用读取少量的数据页就能获取某个用户的全部邮件</li>
 <li>数据的访问更快。聚簇索引将索引和数据保存在同一个B-Tree中，因此从聚簇索引中获取数据通常比在非聚簇索引中查找更快</li>
 <li>使用覆盖索引扫描的查询可以直接使用页节点</li>
 </ul>
-<h2 id="覆盖索引"><a href="#覆盖索引" class="headerlink" title="覆盖索引"></a>覆盖索引</h2><p>通常索引的添加方式，都是根据WHERE条件来进行创建合适的索引，不过这只是索引优化的一个方面，设计优秀的索引要考虑的方面要更多，对于其中的一个场景，如果索引的叶子节点中已经包含要查询的数据，那么还有什么必要再回表查询呢？如果一个索引包含（或者说覆盖）所有需要查询的字段的值，我们就称之为“覆盖索引”</p>
-<h2 id="使用索引扫描来做排序"><a href="#使用索引扫描来做排序" class="headerlink" title="使用索引扫描来做排序"></a>使用索引扫描来做排序</h2><h2 id="删除未使用的索引"><a href="#删除未使用的索引" class="headerlink" title="删除未使用的索引"></a>删除未使用的索引</h2><h1 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h1><ul>
+<p>聚簇索引的使用缺点：</p>
+<ul>
+<li>聚簇索引最大限度提高了 I/O 密集型应用的性能，但是如果数据全部放在内存，就没必要用聚簇索引</li>
+<li>插入速度严重依赖于插入顺序，按主键的顺序插入是最快的</li>
+<li>更新操作代价很高，因为每个被更新的行都会移动到新的位置</li>
+<li>当插入到某个已满的页中，存储引擎会将该页分裂成两个页面来容纳该行，页分裂会导致表占用更多的磁盘空间</li>
+<li>如果行比较稀疏，或者由于页分裂导致数据存储不连续时，聚簇索引可能导致全表扫描速度变慢</li>
+</ul>
+<h2 id="覆盖索引（innoDB）"><a href="#覆盖索引（innoDB）" class="headerlink" title="覆盖索引（innoDB）"></a>覆盖索引（innoDB）</h2><p>通常索引的添加方式，都是根据WHERE条件来进行创建合适的索引，不过这只是索引优化的一个方面，设计优秀的索引要考虑的方面要更多，对于其中的一个场景，如果索引的叶子节点中已经包含要查询的数据，那么还有什么必要再回表查询呢？<br>覆盖索引的定义，如果一个索引包含（或者说覆盖）所有需要查询的字段的值，我们就称之为“覆盖索引”<br>对于InnoDB而言，其二级索引在叶子节点中保存了行的主键值，所以如果二级主键能够覆盖查询，则可以避免对主键索引的二次查询<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select * 不好的地方就在于，</span><br><span class="line">一方面一般情况下不会用到所有的字段，会造成资源的浪费</span><br><span class="line">另一方面去除了本可以使用覆盖索引大大提升效率的情况</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用索引扫描来做排序"><a href="#使用索引扫描来做排序" class="headerlink" title="使用索引扫描来做排序"></a>使用索引扫描来做排序</h2><p>MySQL有两种方式可以生成有序的结果： 通过排序操作，或者是通过索引顺序扫描</p>
+<ul>
+<li>只有当索引的列顺序和ORDER BY子句完全一致，并且所有列的排序方向（正序或倒序）都一样时，MySQL才能够使用索引来对结果做排序</li>
+<li>如果查询需要关联多张表，则只有当ORDER BY子句引用的字段全部为第一个表时，才能使用索引做排序</li>
+<li>ORDER BY子句和查找型查询的限制是一样的，需要满足索引的最左前缀的要求</li>
+<li>前导列为常量的时候，即WHERE或JOIN子句中对这些列指定了常量，就可以“弥补”索引的不足</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">表结构：</span><br><span class="line">CREATE TABLE rental&#123;</span><br><span class="line">    ...</span><br><span class="line">    PRIMARY KEY(rental_id),</span><br><span class="line">    UNIQUE KEY rental_date(rental_date, inventory_id, customer_id),</span><br><span class="line">    KEY idx_fk_inventory_id(inventory_id),</span><br><span class="line">    KEY idx_fk_customer_id(customer_id),</span><br><span class="line">    KEY idx_fk_staff_id(staff_id),</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">查询语句：</span><br><span class="line">EXPLAIN SELECT rental_id, staff_id FROM sakila.rental</span><br><span class="line">-&gt; WHERE rental_date = &apos;2005-05-5&apos;</span><br><span class="line">-&gt; ORDER BY inventory_id, customer_id</span><br><span class="line"></span><br><span class="line">结果：</span><br><span class="line">         type: ref</span><br><span class="line">possible_keys: rental_date</span><br><span class="line">          key: rental_date</span><br><span class="line">         rows: 1</span><br><span class="line">        extra: using where</span><br></pre></td></tr></table></figure>
+<h2 id="删除低质量的索引"><a href="#删除低质量的索引" class="headerlink" title="删除低质量的索引"></a>删除低质量的索引</h2><p>所谓的低质量索引，是指那些冗余、重复、未使用的索引</p>
+<ul>
+<li>冗余的情况是指，如果已经有了联合索引（a，b），再建立独立索引a，索引a则是冗余的情况</li>
+<li>重复的索引是指建立主键索引、唯一索引、普通索引里的两个或三个，实际MySQL里的唯一限制和主键限制都是依靠索引实现的，因此，再此基础上，再加索引，就会造成索引重复</li>
+<li>未使用的索引可以通过两个工具来定位。一是打开Percona Server或MariaDB中的userstates服务器变量，运行一段时间后，再查询INFORMATION_SCHEMA.INDEX_STATISTICS追查每个索引的使用频率;二是通过Percona Toolkit中的pt-index-usage，该工具可以读取查询日志，并对日志中的每条查询进行EXPLAIN操作，然后打印出关于索引和查询的报告</li>
+</ul>
+<h1 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h1><ul>
 <li>《高性能MySQL》</li>
 <li>《深入浅出MySQL》</li>
 <li><a href="https://blog.csdn.net/oChangWen/article/details/54024063" target="_blank" rel="noopener">hash索引和B-Tree索引的区别</a></li>
@@ -445,19 +608,82 @@
 <li><a href="https://tech.meituan.com/mysql-index.html" target="_blank" rel="noopener">https://tech.meituan.com/mysql-index.html</a></li>
 </ul>
 
-        
-      </div>
-      
-      
       
     </div>
+
     
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>vgmdj</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.vgmdj.cn/2018/04/06/mysql学习-索引/" title="mysql学习-索引">https://blog.vgmdj.cn/2018/04/06/mysql学习-索引/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/database/" rel="tag"># database</a>
+          
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/31/程序员进化之路-技术提升/" rel="next" title="程序员进化之路-技术提升">
+                <i class="fa fa-chevron-left"></i> 程序员进化之路-技术提升
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
 
-    
-    
-    
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -523,7 +749,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-count">26</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -675,7 +901,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#索引"><span class="nav-number">1.</span> <span class="nav-text">索引</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引类型"><span class="nav-number">2.</span> <span class="nav-text">索引类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#根据功能划分"><span class="nav-number">2.1.</span> <span class="nav-text">根据功能划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根据数据结构划分"><span class="nav-number">2.2.</span> <span class="nav-text">根据数据结构划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Tree索引-和-Hash索引对比"><span class="nav-number">2.3.</span> <span class="nav-text">B-Tree索引 和 Hash索引对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Tree-和-B-Tree-比较"><span class="nav-number">2.4.</span> <span class="nav-text">B-Tree 和 B+Tree 比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引的优缺点"><span class="nav-number">3.</span> <span class="nav-text">索引的优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#优点"><span class="nav-number">3.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点"><span class="nav-number">3.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引的适用范围及限制（B-Tree索引）"><span class="nav-number">4.</span> <span class="nav-text">索引的适用范围及限制（B-Tree索引）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#有效范围"><span class="nav-number">4.1.</span> <span class="nav-text">有效范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用限制"><span class="nav-number">4.2.</span> <span class="nav-text">使用限制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计索引原则"><span class="nav-number">4.3.</span> <span class="nav-text">设计索引原则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引策略"><span class="nav-number">5.</span> <span class="nav-text">索引策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用独立的列"><span class="nav-number">5.1.</span> <span class="nav-text">使用独立的列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前缀索引和索引选择性"><span class="nav-number">5.2.</span> <span class="nav-text">前缀索引和索引选择性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优缺点"><span class="nav-number">5.2.1.</span> <span class="nav-text">优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prefix-length确定"><span class="nav-number">5.2.2.</span> <span class="nav-text">prefix_length确定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适用场景"><span class="nav-number">5.2.3.</span> <span class="nav-text">适用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多列索引"><span class="nav-number">5.3.</span> <span class="nav-text">多列索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择合适的顺序（B-Tree）"><span class="nav-number">5.4.</span> <span class="nav-text">选择合适的顺序（B-Tree）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#聚簇索引"><span class="nav-number">5.5.</span> <span class="nav-text">聚簇索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#覆盖索引"><span class="nav-number">5.6.</span> <span class="nav-text">覆盖索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用索引扫描来做排序"><span class="nav-number">5.7.</span> <span class="nav-text">使用索引扫描来做排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除未使用的索引"><span class="nav-number">5.8.</span> <span class="nav-text">删除未使用的索引</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考内容"><span class="nav-number">6.</span> <span class="nav-text">参考内容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#索引"><span class="nav-number">1.</span> <span class="nav-text">索引</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引类型"><span class="nav-number">2.</span> <span class="nav-text">索引类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#根据功能划分"><span class="nav-number">2.1.</span> <span class="nav-text">根据功能划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根据数据结构划分"><span class="nav-number">2.2.</span> <span class="nav-text">根据数据结构划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Tree索引-和-Hash索引对比"><span class="nav-number">2.3.</span> <span class="nav-text">B-Tree索引 和 Hash索引对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Tree-和-B-Tree-比较"><span class="nav-number">2.4.</span> <span class="nav-text">B-Tree 和 B+Tree 比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引的优缺点"><span class="nav-number">3.</span> <span class="nav-text">索引的优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#优点"><span class="nav-number">3.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点"><span class="nav-number">3.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引的适用范围及限制（B-Tree索引）"><span class="nav-number">4.</span> <span class="nav-text">索引的适用范围及限制（B-Tree索引）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#有效范围"><span class="nav-number">4.1.</span> <span class="nav-text">有效范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用限制"><span class="nav-number">4.2.</span> <span class="nav-text">使用限制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计索引原则"><span class="nav-number">4.3.</span> <span class="nav-text">设计索引原则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引策略"><span class="nav-number">5.</span> <span class="nav-text">索引策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用独立的列"><span class="nav-number">5.1.</span> <span class="nav-text">使用独立的列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前缀索引和索引选择性"><span class="nav-number">5.2.</span> <span class="nav-text">前缀索引和索引选择性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优缺点"><span class="nav-number">5.2.1.</span> <span class="nav-text">优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prefix-length确定"><span class="nav-number">5.2.2.</span> <span class="nav-text">prefix_length确定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适用场景"><span class="nav-number">5.2.3.</span> <span class="nav-text">适用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多列索引"><span class="nav-number">5.3.</span> <span class="nav-text">多列索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择合适的顺序（B-Tree）"><span class="nav-number">5.4.</span> <span class="nav-text">选择合适的顺序（B-Tree）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#聚簇索引"><span class="nav-number">5.5.</span> <span class="nav-text">聚簇索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#覆盖索引（innoDB）"><span class="nav-number">5.6.</span> <span class="nav-text">覆盖索引（innoDB）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用索引扫描来做排序"><span class="nav-number">5.7.</span> <span class="nav-text">使用索引扫描来做排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除低质量的索引"><span class="nav-number">5.8.</span> <span class="nav-text">删除低质量的索引</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考内容"><span class="nav-number">6.</span> <span class="nav-text">参考内容</span></a></li></ol></div>
             
 
           </div>
@@ -710,7 +936,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">56k</span>
+    <span title="站点总字数">63k</span>
   
 
   
@@ -721,7 +947,7 @@
     
       <span class="post-meta-item-text">站点总阅读时长&#58;</span>
     
-    <span title="站点总阅读时长">0:56</span>
+    <span title="站点总阅读时长">1:03</span>
   
 </div>
 
