@@ -319,6 +319,225 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/04/26/容器学习-k8s搭建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="vgmdj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="keep thinking">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/26/容器学习-k8s搭建/" itemprop="url">容器学习-k8s搭建</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T14:28:51+08:00">2018-04-26</time>
+            
+
+            
+            
+              
+                
+              
+            
+
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-26T14:30:58+08:00">2018-04-26</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Golang/" itemprop="url" rel="index"><span itemprop="name">Golang</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/04/26/容器学习-k8s搭建/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::https://blog.vgmdj.cn/2018/04/26/容器学习-k8s搭建/" class="cy_cmt_count" data-xid="2018/04/26/容器学习-k8s搭建/" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2018/04/26/容器学习-k8s搭建/" class="leancloud_visitors" data-flag-title="容器学习-k8s搭建">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">3.9k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">0:04</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="kubernetes-学习"><a href="#kubernetes-学习" class="headerlink" title="kubernetes 学习"></a>kubernetes 学习</h1><p>目标，搭建好环境，使k8s集群运行起来，在其上部署一个服务，并可以正常访问</p>
+<h1 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h1><h2 id="源码包"><a href="#源码包" class="headerlink" title="源码包"></a>源码包</h2><p>  第一步，先从github上把源码下载到本地，再按照文档的要求一步一步搭建<br>  源码地址： <a href="https://github.com/kubernetes/kubernetes" target="_blank" rel="noopener">https://github.com/kubernetes/kubernetes</a><br>  安装过程可以看：　<a href="https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/" target="_blank" rel="noopener">https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/</a></p>
+<h2 id="高可用集群"><a href="#高可用集群" class="headerlink" title="高可用集群"></a>高可用集群</h2><p>kubernetes 作为容器应用的管理中心，通过RC或Deployment来保证集群中pod（容器应用实例）的运行数量，当pod数量因为种种原因（如服务挂掉）小于预期数量时，k8s将会创建新的pod并调度到可用的node上，实现了应用层的高可用。高可用方案的核心是保证有一个冗余和可靠的存储层，当我们的集群挂掉时，可以保证数据不丢失，从而能够使用原有的数据来还原集群状态，除此之外，防止集群单点故障也是保证集群高可用的重要措施。<br>对于k8s集群来说，集群的数据都保存在etcd数据库中，而k8s的master作为集群的管理中心，需要避免压力过大或是单点故障，因此针对k8s集群的高可用主要从以下两个方面入手：</p>
+<ul>
+<li>保证etcd集群的高可用</li>
+<li>多master节点避免单点故障</li>
+</ul>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>先搭建一个master, 两个node，共三台机器的集群，后续手头机器再多点时再研究详细的配置和使用</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/26/容器学习-k8s搭建/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/04/23/微信开发问题小结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2230,218 +2449,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-三-socket套接字分析/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="vgmdj">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="keep thinking">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/08/计算机网络学习-三-socket套接字分析/" itemprop="url">计算机网络学习(三)-socket套接字分析</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-08T13:42:05+08:00">2018-03-08</time>
-            
-
-            
-            
-              
-                
-              
-            
-
-            
-              
-              <span class="post-meta-divider">|</span>
-              
-
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-08T14:39:52+08:00">2018-03-08</time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机网络/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2018/03/08/计算机网络学习-三-socket套接字分析/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::https://blog.vgmdj.cn/2018/03/08/计算机网络学习-三-socket套接字分析/" class="cy_cmt_count" data-xid="2018/03/08/计算机网络学习-三-socket套接字分析/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-             <span id="/2018/03/08/计算机网络学习-三-socket套接字分析/" class="leancloud_visitors" data-flag-title="计算机网络学习(三)-socket套接字分析">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">4.4k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">0:04</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="TCP实验："><a href="#TCP实验：" class="headerlink" title="TCP实验："></a>TCP实验：</h2><h3 id="TCP客户端套接字程序"><a href="#TCP客户端套接字程序" class="headerlink" title="TCP客户端套接字程序"></a>TCP客户端套接字程序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import java.io.*;</span><br><span class="line">import java.net.*;</span><br><span class="line">class TCPClient&#123;</span><br><span class="line">  public static void main(String argv[]) throws Exception</span><br><span class="line">  &#123;</span><br><span class="line">     String sentence;</span><br><span class="line">     String modifiedSentence;</span><br><span class="line">     BufferedReader inFromUser =</span><br><span class="line">        new BufferedReader(</span><br><span class="line">              new InputStreamReader(System.in));</span><br><span class="line">     Socket ClientSocket = new Socket(&quot;222.194.1.36&quot;,6789);</span><br><span class="line">     DataOutputStream outToServer =</span><br><span class="line">        new DataOutputStream(</span><br><span class="line">              ClientSocket.getOutputStream());</span><br><span class="line">     BufferedReader inFromServer =</span><br><span class="line">        new BufferedReader(new InputStreamReader(</span><br><span class="line">               ClientSocket.getInputStream()));</span><br><span class="line">     sentence =inFromUser.readLine();</span><br><span class="line">     outToServer.writeBytes(sentence + &apos;\n&apos;);</span><br><span class="line">     modifiedSentence = inFromServer.readLine();</span><br><span class="line">     System.out.println(&quot;FROM SERVER:&quot;+</span><br><span class="line">                           modifiedSentence);</span><br><span class="line">     ClientSocket.close();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/08/计算机网络学习-三-socket套接字分析/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2495,7 +2502,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2571,7 +2578,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">16</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2672,7 +2683,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">65k</span>
+    <span title="站点总字数">69k</span>
   
 
   
@@ -2683,7 +2694,7 @@
     
       <span class="post-meta-item-text">站点总阅读时长&#58;</span>
     
-    <span title="站点总阅读时长">1:05</span>
+    <span title="站点总阅读时长">1:09</span>
   
 </div>
 

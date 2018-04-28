@@ -319,6 +319,218 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-三-socket套接字分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="vgmdj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="keep thinking">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/08/计算机网络学习-三-socket套接字分析/" itemprop="url">计算机网络学习(三)-socket套接字分析</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-08T13:42:05+08:00">2018-03-08</time>
+            
+
+            
+            
+              
+                
+              
+            
+
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-08T14:39:52+08:00">2018-03-08</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机网络/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/03/08/计算机网络学习-三-socket套接字分析/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::https://blog.vgmdj.cn/2018/03/08/计算机网络学习-三-socket套接字分析/" class="cy_cmt_count" data-xid="2018/03/08/计算机网络学习-三-socket套接字分析/" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2018/03/08/计算机网络学习-三-socket套接字分析/" class="leancloud_visitors" data-flag-title="计算机网络学习(三)-socket套接字分析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">4.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">0:04</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="TCP实验："><a href="#TCP实验：" class="headerlink" title="TCP实验："></a>TCP实验：</h2><h3 id="TCP客户端套接字程序"><a href="#TCP客户端套接字程序" class="headerlink" title="TCP客户端套接字程序"></a>TCP客户端套接字程序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import java.io.*;</span><br><span class="line">import java.net.*;</span><br><span class="line">class TCPClient&#123;</span><br><span class="line">  public static void main(String argv[]) throws Exception</span><br><span class="line">  &#123;</span><br><span class="line">     String sentence;</span><br><span class="line">     String modifiedSentence;</span><br><span class="line">     BufferedReader inFromUser =</span><br><span class="line">        new BufferedReader(</span><br><span class="line">              new InputStreamReader(System.in));</span><br><span class="line">     Socket ClientSocket = new Socket(&quot;222.194.1.36&quot;,6789);</span><br><span class="line">     DataOutputStream outToServer =</span><br><span class="line">        new DataOutputStream(</span><br><span class="line">              ClientSocket.getOutputStream());</span><br><span class="line">     BufferedReader inFromServer =</span><br><span class="line">        new BufferedReader(new InputStreamReader(</span><br><span class="line">               ClientSocket.getInputStream()));</span><br><span class="line">     sentence =inFromUser.readLine();</span><br><span class="line">     outToServer.writeBytes(sentence + &apos;\n&apos;);</span><br><span class="line">     modifiedSentence = inFromServer.readLine();</span><br><span class="line">     System.out.println(&quot;FROM SERVER:&quot;+</span><br><span class="line">                           modifiedSentence);</span><br><span class="line">     ClientSocket.close();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/08/计算机网络学习-三-socket套接字分析/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2247,218 +2459,6 @@ sync.Condsync.Cond是用来控制某个条件下，goroutine进入等待时期�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2017/07/01/设计模式学习-简单工厂模式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="vgmdj">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="keep thinking">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/01/设计模式学习-简单工厂模式/" itemprop="url">设计模式学习-简单工厂模式</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-01T18:39:52+08:00">2017-07-01</time>
-            
-
-            
-            
-              
-                
-              
-            
-
-            
-              
-              <span class="post-meta-divider">|</span>
-              
-
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-01T20:39:52+08:00">2018-07-01</time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/设计模式/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2017/07/01/设计模式学习-简单工厂模式/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::https://blog.vgmdj.cn/2017/07/01/设计模式学习-简单工厂模式/" class="cy_cmt_count" data-xid="2017/07/01/设计模式学习-简单工厂模式/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-             <span id="/2017/07/01/设计模式学习-简单工厂模式/" class="leancloud_visitors" data-flag-title="设计模式学习-简单工厂模式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">3.1k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">0:03</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="简单工厂模式-Simple-Factory"><a href="#简单工厂模式-Simple-Factory" class="headerlink" title="简单工厂模式(Simple Factory)"></a>简单工厂模式(Simple Factory)</h2><p>工厂模式是对象的生产器，解耦用户对具体对象的依赖。<br>通过封闭、继承、多态把程序的耦合度降低，使程序更加的灵活，容易修改，并易于复用。<br>简单工厂模式中，各种运算方法类实现了运算接口，在业务上如果想添加一种运算方法，只需要增加一个实现运算接口的类，并且在工厂类中添加一个类型判断。<br>这种设计适合于业务类型并不是很多的情况，如果业务类型非常多，那么在工作类中就会有一个很长的switch…case结构，这时候使用方法工厂模式会比较合适。<br></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/01/设计模式学习-简单工厂模式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2512,7 +2512,7 @@ sync.Condsync.Cond是用来控制某个条件下，goroutine进入等待时期�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2588,7 +2588,11 @@ sync.Condsync.Cond是用来控制某个条件下，goroutine进入等待时期�
                     
                       
                     
-                    <span class="site-state-item-count">16</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2689,7 +2693,7 @@ sync.Condsync.Cond是用来控制某个条件下，goroutine进入等待时期�
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">65k</span>
+    <span title="站点总字数">69k</span>
   
 
   
@@ -2700,7 +2704,7 @@ sync.Condsync.Cond是用来控制某个条件下，goroutine进入等待时期�
     
       <span class="post-meta-item-text">站点总阅读时长&#58;</span>
     
-    <span title="站点总阅读时长">1:05</span>
+    <span title="站点总阅读时长">1:09</span>
   
 </div>
 
