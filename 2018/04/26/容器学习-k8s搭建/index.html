@@ -100,21 +100,21 @@
 
 
   
-  <meta name="keywords" content="k8s,架构," />
+  <meta name="keywords" content="k8s,分布式系统," />
 
 
-<meta name="description" content="kubernetes 学习目标，搭建好环境，使k8s集群运行起来，在其上部署一个服务，并可以正常访问 搭建源码包  第一步，先从github上把源码下载到本地，再按照文档的要求一步一步搭建  源码地址： https://github.com/kubernetes/kubernetes  安装过程可以看：　https://kubernetes.io/docs/setup/independent/cr">
-<meta name="keywords" content="k8s,架构">
+<meta name="description" content="kubernetes 学习目标，搭建好环境，使k8s集群运行起来，在其上部署一个服务，并可以正常访问当然，单单一个k8s搭建完成还是不够的，还需要一系统的应用来保证服务的高可用，如负载均衡，多master防单点故障等详见下期 容器学习-高可用k8s集群 搭建源码包  第一步，先从github上把源码下载到本地，再按照文档的要求一步一步搭建  源码地址： https://github.com/kub">
+<meta name="keywords" content="k8s,分布式系统">
 <meta property="og:type" content="article">
 <meta property="og:title" content="容器学习-k8s搭建">
 <meta property="og:url" content="https://blog.vgmdj.cn/2018/04/26/容器学习-k8s搭建/index.html">
 <meta property="og:site_name" content="keep thinking">
-<meta property="og:description" content="kubernetes 学习目标，搭建好环境，使k8s集群运行起来，在其上部署一个服务，并可以正常访问 搭建源码包  第一步，先从github上把源码下载到本地，再按照文档的要求一步一步搭建  源码地址： https://github.com/kubernetes/kubernetes  安装过程可以看：　https://kubernetes.io/docs/setup/independent/cr">
+<meta property="og:description" content="kubernetes 学习目标，搭建好环境，使k8s集群运行起来，在其上部署一个服务，并可以正常访问当然，单单一个k8s搭建完成还是不够的，还需要一系统的应用来保证服务的高可用，如负载均衡，多master防单点故障等详见下期 容器学习-高可用k8s集群 搭建源码包  第一步，先从github上把源码下载到本地，再按照文档的要求一步一步搭建  源码地址： https://github.com/kub">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-04-26T06:30:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="容器学习-k8s搭建">
-<meta name="twitter:description" content="kubernetes 学习目标，搭建好环境，使k8s集群运行起来，在其上部署一个服务，并可以正常访问 搭建源码包  第一步，先从github上把源码下载到本地，再按照文档的要求一步一步搭建  源码地址： https://github.com/kubernetes/kubernetes  安装过程可以看：　https://kubernetes.io/docs/setup/independent/cr">
+<meta name="twitter:description" content="kubernetes 学习目标，搭建好环境，使k8s集群运行起来，在其上部署一个服务，并可以正常访问当然，单单一个k8s搭建完成还是不够的，还需要一系统的应用来保证服务的高可用，如负载均衡，多master防单点故障等详见下期 容器学习-高可用k8s集群 搭建源码包  第一步，先从github上把源码下载到本地，再按照文档的要求一步一步搭建  源码地址： https://github.com/kub">
 
 
 
@@ -386,7 +386,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Golang/" itemprop="url" rel="index"><span itemprop="name">Golang</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/分布式系统/" itemprop="url" rel="index"><span itemprop="name">分布式系统</span></a></span>
 
                 
                 
@@ -436,7 +436,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">3.9k</span>
+                <span title="字数统计">3.8k</span>
               
 
               
@@ -470,15 +470,14 @@
       
 
       
-        <h1 id="kubernetes-学习"><a href="#kubernetes-学习" class="headerlink" title="kubernetes 学习"></a>kubernetes 学习</h1><p>目标，搭建好环境，使k8s集群运行起来，在其上部署一个服务，并可以正常访问</p>
+        <h1 id="kubernetes-学习"><a href="#kubernetes-学习" class="headerlink" title="kubernetes 学习"></a>kubernetes 学习</h1><p>目标，搭建好环境，使k8s集群运行起来，在其上部署一个服务，并可以正常访问<br>当然，单单一个k8s搭建完成还是不够的，还需要一系统的应用来保证服务的高可用，如负载均衡，多master防单点故障等<br>详见下期 <a href="/2018/04/">容器学习-高可用k8s集群</a></p>
 <h1 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h1><h2 id="源码包"><a href="#源码包" class="headerlink" title="源码包"></a>源码包</h2><p>  第一步，先从github上把源码下载到本地，再按照文档的要求一步一步搭建<br>  源码地址： <a href="https://github.com/kubernetes/kubernetes" target="_blank" rel="noopener">https://github.com/kubernetes/kubernetes</a><br>  安装过程可以看：　<a href="https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/" target="_blank" rel="noopener">https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/</a></p>
-<h2 id="高可用集群"><a href="#高可用集群" class="headerlink" title="高可用集群"></a>高可用集群</h2><p>kubernetes 作为容器应用的管理中心，通过RC或Deployment来保证集群中pod（容器应用实例）的运行数量，当pod数量因为种种原因（如服务挂掉）小于预期数量时，k8s将会创建新的pod并调度到可用的node上，实现了应用层的高可用。高可用方案的核心是保证有一个冗余和可靠的存储层，当我们的集群挂掉时，可以保证数据不丢失，从而能够使用原有的数据来还原集群状态，除此之外，防止集群单点故障也是保证集群高可用的重要措施。<br>对于k8s集群来说，集群的数据都保存在etcd数据库中，而k8s的master作为集群的管理中心，需要避免压力过大或是单点故障，因此针对k8s集群的高可用主要从以下两个方面入手：</p>
+<h2 id="完成目标"><a href="#完成目标" class="headerlink" title="完成目标"></a>完成目标</h2><p>根据官方文档走，最终搭建成功后，应该最终情况为</p>
 <ul>
-<li>保证etcd集群的高可用</li>
-<li>多master节点避免单点故障</li>
+<li>一个master节点，上面运行着etcd提供k8s数据管理, apiserver, scheduler等提供k8s管控</li>
+<li>n个node节点，其上主要运行服务</li>
 </ul>
-<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>先搭建一个master, 两个node，共三台机器的集群，后续手头机器再多点时再研究详细的配置和使用</p>
-<a id="more"></a>
+<p>从这里也可以看出，官方不推荐把服务也运行在master上的原因，单master结点，etcd还只在其上，一但master结点压力太大挂掉，虽然不影响node上服务的运行，但将失去变更调控的能力。<br>当然生产环境高可用肯定不能只这样保证，但如果没那么高的需求，这样的一个简单的配置也是可用的<br><a id="more"></a></p>
 <h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><h3 id="使用apt-yum安装kubeadm"><a href="#使用apt-yum安装kubeadm" class="headerlink" title="使用apt/yum安装kubeadm"></a>使用apt/yum安装kubeadm</h3><p>这里第一步需要添加kubernetes的密钥，但是这个下载链接是被墙的，这里我放在自己服务器上，有需要的可以<a href="/kubernetes/apt-key.gpg">下载</a>，之后apt-key add apt-key.gpg即可<br>同时，apt源也需要更换成中科大的kubernetes源<br>ps: 之前阿里云源更新不及时，可以会造成版本不一致，现在两者都是最新版本了，就没什么顾虑了。截至到目前为止，都是1.10.1</p>
 <ul>
 <li>ubuntu下</li>
@@ -564,7 +563,7 @@
           
             <a href="/tags/k8s/" rel="tag"># k8s</a>
           
-            <a href="/tags/架构/" rel="tag"># 架构</a>
+            <a href="/tags/分布式系统/" rel="tag"># 分布式系统</a>
           
         </div>
       
@@ -701,7 +700,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -832,7 +833,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#kubernetes-学习"><span class="nav-number">1.</span> <span class="nav-text">kubernetes 学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建"><span class="nav-number">2.</span> <span class="nav-text">搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#源码包"><span class="nav-number">2.1.</span> <span class="nav-text">源码包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高可用集群"><span class="nav-number">2.2.</span> <span class="nav-text">高可用集群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-number">2.3.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过程"><span class="nav-number">2.4.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用apt-yum安装kubeadm"><span class="nav-number">2.4.1.</span> <span class="nav-text">使用apt/yum安装kubeadm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#master-节点配置"><span class="nav-number">2.4.2.</span> <span class="nav-text">master 节点配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flannel-配置"><span class="nav-number">2.4.3.</span> <span class="nav-text">flannel 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node-节点配置"><span class="nav-number">2.4.4.</span> <span class="nav-text">node 节点配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的问题"><span class="nav-number">3.</span> <span class="nav-text">遇到的问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#kubernetes-学习"><span class="nav-number">1.</span> <span class="nav-text">kubernetes 学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建"><span class="nav-number">2.</span> <span class="nav-text">搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#源码包"><span class="nav-number">2.1.</span> <span class="nav-text">源码包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完成目标"><span class="nav-number">2.2.</span> <span class="nav-text">完成目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过程"><span class="nav-number">2.3.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用apt-yum安装kubeadm"><span class="nav-number">2.3.1.</span> <span class="nav-text">使用apt/yum安装kubeadm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#master-节点配置"><span class="nav-number">2.3.2.</span> <span class="nav-text">master 节点配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flannel-配置"><span class="nav-number">2.3.3.</span> <span class="nav-text">flannel 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node-节点配置"><span class="nav-number">2.3.4.</span> <span class="nav-text">node 节点配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的问题"><span class="nav-number">3.</span> <span class="nav-text">遇到的问题</span></a></li></ol></div>
             
 
           </div>
