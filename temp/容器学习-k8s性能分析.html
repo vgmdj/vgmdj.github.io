@@ -100,28 +100,28 @@
 
 
   
-  <meta name="keywords" content="linux,命令," />
+  <meta name="keywords" content=",," />
 
 
-<meta name="description" content="记录一下时不时就会遇到，但总是会忘记的几个命令 查看端口占用1sudo netstat -apn | grep port">
-<meta name="keywords" content="linux,命令">
-<meta property="og:type" content="article">
-<meta property="og:title" content="linux 常用命令">
-<meta property="og:url" content="https://blog.vgmdj.cn/2018/03/07/linux常用命令/index.html">
+<meta name="description" content="性能分析基础概念关于并发用户数和qps，自己一直被这两个概念纠结，阅读了一下相关资料，总结如下：并发用户数和qps两个概念没有直接关系，但是如果要说qps时，一定需要指明是多少并发用户数下的qps，否则豪无意义，因为单用户数的40qps和20并发用户数下的40qps是两个不同的概念。前者说明该应用可以在一秒内串行执行40个请求，而后者说明在并发20个请求的情况下，一秒内该应用能处理40个请求 12">
+<meta name="keywords" content="k8s,分布式系统">
+<meta property="og:type" content="website">
+<meta property="og:title" content="容器学习-k8s性能分析">
+<meta property="og:url" content="https://blog.vgmdj.cn/temp/容器学习-k8s性能分析.html">
 <meta property="og:site_name" content="keep thinking">
-<meta property="og:description" content="记录一下时不时就会遇到，但总是会忘记的几个命令 查看端口占用1sudo netstat -apn | grep port">
+<meta property="og:description" content="性能分析基础概念关于并发用户数和qps，自己一直被这两个概念纠结，阅读了一下相关资料，总结如下：并发用户数和qps两个概念没有直接关系，但是如果要说qps时，一定需要指明是多少并发用户数下的qps，否则豪无意义，因为单用户数的40qps和20并发用户数下的40qps是两个不同的概念。前者说明该应用可以在一秒内串行执行40个请求，而后者说明在并发20个请求的情况下，一秒内该应用能处理40个请求 12">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-07T09:23:50.000Z">
+<meta property="og:updated_time" content="2018-05-04T13:08:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux 常用命令">
-<meta name="twitter:description" content="记录一下时不时就会遇到，但总是会忘记的几个命令 查看端口占用1sudo netstat -apn | grep port">
+<meta name="twitter:title" content="容器学习-k8s性能分析">
+<meta name="twitter:description" content="性能分析基础概念关于并发用户数和qps，自己一直被这两个概念纠结，阅读了一下相关资料，总结如下：并发用户数和qps两个概念没有直接关系，但是如果要说qps时，一定需要指明是多少并发用户数下的qps，否则豪无意义，因为单用户数的40qps和20并发用户数下的40qps是两个不同的概念。前者说明该应用可以在一秒内串行执行40个请求，而后者说明在并发20个请求的情况下，一秒内该应用能处理40个请求 12">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.vgmdj.cn/2018/03/07/linux常用命令/"/>
+  <link rel="canonical" href="https://blog.vgmdj.cn/temp/容器学习-k8s性能分析.html"/>
 
 
 
@@ -130,7 +130,7 @@
     sidebar: "",
   };
 </script>
-  <title>linux 常用命令 | keep thinking</title>
+  <title>容器学习-k8s性能分析 | keep thinking</title>
   
 
 
@@ -306,275 +306,45 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/03/07/linux常用命令/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="vgmdj">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="keep thinking">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
+<h2 class="post-title" itemprop="name headline">容器学习-k8s性能分析</h2>
+
+<div class="post-meta">
+  
+  
+
+
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
         
         
-          <h2 class="post-title" itemprop="name headline">linux 常用命令</h2>
+          <h1 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h1><h1 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h1><p>关于并发用户数和qps，自己一直被这两个概念纠结，阅读了一下相关资料，总结如下：并发用户数和qps两个概念没有直接关系，但是如果要说qps时，一定需要指明是多少并发用户数下的qps，否则豪无意义，因为单用户数的40qps和20并发用户数下的40qps是两个不同的概念。前者说明该应用可以在一秒内串行执行40个请求，而后者说明在并发20个请求的情况下，一秒内该应用能处理40个请求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">并发连接数 = pv / 统计时间 * 页面衍生连接次数 * http响应时间 * 因数 / 其他web服务器 数量</span><br><span class="line"></span><br><span class="line">pv = 并发连接数 * 统计时间 * 其他web服务器 数量/ 页面衍生连接次数 / http响应时间 / 因数</span><br><span class="line"></span><br><span class="line">首先介绍一下pv量：</span><br><span class="line">PV(访问量)：即Page View, 即页面浏览量或点击量，用户每次刷新即被计算一次。</span><br><span class="line">UV(独立访客)：即Unique Visitor,访问您网站的一台电脑客户端为一个访客。00:00-24:00内相同的客户</span><br><span class="line">端只被计算一次。</span><br><span class="line">IP(独立IP)：即Internet Protocol,指独立IP数。00:00-24:00内相同IP地址之被计算一次。</span><br><span class="line"></span><br><span class="line">解释：  统计时间 : pv统计的总时间，单位秒，要计算一天的pv就是86400秒  页面衍生连接次数: 一个html页面可能会请求好几次http连接，如外部的css, js ,图片等,可以估算一下，或者用10,可根据实际情况改变  http响应时间: 可以使用1秒或更少,可根据实际情况改变  因数: 一般使用5即可,可根据实际情况计算后推出  其他web服务器 数量: 其他web服务器 数量</span><br><span class="line"></span><br><span class="line">* “页面衍生连接次数”，”http响应时间”，”因数”这三个参数要根据实际情况分析计算后，确定一个适合的值</span><br><span class="line"></span><br><span class="line">推算一下。单台机器1000并发的情况下，一天是1,728,000的pv(1秒响应，10个衍生连接，因子为5的情况下) ======================================================================</span><br><span class="line"></span><br><span class="line">例子：</span><br><span class="line"></span><br><span class="line">保证每天多少pv的并发连接数的计算公式是：  并发连接数＝ pv / 统计时间(一天是86400) * 页面衍生连接次数 * http响应时间 * 因数(5) / 其他web服务器 数量</span><br><span class="line"></span><br><span class="line">保证4千万pv的并发连接数：  (40000000pv / 86400秒 * 10个派生连接数 * 5秒内响应 * 5倍峰值) / 6台其他web服务器 = 19290连接数</span><br><span class="line"></span><br><span class="line">面试时，面试官问道：1亿个pv，如何确定并发用户数？  一时想不起来具体的公式，就记得80/20原则，就回答了一些。又说了一些原来我们公司会提供峰值的方法，确定最后施压的用户数。</span><br><span class="line"></span><br><span class="line">）80~20原则：但是在现实生活中，以上两种情况发生的概率很小。根据统计学原理，采用80~20原则计算并发用户数。 PV*0.8/（8*60*60*0.2）=并发连接数，即每秒中有两个用户并发。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">网站流量是指什么? ip和pv呢？  通常说的网站流量（traffic）是指网站的访问量，是用来描述访问一个网站的用户数量以及用户所浏览的网页数量等指标，常用的统计指标包括网站的独立用户数量、总用户数量（含重复访问者）、网页浏览数量、每个用户的页面浏览数量、用户在网站的平均停留时间等。</span><br><span class="line"></span><br><span class="line">网站访问统计分析的基础是获取网站流量的基本数据，根据网上营销新观察的相关文章，网站流量统计指标大致可以分为三类，每类包含若干数量的统计指标。具体的网站流量统计是通过不同的ip登陆网站来计算的，也就是说。一天内同一台机器登陆网站的次数不论是多少，在流量统计中只记为一次有效登陆，这种计算方法可以较为科学 的计算出有多少人登陆过该网站，有效的防止了有意的对网站进行刷新从而增加自己网站的点击率。</span><br><span class="line"></span><br><span class="line">网站流量指标</span><br><span class="line"></span><br><span class="line">网站流量统计指标常用来对网站效果进行评价，主要指标包括：  ·独立访问者数量（unique visitors）；  ·重复访问者数量（repeat visitors）  ·页面浏览数（page views）；  ·每个访问者的页面浏览数（page views per user）；  ·某些具体文件/页面的统计指标，如页面显示次数、文件下载次数等。</span><br><span class="line"></span><br><span class="line">ip 是使用不同ip上网的人访问你网站的人数，也就是上面的独立访问者数量。  一般来说是24小时同一ip不重复记录的, 也应该24小时不重复记录。（其实ip也不一定就是独立访问者数量，因为有的用户是公用一个ip的,但大致上可以认为就是今日的独立访问者数量。）</span><br><span class="line"></span><br><span class="line">pv 则是上面的页面浏览数，是指这些访问者一共浏览了多少次你网站的页面，他是会重复记录的，你点这个网站10个页面，他就会记录10次。</span><br><span class="line"></span><br><span class="line">所以pv一定是&gt;=ip的，如一个网站今天的流量统计是100ip 200pv就是说今天有大致100个独立访问者，一共访问了200次页面，平均每个用户访问页面数量是 pv/ip=2 ，一般来说这个数字越大说明网站内容越吸引用户，但也和网站本身的页面有关。</span><br><span class="line"></span><br><span class="line">吞吐量（tps)＝活动的用户数/响应时间  活动用户＝并发用户*[响应时间/（响应时间+思考时间）]  吞吐量（tps)=并发用户/（响应时间+思考时间）  由此推出：  并发用户＝活动用户+吞吐量*思考时间  并发用户＝活动用户*（1+思考时间/响应时间）  并发用户＝吞吐量*（响应时间+思考时间）</span><br><span class="line"></span><br><span class="line">并发连接数与pv的换算公式  oncurrent connections＝pv / seconds *（para connect per a page) * (time to react) * (factor) / (web hosts)</span><br><span class="line"></span><br><span class="line">pv = concurrent connections * seconds * (web hosts)/ (para connect per a page)/ (time to react)/ (factor)</span><br><span class="line"></span><br><span class="line">concurrent connections：并发连接数</span><br><span class="line"></span><br><span class="line">seconds: pv统计的总时间，单位秒，要计算一天的pv就是86400秒</span><br><span class="line"></span><br><span class="line">para connect per a page: 页面衍生连接次数。一个html页面可能会请求好几次http连接，如外部的css, js ,图片等。可以估算一下</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">此文来自: 马开东博客 转载请注明出处 网址： http://www.makaidong.com</span><br><span class="line"></span><br><span class="line">，或者用10。可根据实际情况改变</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">time to react：http响应时间，可以使用1秒或更少。可根据实际情况改变</span><br><span class="line"></span><br><span class="line">factor：因数，一般使用5即可。可根据实际情况计算后推出</span><br><span class="line"></span><br><span class="line">web hosts：其他web服务器 数量</span><br><span class="line"></span><br><span class="line">* para connect per a page，time to react，factor这三个参数要根据实际情况分析计算后，确定一个适合的值</span><br><span class="line"></span><br><span class="line">推算一下。单台机器1000并发的情况下，一天是1,728,000的pv(1秒响应，10个衍生连接，因子为5的情况下)</span><br><span class="line"></span><br><span class="line">==================================================================================</span><br><span class="line"></span><br><span class="line">术语说明：  qps = req/sec = 请求数/秒</span><br><span class="line"></span><br><span class="line">【qps计算pv和机器的方式】</span><br><span class="line"></span><br><span class="line">qps统计方式 [一般使用 http_load 进行统计]  qps = 总请求数 / ( 进程总数 * 请求时间 )  qps: 单个进程每秒请求服务器的成功次数</span><br><span class="line"></span><br><span class="line">单台服务器每天pv计算  公式1：每天总pv = qps * 3600 * 6  公式2：每天总pv = qps * 3600 * 8</span><br><span class="line"></span><br><span class="line">服务器计算  服务器数量 = ceil( 每天总pv / 单台服务器每天总pv )</span><br><span class="line"></span><br><span class="line">【峰值qps和机器计算公式】</span><br><span class="line"></span><br><span class="line">原理：每天80%的访问集中在20%的时间里，这20%时间叫做峰值时间  公式：( 总pv数 * 80% ) / ( 每天秒数 * 20% ) = 峰值时间每秒请求数(qps)  机器：峰值时间每秒qps / 单台机器的qps = 需要的机器</span><br><span class="line"></span><br><span class="line">问：每天300w pv 的在单台机器上，这台机器需要多少qps？  答：( 3000000 * 0.8 ) / (86400 * 0.2 ) = 139 (qps)</span><br><span class="line"></span><br><span class="line">问：如果一台机器的qps是58，需要几台机器来支持？  答：139 / 58 = 3</span><br><span class="line"></span><br><span class="line">ps: 在实际情况中，会把这个考虑的更多一点，就是把qps再往多了调一调，以防万</span><br><span class="line"></span><br><span class="line">ps：下面是性能测试的主要概念和计算公式，记录下：</span><br><span class="line"></span><br><span class="line">一．系统吞度量要素：</span><br><span class="line"></span><br><span class="line">  一个系统的吞度量（承压能力）与request对cpu的消耗、外部接口、io等等紧密关联。</span><br><span class="line"></span><br><span class="line">单个reqeust 对cpu消耗越高，外部系统接口、io影响速度越慢，系统吞吐能力越低，反之越高。</span><br><span class="line"></span><br><span class="line">系统吞吐量几个重要参数：qps（tps）、并发数、响应时间</span><br><span class="line"></span><br><span class="line">        qps（tps）：每秒钟request/事务 数量</span><br><span class="line"></span><br><span class="line">        并发数： 系统同时处理的request/事务数</span><br><span class="line"></span><br><span class="line">        响应时间：  一般取平均响应时间</span><br><span class="line"></span><br><span class="line">（很多人经常会把并发数和tps理解混淆）</span><br><span class="line"></span><br><span class="line">理解了上面三个要素的意义之后，就能推算出它们之间的关系：</span><br><span class="line"></span><br><span class="line">qps（tps）= 并发数/平均响应时间</span><br><span class="line"></span><br><span class="line">        一个系统吞吐量通常由qps（tps）、并发数两个因素决定，每套系统这两个值都</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">此文来自: 马开东博客 转载请注明出处 网址： http://www.makaidong.com</span><br><span class="line"></span><br><span class="line">有一个相对极限值，在应用场景访问压力下，只要某一项达到系统最高值，系统的吞吐量就上不去了，如果压力继续增大，系统的吞吐量反而会下降，原因是系统超负荷工作，上下文切换、内存等等其它消耗导致系统性能下降。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">决定系统响应时间要素</span><br><span class="line"></span><br><span class="line">我们做项目要排计划，可以多人同时并发做多项任务，也可以一个人或者多个人串行工作，始终会有一条关键路径，这条路径就是项目的工期。</span><br><span class="line"></span><br><span class="line">系统一次调用的响应时间跟项目计划一样，也有一条关键路径，这个关键路径是就是系统影响时间；</span><br><span class="line"></span><br><span class="line">关键路径是有cpu运算、io、外部系统响应等等组成。</span><br><span class="line"></span><br><span class="line">二．系统吞吐量评估：</span><br><span class="line"></span><br><span class="line">我们在做系统设计的时候就需要考虑cpu运算、io、外部系统响应因素造成的影响以及对系统性能的初步预估。</span><br><span class="line"></span><br><span class="line">而通常境况下，我们面对需求，我们评估出来的出来qps、并发数之外，还有另外一个维度：日pv。</span><br><span class="line"></span><br><span class="line">通过观察系统的访问日志发现，在用户量很大的情况下，各个时间周期内的同一时间段的访问流量几乎一样。比如工作日的每天早上。只要能拿到日流量图和qps我们就可以推算日流量。</span><br><span class="line"></span><br><span class="line">通常的技术方法：</span><br><span class="line"></span><br><span class="line">        1. 找出系统的最高tps和日pv，这两个要素有相对比较稳定的关系（除了放假、季节性因素影响之外）</span><br><span class="line"></span><br><span class="line">        2. 通过压力测试或者经验预估，得出最高tps，然后跟进1的关系，计算出系统最高的日吞吐量。b2b中文和淘宝 面对的客户群不一样，这两个客户群的网络行为不应用，他们之间的tps和pv关系比例也不一样。</span><br><span class="line"></span><br><span class="line">a)淘宝</span><br><span class="line"></span><br><span class="line">淘宝 的tps和pv之间的关系通常为  最高tps：pv大约为 1 : 11*3600 （相当于按最高tps访问11个小时，这个是商品详情的场景，不同的应用场景会有一些不同）</span><br><span class="line"></span><br><span class="line">b) b2b中文站</span><br><span class="line"></span><br><span class="line">b2b的tps和pv之间的关系不同的系统不同的应用场景比例变化比较大，粗略估计在1 : 8个小时左右的关系（09年对offerdetail的流量分析数据）。旺铺和offerdetail这两个比例相差很大，可能是因为爬虫暂的比例较高的原因导致。</span><br><span class="line"></span><br><span class="line">在淘宝 环境下，假设我们压力测试出的tps为100，那么这个系统的日吞吐量=100*11*3600=396万</span><br><span class="line"></span><br><span class="line">这个是在简单（单一url）的情况下，有些页面，一个页面有多个request，系统的实际吞吐量还要小。</span><br><span class="line"></span><br><span class="line">无论有无思考时间（t_think），测试所得的tps值和并发虚拟用户数(u_concurrent)、loadrunner读取的交易响应时间（t_response）之间有以下关系（稳定运行情况下）：</span><br><span class="line">tps=u_concurrent / (t_response+t_think)。</span><br><span class="line"></span><br><span class="line">并发数、qps、平均响应时间三者之间关系</span><br></pre></td></tr></table></figure>
+<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="ab"><a href="#ab" class="headerlink" title="ab"></a>ab</h2><h2 id="locust"><a href="#locust" class="headerlink" title="locust"></a>locust</h2>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T15:23:50+08:00">2018-03-07</time>
-            
-
-            
-            
-              
-                
-              
-            
-
-            
-              
-              <span class="post-meta-divider">|</span>
-              
-
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-07T17:23:50+08:00">2018-03-07</time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2018/03/07/linux常用命令/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/03/07/linux常用命令/" itemprop="commentsCount"></span>
-                </a>
-              
-            
-          
-
-          
-          
-             <span id="/2018/03/07/linux常用命令/" class="leancloud_visitors" data-flag-title="linux 常用命令">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">743</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">0:01</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>记录一下时不时就会遇到，但总是会忘记的几个命令</p>
-<h2 id="查看端口占用"><a href="#查看端口占用" class="headerlink" title="查看端口占用"></a>查看端口占用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netstat -apn | grep port</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><ul>
-<li><p>apt purge / apt –purge remove<br>删除已安装包（不保留配置文件)。<br>如软件包a，依赖软件包b，则执行该命令会删除a，而且不保留配置文</p>
-</li>
-<li><p>apt autoremove<br>删除为了满足依赖而安装的，但现在不再需要的软件包（包括已安装包），保留配置文件。</p>
-</li>
-<li><p>apt remove<br>删除已安装的软件包（保留配置文件），不会删除依赖软件包，且保留配置文件。</p>
-</li>
-<li><p>apt autoclean<br>APT的底层包是dpkg, 而dpkg 安装Package时, 会将 *.deb 放在 /var/cache/apt/archives/中，apt-get autoclean 只会删除 /var/cache/apt/archives/ 已经过期的deb</p>
-</li>
-<li><p>apt clean<br>使用 apt-get clean 会将 /var/cache/apt/archives/ 的 所有 deb 删掉，可以理解为 rm /var/cache/apt/archives/*.deb。</p>
-<!--more-->
-</li>
-</ul>
-<h2 id="查看存储空间"><a href="#查看存储空间" class="headerlink" title="查看存储空间"></a>查看存储空间</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">free 查看内存使用情况</span><br><span class="line">df -h 查看各挂载点所占用和可用空间</span><br><span class="line">du -sh * 查看当前目录下所有文件和文件夹所占空间</span><br></pre></td></tr></table></figure>
-<h2 id="生成ssh密钥"><a href="#生成ssh密钥" class="headerlink" title="生成ssh密钥"></a>生成ssh密钥</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
-<h2 id="进程查看"><a href="#进程查看" class="headerlink" title="进程查看"></a>进程查看</h2><ul>
-<li>-e 显示所有的进程</li>
-<li>-f 显示全格式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep nginx</span><br><span class="line">可以查看nginx的运行情况</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="进程结束-kill"><a href="#进程结束-kill" class="headerlink" title="进程结束 kill"></a>进程结束 kill</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kill -15 pid = kill pid , SIGTERM,  通知程序正常退出</span><br><span class="line">kill -9 pid , SIGKILL， 使程序强制退出</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>vgmdj</li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="https://blog.vgmdj.cn/2018/03/07/linux常用命令/" title="linux 常用命令">https://blog.vgmdj.cn/2018/03/07/linux常用命令/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
-</ul>
-
       </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/linux/" rel="tag"># linux</a>
-          
-            <a href="/tags/命令/" rel="tag"># 命令</a>
-          
-        </div>
-      
-
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/08/02/go语言学习-sync/" rel="next" title="go语言学习-sync">
-                <i class="fa fa-chevron-left"></i> go语言学习-sync
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/08/计算机网络学习-一-测试通信/" rel="prev" title="计算机网络学习(一)-测试通信">
-                计算机网络学习(一)-测试通信 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
       
     </div>
+    
+
+
+
+    
+    
+    
   </div>
 
 
@@ -804,7 +574,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看端口占用"><span class="nav-number">1.</span> <span class="nav-text">查看端口占用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卸载"><span class="nav-number">2.</span> <span class="nav-text">卸载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看存储空间"><span class="nav-number">3.</span> <span class="nav-text">查看存储空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成ssh密钥"><span class="nav-number">4.</span> <span class="nav-text">生成ssh密钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程查看"><span class="nav-number">5.</span> <span class="nav-text">进程查看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程结束-kill"><span class="nav-number">6.</span> <span class="nav-text">进程结束 kill</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#性能分析"><span class="nav-number">1.</span> <span class="nav-text">性能分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础概念"><span class="nav-number">2.</span> <span class="nav-text">基础概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工具"><span class="nav-number">3.</span> <span class="nav-text">工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ab"><span class="nav-number">3.1.</span> <span class="nav-text">ab</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#locust"><span class="nav-number">3.2.</span> <span class="nav-text">locust</span></a></li></ol></li></ol></div>
             
 
           </div>
