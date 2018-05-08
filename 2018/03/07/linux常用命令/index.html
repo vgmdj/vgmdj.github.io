@@ -103,18 +103,18 @@
   <meta name="keywords" content="linux,命令," />
 
 
-<meta name="description" content="记录一下时不时就会遇到，但总是会忘记的几个命令 查看端口占用1sudo netstat -apn | grep port">
+<meta name="description" content="记录一下时不时就会遇到，但总是会忘记的几个命令 bash 篇多条件匹配 -eq  = -ne  != -gt  &amp;gt; -lt  &amp;lt; -ge  &amp;gt;= -le  &amp;lt;=以上适用于数字  -a  &amp;amp;&amp;amp;  -o  ||12345例： 设a=3,b=4,c=5, if (a + b &amp;gt; c &amp;amp;&amp;amp;  b-a &amp;lt; c ) print (&amp;quot;">
 <meta name="keywords" content="linux,命令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux 常用命令">
 <meta property="og:url" content="https://blog.vgmdj.cn/2018/03/07/linux常用命令/index.html">
 <meta property="og:site_name" content="keep thinking">
-<meta property="og:description" content="记录一下时不时就会遇到，但总是会忘记的几个命令 查看端口占用1sudo netstat -apn | grep port">
+<meta property="og:description" content="记录一下时不时就会遇到，但总是会忘记的几个命令 bash 篇多条件匹配 -eq  = -ne  != -gt  &amp;gt; -lt  &amp;lt; -ge  &amp;gt;= -le  &amp;lt;=以上适用于数字  -a  &amp;amp;&amp;amp;  -o  ||12345例： 设a=3,b=4,c=5, if (a + b &amp;gt; c &amp;amp;&amp;amp;  b-a &amp;lt; c ) print (&amp;quot;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-03-07T09:23:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux 常用命令">
-<meta name="twitter:description" content="记录一下时不时就会遇到，但总是会忘记的几个命令 查看端口占用1sudo netstat -apn | grep port">
+<meta name="twitter:description" content="记录一下时不时就会遇到，但总是会忘记的几个命令 bash 篇多条件匹配 -eq  = -ne  != -gt  &amp;gt; -lt  &amp;lt; -ge  &amp;gt;= -le  &amp;lt;=以上适用于数字  -a  &amp;amp;&amp;amp;  -o  ||12345例： 设a=3,b=4,c=5, if (a + b &amp;gt; c &amp;amp;&amp;amp;  b-a &amp;lt; c ) print (&amp;quot;">
 
 
 
@@ -436,7 +436,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">743</span>
+                <span title="字数统计">1.1k</span>
               
 
               
@@ -471,6 +471,19 @@
 
       
         <p>记录一下时不时就会遇到，但总是会忘记的几个命令</p>
+<h1 id="bash-篇"><a href="#bash-篇" class="headerlink" title="bash 篇"></a>bash 篇</h1><h2 id="多条件匹配"><a href="#多条件匹配" class="headerlink" title="多条件匹配"></a>多条件匹配</h2><ul>
+<li>-eq  =</li>
+<li>-ne  !=</li>
+<li>-gt  &gt;</li>
+<li>-lt  &lt;</li>
+<li>-ge  &gt;=</li>
+<li><p>-le  &lt;=<br>以上适用于数字</p>
+</li>
+<li><p>-a  &amp;&amp;</p>
+</li>
+<li>-o  ||<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">例： 设a=3,b=4,c=5, if (a + b &gt; c &amp;&amp;  b-a &lt; c ) print (&quot;yes&quot;)</span><br><span class="line"></span><br><span class="line">if [a+b -gt c  -a b-a -lt c  ]; then</span><br><span class="line">  echo &quot;yes&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <h2 id="查看端口占用"><a href="#查看端口占用" class="headerlink" title="查看端口占用"></a>查看端口占用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netstat -apn | grep port</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><ul>
@@ -494,6 +507,18 @@
 </li>
 </ul>
 <h2 id="进程结束-kill"><a href="#进程结束-kill" class="headerlink" title="进程结束 kill"></a>进程结束 kill</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kill -15 pid = kill pid , SIGTERM,  通知程序正常退出</span><br><span class="line">kill -9 pid , SIGKILL， 使程序强制退出</span><br></pre></td></tr></table></figure>
+<h1 id="vim-篇"><a href="#vim-篇" class="headerlink" title="vim 篇"></a>vim 篇</h1><h2 id="显示行号"><a href="#显示行号" class="headerlink" title="显示行号"></a>显示行号</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">：set number</span><br></pre></td></tr></table></figure>
+<h2 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h2><ul>
+<li><p>当前行替换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:s/src/dst/g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>全文替换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s/src/dst/g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>全文确认替换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s/src/dst/gc</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -804,7 +829,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看端口占用"><span class="nav-number">1.</span> <span class="nav-text">查看端口占用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卸载"><span class="nav-number">2.</span> <span class="nav-text">卸载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看存储空间"><span class="nav-number">3.</span> <span class="nav-text">查看存储空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成ssh密钥"><span class="nav-number">4.</span> <span class="nav-text">生成ssh密钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程查看"><span class="nav-number">5.</span> <span class="nav-text">进程查看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程结束-kill"><span class="nav-number">6.</span> <span class="nav-text">进程结束 kill</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#bash-篇"><span class="nav-number">1.</span> <span class="nav-text">bash 篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#多条件匹配"><span class="nav-number">1.1.</span> <span class="nav-text">多条件匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看端口占用"><span class="nav-number">1.2.</span> <span class="nav-text">查看端口占用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卸载"><span class="nav-number">1.3.</span> <span class="nav-text">卸载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看存储空间"><span class="nav-number">1.4.</span> <span class="nav-text">查看存储空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成ssh密钥"><span class="nav-number">1.5.</span> <span class="nav-text">生成ssh密钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程查看"><span class="nav-number">1.6.</span> <span class="nav-text">进程查看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程结束-kill"><span class="nav-number">1.7.</span> <span class="nav-text">进程结束 kill</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vim-篇"><span class="nav-number">2.</span> <span class="nav-text">vim 篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#显示行号"><span class="nav-number">2.1.</span> <span class="nav-text">显示行号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#替换"><span class="nav-number">2.2.</span> <span class="nav-text">替换</span></a></li></ol></li></ol></div>
             
 
           </div>

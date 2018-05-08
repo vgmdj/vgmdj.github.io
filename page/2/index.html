@@ -1073,7 +1073,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">743</span>
+                <span title="字数统计">1.1k</span>
               
 
               
@@ -1109,6 +1109,19 @@
       
         
           <p>记录一下时不时就会遇到，但总是会忘记的几个命令</p>
+<h1 id="bash-篇"><a href="#bash-篇" class="headerlink" title="bash 篇"></a>bash 篇</h1><h2 id="多条件匹配"><a href="#多条件匹配" class="headerlink" title="多条件匹配"></a>多条件匹配</h2><ul>
+<li>-eq  =</li>
+<li>-ne  !=</li>
+<li>-gt  &gt;</li>
+<li>-lt  &lt;</li>
+<li>-ge  &gt;=</li>
+<li><p>-le  &lt;=<br>以上适用于数字</p>
+</li>
+<li><p>-a  &amp;&amp;</p>
+</li>
+<li>-o  ||<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">例： 设a=3,b=4,c=5, if (a + b &gt; c &amp;&amp;  b-a &lt; c ) print (&quot;yes&quot;)</span><br><span class="line"></span><br><span class="line">if [a+b -gt c  -a b-a -lt c  ]; then</span><br><span class="line">  echo &quot;yes&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <h2 id="查看端口占用"><a href="#查看端口占用" class="headerlink" title="查看端口占用"></a>查看端口占用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netstat -apn | grep port</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
