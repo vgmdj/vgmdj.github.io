@@ -1007,7 +1007,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-23T16:23:50+08:00">2018-04-23</time>
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-16T09:26:01+08:00">2018-05-16</time>
             
           </span>
 
@@ -1073,7 +1073,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">1.1k</span>
+                <span title="字数统计">1.4k</span>
               
 
               
@@ -1108,7 +1108,7 @@
 
       
         
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>微信公众号开发告一段落，在这里作一下期间遇到的各种问题</p>
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>微信公众号开发告一段落，在这里总结一下期间遇到的各种问题</p>
 <h1 id="oauth2-授权重定向两次问题"><a href="#oauth2-授权重定向两次问题" class="headerlink" title="oauth2 授权重定向两次问题"></a>oauth2 授权重定向两次问题</h1><p>每次从微信那边来的重定向，都有两次，一次什么信息都不带，一次则是正常的含有code和state的跳转，这样就带来了一系列的问题，包含让error信息混乱，加大并发压力等<br>使用第三方代理域名或者是用nginx做反向代理，在向微信服务器发送请求的时候，微信回调时，会认为你的域名请求不一致，会回调两次，重定向你的服务器两次。<br>解决方式也很简单</p>
 <ul>
 <li>更改正式域名，不使用反向代理就会回调一次</li>
