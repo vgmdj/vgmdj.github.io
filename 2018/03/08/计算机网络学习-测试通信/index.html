@@ -103,25 +103,37 @@
   <meta name="keywords" content="学习,计算机网络," />
 
 
-<meta name="description" content="我们在学校上网时一次网页请求的过程是什么呢?">
+<meta name="description" content="之前学习网络的时候做的一些总结，现在正好整理一下，再加深一下记忆 测试连接通信主要有5个命令，分别为ping , arp , ipconfig , tracert , netstat">
 <meta name="keywords" content="学习,计算机网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机网络学习(四)-页面的请求过程">
-<meta property="og:url" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-四-页面的请求过程/index.html">
+<meta property="og:title" content="计算机网络学习-测试通信">
+<meta property="og:url" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-测试通信/index.html">
 <meta property="og:site_name" content="keep thinking">
-<meta property="og:description" content="我们在学校上网时一次网页请求的过程是什么呢?">
+<meta property="og:description" content="之前学习网络的时候做的一些总结，现在正好整理一下，再加深一下记忆 测试连接通信主要有5个命令，分别为ping , arp , ipconfig , tracert , netstat">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-一-测试通信/ipconfig.png">
+<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-一-测试通信/ping.png">
+<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-一-测试通信/tracert.png">
+<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-一-测试通信/netstat.png">
+<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-一-测试通信/arp.png">
+<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-一-测试通信/nslookup1.png">
+<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-一-测试通信/nslookup2.png">
+<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-一-测试通信/nslookup3.png">
+<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08//计算机网络学习-一-测试通信/telnet.png">
+<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-一-测试通信/pop3.png">
+<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-一-测试通信/pop3-2.png">
 <meta property="og:updated_time" content="2018-03-08T06:39:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机网络学习(四)-页面的请求过程">
-<meta name="twitter:description" content="我们在学校上网时一次网页请求的过程是什么呢?">
+<meta name="twitter:title" content="计算机网络学习-测试通信">
+<meta name="twitter:description" content="之前学习网络的时候做的一些总结，现在正好整理一下，再加深一下记忆 测试连接通信主要有5个命令，分别为ping , arp , ipconfig , tracert , netstat">
+<meta name="twitter:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-一-测试通信/ipconfig.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-四-页面的请求过程/"/>
+  <link rel="canonical" href="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-测试通信/"/>
 
 
 
@@ -130,7 +142,7 @@
     sidebar: "",
   };
 </script>
-  <title>计算机网络学习(四)-页面的请求过程 | keep thinking</title>
+  <title>计算机网络学习-测试通信 | keep thinking</title>
   
 
 
@@ -320,7 +332,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-四-页面的请求过程/">
+    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-测试通信/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="vgmdj">
@@ -337,7 +349,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">计算机网络学习(四)-页面的请求过程</h2>
+          <h2 class="post-title" itemprop="name headline">计算机网络学习-测试通信</h2>
         
 
         <div class="post-meta">
@@ -349,7 +361,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-08T13:42:29+08:00">2018-03-08</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-08T13:39:52+08:00">2018-03-08</time>
             
 
             
@@ -402,8 +414,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/2018/03/08/计算机网络学习-四-页面的请求过程/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/03/08/计算机网络学习-四-页面的请求过程/" itemprop="commentsCount"></span>
+                <a href="/2018/03/08/计算机网络学习-测试通信/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/03/08/计算机网络学习-测试通信/" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -411,7 +423,7 @@
 
           
           
-             <span id="/2018/03/08/计算机网络学习-四-页面的请求过程/" class="leancloud_visitors" data-flag-title="计算机网络学习(四)-页面的请求过程">
+             <span id="/2018/03/08/计算机网络学习-测试通信/" class="leancloud_visitors" data-flag-title="计算机网络学习-测试通信">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -436,7 +448,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">1.4k</span>
+                <span title="字数统计">2.5k</span>
               
 
               
@@ -450,7 +462,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:01</span>
+                <span title="阅读时长">0:03</span>
               
             </div>
           
@@ -470,22 +482,50 @@
       
 
       
-        <p>我们在学校上网时一次网页请求的过程是什么呢?<br><a id="more"></a></p>
-<p>首先将电脑用一条以太网网线连到以太网交换机, 这个交换机连到学校的路由器,该路由器再连到ISP(Internet Service Provider), 就是电信等公司, 电信会提供DNS域名解析服务.<br><!--more--></p>
-<p>当电脑刚刚连上网络的时候, 需要运行DHCP协议从本地的DHCP服务器来得到一个IP地址。<br><!--more--></p>
-<p>电脑创建一个DHCP request message, 放到一个UDP段里面, 这个段还包含目标端口(DHCP server)和来源端口(DHCP client). 这个UDP段会放到一个IP数据报里面, 这个包的目标IP地址是广播地址(255.255.255.255), 来源地址是0.0.0.0.<br><!--more--></p>
-<p>IP数据报放在一个Ethernet frame里, 这个以太网帧的目标地址是FF:FF:FF:FF:FF:FF所以该帧会被广播到所有连接在该交换机的设备,该帧的来源MAC地址是电脑的物理地址.</p>
-<p>当DHCP服务器收到这个IP数据报后,就会分配一个IP地址. 创建一个包含该IP地址和DNS地址的DHCP ACK message, 发回到我们的电脑.</p>
-<p>有了IP地址后就可以上网了。在浏览器上输入URL <a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a>, 浏览器会首先创建一个TCP socket, 然后通过TCP socket发送HTTP请求。 为了创建TCP socket我们首先要知道 <a href="http://www.google.com的IP地址，" target="_blank" rel="noopener">www.google.com的IP地址，</a> 该地址由DNS协议得到。</p>
-<p>操作系统创建了一个DNS query message, 放进一个目标端口为53（DNS服务器）的UDP段里面， 这个UDP段放进以DNS server IP的为目标的IP数据报里。</p>
-<p>包含该IP数据报的Ethernet frame会发往学校的网关路由器。尽管我们的电脑知道学校网关的IP地址，但是它不知道网关路由器的MAC地址， 这个时候就需要用到 ARP 协议。</p>
-<p>电脑创建一个包含网关IP地址的ARP query message， 把它放进目标地址为广播地址FF:FF:FF:FF:FF:FF的以太网帧里面。 交换机会把这个帧发送到所有连接的设备，包括网关路由器。</p>
-<p>网关路由器发现这个DNS query message的目标IP是自己，则创建一个ARP reply, 把自己的MAC地址发送回去。 操作系统得到网关的MAC地址后， 就可以发送DNS query了。</p>
-<p>网关路由器拿到DNS query, 查看它的目标地址，根据forwading table决定传递到哪一个路由器去。IP数据报被放进链接层的帧里面。</p>
-<p>拿到该链接层帧的路由器再根据它的forwading table转发，该forwarding table由Internet’s intera-domain protocal(如 RIP, OSPF, IS-IS, BGP)维护。</p>
-<p>最后DNS server查询DNS query里的网址，得到对应的IP， 发送回我们的电脑。</p>
-<p>得到<a href="http://www.google.com的IP地址后，我们就可以创建TCP" target="_blank" rel="noopener">www.google.com的IP地址后，我们就可以创建TCP</a> socket了。 首先TCP要进行三次握手连接到80端口， 然后发送HTTP GET。</p>
-<p>Google的服务器读取HTTP GET讯息，返回包含网页内容的HTTP response. 我们的电脑就可以展示其中的内容了。</p>
+        <p>之前学习网络的时候做的一些总结，现在正好整理一下，再加深一下记忆</p>
+<h1 id="测试连接通信主要有5个命令，分别为ping-arp-ipconfig-tracert-netstat"><a href="#测试连接通信主要有5个命令，分别为ping-arp-ipconfig-tracert-netstat" class="headerlink" title="测试连接通信主要有5个命令，分别为ping , arp , ipconfig , tracert , netstat"></a>测试连接通信主要有5个命令，分别为ping , arp , ipconfig , tracert , netstat</h1><a id="more"></a>
+<h2 id="ipconfig-命令（windows）-ifconfig命令（linux）"><a href="#ipconfig-命令（windows）-ifconfig命令（linux）" class="headerlink" title="ipconfig 命令（windows）/ ifconfig命令（linux）"></a>ipconfig 命令（windows）/ ifconfig命令（linux）</h2><p>利用ipconfig命令显示所有当前的TCP/IP网络配置值、刷新动态主机配置协议 (DHCP) 和域名系统 (DNS) 设置。 使用不带参数的IPCONFIG显示所有适配器的 IP 地址、子网掩码、默认网关。<br>利用ifconfig命令可以在linux系统下显示所有适配器的 IP 地址、子网掩码、默认网关。<br><img src="/2018/03/08/计算机网络学习-一-测试通信/ipconfig.png" alt="ipconfig"></p>
+<h2 id="ping-命令"><a href="#ping-命令" class="headerlink" title="ping 命令"></a>ping 命令</h2><p>Ping向目标主机(地址)发送一个回送请求数据包，要求目标主机收到请求后给予答复，从而判断网络的响应时间和本机是否与目标主机(地址)联通。<br>如果执行Ping不成功，则可以预测故障出现在以下几个方面：网线故障，网络适配器配置不正确，IP地址不正确。如果执行Ping成功而网络仍无法使用，那么问题很可能出在网络系统的软件配置方面，Ping成功只能保证本机与目标主机间存在一条连通的物理路径。<br>命令格式：<br>ping IP地址或主机名 [-t] [-a] [-n count] [-l size]<br>常用参数含义：</p>
+<ul>
+<li>-t不停地向目标主机发送数据；</li>
+<li>-a 以IP地址格式来显示目标主机的网络地址 ；</li>
+<li>-n count 指定要Ping多少次，具体次数由count来指定 ；</li>
+<li>-l size 指定发送到目标主机的数据包的大小。<br><img src="/2018/03/08/计算机网络学习-一-测试通信/ping.png" alt="ping"><!--more-->
+</li>
+</ul>
+<h2 id="tracert-命令-windows-traceroute命令（linux）"><a href="#tracert-命令-windows-traceroute命令（linux）" class="headerlink" title="tracert 命令(windows) / traceroute命令（linux）"></a>tracert 命令(windows) / traceroute命令（linux）</h2><p>Tracert命令用来显示数据包到达目标主机所经过的路径，并显示到达每个节点的时间，分析网络延时产生的原因。<br>Tracert命令用来显示数据包到达目标主机所经过的路径，并显示到达每个节点的时间。命令功能同Ping类似，但它所获得的信息要比Ping命令详细得多，它把数据包所走的全部路径、节点的IP以及花费的时间都显示出来。该命令比较适用于大型网络。<br>命令格式：<br>tracert IP地址或主机名 [-d][-h maximumhops][-j host_list] [-w timeout]<br>参数含义：</p>
+<ul>
+<li>-d 不解析目标主机的名字；</li>
+<li>-h maximum_hops 指定搜索到目标地址的最大跳跃数；</li>
+<li>-j host_list 按照主机列表中的地址释放源路由；</li>
+<li>-w timeout 指定超时时间间隔，程序默认的时间单位是毫秒。</li>
+</ul>
+<p><img src="/2018/03/08/计算机网络学习-一-测试通信/tracert.png" alt="tracert"></p>
+<p>ps: 很实用的一个命令，在使用京东的云主机的时候，出现访问腾讯地图延时过长的问题，使用命令分析后发现是京东云主机默认的主dns服务器对腾讯地图的地址解析过慢（10s以上），更换dns为8.8.8.8后解决问题</p>
+<h2 id="netstat-命令"><a href="#netstat-命令" class="headerlink" title="netstat 命令"></a>netstat 命令</h2><p>Netstat命令了解网络的整体使用情况。显示当前正在活动的网络连接的详细信息，例如显示网络连接、路由表和网络接口信息，统计目前总共有哪些网络连接正在运行。<br>参数含义：</p>
+<ul>
+<li>-a  显示所有连接和侦听端口。</li>
+<li>-b  显示在创建每个连接或侦听端口时涉及的可执行程序。在某些情况下，已知可执行程序承载多个独立的组件，这些情况下，显示创建连接或侦听端口时涉及的组件序列。此情况下，可执行程序的名称位于底部[]中，它调用的组件位于顶部，直至达到 TCP/IP。注意，此选项可能很耗时，并且在没有足够权限时可能失败。</li>
+<li>-e   显示以太网统计。此选项可以与 -s 选项结合使用。</li>
+<li>-f   显示外部地址的完全限定域名(FQDN)。</li>
+<li>-n   以数字形式显示地址和端口号。</li>
+<li>-o   显示拥有的与每个连接关联的进程 ID。</li>
+<li>-p proto  显示 proto 指定的协议的连接；proto 可以是下列任何一个: TCP、UDP、TCPv6 或 UDPv6。如果与 -s 选项一起用来显示每个协议的统计，proto 可以是下列任何一个: IP、IPv6、ICMP、ICMPv6、TCP、TCPv6、UDP或 UDPv6。</li>
+<li>-r    显示路由表。</li>
+<li>-s    显示每个协议的统计。默认情况下，显示IP、IPv6、ICMP、ICMPv6、TCP、TCPv6、UDP 和 UDPv6的统计；-p 选项可用于指定默认的子网。</li>
+<li>-t    显示当前连接卸载状态。<br><img src="/2018/03/08/计算机网络学习-一-测试通信/netstat.png" alt="netstat"></li>
+</ul>
+<h2 id="arp-命令"><a href="#arp-命令" class="headerlink" title="arp 命令"></a>arp 命令</h2><p>利用ARP确定对应IP地址的网卡物理地址。查看本地计算机或另一台计算机的ARP高速缓存中的当前内容。<br><img src="/2018/03/08/计算机网络学习-一-测试通信/arp.png" alt="arp"></p>
+<h1 id="测试dns服务器与smtp服务器"><a href="#测试dns服务器与smtp服务器" class="headerlink" title="测试dns服务器与smtp服务器"></a>测试dns服务器与smtp服务器</h1><h2 id="nslookup-命令使用"><a href="#nslookup-命令使用" class="headerlink" title="nslookup 命令使用"></a>nslookup 命令使用</h2><p>先从13个根名称服务器中任选一个（本次选择 198.41.0.4）去查找能解析.com的顶级域的域名<br><img src="/2018/03/08/计算机网络学习-一-测试通信/nslookup1.png" alt="nslookup"></p>
+<p>再任选一个（本次选择a.gtld-servers.net）上步给出的顶级域的域名，去查找能解析 baidu.com 的权威名称服务器的域名<br><img src="/2018/03/08/计算机网络学习-一-测试通信/nslookup2.png" alt="nslookup"></p>
+<p>再去上步给出的权威名称服务器中去查找 yun.baidu.com ，最终得到结果<br><img src="/2018/03/08/计算机网络学习-一-测试通信/nslookup3.png" alt="nslookup"></p>
+<h2 id="telnet-命令"><a href="#telnet-命令" class="headerlink" title="telnet 命令"></a>telnet 命令</h2><p>远程连接命令</p>
+<h3 id="Smtp"><a href="#Smtp" class="headerlink" title="Smtp:"></a>Smtp:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Telnet smtp.163.com  25</span><br><span class="line">Helo wang</span><br><span class="line">Auth login</span><br><span class="line">dzMyMTEwNDE4QDE2My5jb20=</span><br><span class="line">d2FuZ3J1aQ==</span><br><span class="line">MAIL FROM:&lt;w32110418@163.com&gt;</span><br><span class="line">RCPT TO:&lt;32110418@qq.com&gt;</span><br><span class="line">Data</span><br><span class="line">TO: 32110418@qq.com</span><br><span class="line">FROM: w32110418@163.com</span><br><span class="line">Subject :test mail</span><br><span class="line">Hahaha</span><br><span class="line">Hahahah</span><br><span class="line">Heheheh</span><br><span class="line">Hehehe</span><br><span class="line">.</span><br><span class="line">Quit</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/03/08//计算机网络学习-一-测试通信/telnet.png" alt="telnet"></p>
+<h3 id="Pop3"><a href="#Pop3" class="headerlink" title="Pop3:"></a>Pop3:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Telnet pop.163.com 110</span><br><span class="line">User w32110418</span><br><span class="line">Pass 120410228</span><br><span class="line">Stat</span><br><span class="line">List 3</span><br><span class="line">Retr 4</span><br><span class="line">Quit</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/03/08/计算机网络学习-一-测试通信/pop3.png" alt="telnet"></p>
+<p><img src="/2018/03/08/计算机网络学习-一-测试通信/pop3-2.png" alt="telnet"></p>
+<p>两种方法都可以实现dos环境下，对邮件的一些操作。但是在操作的过程中，一但输入错误，就必须重新输入，有点烦琐。<br>smtp下，向目标发送的必须是base64转换后的内容。而pop3下就不需要这步。<br>有的邮箱必须是得开启选项后，才能使用这种方法。</p>
 
       
     </div>
@@ -507,7 +547,7 @@
     <strong>本文作者： </strong>vgmdj</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-四-页面的请求过程/" title="计算机网络学习(四)-页面的请求过程">https://blog.vgmdj.cn/2018/03/08/计算机网络学习-四-页面的请求过程/</a>
+    <a href="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-测试通信/" title="计算机网络学习-测试通信">https://blog.vgmdj.cn/2018/03/08/计算机网络学习-测试通信/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -535,8 +575,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/08/计算机网络学习-三-socket套接字分析/" rel="next" title="计算机网络学习(三)-socket套接字分析">
-                <i class="fa fa-chevron-left"></i> 计算机网络学习(三)-socket套接字分析
+              <a href="/2018/03/07/linux常用命令/" rel="next" title="linux 常用命令">
+                <i class="fa fa-chevron-left"></i> linux 常用命令
               </a>
             
           </div>
@@ -545,8 +585,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/20/数据库学习/" rel="prev" title="数据库学习">
-                数据库学习 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/08/计算机网络学习-协议分析/" rel="prev" title="计算机网络学习-协议分析">
+                计算机网络学习-协议分析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -603,8 +643,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -779,6 +828,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#测试连接通信主要有5个命令，分别为ping-arp-ipconfig-tracert-netstat"><span class="nav-number">1.</span> <span class="nav-text">测试连接通信主要有5个命令，分别为ping , arp , ipconfig , tracert , netstat</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ipconfig-命令（windows）-ifconfig命令（linux）"><span class="nav-number">1.1.</span> <span class="nav-text">ipconfig 命令（windows）/ ifconfig命令（linux）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ping-命令"><span class="nav-number">1.2.</span> <span class="nav-text">ping 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tracert-命令-windows-traceroute命令（linux）"><span class="nav-number">1.3.</span> <span class="nav-text">tracert 命令(windows) / traceroute命令（linux）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#netstat-命令"><span class="nav-number">1.4.</span> <span class="nav-text">netstat 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arp-命令"><span class="nav-number">1.5.</span> <span class="nav-text">arp 命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试dns服务器与smtp服务器"><span class="nav-number">2.</span> <span class="nav-text">测试dns服务器与smtp服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nslookup-命令使用"><span class="nav-number">2.1.</span> <span class="nav-text">nslookup 命令使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#telnet-命令"><span class="nav-number">2.2.</span> <span class="nav-text">telnet 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Smtp"><span class="nav-number">2.2.1.</span> <span class="nav-text">Smtp:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pop3"><span class="nav-number">2.2.2.</span> <span class="nav-text">Pop3:</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

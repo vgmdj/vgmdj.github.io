@@ -103,39 +103,25 @@
   <meta name="keywords" content="学习,计算机网络," />
 
 
-<meta name="description" content="协议分层互联网协议分为五层，各层的所有协议被称为协议栈。一般采用自顶向下的方法，首先处理应用层，然后向下进行处理12345应用层运输层网络层链路层物理层">
+<meta name="description" content="我们在学校上网时一次网页请求的过程是什么呢?">
 <meta name="keywords" content="学习,计算机网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机网络学习(二)-协议分析">
-<meta property="og:url" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/index.html">
+<meta property="og:title" content="计算机网络学习-页面的请求过程">
+<meta property="og:url" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-页面的请求过程/index.html">
 <meta property="og:site_name" content="keep thinking">
-<meta property="og:description" content="协议分层互联网协议分为五层，各层的所有协议被称为协议栈。一般采用自顶向下的方法，首先处理应用层，然后向下进行处理12345应用层运输层网络层链路层物理层">
+<meta property="og:description" content="我们在学校上网时一次网页请求的过程是什么呢?">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/tcp.jpg">
-<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/udp.jpg">
-<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/tcp2.jpg">
-<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/tcp3.jpg">
-<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/tcp4.jpg">
-<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/dns.png">
-<meta property="og:image" content="https://pic002.cnblogs.com/images/2012/38542/2012072310244445.png">
-<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/http1.jpg">
-<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/http2.jpg">
-<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/http3.jpg">
-<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/http4.jpg">
-<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/dns2.jpg">
-<meta property="og:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/dns3.jpg">
-<meta property="og:updated_time" content="2018-04-10T06:39:52.000Z">
+<meta property="og:updated_time" content="2018-03-08T06:39:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机网络学习(二)-协议分析">
-<meta name="twitter:description" content="协议分层互联网协议分为五层，各层的所有协议被称为协议栈。一般采用自顶向下的方法，首先处理应用层，然后向下进行处理12345应用层运输层网络层链路层物理层">
-<meta name="twitter:image" content="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/tcp.jpg">
+<meta name="twitter:title" content="计算机网络学习-页面的请求过程">
+<meta name="twitter:description" content="我们在学校上网时一次网页请求的过程是什么呢?">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/"/>
+  <link rel="canonical" href="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-页面的请求过程/"/>
 
 
 
@@ -144,7 +130,7 @@
     sidebar: "",
   };
 </script>
-  <title>计算机网络学习(二)-协议分析 | keep thinking</title>
+  <title>计算机网络学习-页面的请求过程 | keep thinking</title>
   
 
 
@@ -334,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/">
+    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-页面的请求过程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="vgmdj">
@@ -351,7 +337,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">计算机网络学习(二)-协议分析</h2>
+          <h2 class="post-title" itemprop="name headline">计算机网络学习-页面的请求过程</h2>
         
 
         <div class="post-meta">
@@ -363,7 +349,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-08T13:40:56+08:00">2018-03-08</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-08T13:42:29+08:00">2018-03-08</time>
             
 
             
@@ -384,7 +370,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-10T14:39:52+08:00">2018-04-10</time>
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-08T14:39:52+08:00">2018-03-08</time>
             
           </span>
 
@@ -416,8 +402,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/2018/03/08/计算机网络学习-二-协议分析/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/03/08/计算机网络学习-二-协议分析/" itemprop="commentsCount"></span>
+                <a href="/2018/03/08/计算机网络学习-页面的请求过程/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/03/08/计算机网络学习-页面的请求过程/" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -425,7 +411,7 @@
 
           
           
-             <span id="/2018/03/08/计算机网络学习-二-协议分析/" class="leancloud_visitors" data-flag-title="计算机网络学习(二)-协议分析">
+             <span id="/2018/03/08/计算机网络学习-页面的请求过程/" class="leancloud_visitors" data-flag-title="计算机网络学习-页面的请求过程">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -450,7 +436,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">5.3k</span>
+                <span title="字数统计">1.4k</span>
               
 
               
@@ -464,7 +450,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:05</span>
+                <span title="阅读时长">0:01</span>
               
             </div>
           
@@ -484,98 +470,22 @@
       
 
       
-        <h2 id="协议分层"><a href="#协议分层" class="headerlink" title="协议分层"></a>协议分层</h2><p>互联网协议分为五层，各层的所有协议被称为协议栈。一般采用自顶向下的方法，首先处理应用层，然后向下进行处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">应用层</span><br><span class="line">运输层</span><br><span class="line">网络层</span><br><span class="line">链路层</span><br><span class="line">物理层</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>国际标准化组织（ISO）提出了计算机网络的七层模型，即开放式互连模型（OSI），并未被使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">应用层</span><br><span class="line">表示层</span><br><span class="line">会话层</span><br><span class="line">运输层</span><br><span class="line">网络层</span><br><span class="line">链路层</span><br><span class="line">物理层</span><br></pre></td></tr></table></figure></p>
-<!--more-->
-<h2 id="传输层协议分析"><a href="#传输层协议分析" class="headerlink" title="传输层协议分析"></a>传输层协议分析</h2><p><a href="http://www.cnblogs.com/skynet/archive/2010/12/12/1903949.html" target="_blank" rel="noopener">socket可参考文章</a><br><a href="https://www.jianshu.com/p/ef892323e68f" target="_blank" rel="noopener">tcp可参考文章</a><br><!--more--></p>
-<h3 id="tcp"><a href="#tcp" class="headerlink" title="tcp"></a>tcp</h3><p><img src="/2018/03/08/计算机网络学习-二-协议分析/tcp.jpg" alt="tcp报文结构"><br>6位标志域。表示为：紧急标志、有意义的应答标志、推、重置连接标志、同步序列号标志、完成发送数据标志。按照顺序排列是：URG、ACK、PSH、RST、SYN、FIN。<br>tcp的具体分析可见下篇，<a href="/2018/03/08/计算机网络学习-三-socket套接字分析/">socket套接字分析</a><br><!--more--></p>
-<h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4><ul>
-<li>客户端向服务器发送一个SEQ J,SYN 1</li>
-<li>服务器向客户端响应一个SEQ K，SYN 1, 并进行确认ACK J+1</li>
-<li>客户端再想服务器发一个确认ACK K+1</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A: 请求连接</span><br><span class="line">B：好，收到了，可以连了</span><br><span class="line">A：好，我知道你准备好了</span><br></pre></td></tr></table></figure>
-<h4 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h4><ul>
-<li>某个应用进程首先调用close主动关闭连接，这时TCP发送一个FIN M；</li>
-<li>另一端接收到FIN M之后，执行被动关闭，对这个FIN进行确认。它的接收也作为文件结束符传递给应用进程，因为FIN的接收意味着应用进程在相应的连接上再也接收不到额外数据；</li>
-<li>一段时间之后，接收到文件结束符的应用进程调用close关闭它的socket。这导致它的TCP也发送一个FIN N；</li>
-<li>接收到这个FIN的源发送端TCP对它进行确认。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A: 请求关闭</span><br><span class="line">B：好，我知道了，正在关闭</span><br><span class="line">B: 好了，我处理完了，可以关闭连接了</span><br><span class="line">A：好，那就关闭吧</span><br></pre></td></tr></table></figure>
-<h4 id="为什么不是两次握手或者是四次握手"><a href="#为什么不是两次握手或者是四次握手" class="headerlink" title="为什么不是两次握手或者是四次握手"></a>为什么不是两次握手或者是四次握手</h4><p>主旨就是握手过程中，就是在商议A与B之间的初始通信序列号，</p>
-<ul>
-<li>A告诉B自己序列号</li>
-<li>B告诉A，收到且发送自己序列号</li>
-<li>A告诉B，初始成功</li>
-</ul>
-<p>如果两次，无法保证成功，四次则多了，具体可见：<br><a href="https://www.zhihu.com/question/24853633" target="_blank" rel="noopener">https://www.zhihu.com/question/24853633</a></p>
-<h3 id="udp"><a href="#udp" class="headerlink" title="udp"></a>udp</h3><p><img src="/2018/03/08/计算机网络学习-二-协议分析/udp.jpg" alt="udp报文结构"></p>
-<h3 id="对传输层协议TCP-UDP进行捕包分析"><a href="#对传输层协议TCP-UDP进行捕包分析" class="headerlink" title="对传输层协议TCP/UDP进行捕包分析"></a>对传输层协议TCP/UDP进行捕包分析</h3><p><img src="/2018/03/08/计算机网络学习-二-协议分析/tcp2.jpg" alt="tcp包分析"></p>
-<p>(1) 向gaia.cs.umass.edu服务器传送文件的客户端主机的IP地址和TCP端口号是多少？<br>答：IP地址是：128.119.245.12<br>    端口号是：80<br>(1) 客户服务器之间用于初始化TCP连接的TCP SYN报文段的序号（sequence number）是多少？在该报文段中，是用什么来标示该报文段是SYN报文段的？<br>    答：seq为0， 用flags相应位置1来标示SYN报文段</p>
-<p>TCP第二次握手协议图如下：<br><img src="/2018/03/08/计算机网络学习-二-协议分析/tcp3.jpg" alt="tcp包分析"></p>
-<p>(1) 服务器向客户端发送的SYNACK报文段序号是多少？该报文段中，ACKnowledgement字段的值是多少？Gaia.cs.umass.edu服务器是如何决定此值的？在该报文段中，是用什么来标示该报文段是SYNACK报文段的？<br>答：SYNACK报文段的seq = 0 ， ACK = 1, 服务器计算方法是ACK = seq(SYN的) + 1， 在这个报文段中，用flags = 0x012来标示<br>(1) 前六个TCP报文段的长度各是多少？<br>答：由图可知，前六个TCP报文段长度为66 bytes、66 bytes、54 bytes、1462 bytes、1462 bytes、1462 bytes<br>(1) 在跟踪文件中是否有重传的报文段？进行判断的依据是什么？<br>答：没有重传的报文段，判断的依据是，如果有重传的报文段的话，那么服务器端向客户端 发送的TCP报文段里，就会出现大量的重复ACK。<br><img src="/2018/03/08/计算机网络学习-二-协议分析/tcp4.jpg" alt="tcp包分析"></p>
-<h2 id="应用层协议分析"><a href="#应用层协议分析" class="headerlink" title="应用层协议分析"></a>应用层协议分析</h2><h3 id="dns分析"><a href="#dns分析" class="headerlink" title="dns分析"></a>dns分析</h3><p>DNS（域名系统）：Domain Name System  因特网的目录服务<br>DNS协议属于应用层协议<br>DNS通常是由其它应用层协议来使用的。<br>DNS是一个在因特网上实现分布式数据库的精彩范例。</p>
-<p>DNS服务器的种类：</p>
-<ul>
-<li>根DNS服务器：用来引导查询获取顶级域名称服务器的域名及对应的顶级域服务器的IP地址。</li>
-<li>顶级域（DNS）服务器：负责顶级域名如：com、org、net、edu、gov，以及所有国家的顶级域名如uk、fr、ca、jp等。</li>
-<li>权威DNS服务器：在因特网上具有公共可访问主机的每个组织机构都必须提供公共可访问的DNS记录，这些记录将这些主机的名字映射为IP地址。权威名称服务器对这些DNS记录进行收藏。</li>
-<li>本地DNS服务器：不属于服务器的层次结构，但对DNS层次结构非常重要。</li>
-</ul>
-<p><img src="/2018/03/08/计算机网络学习-二-协议分析/dns.png" alt="dns分类"></p>
-<h3 id="http分析"><a href="#http分析" class="headerlink" title="http分析"></a>http分析</h3><p>HTTP（超文本传输协议）：Hyper Text Transfer Protocol<br>HTTP协议永远都是客户端发起请求，服务器回送响应。<br>HTTP协议是一个无状态的协议，同一个客户端的这次请求和上次请求是没有对应关系。</p>
-<h4 id="http-header"><a href="#http-header" class="headerlink" title="http header"></a>http header</h4><ul>
-<li><p>Host<br>指定请求资源的Intenet主机和端口号，必须表示请求url的原始服务器或网关的位置。HTTP/1.1请求必须包含host，否则系统会以400状态码返回。</p>
-</li>
-<li><p>Range<br>Range头域可以请求实体的一个或者多个子范围。<br>一般用于<a href="http://blog.csdn.net/lv18092081172/article/details/51457525" target="_blank" rel="noopener">断点续传</a></p>
-</li>
-<li><p>User-Agent<br>包含发出请求的用户信息，可根据此来判断浏览器类型或爬虫类型。<br>github page 就是根据此屏蔽百度爬虫</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Cache-Control<br>指定请求和响应遵循的缓存机制,请求时的缓存指令包括no-cache、no-store、max-age、max-stale、min-fresh、only-if-cached，响应消息中的指令包括public、private、no-cache、no-store、no-transform、must-revalidate、proxy-revalidate、max-age。<br>性能提升相关</p>
-</li>
-</ul>
-<h4 id="http长连接"><a href="#http长连接" class="headerlink" title="http长连接"></a>http长连接</h4><p>实际就是保持用于传输http数据的tcp连接保持不断开，使得客户端下一次访问服务端，还可以使用同一个tcp连接，从而避免了建立tcp连接的消耗。<br>对于频繁请求资源的客户来说，较适合使用长连接。但如果连接不断开，随着客户端的增长，保持的长连接也会越来越多，对服务器的压力反而会更大。<br>长连接适用于，操作频繁，点对点的通讯，且连接数不适合太多<br>短连接适用于，连接数较多且不会频繁操作的通讯<br><a href="https://www.cnblogs.com/gotodsp/p/6366163.html" target="_blank" rel="noopener">长连接和短连接的理解</a></p>
-<h4 id="http重定向，301和302"><a href="#http重定向，301和302" class="headerlink" title="http重定向，301和302"></a>http重定向，301和302</h4><p>重定向(Redirect)就是通过各种方法将各种网络请求重新定个方向转到其它位置</p>
-<ul>
-<li>301 代表的是永久性的重定向，搜索引擎在抓取新内容的同时也将旧的网址替换为重定向之后的网址。</li>
-<li>302 代表的是暂时性的重定向，搜索引擎会抓取新的内容而保留旧的网址。因为服务器返回302代码，搜索引擎认为新的网址只是暂时的。</li>
-</ul>
-<h3 id="https"><a href="#https" class="headerlink" title="https"></a>https</h3><h4 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h4><p>在http之上多了一层SSL/TLS，在http开始时，服务端会先向客户端发送ssl证书，<br>ssl证书中会包含网站基本信息，ca机构，证书编号，服务器的公钥。<br>客户端收到证书后，会使用hash对照证书编号验证一致性与完整性，验证的过程就是查找本地维护的证书中指定的ca机构的公钥，对编号进行解密从而得到编号1，然后用证书中指定的编号生成方式生成一个编号2，如果两个编号相同，则证书验证通过。<br>然后客户端取出服务端的公钥，结合随机数生成一个对称加密的密钥再用服务器的公钥加密后，发回给服务端，服务端用自己的私钥解密之后双方就可以使用对称加密密钥进行通信了。</p>
-<h4 id="四次握手"><a href="#四次握手" class="headerlink" title="四次握手"></a>四次握手</h4><p>https的握手过程，包含两部分</p>
-<ul>
-<li>tcp三次握手</li>
-<li>ssl/tls 一次握手</li>
-</ul>
-<p>其中SSL/TLS 握手过程包括<br><img src="https://pic002.cnblogs.com/images/2012/38542/2012072310244445.png" alt="https"></p>
-<ul>
-<li>Client Hello<br>握手第一步是客户端向服务端发送 Client Hello 消息，这个消息里包含了一个客户端生成的随机数 Random1、客户端支持的加密套件（Support Ciphers）和 SSL Version 等信息。</li>
-<li>Server Hello<br>第二步是服务端向客户端发送 Server Hello 消息，这个消息会从 Client Hello 传过来的 Support Ciphers 里确定一份加密套件，这个套件决定了后续加密和生成摘要时具体使用哪些算法，另外还会生成一份随机数 Random2。注意，至此客户端和服务端都拥有了两个随机数（Random1+ Random2），这两个随机数会在后续生成对称秘钥时用到。</li>
-<li>Certificate<br>这一步是服务端将自己的证书下发给客户端，让客户端验证自己的身份，客户端验证通过后取出证书中的公钥。</li>
-<li>Server Key Exchange<br>如果是DH算法，这里发送服务器使用的DH参数。RSA算法不需要这一步。</li>
-<li>Certificate Request<br>Certificate Request 是服务端要求客户端上报证书，这一步是可选的，对于安全性要求高的场景会用到。</li>
-<li>Server Hello Done<br>Server Hello Done 通知客户端 Server Hello 过程结束。</li>
-<li>Certificate Verify<br>客户端收到服务端传来的证书后，先从 CA 验证该证书的合法性，验证通过后取出证书中的服务端公钥，再生成一个随机数 Random3，再用服务端公钥非对称加密 Random3 生成 PreMaster Key。</li>
-<li>Client Key Exchange<br>上面客户端根据服务器传来的公钥生成了 PreMaster Key，Client Key Exchange 就是将这个 key 传给服务端，服务端再用自己的私钥解出这个 PreMaster Key 得到客户端生成的 Random3。至此，客户端和服务端都拥有 Random1 + Random2 + Random3，两边再根据同样的算法就可以生成一份秘钥，握手结束后的应用层数据都是使用这个秘钥进行对称加密。为什么要使用三个随机数呢？这是因为 SSL/TLS 握手过程的数据都是明文传输的，并且多个随机数种子来生成秘钥不容易被暴力破解出来。</li>
-<li>Change Cipher Spec(Client)<br>这一步是客户端通知服务端后面再发送的消息都会使用前面协商出来的秘钥加密了，是一条事件消息。</li>
-<li>Encrypted Handshake Message(Client)<br>这一步对应的是 Client Finish 消息，客户端将前面的握手消息生成摘要再用协商好的秘钥加密，这是客户端发出的第一条加密消息。服务端接收后会用秘钥解密，能解出来说明前面协商出来的秘钥是一致的。</li>
-<li>Change Cipher Spec(Server)<br>这一步是服务端通知客户端后面再发送的消息都会使用加密，也是一条事件消息。</li>
-<li>Encrypted Handshake Message(Server)<br>这一步对应的是 Server Finish 消息，服务端也会将握手过程的消息生成摘要再用秘钥加密，这是服务端发出的第一条加密消息。客户端接收后会用秘钥解密，能解出来说明协商的秘钥是一致的。</li>
-<li>Application Data<br>到这里，双方已安全地协商出了同一份秘钥，所有的应用层数据都会用这个秘钥加密后再通过 TCP 进行可靠传输。</li>
-</ul>
-<h4 id="安全验证"><a href="#安全验证" class="headerlink" title="安全验证"></a>安全验证</h4><p>可以在配置好https后，在<a href="https://myssl.com/" target="_blank" rel="noopener">myssl</a>上验证是否安全<br>一切配置完成后，基本都可以达到A+的评级，下面是对 <a href="https://blog.vgmdj.cn">https://blog.vgmdj.cn</a> 的安全测试<br><a href="https://myssl.com/blog.vgmdj.cn?domain=blog.vgmdj.cn&amp;status=success" target="_blank" rel="noopener">https://myssl.com/blog.vgmdj.cn?domain=blog.vgmdj.cn&amp;status=success</a></p>
-<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="http://www.admin10000.com/document/12524.html" target="_blank" rel="noopener">https讲解</a><br><a href="http://www.cnblogs.com/zhuqil/archive/2012/07/23/2604572.html" target="_blank" rel="noopener">https交互图解</a><br><a href="https://www.jianshu.com/p/7158568e4867" target="_blank" rel="noopener">SSL/TLS 握手过程详解</a><br><a href="http://blog.csdn.net/sunmenggmail/article/details/11994013" target="_blank" rel="noopener">rsa加密原理</a><br><a href="https://www.zhihu.com/question/33645891?sort=created" target="_blank" rel="noopener">rsa加密原理2</a></p>
-<h3 id="利用ethereal观察分析协议HTTP和DNS"><a href="#利用ethereal观察分析协议HTTP和DNS" class="headerlink" title="利用ethereal观察分析协议HTTP和DNS"></a>利用ethereal观察分析协议HTTP和DNS</h3><p><img src="/2018/03/08/计算机网络学习-二-协议分析/http1.jpg" alt="http抓包1"><br><img src="/2018/03/08/计算机网络学习-二-协议分析/http2.jpg" alt="http抓包2"><br><img src="/2018/03/08/计算机网络学习-二-协议分析/http3.jpg" alt="http抓包3"><br><img src="/2018/03/08/计算机网络学习-二-协议分析/http4.jpg" alt="http抓包4"></p>
-<h4 id="浏览器运行的是HTTP1-0，还是HTTP1-1？所访问的服务器所运行的HTTP版本号是多少？"><a href="#浏览器运行的是HTTP1-0，还是HTTP1-1？所访问的服务器所运行的HTTP版本号是多少？" class="headerlink" title="浏览器运行的是HTTP1.0，还是HTTP1.1？所访问的服务器所运行的HTTP版本号是多少？"></a>浏览器运行的是HTTP1.0，还是HTTP1.1？所访问的服务器所运行的HTTP版本号是多少？</h4><p>运行的都是HTTP Version 1.1</p>
-<h4 id="浏览器向服务器指出它能接收何种语言版本的对象？"><a href="#浏览器向服务器指出它能接收何种语言版本的对象？" class="headerlink" title="浏览器向服务器指出它能接收何种语言版本的对象？"></a>浏览器向服务器指出它能接收何种语言版本的对象？</h4><p>指出了能接收汉语，英语</p>
-<h4 id="计算机的IP地址是多少？服务器gaia-cs-umass-edu的IP地址是多少？"><a href="#计算机的IP地址是多少？服务器gaia-cs-umass-edu的IP地址是多少？" class="headerlink" title="计算机的IP地址是多少？服务器gaia.cs.umass.edu的IP地址是多少？"></a>计算机的IP地址是多少？服务器gaia.cs.umass.edu的IP地址是多少？</h4><p>本机IP：172.30.164.86，目标IP：128.119.245.12</p>
-<h4 id="从服务器上所获取的HTML文件的最后修改时间是多少？"><a href="#从服务器上所获取的HTML文件的最后修改时间是多少？" class="headerlink" title="从服务器上所获取的HTML文件的最后修改时间是多少？"></a>从服务器上所获取的HTML文件的最后修改时间是多少？</h4><p>最后的修改时间为Tue , 30 Oct 2007 17：00：02</p>
-<h4 id="一共发出了多少个HTTP-GET请求？"><a href="#一共发出了多少个HTTP-GET请求？" class="headerlink" title="一共发出了多少个HTTP GET请求？"></a>一共发出了多少个HTTP GET请求？</h4><p>发出了一个GET请求</p>
-<h4 id="承载这一个HTTP响应报文一共需要多少个data-containing-TCP报文段？"><a href="#承载这一个HTTP响应报文一共需要多少个data-containing-TCP报文段？" class="headerlink" title="承载这一个HTTP响应报文一共需要多少个data-containing TCP报文段？"></a>承载这一个HTTP响应报文一共需要多少个data-containing TCP报文段？</h4><p>4个报文段</p>
-<h4 id="这个HTTP-GET请求相对应的响应报文的状态代码和状态短语是什么？"><a href="#这个HTTP-GET请求相对应的响应报文的状态代码和状态短语是什么？" class="headerlink" title="这个HTTP GET请求相对应的响应报文的状态代码和状态短语是什么？"></a>这个HTTP GET请求相对应的响应报文的状态代码和状态短语是什么？</h4><p>状态码200，短语OK ，意思为请求成功</p>
-<h4 id="定位到DNS查询报文和查询响应报文，这两种报文的发送是基于UDP还是基于TCP的？"><a href="#定位到DNS查询报文和查询响应报文，这两种报文的发送是基于UDP还是基于TCP的？" class="headerlink" title="定位到DNS查询报文和查询响应报文，这两种报文的发送是基于UDP还是基于TCP的？"></a>定位到DNS查询报文和查询响应报文，这两种报文的发送是基于UDP还是基于TCP的？</h4><p>能看出，这两种报文都是基于UDP发送的</p>
-<h4 id="查询报文的目的端口号是多少？DNS查询响应报文的源端口号是多少？"><a href="#查询报文的目的端口号是多少？DNS查询响应报文的源端口号是多少？" class="headerlink" title="查询报文的目的端口号是多少？DNS查询响应报文的源端口号是多少？"></a>查询报文的目的端口号是多少？DNS查询响应报文的源端口号是多少？</h4><p>查询报文:<br><img src="/2018/03/08/计算机网络学习-二-协议分析/dns2.jpg" alt="dns查询"><br>查询响应报文：<br><img src="/2018/03/08/计算机网络学习-二-协议分析/dns3.jpg" alt="dns查询"><br>由图可以看出，两个端口号都是一致的，是53号端口</p>
+        <p>我们在学校上网时一次网页请求的过程是什么呢?<br><a id="more"></a></p>
+<p>首先将电脑用一条以太网网线连到以太网交换机, 这个交换机连到学校的路由器,该路由器再连到ISP(Internet Service Provider), 就是电信等公司, 电信会提供DNS域名解析服务.<br><!--more--></p>
+<p>当电脑刚刚连上网络的时候, 需要运行DHCP协议从本地的DHCP服务器来得到一个IP地址。<br><!--more--></p>
+<p>电脑创建一个DHCP request message, 放到一个UDP段里面, 这个段还包含目标端口(DHCP server)和来源端口(DHCP client). 这个UDP段会放到一个IP数据报里面, 这个包的目标IP地址是广播地址(255.255.255.255), 来源地址是0.0.0.0.<br><!--more--></p>
+<p>IP数据报放在一个Ethernet frame里, 这个以太网帧的目标地址是FF:FF:FF:FF:FF:FF所以该帧会被广播到所有连接在该交换机的设备,该帧的来源MAC地址是电脑的物理地址.</p>
+<p>当DHCP服务器收到这个IP数据报后,就会分配一个IP地址. 创建一个包含该IP地址和DNS地址的DHCP ACK message, 发回到我们的电脑.</p>
+<p>有了IP地址后就可以上网了。在浏览器上输入URL <a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a>, 浏览器会首先创建一个TCP socket, 然后通过TCP socket发送HTTP请求。 为了创建TCP socket我们首先要知道 <a href="http://www.google.com的IP地址，" target="_blank" rel="noopener">www.google.com的IP地址，</a> 该地址由DNS协议得到。</p>
+<p>操作系统创建了一个DNS query message, 放进一个目标端口为53（DNS服务器）的UDP段里面， 这个UDP段放进以DNS server IP的为目标的IP数据报里。</p>
+<p>包含该IP数据报的Ethernet frame会发往学校的网关路由器。尽管我们的电脑知道学校网关的IP地址，但是它不知道网关路由器的MAC地址， 这个时候就需要用到 ARP 协议。</p>
+<p>电脑创建一个包含网关IP地址的ARP query message， 把它放进目标地址为广播地址FF:FF:FF:FF:FF:FF的以太网帧里面。 交换机会把这个帧发送到所有连接的设备，包括网关路由器。</p>
+<p>网关路由器发现这个DNS query message的目标IP是自己，则创建一个ARP reply, 把自己的MAC地址发送回去。 操作系统得到网关的MAC地址后， 就可以发送DNS query了。</p>
+<p>网关路由器拿到DNS query, 查看它的目标地址，根据forwading table决定传递到哪一个路由器去。IP数据报被放进链接层的帧里面。</p>
+<p>拿到该链接层帧的路由器再根据它的forwading table转发，该forwarding table由Internet’s intera-domain protocal(如 RIP, OSPF, IS-IS, BGP)维护。</p>
+<p>最后DNS server查询DNS query里的网址，得到对应的IP， 发送回我们的电脑。</p>
+<p>得到<a href="http://www.google.com的IP地址后，我们就可以创建TCP" target="_blank" rel="noopener">www.google.com的IP地址后，我们就可以创建TCP</a> socket了。 首先TCP要进行三次握手连接到80端口， 然后发送HTTP GET。</p>
+<p>Google的服务器读取HTTP GET讯息，返回包含网页内容的HTTP response. 我们的电脑就可以展示其中的内容了。</p>
 
       
     </div>
@@ -597,7 +507,7 @@
     <strong>本文作者： </strong>vgmdj</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/" title="计算机网络学习(二)-协议分析">https://blog.vgmdj.cn/2018/03/08/计算机网络学习-二-协议分析/</a>
+    <a href="https://blog.vgmdj.cn/2018/03/08/计算机网络学习-页面的请求过程/" title="计算机网络学习-页面的请求过程">https://blog.vgmdj.cn/2018/03/08/计算机网络学习-页面的请求过程/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -625,8 +535,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/08/计算机网络学习-一-测试通信/" rel="next" title="计算机网络学习(一)-测试通信">
-                <i class="fa fa-chevron-left"></i> 计算机网络学习(一)-测试通信
+              <a href="/2018/03/08/计算机网络学习-socket套接字分析/" rel="next" title="计算机网络学习-socket套接字分析">
+                <i class="fa fa-chevron-left"></i> 计算机网络学习-socket套接字分析
               </a>
             
           </div>
@@ -635,8 +545,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/08/计算机网络学习-三-socket套接字分析/" rel="prev" title="计算机网络学习(三)-socket套接字分析">
-                计算机网络学习(三)-socket套接字分析 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/20/数据库学习/" rel="prev" title="数据库学习">
+                数据库学习 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -693,17 +603,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -878,22 +779,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#协议分层"><span class="nav-number">1.</span> <span class="nav-text">协议分层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传输层协议分析"><span class="nav-number">2.</span> <span class="nav-text">传输层协议分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tcp"><span class="nav-number">2.1.</span> <span class="nav-text">tcp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三次握手"><span class="nav-number">2.1.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.1.2.</span> <span class="nav-text">四次挥手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么不是两次握手或者是四次握手"><span class="nav-number">2.1.3.</span> <span class="nav-text">为什么不是两次握手或者是四次握手</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#udp"><span class="nav-number">2.2.</span> <span class="nav-text">udp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对传输层协议TCP-UDP进行捕包分析"><span class="nav-number">2.3.</span> <span class="nav-text">对传输层协议TCP/UDP进行捕包分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用层协议分析"><span class="nav-number">3.</span> <span class="nav-text">应用层协议分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dns分析"><span class="nav-number">3.1.</span> <span class="nav-text">dns分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http分析"><span class="nav-number">3.2.</span> <span class="nav-text">http分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#http-header"><span class="nav-number">3.2.1.</span> <span class="nav-text">http header</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#http长连接"><span class="nav-number">3.2.2.</span> <span class="nav-text">http长连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#http重定向，301和302"><span class="nav-number">3.2.3.</span> <span class="nav-text">http重定向，301和302</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#https"><span class="nav-number">3.3.</span> <span class="nav-text">https</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简述"><span class="nav-number">3.3.1.</span> <span class="nav-text">简述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四次握手"><span class="nav-number">3.3.2.</span> <span class="nav-text">四次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安全验证"><span class="nav-number">3.3.3.</span> <span class="nav-text">安全验证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考资料"><span class="nav-number">3.3.4.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#利用ethereal观察分析协议HTTP和DNS"><span class="nav-number">3.4.</span> <span class="nav-text">利用ethereal观察分析协议HTTP和DNS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器运行的是HTTP1-0，还是HTTP1-1？所访问的服务器所运行的HTTP版本号是多少？"><span class="nav-number">3.4.1.</span> <span class="nav-text">浏览器运行的是HTTP1.0，还是HTTP1.1？所访问的服务器所运行的HTTP版本号是多少？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器向服务器指出它能接收何种语言版本的对象？"><span class="nav-number">3.4.2.</span> <span class="nav-text">浏览器向服务器指出它能接收何种语言版本的对象？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机的IP地址是多少？服务器gaia-cs-umass-edu的IP地址是多少？"><span class="nav-number">3.4.3.</span> <span class="nav-text">计算机的IP地址是多少？服务器gaia.cs.umass.edu的IP地址是多少？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从服务器上所获取的HTML文件的最后修改时间是多少？"><span class="nav-number">3.4.4.</span> <span class="nav-text">从服务器上所获取的HTML文件的最后修改时间是多少？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一共发出了多少个HTTP-GET请求？"><span class="nav-number">3.4.5.</span> <span class="nav-text">一共发出了多少个HTTP GET请求？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#承载这一个HTTP响应报文一共需要多少个data-containing-TCP报文段？"><span class="nav-number">3.4.6.</span> <span class="nav-text">承载这一个HTTP响应报文一共需要多少个data-containing TCP报文段？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#这个HTTP-GET请求相对应的响应报文的状态代码和状态短语是什么？"><span class="nav-number">3.4.7.</span> <span class="nav-text">这个HTTP GET请求相对应的响应报文的状态代码和状态短语是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定位到DNS查询报文和查询响应报文，这两种报文的发送是基于UDP还是基于TCP的？"><span class="nav-number">3.4.8.</span> <span class="nav-text">定位到DNS查询报文和查询响应报文，这两种报文的发送是基于UDP还是基于TCP的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询报文的目的端口号是多少？DNS查询响应报文的源端口号是多少？"><span class="nav-number">3.4.9.</span> <span class="nav-text">查询报文的目的端口号是多少？DNS查询响应报文的源端口号是多少？</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
