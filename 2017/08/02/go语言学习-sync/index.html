@@ -103,18 +103,18 @@
   <meta name="keywords" content="Golang,学习," />
 
 
-<meta name="description" content="sync包介绍sync包是go提供的实现锁机制的集合 sync.Mutexsync.Mutex是互斥锁，它的作用是守护在临界区入口来确保同一时间只能有一个线程进入临界区。 sync.RWMutexsync.RWMutex是读写锁，它的作用是允许同一时间多个线程对变量进行读操作，但是只能一个线程进行写操作，常用于读操作远远多于写操作的场景下1l := new(sync.RWMutex)  l.RLo">
+<meta name="description" content="sync包介绍sync包是go提供的实现锁机制的集合 sync.Mutexsync.Mutex是互斥锁，它的作用是守护在临界区入口来确保同一时间只能有一个线程进入临界区。">
 <meta name="keywords" content="Golang,学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="go语言学习-sync">
 <meta property="og:url" content="https://blog.vgmdj.cn/2017/08/02/go语言学习-sync/index.html">
 <meta property="og:site_name" content="keep thinking">
-<meta property="og:description" content="sync包介绍sync包是go提供的实现锁机制的集合 sync.Mutexsync.Mutex是互斥锁，它的作用是守护在临界区入口来确保同一时间只能有一个线程进入临界区。 sync.RWMutexsync.RWMutex是读写锁，它的作用是允许同一时间多个线程对变量进行读操作，但是只能一个线程进行写操作，常用于读操作远远多于写操作的场景下1l := new(sync.RWMutex)  l.RLo">
+<meta property="og:description" content="sync包介绍sync包是go提供的实现锁机制的集合 sync.Mutexsync.Mutex是互斥锁，它的作用是守护在临界区入口来确保同一时间只能有一个线程进入临界区。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-04-06T07:23:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="go语言学习-sync">
-<meta name="twitter:description" content="sync包介绍sync包是go提供的实现锁机制的集合 sync.Mutexsync.Mutex是互斥锁，它的作用是守护在临界区入口来确保同一时间只能有一个线程进入临界区。 sync.RWMutexsync.RWMutex是读写锁，它的作用是允许同一时间多个线程对变量进行读操作，但是只能一个线程进行写操作，常用于读操作远远多于写操作的场景下1l := new(sync.RWMutex)  l.RLo">
+<meta name="twitter:description" content="sync包介绍sync包是go提供的实现锁机制的集合 sync.Mutexsync.Mutex是互斥锁，它的作用是守护在临界区入口来确保同一时间只能有一个线程进入临界区。">
 
 
 
@@ -471,7 +471,7 @@
 
       
         <h2 id="sync包介绍"><a href="#sync包介绍" class="headerlink" title="sync包介绍"></a>sync包介绍</h2><p>sync包是go提供的实现锁机制的集合</p>
-<h2 id="sync-Mutex"><a href="#sync-Mutex" class="headerlink" title="sync.Mutex"></a>sync.Mutex</h2><p>sync.Mutex是互斥锁，它的作用是守护在临界区入口来确保同一时间只能有一个线程进入临界区。</p>
+<h2 id="sync-Mutex"><a href="#sync-Mutex" class="headerlink" title="sync.Mutex"></a>sync.Mutex</h2><p>sync.Mutex是互斥锁，它的作用是守护在临界区入口来确保同一时间只能有一个线程进入临界区。<br><a id="more"></a></p>
 <h2 id="sync-RWMutex"><a href="#sync-RWMutex" class="headerlink" title="sync.RWMutex"></a>sync.RWMutex</h2><p>sync.RWMutex是读写锁，它的作用是允许同一时间多个线程对变量进行读操作，但是只能一个线程进行写操作，常用于读操作远远多于写操作的场景下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l := new(sync.RWMutex)</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><p>l.RLock 读锁<br>当有写锁时，无法加载读锁，当只有读锁或者没有锁时，可以加载多个读锁，所有适合读多写少的场景</p>
