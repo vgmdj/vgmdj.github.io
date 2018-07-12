@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.vgmdj.cn/temp/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%AD%A6%E4%B9%A0-%E5%8D%8F%E8%AE%AE.html</loc>
+    
+    <lastmod>2018-07-05T08:08:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.vgmdj.cn/2017/07/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2018-07-01T12:39:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vgmdj.cn/temp/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%AD%A6%E4%B9%A0-%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5.html</loc>
+    
+    <lastmod>2018-06-29T08:08:58.000Z</lastmod>
     
   </url>
   
@@ -86,9 +100,16 @@
   </url>
   
   <url>
-    <loc>https://blog.vgmdj.cn/temp/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E6%8F%92%E4%BB%B6.html</loc>
+    <loc>https://blog.vgmdj.cn/2018/05/01/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E6%8F%92%E4%BB%B6/</loc>
     
     <lastmod>2018-05-01T06:30:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vgmdj.cn/2018/03/07/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    
+    <lastmod>2018-05-01T01:53:17.000Z</lastmod>
     
   </url>
   
@@ -163,14 +184,14 @@
   </url>
   
   <url>
-    <loc>https://blog.vgmdj.cn/temp/redis%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88.html</loc>
+    <loc>https://blog.vgmdj.cn/temp/redis%E5%AD%A6%E4%B9%A0-%E6%8C%81%E4%B9%85%E5%8C%96.html</loc>
     
     <lastmod>2018-04-02T09:23:50.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.vgmdj.cn/temp/redis%E5%AD%A6%E4%B9%A0-%E6%8C%81%E4%B9%85%E5%8C%96.html</loc>
+    <loc>https://blog.vgmdj.cn/temp/redis%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88.html</loc>
     
     <lastmod>2018-04-02T09:23:50.000Z</lastmod>
     
@@ -240,7 +261,7 @@
   </url>
   
   <url>
-    <loc>https://blog.vgmdj.cn/2018/03/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B/</loc>
+    <loc>https://blog.vgmdj.cn/2018/03/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E6%B5%8B%E8%AF%95%E9%80%9A%E4%BF%A1/</loc>
     
     <lastmod>2018-03-08T06:39:52.000Z</lastmod>
     
@@ -254,16 +275,9 @@
   </url>
   
   <url>
-    <loc>https://blog.vgmdj.cn/2018/03/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E6%B5%8B%E8%AF%95%E9%80%9A%E4%BF%A1/</loc>
+    <loc>https://blog.vgmdj.cn/2018/03/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B/</loc>
     
     <lastmod>2018-03-08T06:39:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vgmdj.cn/2018/03/07/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    
-    <lastmod>2018-03-07T09:23:50.000Z</lastmod>
     
   </url>
   

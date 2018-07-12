@@ -100,28 +100,28 @@
 
 
   
-  <meta name="keywords" content="Golang,学习," />
+  <meta name="keywords" content=",," />
 
 
-<meta name="description" content="前言跳槽季，接手代码后，发现了一些自定义error的小问题，在这里做个记录总结。 interfaceinterface是一组method签名的组合，通过interface我们可以定义对象的一组行为。实现这一组行为的类的对象，同属于该interface类型。通过这一特性，可以使面向对象和内容组织的实现变得非常方便。">
-<meta name="keywords" content="Golang,学习">
-<meta property="og:type" content="article">
-<meta property="og:title" content="go语言学习-interface">
-<meta property="og:url" content="https://blog.vgmdj.cn/2018/05/21/go语言学习-interface/index.html">
+<meta name="description" content="vgmdj&apos;s Blog">
+<meta name="keywords" content="消息队列,学习">
+<meta property="og:type" content="website">
+<meta property="og:title" content="消息队列学习-健康检查">
+<meta property="og:url" content="https://blog.vgmdj.cn/temp/消息队列学习-协议.html">
 <meta property="og:site_name" content="keep thinking">
-<meta property="og:description" content="前言跳槽季，接手代码后，发现了一些自定义error的小问题，在这里做个记录总结。 interfaceinterface是一组method签名的组合，通过interface我们可以定义对象的一组行为。实现这一组行为的类的对象，同属于该interface类型。通过这一特性，可以使面向对象和内容组织的实现变得非常方便。">
+<meta property="og:description" content="vgmdj&apos;s Blog">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-30T07:41:12.000Z">
+<meta property="og:updated_time" content="2018-07-05T08:08:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="go语言学习-interface">
-<meta name="twitter:description" content="前言跳槽季，接手代码后，发现了一些自定义error的小问题，在这里做个记录总结。 interfaceinterface是一组method签名的组合，通过interface我们可以定义对象的一组行为。实现这一组行为的类的对象，同属于该interface类型。通过这一特性，可以使面向对象和内容组织的实现变得非常方便。">
+<meta name="twitter:title" content="消息队列学习-健康检查">
+<meta name="twitter:description" content="vgmdj&apos;s Blog">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.vgmdj.cn/2018/05/21/go语言学习-interface/"/>
+  <link rel="canonical" href="https://blog.vgmdj.cn/temp/消息队列学习-协议.html"/>
 
 
 
@@ -130,7 +130,7 @@
     sidebar: "",
   };
 </script>
-  <title>go语言学习-interface | keep thinking</title>
+  <title>消息队列学习-健康检查 | keep thinking</title>
   
 
 
@@ -306,277 +306,43 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/05/21/go语言学习-interface/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="vgmdj">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="keep thinking">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
+<h2 class="post-title" itemprop="name headline">消息队列学习-健康检查</h2>
+
+<div class="post-meta">
+  
+  
+
+
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
         
         
-          <h2 class="post-title" itemprop="name headline">go语言学习-interface</h2>
+          
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-21T15:27:15+08:00">2018-05-21</time>
-            
-
-            
-            
-              
-                
-              
-            
-
-            
-              
-              <span class="post-meta-divider">|</span>
-              
-
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-30T15:41:12+08:00">2018-03-30</time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Golang/" itemprop="url" rel="index"><span itemprop="name">Golang</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2018/05/21/go语言学习-interface/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/05/21/go语言学习-interface/" itemprop="commentsCount"></span>
-                </a>
-              
-            
-          
-
-          
-          
-             <span id="/2018/05/21/go语言学习-interface/" class="leancloud_visitors" data-flag-title="go语言学习-interface">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">5k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">0:05</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>跳槽季，接手代码后，发现了一些自定义error的小问题，在这里做个记录总结。</p>
-<h1 id="interface"><a href="#interface" class="headerlink" title="interface"></a>interface</h1><p>interface是一组method签名的组合，通过interface我们可以定义对象的一组行为。<br>实现这一组行为的类的对象，同属于该interface类型。通过这一特性，可以使面向对象和内容组织的实现变得非常方便。<br><a id="more"></a></p>
-<h1 id="interface的使用"><a href="#interface的使用" class="headerlink" title="interface的使用"></a>interface的使用</h1><p>interface在go的设计模式中被大量使用，可以在 <a href="/tags/设计模式/">golang设计模式</a> 中查看更多内容<br>下面是一个小例子，Ti是interface, Ts1和Ts2都实现了Ti，New()函数根据输入值返回Ti，这样我们在使用Ti时，只用关注它的函数，而不用去管其中具体是怎么实现的，有利于模块间的充分解耦</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">type Ti interface &#123;</span><br><span class="line">	SetValue(value int)</span><br><span class="line">	Test()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">type Ts1 struct &#123;</span><br><span class="line">	Value int</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func (ts *Ts1) SetValue(value int) &#123;</span><br><span class="line">	ts.Value = value + 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func (ts *Ts1) Test() &#123;</span><br><span class="line">	fmt.Printf(&quot;ts1&apos;s value is %d\n&quot;, ts.Value)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">type Ts2 struct &#123;</span><br><span class="line">	Value int</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func (ts *Ts2) SetValue(value int) &#123;</span><br><span class="line">	ts.Value = value + 2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func (ts *Ts2) Test() &#123;</span><br><span class="line">	fmt.Printf(&quot;ts2&apos;s value is %d\n&quot;, ts.Value)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func New(tn int) Ti &#123;</span><br><span class="line">	switch tn &#123;</span><br><span class="line">	default:</span><br><span class="line">		return nil</span><br><span class="line">	case 1:</span><br><span class="line">		return new(Ts1)</span><br><span class="line">	case 2:</span><br><span class="line">		return new(Ts2)</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">  //t1 use New() Ti to create Ts1</span><br><span class="line">  	t1 := New(1)</span><br><span class="line">  	t1.SetValue(3)</span><br><span class="line">  	t1.Test()</span><br><span class="line"></span><br><span class="line">  	//t2 use New() Ti to create Ts2</span><br><span class="line">  	t2 := New(2)</span><br><span class="line">  	t2.SetValue(2)</span><br><span class="line">  	t2.Test()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="interface的底层结构"><a href="#interface的底层结构" class="headerlink" title="interface的底层结构"></a>interface的底层结构</h1><p>interface并不是一个指针，它的底层实现由两部分组成，一个是类型，一个值，也就是类似于：(Type, Value)。只有当类型和值都是nil，即interface为 (nil,nil) 的时候，才等于nil。<br>所以interface与nil判断的时候，要先判断是否是interface类型，再判断interface的类型和值是什么。有点拗口，接下来判断时，interface类型就是interface，interface的值就以(type, value)来表示</p>
-<h1 id="interface的nil"><a href="#interface的nil" class="headerlink" title="interface的nil"></a>interface的nil</h1><p>我们使用 “==” 来判断两个对象是否相等，如果 “==” 的结果为true， 那么我们就认为两对象类型相同且值相等，一般情况下，两类型不同的对象间不能进行比较<br>那么，如果类型为interface时， “==” 的判断，会出现什么情况呢</p>
-<h2 id="普通比较判断"><a href="#普通比较判断" class="headerlink" title="普通比较判断"></a>普通比较判断</h2><blockquote>
-<p>fmt.Println(t1 == t2, t1.(*Ts1).Value == t2.(*Ts2).Value)</p>
-</blockquote>
-<p>结果为 false , true。 这点很好理解，因为t1和t2的类型不同，一个是Ts1，一个是Ts2<br>这就下面代码性质差不多，只不过下面这样写编译会出错，提示类型不同，不能进行比较</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//tt1 := new(Ts1)</span><br><span class="line">//tt2 := new(Ts2)</span><br><span class="line">//fmt.Println(tt1 == tt2)</span><br></pre></td></tr></table></figure>
-<h2 id="有interface与nil参与的时候"><a href="#有interface与nil参与的时候" class="headerlink" title="有interface与nil参与的时候"></a>有interface与nil参与的时候</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">func NewTs1() *Ts1 &#123;</span><br><span class="line">	return nil</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>创建一个新函数，用于返回*Ts1类型的nil，上面的New()函数在使用’3’作为输入时，返回的是Ti类型的(nil,nil)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> //t use New() Ti to create (nil,nil)</span><br><span class="line">t := New(3)</span><br><span class="line">fmt.Println(t == nil)</span><br><span class="line"></span><br><span class="line">//t use NewTs1() *Ts1 to make t = nil, now t Ti = (*Ts1,nil)</span><br><span class="line">t = NewTs1()</span><br><span class="line">fmt.Println(t == nil)</span><br><span class="line"></span><br><span class="line">//ts use NewTs1() *Ts1 to create nil, not interface type *Ts1, value nil</span><br><span class="line">ts := NewTs1()</span><br><span class="line">fmt.Println(ts == nil)</span><br></pre></td></tr></table></figure>
-<p>t第一次赋值后，t与nil比较时，t的类型是Ti - interface类型，值为(nil,nil)<br>第二次赋值后，t与nil比较时,t的类型还是Ti，值是指向了<em>Ts1类型的nil，即(\</em>Ts1, nil)，所以不相等<br>ts与nil比较时，ts类型是<em>Ts1，值为nil<br>注意，这里的ts不是interface类型，而是实现了interface的</em>Ts1类型</p>
-<p>实际上第二次赋值后的t就相当于这里的tis</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> var tis Ti            //类型是Ti， interface</span><br><span class="line">var ts1 *Ts1 = nil    </span><br><span class="line">tis = ts1            //值是ts1，ts1是*Ts1类型，值是nil</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>   fmt.Println(tis,tis == nil) //nil, false<br>fmt.Println(tis == t)  //true</p>
-</blockquote>
-<h1 id="实例-自定义error"><a href="#实例-自定义error" class="headerlink" title="实例-自定义error"></a>实例-自定义error</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">type MsgError struct&#123;&#125;</span><br><span class="line"></span><br><span class="line">func (msgErr *MsgError) Error() string &#123;</span><br><span class="line">	return &quot;err&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func NewError() error &#123;</span><br><span class="line">	var err *MsgError = nil</span><br><span class="line">	if false &#123;</span><br><span class="line">		return &amp;MsgError&#123;&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	err := NewError()</span><br><span class="line">	if err != nil&#123;</span><br><span class="line">		fmt.Println(err.Error())</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这时，err怎么都不会与nil相等，因为类型是error，值是(*MsgError,nil)，nil是(nil，nil)<br>同样的错误，不同的写法还有</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">func NewErr()*MsgError&#123;</span><br><span class="line">	return nil</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	err := errors.New(&quot;errors&quot;)</span><br><span class="line"></span><br><span class="line">	err = NewErr()</span><br><span class="line">	if err != nil&#123;</span><br><span class="line">		fmt.Println(err.Error())</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="完整的代码例子"><a href="#完整的代码例子" class="headerlink" title="完整的代码例子"></a>完整的代码例子</h1><p>interface</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">type Ti interface &#123;</span><br><span class="line">	SetValue(value int)</span><br><span class="line">	Test()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">type Ts1 struct &#123;</span><br><span class="line">	Value int</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func (ts *Ts1) SetValue(value int) &#123;</span><br><span class="line">	ts.Value = value + 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func (ts *Ts1) Test() &#123;</span><br><span class="line">	fmt.Printf(&quot;ts1&apos;s value is %d\n&quot;, ts.Value)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">type Ts2 struct &#123;</span><br><span class="line">	Value int</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func (ts *Ts2) SetValue(value int) &#123;</span><br><span class="line">	ts.Value = value + 2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func (ts *Ts2) Test() &#123;</span><br><span class="line">	fmt.Printf(&quot;ts2&apos;s value is %d\n&quot;, ts.Value)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func New(tn int) Ti &#123;</span><br><span class="line">	switch tn &#123;</span><br><span class="line">	default:</span><br><span class="line">		return nil</span><br><span class="line">	case 1:</span><br><span class="line">		return new(Ts1)</span><br><span class="line">	case 2:</span><br><span class="line">		return new(Ts2)</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func NewTs1() *Ts1 &#123;</span><br><span class="line">	return nil</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	//t1 use New() Ti to create Ts1</span><br><span class="line">	t1 := New(1)</span><br><span class="line">	t1.SetValue(3)</span><br><span class="line">	t1.Test()      //ts1&apos;s value is 4</span><br><span class="line"></span><br><span class="line">	//t2 use New() Ti to create Ts2</span><br><span class="line">	t2 := New(2)</span><br><span class="line">	t2.SetValue(2)</span><br><span class="line">	t2.Test()      //ts2&apos;s value is 4</span><br><span class="line"></span><br><span class="line">  //t1 == t2 t1.Value == t2.Value</span><br><span class="line">	fmt.Println(t1 == t2, t1.(*Ts1).Value == t2.(*Ts2).Value)      //false true</span><br><span class="line"></span><br><span class="line">	//tt1 := new(Ts1)</span><br><span class="line">	//tt2 := new(Ts2)</span><br><span class="line">	//fmt.Println(tt1 == tt2)    //invalid operation: tt1 == tt2 (mismatched types *Ts1 and *Ts2)</span><br><span class="line"></span><br><span class="line">	//t use New() Ti to create nil</span><br><span class="line">	t := New(3)</span><br><span class="line">	fmt.Println(t == nil)      //true</span><br><span class="line"></span><br><span class="line">	//t use NewTs1() *Ts1 to make t = nil</span><br><span class="line">	t = NewTs1()</span><br><span class="line">	fmt.Println(t == nil, t.(*Ts1) == nil)     //false, true</span><br><span class="line"></span><br><span class="line">	var tis Ti</span><br><span class="line">	var ts1 *Ts1 = nil</span><br><span class="line">	tis = ts1</span><br><span class="line">	fmt.Println(tis, tis == nil, t == tis)     //nil, false, true</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a href="https://golang.org/doc/faq#nil_error" target="_blank" rel="noopener">https://golang.org/doc/faq#nil_error</a></li>
-<li><a href="https://my.oschina.net/goal/blog/194233?p=2&amp;temp=1526895266744" target="_blank" rel="noopener">https://my.oschina.net/goal/blog/194233?p=2&amp;temp=1526895266744</a></li>
-<li><a href="https://my.oschina.net/chai2010/blog/117923" target="_blank" rel="noopener">https://my.oschina.net/chai2010/blog/117923</a></li>
-</ul>
-
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>vgmdj</li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="https://blog.vgmdj.cn/2018/05/21/go语言学习-interface/" title="go语言学习-interface">https://blog.vgmdj.cn/2018/05/21/go语言学习-interface/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
-</ul>
-
       </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Golang/" rel="tag"># Golang</a>
-          
-            <a href="/tags/学习/" rel="tag"># 学习</a>
-          
-        </div>
-      
-
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/05/14/微服务学习-数据一致性理论/" rel="next" title="微服务学习-数据一致性理论">
-                <i class="fa fa-chevron-left"></i> 微服务学习-数据一致性理论
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
       
     </div>
+    
+
+
+
+    
+    
+    
   </div>
 
 
@@ -613,17 +379,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -642,7 +399,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">31</span>
+                    <span class="site-state-item-count">32</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -799,22 +556,6 @@
       </section>
 
       
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#interface"><span class="nav-number">2.</span> <span class="nav-text">interface</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#interface的使用"><span class="nav-number">3.</span> <span class="nav-text">interface的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#interface的底层结构"><span class="nav-number">4.</span> <span class="nav-text">interface的底层结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#interface的nil"><span class="nav-number">5.</span> <span class="nav-text">interface的nil</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通比较判断"><span class="nav-number">5.1.</span> <span class="nav-text">普通比较判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有interface与nil参与的时候"><span class="nav-number">5.2.</span> <span class="nav-text">有interface与nil参与的时候</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实例-自定义error"><span class="nav-number">6.</span> <span class="nav-text">实例-自定义error</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#完整的代码例子"><span class="nav-number">7.</span> <span class="nav-text">完整的代码例子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">8.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
 
       
 
@@ -843,7 +584,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">80k</span>
+    <span title="站点总字数">82k</span>
   
 
   
@@ -854,7 +595,7 @@
     
       <span class="post-meta-item-text">站点总阅读时长&#58;</span>
     
-    <span title="站点总阅读时长">1:20</span>
+    <span title="站点总阅读时长">1:22</span>
   
 </div>
 
