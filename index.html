@@ -319,6 +319,466 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/07/12/efk学习-ElasticSearch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="vgmdj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="keep thinking">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/12/efk学习-ElasticSearch/" itemprop="url">efk学习-ElasticSearch</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T10:24:51+08:00">2018-07-12</time>
+            
+
+            
+            
+              
+                
+              
+            
+
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-12T14:30:58+08:00">2018-07-12</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/database/" itemprop="url" rel="index"><span itemprop="name">database</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/07/12/efk学习-ElasticSearch/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::https://blog.vgmdj.cn/2018/07/12/efk学习-ElasticSearch/" class="cy_cmt_count" data-xid="2018/07/12/efk学习-ElasticSearch/" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2018/07/12/efk学习-ElasticSearch/" class="leancloud_visitors" data-flag-title="efk学习-ElasticSearch">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">2.9k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">0:03</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          基本操作增删改查增删改查是数据库的基础操作方法。ES 虽然不是数据库，但是很多场合下，都被人们当做一个文档型 NoSQL 数据库在使用，原因自然是因为在接口和分布式架构层面的相似性。虽然在 Elastic Stack 场景下，数据的写入和查询，分别由 Fluntd(Logstash) 和 Kibana 代劳，作为测试、调研和排错时的基本功，还是需要了解一下 ES 的增删改查用法的。
+
+insert
+123curl -X POST http://127.0.0.1:9200/curllog-2018.07.12/testlog -d &apos;&#123;&quot;user&quot;:&quot;vgmdj&quot;,&quot;msg&quot;:&quot;this is the first message into elasticsearch&quot;&#125;&apos;&#123;&quot;_index&quot;:&quot;curllog-2018.07.12&quot;,&quot;_type&quot;:&quot;testlog&quot;,&quot;_id&quot;:&quot;AWSMZIsGDVyT1z9Mhc1z&quot;,&quot;_version&quot;:1,&quot;result&quot;:&quot;created&quot;,&quot;_shards&quot;:&#123;&quot;total&quot;:2,&quot;successful&quot;:2,&quot;failed&quot;:0&#125;,&quot;created&quot;:true&#125;
+
+get
+123curl http://127.0.0.1:9200/curllog-2018.07.12/testlog/AWSMZIsGDVyT1z9Mhc1z&#123;&quot;_index&quot;:&quot;curllog-2018.07.12&quot;,&quot;_type&quot;:&quot;testlog&quot;,&quot;_id&quot;:&quot;AWSMZIsGDVyT1z9Mhc1z&quot;,&quot;_version&quot;:1,&quot;found&quot;:true,&quot;_source&quot;:&#123;&quot;user&quot;:&quot;vgmdj&quot;,&quot;msg&quot;:&quot;this is the first message into elasticsearch&quot;&#125;&#125;
+
+get all
+123curl http://127.0.0.1:9200/curllog-2018.07.12/testlog/_search&#123;&quot;took&quot;:4,&quot;timed_out&quot;:false,&quot;_shards&quot;:&#123;&quot;total&quot;:5,&quot;successful&quot;:5,&quot;skipped&quot;:0,&quot;failed&quot;:0&#125;,&quot;hits&quot;:&#123;&quot;total&quot;:1,&quot;max_score&quot;:1.0,&quot;hits&quot;:[&#123;&quot;_index&quot;:&quot;curllog-2018.07.12&quot;,&quot;_type&quot;:&quot;testlog&quot;,&quot;_id&quot;:&quot;AWSMZIsGDVyT1z9Mhc1z&quot;,&quot;_score&quot;:1.0,&quot;_source&quot;:&#123;&quot;user&quot;:&quot;vgmdj&quot;,&quot;msg&quot;:&quot;this is the third message into elasticsearch&quot;&#125;&#125;]&#125;&#125;
+
+update
+123curl -X PUT http://127.0.0.1:9200/curllog-2018.07.12/testlog/AWSMZIsGDVyT1z9Mhc1z -d &apos;&#123;&quot;user&quot;:&quot;vgmdj&quot;,&quot;msg&quot;:&quot;this is the second message
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/12/efk学习-ElasticSearch/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/06/10/efk学习-简介/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="vgmdj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="keep thinking">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/10/efk学习-简介/" itemprop="url">efk学习-简介</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-10T10:24:51+08:00">2018-06-10</time>
+            
+
+            
+            
+              
+                
+              
+            
+
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-10T14:30:58+08:00">2018-06-10</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/database/" itemprop="url" rel="index"><span itemprop="name">database</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/06/10/efk学习-简介/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::https://blog.vgmdj.cn/2018/06/10/efk学习-简介/" class="cy_cmt_count" data-xid="2018/06/10/efk学习-简介/" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2018/06/10/efk学习-简介/" class="leancloud_visitors" data-flag-title="efk学习-简介">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">0:01</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          前言通常日志由服务器生成，输出到不同的文件中，一般会有系统日志、 应用日志、安全日志。这些日志分散地存储在不同的机器上。而当系统发生故障时，工程师需要登录到各个服务器上，使用 grep / sed / awk 等 Linux 脚本工具去日志里查找故障原因。在没有日志系统的情况下，首先需要定位处理请求的服务器，如果这台服务器部署了多个实例，则需要去每个应用实例的日志目录下去找日志文件。每个应用实例还会设置日志滚动策略（如：每天生成一个文件），还有日志压缩归档策略等。这样一系列流程下来，对于我们排查故障以及及时找到故障原因，造成了比较大的麻烦。因此，如果我们能把这些日志集中管理，并提供集中检索功能，不仅可以提高诊断的效率，同时对系统情况有个全面的理解，避免事后救火的被动。
+简介efk，一个集中式日志系统，elasticsearch-fluentd-kibana三者的结合，之前的经典组合是elk,即把logstash换成了fluentd
+
+ElasticSearch 全文搜索引擎
+Fluentd 日志收集工具
+Kibana 数据分析展示
+logstash 日志收集工具
+
+ElasticSearch
+Elasticsearch 来源于作者 Shay Banon 的第一个开源项目 Compass 库，而这个 Java 库最初的目的只是为了给 Shay 当时正在学厨师的妻子做一个菜谱的搜索引擎。2010 年，Elasticsearch 正式发布。至今已经成为 GitHub 上最流行的 Java 项目，不过 Shay 承诺给妻子的菜谱搜索依然没有面世……
+
+提供了REST API的操作接口，可以达到开箱即用
+
+IndexElastic 数据管理的顶层单位就叫做 Index（索引）。它是单个数据库的同义词。每个 Index （即数据库）的名字必须是 小写。
+
+DocumentIndex 里面单条的记录称为 Document（文档）。许多条 Document 构成了一个 Index。Document 使用 JSON 格式表示，同一个 Index 里面的 Document，不要求有相同的结构（scheme），但是最好保持相同，这样有利于提高搜索效率。
+
+TypeDocument下的分组，可以通过Type来筛选Document，比如天气的Document里，可以按城市分组（北京和上海），也可以按气候分组（晴天和雨天），这种分组就叫做 Type，是一种虚拟的逻辑分组。
+
+
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/10/efk学习-简介/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/05/14/微服务学习-数据一致性理论/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -896,53 +1356,12 @@
 
       
         
-          
-          应用插件安装完k8s后，仅仅只是第一步，我们还需要一系列的插件来提供对集群的管理，以提高效率
-
-traefik ingress，提供负载均衡和统一的对外暴露端口
-heapster插件，提供监控系统
-dashboard插件，用于显示当前资源使用情况
-EFK插件，ElasticSearch+Fluentd+Kibana，用于日志的收集分析和搜索
-
-配置dashboardyaml文件可以通过kubernetes github仓库里的官方推荐来安装1https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
-也可以通过我修改后的yaml文件来配置，做的修改只是把镜像换成了国内可访问的1https://github.com/vgmdj/k8s-config/blob/master/addons/dashboard/kubernetes-dashboard.yaml
-配置 heapster插件下载配置1https://github.com/vgmdj/k8s-config/tree/master/addons/heapster
-直接在文件夹里执行即可1kubectl create -f .
-EFK插件同上1https://github.com/vgmdj/k8s-config/tree/master/addons/elasticsearch-fluentd-kibana
-traefik-ingress配置同上，traefik Annotate需要根据实际的环境进行配置
-
-kubernetes.io/ingress.class: traefikIngress声明，这里声明了ingress后端采用traefik实现，而不是nginx的controller
-
-ingress.kubernetes.io/whitelist-source-range: “1.2.3.0/24, fe80::/16”配置访问白名单，支持ipv4和ipv6
-
-ingress.kubernetes.io/auth-type: basichttp认证模式，此处为basic模式
-
-ingress.kubernetes.io/auth-secret: mysecretbasic认证的对应的username和password，这里对应的traefik所在kubernetes命名空间里的secrets
-
-traefik.frontend.rule.type: PathPrefixStrip如果说host对应的是nginx的server_name, 那么加上这条PathPrefixStrip后，path 就对应nginx里的 location，如果不加的话，则表示，只有定义的path才会进行反向代理
-
-traefik.frontend.priority: “3”配置前端的权重，值越高则优先匹配
-
-traefik.frontend.passHostHeader: “false”关闭传入Hearder
-
-traefik.protocol=https使用https协议
-
-traefik.frontend.entryPoints=http,https同时支持http和https，默认只支持http
-
-traefik.ingress.kubernetes.io/app-root: “/index.html”全部请求都重定向到首页
-
-traefik.ingress.kubernetes.io/load-balancer-method: drr后端服务负载策略，默认是wrr-加权循环调度算法，drr-差额循环队列
-
-traefik.backend.healthcheck.path=/healthtraefik的监控检查路径
-
-traefik.backend.healthcheck.interval=5s健康检查的时间间隔
-
-traefik.backend.circuitbreaker: “NetworkErrorRatio() &gt; 0.5”监测某台节点上的服务错误率达到50%时，自动下线该节点。
-
-traefik.backend.circuitbreaker: “LatencyAtQuantileMS(50.0) &gt; 50”监测某台节点上服务的延时大于50ms时，自动下线该节点。
-
-traefik.backend.circuitbreaker: “ResponseCodeRatio(500, 600, 0, 600) &gt; 0.5”监测某台节点上服务返回状态码为[500-600]在[0-600]区间占比超过50%时，自动
-          ...
+          <h2 id="应用插件"><a href="#应用插件" class="headerlink" title="应用插件"></a>应用插件</h2><p>安装完k8s后，仅仅只是第一步，我们还需要一系列的插件来提供对集群的管理，以提高效率</p>
+<ul>
+<li>traefik ingress，提供负载均衡和统一的对外暴露端口</li>
+<li>heapster插件，提供监控系统</li>
+<li>dashboard插件，用于显示当前资源使用情况</li>
+<li>EFK插件，ElasticSearch+Fluentd+Kibana，用于日志的收集分析和搜索</li></ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/01/容器学习-k8s插件/#more" rel="contents">
@@ -2053,432 +2472,6 @@ traefik.backend.circuitbreaker: “ResponseCodeRatio(500, 600, 0, 600) &gt; 0.5�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/03/30/go语言学习-map/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="vgmdj">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="keep thinking">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/30/go语言学习-map/" itemprop="url">go语言学习-map</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-30T13:23:51+08:00">2018-03-30</time>
-            
-
-            
-            
-              
-                
-              
-            
-
-            
-              
-              <span class="post-meta-divider">|</span>
-              
-
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-30T15:23:58+08:00">2018-03-30</time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Golang/" itemprop="url" rel="index"><span itemprop="name">Golang</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2018/03/30/go语言学习-map/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::https://blog.vgmdj.cn/2018/03/30/go语言学习-map/" class="cy_cmt_count" data-xid="2018/03/30/go语言学习-map/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-             <span id="/2018/03/30/go语言学习-map/" class="leancloud_visitors" data-flag-title="go语言学习-map">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">6k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">0:06</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>go版本 1.10</p>
-<h2 id="HashMap和HashTable"><a href="#HashMap和HashTable" class="headerlink" title="HashMap和HashTable"></a>HashMap和HashTable</h2><p>线性表中，数组查询方便，链表插入、删除方便，而HashTable则是结合了两者的优点，使得在所有操作上都是 O(1) 的时间复杂度，效率非常高<br>HashMap是基于HashTable的 Map 接口的实现，其去掉了线程同步的操作，因而效率要更高一些，所以说HashTable是线程安全的，而HashMap则非线程安全。<br>go语言中的map类型就是使用的HashMap,即go中的map非线程安全，不能放在多个goroutine中，只能自己维护线程安全<br></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/30/go语言学习-map/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/03/27/服务器安全防护/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="vgmdj">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="keep thinking">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/27/服务器安全防护/" itemprop="url">服务器安全防护</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-27T13:23:51+08:00">2018-03-27</time>
-            
-
-            
-            
-              
-                
-              
-            
-
-            
-              
-              <span class="post-meta-divider">|</span>
-              
-
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-27T15:23:58+08:00">2018-03-27</time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/站点建设/" itemprop="url" rel="index"><span itemprop="name">站点建设</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2018/03/27/服务器安全防护/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::https://blog.vgmdj.cn/2018/03/27/服务器安全防护/" class="cy_cmt_count" data-xid="2018/03/27/服务器安全防护/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-             <span id="/2018/03/27/服务器安全防护/" class="leancloud_visitors" data-flag-title="服务器安全防护">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">1.7k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">0:02</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="服务器安全"><a href="#服务器安全" class="headerlink" title="服务器安全"></a>服务器安全</h2><p>一段时间没去打理我的服务器，只是搭个ss，当科学工具用，今天忽然收到服务商的电话，说是服务器上存在不合法行为，还吓我一跳，觉着现在都查这么严格，自建梯子都不行了。实际在管理平台上一看日志，才知道说是服务器存在安全问题，应该是已经被黑掉，在不停的试探别的ip的22端口，总计被监测到400多万次行为，看来当真是有挺长一段时间没管理了。。。</p>
-<h2 id="主要被攻击方式"><a href="#主要被攻击方式" class="headerlink" title="主要被攻击方式"></a>主要被攻击方式</h2><p>从日志中可以看到，应该主要是扫描加暴力破解的方式，所以理所当然的应对手段就是，开启防火墙，改ssh端口，改mysql端口，开启安全组，之前是觉着被攻击的机率太低了，现在看来，再低机率也不应该懈怠<br></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/27/服务器安全防护/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2532,7 +2525,7 @@ traefik.backend.circuitbreaker: “ResponseCodeRatio(500, 600, 0, 600) &gt; 0.5�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-count">34</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2616,7 +2609,9 @@ traefik.backend.circuitbreaker: “ResponseCodeRatio(500, 600, 0, 600) &gt; 0.5�
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                      
+                    
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2717,7 +2712,7 @@ traefik.backend.circuitbreaker: “ResponseCodeRatio(500, 600, 0, 600) &gt; 0.5�
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">82k</span>
+    <span title="站点总字数">86k</span>
   
 
   
@@ -2728,7 +2723,7 @@ traefik.backend.circuitbreaker: “ResponseCodeRatio(500, 600, 0, 600) &gt; 0.5�
     
       <span class="post-meta-item-text">站点总阅读时长&#58;</span>
     
-    <span title="站点总阅读时长">1:22</span>
+    <span title="站点总阅读时长">1:26</span>
   
 </div>
 

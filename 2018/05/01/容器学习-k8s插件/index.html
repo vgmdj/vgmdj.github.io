@@ -103,18 +103,18 @@
   <meta name="keywords" content="k8s,分布式系统," />
 
 
-<meta name="description" content="应用插件安装完k8s后，仅仅只是第一步，我们还需要一系列的插件来提供对集群的管理，以提高效率  traefik ingress，提供负载均衡和统一的对外暴露端口 heapster插件，提供监控系统 dashboard插件，用于显示当前资源使用情况 EFK插件，ElasticSearch+Fluentd+Kibana，用于日志的收集分析和搜索  配置dashboardyaml文件可以通过kubern">
+<meta name="description" content="应用插件安装完k8s后，仅仅只是第一步，我们还需要一系列的插件来提供对集群的管理，以提高效率  traefik ingress，提供负载均衡和统一的对外暴露端口 heapster插件，提供监控系统 dashboard插件，用于显示当前资源使用情况 EFK插件，ElasticSearch+Fluentd+Kibana，用于日志的收集分析和搜索">
 <meta name="keywords" content="k8s,分布式系统">
 <meta property="og:type" content="article">
 <meta property="og:title" content="容器学习-k8s插件">
 <meta property="og:url" content="https://blog.vgmdj.cn/2018/05/01/容器学习-k8s插件/index.html">
 <meta property="og:site_name" content="keep thinking">
-<meta property="og:description" content="应用插件安装完k8s后，仅仅只是第一步，我们还需要一系列的插件来提供对集群的管理，以提高效率  traefik ingress，提供负载均衡和统一的对外暴露端口 heapster插件，提供监控系统 dashboard插件，用于显示当前资源使用情况 EFK插件，ElasticSearch+Fluentd+Kibana，用于日志的收集分析和搜索  配置dashboardyaml文件可以通过kubern">
+<meta property="og:description" content="应用插件安装完k8s后，仅仅只是第一步，我们还需要一系列的插件来提供对集群的管理，以提高效率  traefik ingress，提供负载均衡和统一的对外暴露端口 heapster插件，提供监控系统 dashboard插件，用于显示当前资源使用情况 EFK插件，ElasticSearch+Fluentd+Kibana，用于日志的收集分析和搜索">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-05-01T06:30:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="容器学习-k8s插件">
-<meta name="twitter:description" content="应用插件安装完k8s后，仅仅只是第一步，我们还需要一系列的插件来提供对集群的管理，以提高效率  traefik ingress，提供负载均衡和统一的对外暴露端口 heapster插件，提供监控系统 dashboard插件，用于显示当前资源使用情况 EFK插件，ElasticSearch+Fluentd+Kibana，用于日志的收集分析和搜索  配置dashboardyaml文件可以通过kubern">
+<meta name="twitter:description" content="应用插件安装完k8s后，仅仅只是第一步，我们还需要一系列的插件来提供对集群的管理，以提高效率  traefik ingress，提供负载均衡和统一的对外暴露端口 heapster插件，提供监控系统 dashboard插件，用于显示当前资源使用情况 EFK插件，ElasticSearch+Fluentd+Kibana，用于日志的收集分析和搜索">
 
 
 
@@ -475,7 +475,8 @@
 <li>traefik ingress，提供负载均衡和统一的对外暴露端口</li>
 <li>heapster插件，提供监控系统</li>
 <li>dashboard插件，用于显示当前资源使用情况</li>
-<li>EFK插件，ElasticSearch+Fluentd+Kibana，用于日志的收集分析和搜索</li>
+<li>EFK插件，ElasticSearch+Fluentd+Kibana，用于日志的收集分析和搜索<a id="more"></a>
+</li>
 </ul>
 <h2 id="配置dashboard"><a href="#配置dashboard" class="headerlink" title="配置dashboard"></a>配置dashboard</h2><p>yaml文件可以通过kubernetes github仓库里的官方推荐来安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml</span><br></pre></td></tr></table></figure></p>
 <p>也可以通过我修改后的yaml文件来配置，做的修改只是把镜像换成了国内可访问的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/vgmdj/k8s-config/blob/master/addons/dashboard/kubernetes-dashboard.yaml</span><br></pre></td></tr></table></figure></p>
@@ -665,7 +666,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-count">34</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -749,7 +750,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                      
+                    
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -866,7 +869,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">82k</span>
+    <span title="站点总字数">86k</span>
   
 
   
@@ -877,7 +880,7 @@
     
       <span class="post-meta-item-text">站点总阅读时长&#58;</span>
     
-    <span title="站点总阅读时长">1:22</span>
+    <span title="站点总阅读时长">1:26</span>
   
 </div>
 
