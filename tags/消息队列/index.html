@@ -100,28 +100,26 @@
 
 
   
-  <meta name="keywords" content=",," />
+  <meta name="keywords" content="vgmdj,keep thinking,生命不止 思考不息" />
 
 
-<meta name="description" content="背景本来对于消息队列的使用都是在内网状态下，网络连接相对来说比较稳定，所以只是做了发送失败的重连处理，对于接收连接断掉的情况，则没有重连机制（主要之前也没发生过，疏忽了）。现在为了保证猫池和卡池的短信发送，便使用了另一处机房，这样，手机的信息保证，网络又不太稳定了。 AMQP模拟检测使用附带的TCP健康检查程序，就可以通过TCP连接测试Rabbit是否能在端口5672上响应。但是如果这样做的话，虽">
-<meta name="keywords" content="消息队列,学习">
+<meta name="description" content="vgmdj&apos;s Blog">
 <meta property="og:type" content="website">
-<meta property="og:title" content="消息队列学习-健康检查">
-<meta property="og:url" content="https://blog.vgmdj.cn/temp/消息队列学习-健康检查.html">
+<meta property="og:title" content="keep thinking">
+<meta property="og:url" content="https://blog.vgmdj.cn/tags/消息队列/index.html">
 <meta property="og:site_name" content="keep thinking">
-<meta property="og:description" content="背景本来对于消息队列的使用都是在内网状态下，网络连接相对来说比较稳定，所以只是做了发送失败的重连处理，对于接收连接断掉的情况，则没有重连机制（主要之前也没发生过，疏忽了）。现在为了保证猫池和卡池的短信发送，便使用了另一处机房，这样，手机的信息保证，网络又不太稳定了。 AMQP模拟检测使用附带的TCP健康检查程序，就可以通过TCP连接测试Rabbit是否能在端口5672上响应。但是如果这样做的话，虽">
+<meta property="og:description" content="vgmdj&apos;s Blog">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-29T08:08:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="消息队列学习-健康检查">
-<meta name="twitter:description" content="背景本来对于消息队列的使用都是在内网状态下，网络连接相对来说比较稳定，所以只是做了发送失败的重连处理，对于接收连接断掉的情况，则没有重连机制（主要之前也没发生过，疏忽了）。现在为了保证猫池和卡池的短信发送，便使用了另一处机房，这样，手机的信息保证，网络又不太稳定了。 AMQP模拟检测使用附带的TCP健康检查程序，就可以通过TCP连接测试Rabbit是否能在端口5672上响应。但是如果这样做的话，虽">
+<meta name="twitter:title" content="keep thinking">
+<meta name="twitter:description" content="vgmdj&apos;s Blog">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.vgmdj.cn/temp/消息队列学习-健康检查.html"/>
+  <link rel="canonical" href="https://blog.vgmdj.cn/tags/消息队列/"/>
 
 
 
@@ -130,7 +128,7 @@
     sidebar: "",
   };
 </script>
-  <title>消息队列学习-健康检查 | keep thinking</title>
+  <title>标签: 消息队列 | keep thinking</title>
   
 
 
@@ -177,7 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -304,66 +302,58 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-    
-    
-    <div class="post-block page">
-      <header class="post-header">
-
-<h2 class="post-title" itemprop="name headline">消息队列学习-健康检查</h2>
-
-<div class="post-meta">
   
   
+  
+  <div class="post-block tag">
 
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-        
-        
-          <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>本来对于消息队列的使用都是在内网状态下，网络连接相对来说比较稳定，所以只是做了发送失败的重连处理，对于接收连接断掉的情况，则没有重连机制（主要之前也没发生过，疏忽了）。<br>现在为了保证猫池和卡池的短信发送，便使用了另一处机房，这样，手机的信息保证，网络又不太稳定了。</p>
-<h2 id="AMQP模拟检测"><a href="#AMQP模拟检测" class="headerlink" title="AMQP模拟检测"></a>AMQP模拟检测</h2><p>使用附带的TCP健康检查程序，就可以通过TCP连接测试Rabbit是否能在端口5672上响应。但是如果这样做的话，虽然可以知道是否在运行，但却不知道是否能正常运作。如RabbitMQ内存不足这种情况，虽然守护进程仍然可能完成TCP握手，但却没有足够的内存来响应AMQP命令。为了能够真正地判断Rabbit是否有能力来服务请求，需要真实地发送AMQP命令。因此，构造一个AMQP ping健康检测就成了一个较为合适的选择。<br>那么ping的异常状态都有哪些呢？</p>
-<ul>
-<li>RabbitMQ没有响应TCP连接</li>
-<li>发送AMQP命令，在接收到响应之前已超时</li>
-<li>当构造AMQP信道时，遇到协议错误</li>
-</ul>
-
-        
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h2>消息队列<small>标签</small>
+        </h2>
       </div>
+
       
-      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2018/06/18/消息队列学习-RabbitMQ健康检查/" itemprop="url">
+              
+                <span itemprop="name">消息队列学习-RabbitMQ健康检查</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-18T23:50:51+08:00"
+              content="2018-06-18" >
+          06-18
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
       
     </div>
-    
 
-
-
-    
-    
-    
   </div>
+  
+  
+  
+
+  
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-      <div id="SOHUCS"></div>
-    </div>
-
-  
-
-
 
         </div>
         
@@ -386,17 +376,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -415,7 +396,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">34</span>
+                    <span class="site-state-item-count">35</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -448,7 +429,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -501,7 +484,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -574,22 +559,6 @@
       </section>
 
       
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AMQP模拟检测"><span class="nav-number">1.1.</span> <span class="nav-text">AMQP模拟检测</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
 
       
 
@@ -618,7 +587,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">86k</span>
+    <span title="站点总字数">88k</span>
   
 
   
@@ -629,7 +598,7 @@
     
       <span class="post-meta-item-text">站点总阅读时长&#58;</span>
     
-    <span title="站点总阅读时长">1:26</span>
+    <span title="站点总阅读时长">1:28</span>
   
 </div>
 
@@ -758,10 +727,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
-
-
 
   
 
