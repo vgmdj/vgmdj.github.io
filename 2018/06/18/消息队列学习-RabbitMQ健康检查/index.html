@@ -478,11 +478,11 @@
 <li><p>queue检查<br>用于获取队列当前信息</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">路径： /api/&#123;:vhost&#125;/&#123;:queue&#125;</span><br><span class="line">返回： 当前队列的所有信息（包含ready, ack , unack各自的数量）</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">路径： /api/&#123;:vhost&#125;/&#123;:queue&#125;</span><br><span class="line">返回： 当前队列的所有信息（包含ready, unacked , total待各种信息）</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h1 id="AMQP模拟检测"><a href="#AMQP模拟检测" class="headerlink" title="AMQP模拟检测"></a>AMQP模拟检测</h1><p>对于AMQP的queue_declare()命令，如果设置passive=True，那么RabbitMQ在收到这个参数时就会明白，此时并不是真正的想要声明一个队列，如果队列已存在的话，会返回队列消息的总数，如果队列不存在的话，则会引发异常。<br>对于模拟检测来讲，passive一定要设为true，因为这不仅是获取队列消息总数的唯一方法，同时也是因为，如果没有传递该参数的话，检测程序会真实地尝试去声明该队列。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">返回：</span><br><span class="line"></span><br><span class="line">Queue struct&#123;</span><br><span class="line">    Name string     //队列名称</span><br><span class="line">    Messages int    //ready状态的消息数量</span><br><span class="line">    Consumers int   //队列消费者的数量</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="确保消费者运行状态"><a href="#确保消费者运行状态" class="headerlink" title="确保消费者运行状态"></a>确保消费者运行状态</h1><p>对于生产者而言，如果发送失败，则说明此时有异常出现，之后就可以尝试进行修复。<br>但是对于消费者而言，如果中途网络不稳定导致连接断掉，并不能直接就检测出此时的状态。<br>因此，一般采用的方式，是监测队列的消息数量。消费者的推荐编写方式是，在正确的处理完消息后再进行ack，那么在处理完成之前消息处于unacked状态，如果消费者忽然挂掉，消息会重新进入队列处于ready状态，所以，可以通过监测当前队列下ready和unacked消息的数量来判断，如果ready超过阈值，而unacked仍为0,说明此时消费者已经不存在了，需要重新创建一个消费者。<br>致于阈值的创建范围，则可以根据实际的需要情况来设置。<br>需要注意的是，如果采用AMQP的方式来获取队列中的消息数量，则只能当前队列中消息的数量，没法得知各种状态的消息数量。这样，对于消息堆积的情况，就会没法区分究竟是由于消费者崩溃造还是由于消费者未能正确的ack消息所造成的。<br>如果Rest API queue检查的方式，则没有这方面的问题。</p>
+<h1 id="确保消费者运行状态"><a href="#确保消费者运行状态" class="headerlink" title="确保消费者运行状态"></a>确保消费者运行状态</h1><p>对于生产者而言，如果发送失败，则说明此时有异常出现，之后就可以尝试进行修复。<br>但是对于消费者而言，如果中途网络不稳定导致连接断掉，并不能直接就检测出此时的状态。<br>因此，一般采用的方式，是监测队列的消息数量。消费者的推荐编写方式是，在正确的处理完消息后再进行ack，那么在处理完成之前消息处于unacked状态，如果消费者忽然挂掉，消息会重新进入队列处于ready状态，所以，可以通过监测当前队列下ready和unacked消息的数量来判断，如果ready超过阈值，而unacked仍为0,说明此时消费者已经不存在了，需要重新创建一个消费者。<br>致于阈值的创建范围，则可以根据实际的需要情况来设置。<br>需要注意的是，如果采用AMQP的方式来获取队列中的消息数量，则只能获取当前队列中ready消息的数量，没法得知unacked状态的消息数量。这样，对于消息堆积的情况，就会没法区分究竟是由于消费者崩溃造还是由于消费者未能正确的ack消息所造成的。<br>如果Rest API queue检查的方式，则没有这方面的问题。</p>
 <h1 id="消息队列阈值基准经验法则"><a href="#消息队列阈值基准经验法则" class="headerlink" title="消息队列阈值基准经验法则"></a>消息队列阈值基准经验法则</h1><p>通过日志文件，我们可以获得合理而又准确的信息，再对信息进行分析，则可以确定队列的平均处理速度。<br>也可以通过图形监控系统来监控队列，来获取近乎精确的平均未消费和未确认消息总数。<br>一般认为：</p>
 <ul>
 <li>高于正常情况20%-90%，属于正常波动，可设为warning</li>
@@ -635,7 +635,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-count">36</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -842,7 +842,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">88k</span>
+    <span title="站点总字数">90k</span>
   
 
   
@@ -853,7 +853,7 @@
     
       <span class="post-meta-item-text">站点总阅读时长&#58;</span>
     
-    <span title="站点总阅读时长">1:28</span>
+    <span title="站点总阅读时长">1:30</span>
   
 </div>
 
