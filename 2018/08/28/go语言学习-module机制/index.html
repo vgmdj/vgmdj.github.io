@@ -100,28 +100,28 @@
 
 
   
-  <meta name="keywords" content="github,blog,hexo," />
+  <meta name="keywords" content="Golang,学习," />
 
 
-<meta name="description" content="前言一直都有记录的习惯，但内容大多都分散在各个网站，现结合github，使用hexo来搭建一个个人博客，将点滴的记录都聚合在一起，下面是一些关键的搭建过程，一方面作为分享，一方面作为备忘，仅供参考，如有问题请留言通知，谢谢支持！ps: 准备过程和搜索内容没多少变化，不过多记录 基本环境准备下载安装nodejs和git，我的搭建环境win10 64，可在git bash下运行如下命令测试环境：  n">
-<meta name="keywords" content="github,blog,hexo">
+<meta name="description" content="Module机制Go Module是Go1.11正式推出的包管理机制，不同于以往基于GOPATH和Vendor的项目构建，其主要是通过$GOPATH/pkg/mod下的缓存包来对项目进行构建。一如所有的Go新添加功能，Go Module可以通过GO111MODULE来控制是否启用，GO111MODULE有三种类型  on 所有的构建，都使用Module机制 off 所有的构建，都不使用Module">
+<meta name="keywords" content="Golang,学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="github+hexo blog 搭建过程-准备">
-<meta property="og:url" content="https://blog.vgmdj.cn/2017/03/03/github-blog-搭建过程-准备/index.html">
+<meta property="og:title" content="go语言学习-module机制">
+<meta property="og:url" content="https://blog.vgmdj.cn/2018/08/28/go语言学习-module机制/index.html">
 <meta property="og:site_name" content="keep thinking">
-<meta property="og:description" content="前言一直都有记录的习惯，但内容大多都分散在各个网站，现结合github，使用hexo来搭建一个个人博客，将点滴的记录都聚合在一起，下面是一些关键的搭建过程，一方面作为分享，一方面作为备忘，仅供参考，如有问题请留言通知，谢谢支持！ps: 准备过程和搜索内容没多少变化，不过多记录 基本环境准备下载安装nodejs和git，我的搭建环境win10 64，可在git bash下运行如下命令测试环境：  n">
+<meta property="og:description" content="Module机制Go Module是Go1.11正式推出的包管理机制，不同于以往基于GOPATH和Vendor的项目构建，其主要是通过$GOPATH/pkg/mod下的缓存包来对项目进行构建。一如所有的Go新添加功能，Go Module可以通过GO111MODULE来控制是否启用，GO111MODULE有三种类型  on 所有的构建，都使用Module机制 off 所有的构建，都不使用Module">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-05T08:23:50.000Z">
+<meta property="og:updated_time" content="2018-08-28T03:23:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="github+hexo blog 搭建过程-准备">
-<meta name="twitter:description" content="前言一直都有记录的习惯，但内容大多都分散在各个网站，现结合github，使用hexo来搭建一个个人博客，将点滴的记录都聚合在一起，下面是一些关键的搭建过程，一方面作为分享，一方面作为备忘，仅供参考，如有问题请留言通知，谢谢支持！ps: 准备过程和搜索内容没多少变化，不过多记录 基本环境准备下载安装nodejs和git，我的搭建环境win10 64，可在git bash下运行如下命令测试环境：  n">
+<meta name="twitter:title" content="go语言学习-module机制">
+<meta name="twitter:description" content="Module机制Go Module是Go1.11正式推出的包管理机制，不同于以往基于GOPATH和Vendor的项目构建，其主要是通过$GOPATH/pkg/mod下的缓存包来对项目进行构建。一如所有的Go新添加功能，Go Module可以通过GO111MODULE来控制是否启用，GO111MODULE有三种类型  on 所有的构建，都使用Module机制 off 所有的构建，都不使用Module">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.vgmdj.cn/2017/03/03/github-blog-搭建过程-准备/"/>
+  <link rel="canonical" href="https://blog.vgmdj.cn/2018/08/28/go语言学习-module机制/"/>
 
 
 
@@ -130,7 +130,7 @@
     sidebar: "",
   };
 </script>
-  <title>github+hexo blog 搭建过程-准备 | keep thinking</title>
+  <title>go语言学习-module机制 | keep thinking</title>
   
 
 
@@ -320,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2017/03/03/github-blog-搭建过程-准备/">
+    <link itemprop="mainEntityOfPage" href="https://blog.vgmdj.cn/2018/08/28/go语言学习-module机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="vgmdj">
@@ -337,7 +337,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">github+hexo blog 搭建过程-准备</h2>
+          <h2 class="post-title" itemprop="name headline">go语言学习-module机制</h2>
         
 
         <div class="post-meta">
@@ -349,7 +349,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-03T16:23:50+08:00">2017-03-03</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-28T10:23:01+08:00">2018-08-28</time>
             
 
             
@@ -370,7 +370,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-05T16:23:50+08:00">2018-03-05</time>
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-28T11:23:58+08:00">2018-08-28</time>
             
           </span>
 
@@ -386,7 +386,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/站点建设/" itemprop="url" rel="index"><span itemprop="name">站点建设</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Golang/" itemprop="url" rel="index"><span itemprop="name">Golang</span></a></span>
 
                 
                 
@@ -402,8 +402,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/2017/03/03/github-blog-搭建过程-准备/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/03/03/github-blog-搭建过程-准备/" itemprop="commentsCount"></span>
+                <a href="/2018/08/28/go语言学习-module机制/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/08/28/go语言学习-module机制/" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -411,7 +411,7 @@
 
           
           
-             <span id="/2017/03/03/github-blog-搭建过程-准备/" class="leancloud_visitors" data-flag-title="github+hexo blog 搭建过程-准备">
+             <span id="/2018/08/28/go语言学习-module机制/" class="leancloud_visitors" data-flag-title="go语言学习-module机制">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -436,7 +436,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">849</span>
+                <span title="字数统计">2.5k</span>
               
 
               
@@ -450,7 +450,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:01</span>
+                <span title="阅读时长">0:03</span>
               
             </div>
           
@@ -470,38 +470,47 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一直都有记录的习惯，但内容大多都分散在各个网站，现结合github，使用hexo来搭建一个个人博客，将点滴的记录都聚合在一起，下面是一些关键的搭建过程，一方面作为分享，一方面作为备忘，仅供参考，如有问题请留言通知，谢谢支持！<br>ps: 准备过程和搜索内容没多少变化，不过多记录</p>
-<h1 id="基本环境准备"><a href="#基本环境准备" class="headerlink" title="基本环境准备"></a>基本环境准备</h1><p>下载安装nodejs和git，我的搭建环境win10 64，可在git bash下运行如下命令测试环境：</p>
+        <h1 id="Module机制"><a href="#Module机制" class="headerlink" title="Module机制"></a>Module机制</h1><p>Go Module是Go1.11正式推出的包管理机制，不同于以往基于GOPATH和Vendor的项目构建，其主要是通过$GOPATH/pkg/mod下的缓存包来对项目进行构建。<br>一如所有的Go新添加功能，Go Module可以通过GO111MODULE来控制是否启用，GO111MODULE有三种类型</p>
 <ul>
-<li>node -v</li>
-<li>npm -v</li>
-<li>git –version<a id="more"></a>
+<li>on 所有的构建，都使用Module机制</li>
+<li>off 所有的构建，都不使用Module机制，而是使用GOPATH和Vendor</li>
+<li>auto 在GOPATH下的项目，不使用Module机制，不在GOPATH下的项目使用<a id="more"></a>
 </li>
 </ul>
-<h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><p>安装过程不再叙述，hexo的安装与使用一直没有什么变化，可自行搜索，安装成功可运行测试命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure></p>
-<p>大致命令集如下：</p>
-<ul>
-<li>npm -g hexo-cli</li>
-<li>cd /c/Users/`whoami`</li>
-<li>mkdir blog</li>
-<li>cd blog</li>
-<li>hexo init</li>
-<li>npm install</li>
-<li>hexo g</li>
-<li>hexo s</li>
+<h1 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h1><ul>
+<li><p>init 初始化module，名称要和路径相一致，即如果要对 github.com/vgmdj/utils 初始化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go mod init github.com/vgmdj/utils</span><br></pre></td></tr></table></figure>
+<p>这样，别人如果引用了utils包，在构建时，就会找包里的go.mod，然后分析依赖进行缓存</p>
+</li>
+<li><p>tidy 对当前引用的再一次整理，添加缺失，去掉多余</p>
+</li>
+<li>vendor 生成vendor目录，但是在module机制下，不会被使用</li>
+<li>edit 对go.mod进行编辑，如果熟悉格式的话，也可以直接改文件</li>
 </ul>
-<p>如果一切顺利的话，打开浏览器，访问 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 便可看到hexo生成的默认主题页面</p>
-<h1 id="准备主题"><a href="#准备主题" class="headerlink" title="准备主题"></a>准备主题</h1><p>以next主题为例，<a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">github地址</a><br><br>在blog根目录执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
-<p>现在我们的blog文件夹内就有了三个配置文件</p>
-<ul>
-<li>站点配置文件$addr/blog/_config.yml</li>
-<li>next主题配置文件$addr/blog/themes/next/_config.yml</li>
-<li>default主题配置文件$addr/blog/themes/landscape/_config.yml</li>
-</ul>
-<p>修改站点配置文件，即可更换主题，后面我们再详细介绍<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#theme: landscape</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure></p>
-<!--more-->
-<h1 id="hexo-指南"><a href="#hexo-指南" class="headerlink" title="hexo 指南"></a>hexo 指南</h1><p>hexo 常用操作可见于：<br><a href="http://blog.vgmdj.cn/2018/03/02/Hexo-introduction/">Hexo 使用指南</a></p>
-<p>hexo next主题教程：<br><a href="http://theme-next.iissnan.com" target="_blank" rel="noopener">next 官网</a><br>ps: 最好的教程都来源于代码和注释，其次是官网，本篇只是作为补充。<br><!--more--></p>
+<h1 id="和dep区别"><a href="#和dep区别" class="headerlink" title="和dep区别"></a>和dep区别</h1><p>dep是解析所有的包引用，然后在$GOPATH/pkg/dep下进行缓存，再在项目下生成vendor，然后基于vendor来构建项目，无法脱离GOPATH，因为vendor必须在GOPATH下才能使用<br>mod是解析所有的包引用，然后在$GOPATH/pkg/mod下进行缓存，直接基于缓存包来构建项目，所以可以脱离GOPATH</p>
+<h1 id="适合场景"><a href="#适合场景" class="headerlink" title="适合场景"></a>适合场景</h1><p>所有引用包都使用git服务器来托管，且不会出现大量本地包</p>
+<h1 id="本地包引用问题"><a href="#本地包引用问题" class="headerlink" title="本地包引用问题"></a>本地包引用问题</h1><p>对于本地包引用，推荐还是使用vendor的方式，一方面不会有版本错乱的问题，另一方面很多被墙包不容易被下载下来，如果映射到本地引用，那go.mod就不是那么纯净了<br>当然，如果是类似golang.org这种在github上备份的，使用replace反而是最好的解决方案<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">replace golang.org/x/sys =&gt; github.com/golang/sys</span><br></pre></td></tr></table></figure></p>
+<p><strong>replace</strong> 指令的使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">go mod edit -replace=old[@v]=new[@v]</span><br><span class="line">go mod edit -dropreplace=old[@v]</span><br><span class="line"></span><br><span class="line">举例：</span><br><span class="line">go mod edit -replace=github.com/vgmdj/utils=/home/vgmdj/utils</span><br><span class="line">go mod edit -replace=github.com/vgmdj/utils@master=/home/vgmdj/utils</span><br></pre></td></tr></table></figure></p>
+<p>如果old里的@v缺省的话，那就代表所有版本，如果new里的@v缺省的话，就表示使用的是本地引用，应该使用本地绝对路径来表示</p>
+<p>如果想直接改go.mod的话，格式类似以下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">replace github.com/vgmdj/utils =&gt; /home/vgmdj/utils</span><br><span class="line">replace github.com/vgmdj/utils master =&gt; /home/vgmdj/utils</span><br></pre></td></tr></table></figure></p>
+<h1 id="私有仓库引用问题"><a href="#私有仓库引用问题" class="headerlink" title="私有仓库引用问题"></a>私有仓库引用问题</h1><p>对于私有包的引用，会出现如下错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Fetching https://gitee.com/xxx/gomodtest?go-get=1</span><br><span class="line">Parsing meta tags from https://gitee.com/xxx/gomodtest?go-get=1 (status code 403)</span><br><span class="line">Fetching https://gitee.com/xxx?go-get=1</span><br><span class="line">Parsing meta tags from https://gitee.com/xxx?go-get=1 (status code 403)</span><br><span class="line">Fetching https://gitee.com?go-get=1</span><br><span class="line">Parsing meta tags from https://gitee.com?go-get=1 (status code 200)</span><br><span class="line">build test: cannot find module for path gitee.com/banyan_tree_in_beijing/gomodtest</span><br></pre></td></tr></table></figure>
+<p>观察log可以发现，是使用https时，仓库不能正确的回应造成的<br>所以我们应该添加部署key，并更改git拉取的方式，即将https改为ssh方式来获取代码</p>
+<blockquote>
+<p>git config –global url.”<a href="mailto:git@gitee.com" target="_blank" rel="noopener">git@gitee.com</a>:”.insteadOf “<a href="https://gitee.com/&quot;" target="_blank" rel="noopener">https://gitee.com/&quot;</a></p>
+</blockquote>
+<p>重试，发现问题依旧，使用go get -v -u gitee.com/xxx/gomodtest ，问题相同<br>查资料发现，对于这种情况，推荐解决方式是在最后加 <strong>.git</strong> ，使用go get xxxxx.git，成功</p>
+<p>重试go build，问题依旧，手动指定go.mod中的包，即在go.mod中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require gitee.com/xxx/gomodtest.git master</span><br></pre></td></tr></table></figure></p>
+<p>重试go build， 可正确下载，但还是会使用https获取信息，猜测是go get读取的是import中的包引用，而不是go.mod中的</p>
+<p>在代码中同时指定git， 即</p>
+<blockquote>
+<p>import “gitee.com/xxx/gomodtest.git”</p>
+</blockquote>
+<p>可正确下载，且正确读取信息，但是会出现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parsing go.mod: unexpected module path &quot;gitee.com/xxx/gomodtest&quot;</span><br></pre></td></tr></table></figure></p>
+<p>修改包的module名，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go mod edit -module gitee.com/xxx/gomodtest.git</span><br></pre></td></tr></table></figure></p>
+<p>修改失败，不知是什么问题，module 变为“”</p>
+<p>手动修改go.mod里 第一行 module ，改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module gitee.com/xxx/gomodtest.git</span><br></pre></td></tr></table></figure></p>
+<p>上传代码并重试，成功编译</p>
 
       
     </div>
@@ -523,7 +532,7 @@
     <strong>本文作者： </strong>vgmdj</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.vgmdj.cn/2017/03/03/github-blog-搭建过程-准备/" title="github+hexo blog 搭建过程-准备">https://blog.vgmdj.cn/2017/03/03/github-blog-搭建过程-准备/</a>
+    <a href="https://blog.vgmdj.cn/2018/08/28/go语言学习-module机制/" title="go语言学习-module机制">https://blog.vgmdj.cn/2018/08/28/go语言学习-module机制/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -536,11 +545,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/github/" rel="tag"># github</a>
+            <a href="/tags/Golang/" rel="tag"># Golang</a>
           
-            <a href="/tags/blog/" rel="tag"># blog</a>
-          
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/学习/" rel="tag"># 学习</a>
           
         </div>
       
@@ -553,8 +560,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/02/Hexo-introduction/" rel="next" title="Hexo 使用指南">
-                <i class="fa fa-chevron-left"></i> Hexo 使用指南
+              <a href="/2018/07/24/设计模式学习-观察者模式/" rel="next" title="设计模式学习-观察者模式">
+                <i class="fa fa-chevron-left"></i> 设计模式学习-观察者模式
               </a>
             
           </div>
@@ -562,10 +569,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/04/github-hexo-blog-搭建过程-配置/" rel="prev" title="github+hexo blog 搭建过程-配置">
-                github+hexo blog 搭建过程-配置 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -822,7 +825,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本环境准备"><span class="nav-number">2.</span> <span class="nav-text">基本环境准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Hexo"><span class="nav-number">3.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备主题"><span class="nav-number">4.</span> <span class="nav-text">准备主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo-指南"><span class="nav-number">5.</span> <span class="nav-text">hexo 指南</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Module机制"><span class="nav-number">1.</span> <span class="nav-text">Module机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本命令"><span class="nav-number">2.</span> <span class="nav-text">基本命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#和dep区别"><span class="nav-number">3.</span> <span class="nav-text">和dep区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#适合场景"><span class="nav-number">4.</span> <span class="nav-text">适合场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地包引用问题"><span class="nav-number">5.</span> <span class="nav-text">本地包引用问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#私有仓库引用问题"><span class="nav-number">6.</span> <span class="nav-text">私有仓库引用问题</span></a></li></ol></div>
             
 
           </div>
