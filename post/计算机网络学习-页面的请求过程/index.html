@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>计算机网络学习-页面的请求过程 - vgmdj&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="VGMDJ" />
+  <meta name="description" content="我们在学校上网时一次网页请求的过程是什么呢? " />
+
+  <meta name="keywords" content="vgmdj, blog, it" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.48" />
+
+
+<link rel="canonical" href="https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="计算机网络学习-页面的请求过程" />
+<meta property="og:description" content="我们在学校上网时一次网页请求的过程是什么呢?
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B/" /><meta property="article:published_time" content="2018-03-08T13:42:29&#43;00:00"/>
+<meta property="article:modified_time" content="2018-03-08T14:39:52&#43;00:00"/>
+<meta itemprop="name" content="计算机网络学习-页面的请求过程">
+<meta itemprop="description" content="我们在学校上网时一次网页请求的过程是什么呢?
+">
+
+
+<meta itemprop="datePublished" content="2018-03-08T13:42:29&#43;00:00" />
+<meta itemprop="dateModified" content="2018-03-08T13:42:29&#43;00:00" />
+<meta itemprop="wordCount" content="1185">
+
+
+
+<meta itemprop="keywords" content="学习,计算机网络," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="计算机网络学习-页面的请求过程"/>
+<meta name="twitter:description" content="我们在学校上网时一次网页请求的过程是什么呢?
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">keep thinking</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/messages/">
+        <li class="mobile-menu-item">Messages</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">keep thinking</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/messages/">Messages</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">计算机网络学习-页面的请求过程</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-03-08 13:42:29 </span>
+        <div class="post-category">
+            
+              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"> 计算机网络 </a>
+            
+          </div>
+        <span class="more-meta"> 约 1185 字 </span>
+        <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>我们在学校上网时一次网页请求的过程是什么呢?
+</p>
+
+<p>首先将电脑用一条以太网网线连到以太网交换机, 这个交换机连到学校的路由器,该路由器再连到ISP(Internet Service Provider), 就是电信等公司, 电信会提供DNS域名解析服务.</p>
+
+<p>当电脑刚刚连上网络的时候, 需要运行DHCP协议从本地的DHCP服务器来得到一个IP地址。</p>
+
+<p>电脑创建一个DHCP request message, 放到一个UDP段里面, 这个段还包含目标端口(DHCP server)和来源端口(DHCP client). 这个UDP段会放到一个IP数据报里面, 这个包的目标IP地址是广播地址(255.255.255.255), 来源地址是0.0.0.0.</p>
+
+<p>IP数据报放在一个Ethernet frame里, 这个以太网帧的目标地址是FF:FF:FF:FF:FF:FF所以该帧会被广播到所有连接在该交换机的设备,该帧的来源MAC地址是电脑的物理地址.</p>
+
+<p>当DHCP服务器收到这个IP数据报后,就会分配一个IP地址. 创建一个包含该IP地址和DNS地址的DHCP ACK message, 发回到我们的电脑.</p>
+
+<p>有了IP地址后就可以上网了。在浏览器上输入URL www.google.com, 浏览器会首先创建一个TCP socket, 然后通过TCP socket发送HTTP请求。 为了创建TCP socket我们首先要知道 www.google.com的IP地址， 该地址由DNS协议得到。</p>
+
+<p>操作系统创建了一个DNS query message, 放进一个目标端口为53（DNS服务器）的UDP段里面， 这个UDP段放进以DNS server IP的为目标的IP数据报里。</p>
+
+<p>包含该IP数据报的Ethernet frame会发往学校的网关路由器。尽管我们的电脑知道学校网关的IP地址，但是它不知道网关路由器的MAC地址， 这个时候就需要用到 ARP 协议。</p>
+
+<p>电脑创建一个包含网关IP地址的ARP query message， 把它放进目标地址为广播地址FF:FF:FF:FF:FF:FF的以太网帧里面。 交换机会把这个帧发送到所有连接的设备，包括网关路由器。</p>
+
+<p>网关路由器发现这个DNS query message的目标IP是自己，则创建一个ARP reply, 把自己的MAC地址发送回去。 操作系统得到网关的MAC地址后， 就可以发送DNS query了。</p>
+
+<p>网关路由器拿到DNS query, 查看它的目标地址，根据forwading table决定传递到哪一个路由器去。IP数据报被放进链接层的帧里面。</p>
+
+<p>拿到该链接层帧的路由器再根据它的forwading table转发，该forwarding table由Internet&rsquo;s intera-domain protocal(如 RIP, OSPF, IS-IS, BGP)维护。</p>
+
+<p>最后DNS server查询DNS query里的网址，得到对应的IP， 发送回我们的电脑。</p>
+
+<p>得到www.google.com的IP地址后，我们就可以创建TCP socket了。 首先TCP要进行三次握手连接到80端口， 然后发送HTTP GET。</p>
+
+<p>Google的服务器读取HTTP GET讯息，返回包含网页内容的HTTP response. 我们的电脑就可以展示其中的内容了。</p>
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">VGMDJ</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-03-08 14:39:52</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+          
+          <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">数据库学习</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-socket%E5%A5%97%E6%8E%A5%E5%AD%97%E5%88%86%E6%9E%90/">
+            <span class="next-text nav-default">计算机网络学习-socket套接字分析</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'vgmdj';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><div id="SOHUCS"></div>
+    <script type="text/javascript">
+    (function(){
+      if (window.location.hostname === 'localhost') return;
+
+      var appid = 'cytuCA7Jz';
+      var conf = '243262789535496f42333d52e6441b7f';
+      var width = window.innerWidth || document.documentElement.clientWidth; 
+      if (width < 960) {window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); }
+    })();
+    </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:vgmdj.wr@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/vgmdj" class="iconfont icon-github" title="github"></a>
+  <a href="https://blog.vgmdj.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+    <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">vgmdj</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?54c4a1219b45b912e867a23f5d8b675e";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>

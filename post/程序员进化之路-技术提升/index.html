@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>程序员进化之路-技术提升 - vgmdj&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="VGMDJ" />
+  <meta name="description" content="前言 不知不觉已经毕业快两年了，但是感觉现在的实力还是很差，仍然需要不停的学习，锻炼。 而要想快速进步，一个明确的大目标和一个个细化的小目标是必不可少的，经历了一段时间的探索，目前来讲，个人职业发展的规划很简单，紧抱google大腿，以go为主开发语言，在后端领域扑腾，专注web开发100年。 那么修炼之路也就很明确了。
+
+" />
+
+  <meta name="keywords" content="vgmdj, blog, it" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.48" />
+
+
+<link rel="canonical" href="https://blog.vgmdj.cn/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BF%9B%E5%8C%96%E4%B9%8B%E8%B7%AF-%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="程序员进化之路-技术提升" />
+<meta property="og:description" content="前言
+
+不知不觉已经毕业快两年了，但是感觉现在的实力还是很差，仍然需要不停的学习，锻炼。
+而要想快速进步，一个明确的大目标和一个个细化的小目标是必不可少的，经历了一段时间的探索，目前来讲，个人职业发展的规划很简单，紧抱google大腿，以go为主开发语言，在后端领域扑腾，专注web开发100年。
+那么修炼之路也就很明确了。
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.vgmdj.cn/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BF%9B%E5%8C%96%E4%B9%8B%E8%B7%AF-%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/" /><meta property="article:published_time" content="2018-03-31T23:18:51&#43;00:00"/>
+<meta property="article:modified_time" content="2018-03-31T23:53:58&#43;00:00"/>
+<meta itemprop="name" content="程序员进化之路-技术提升">
+<meta itemprop="description" content="前言
+
+不知不觉已经毕业快两年了，但是感觉现在的实力还是很差，仍然需要不停的学习，锻炼。
+而要想快速进步，一个明确的大目标和一个个细化的小目标是必不可少的，经历了一段时间的探索，目前来讲，个人职业发展的规划很简单，紧抱google大腿，以go为主开发语言，在后端领域扑腾，专注web开发100年。
+那么修炼之路也就很明确了。
+
+">
+
+
+<meta itemprop="datePublished" content="2018-03-31T23:18:51&#43;00:00" />
+<meta itemprop="dateModified" content="2018-03-31T23:18:51&#43;00:00" />
+<meta itemprop="wordCount" content="526">
+
+
+
+<meta itemprop="keywords" content="职业发展," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="程序员进化之路-技术提升"/>
+<meta name="twitter:description" content="前言
+
+不知不觉已经毕业快两年了，但是感觉现在的实力还是很差，仍然需要不停的学习，锻炼。
+而要想快速进步，一个明确的大目标和一个个细化的小目标是必不可少的，经历了一段时间的探索，目前来讲，个人职业发展的规划很简单，紧抱google大腿，以go为主开发语言，在后端领域扑腾，专注web开发100年。
+那么修炼之路也就很明确了。
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">keep thinking</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/messages/">
+        <li class="mobile-menu-item">Messages</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">keep thinking</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/messages/">Messages</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">程序员进化之路-技术提升</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-03-31 23:18:51 </span>
+        <div class="post-category">
+            
+              <a href="/categories/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95/"> 职业发展 </a>
+            
+          </div>
+        <span class="more-meta"> 约 526 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#前言">前言</a></li>
+<li><a href="#基础">基础</a>
+<ul>
+<li><a href="#数据结构-算法">数据结构 + 算法</a></li>
+<li><a href="#操作系统">操作系统</a></li>
+<li><a href="#网络">网络</a></li>
+</ul></li>
+<li><a href="#golang">golang</a>
+<ul>
+<li><a href="#源码学习">源码学习</a></li>
+<li><a href="#设计理念">设计理念</a></li>
+</ul></li>
+<li><a href="#数据库">数据库</a>
+<ul>
+<li><a href="#基本设计与操作">基本设计与操作</a></li>
+<li><a href="#性能优化">性能优化</a></li>
+<li><a href="#底层结构-索引">底层结构（索引）</a></li>
+</ul></li>
+<li><a href="#消息队列">消息队列</a></li>
+<li><a href="#设计模式">设计模式</a></li>
+<li><a href="#基础工具">基础工具</a>
+<ul>
+<li><a href="#git">git</a></li>
+</ul></li>
+<li><a href="#分布式系统">分布式系统</a></li>
+<li><a href="#架构能力">架构能力</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      <h1 id="前言">前言</h1>
+
+<p>不知不觉已经毕业快两年了，但是感觉现在的实力还是很差，仍然需要不停的学习，锻炼。
+而要想快速进步，一个明确的大目标和一个个细化的小目标是必不可少的，经历了一段时间的探索，目前来讲，个人职业发展的规划很简单，紧抱google大腿，以go为主开发语言，在后端领域扑腾，专注web开发100年。
+那么修炼之路也就很明确了。</p>
+
+<p></p>
+
+<h1 id="基础">基础</h1>
+
+<h2 id="数据结构-算法">数据结构 + 算法</h2>
+
+<ul>
+<li>算法</li>
+</ul>
+
+<pre><code>对于以下算法无变形基本问题可以做到手写无误
+二分搜索 Binary Search
+分治 Divide Conquer
+宽度优先搜索 Breadth First Search
+深度优先搜索 Depth First Search
+回溯法 Backtracking
+双指针 Two Pointers
+动态规划 Dynamic Programming
+扫描线 Scan-line algorithm
+快排 Quick Sort
+</code></pre>
+
+<ul>
+<li>数据结构</li>
+</ul>
+
+<pre><code>栈 Stack
+队列 Queue
+链表 Linked List
+数组 Array
+哈希表 Hash Table
+二叉树 Binary Tree  
+堆 Heap
+并查集 Union Find
+字典树 Trie
+</code></pre>
+
+<ul>
+<li>练习方式： leetcode</li>
+</ul>
+
+<h2 id="操作系统">操作系统</h2>
+
+<ul>
+<li>书籍：
+
+<ul>
+<li>《鸟哥的linux私房菜》</li>
+</ul></li>
+</ul>
+
+<h2 id="网络">网络</h2>
+
+<ul>
+<li>书籍：
+
+<ul>
+<li>《计算机网络-自顶向下》</li>
+<li>《http权威指南》</li>
+<li>《https权威指南》</li>
+</ul></li>
+</ul>
+
+<h1 id="golang">golang</h1>
+
+<h2 id="源码学习">源码学习</h2>
+
+<h2 id="设计理念">设计理念</h2>
+
+<ul>
+<li>并发处理模型</li>
+<li>gc原理</li>
+</ul>
+
+<p>书籍：</p>
+
+<ul>
+<li>《深入解析go》</li>
+<li>《go语言学习笔记》</li>
+<li>《go并发编程实战》</li>
+</ul>
+
+<h1 id="数据库">数据库</h1>
+
+<h2 id="基本设计与操作">基本设计与操作</h2>
+
+<h2 id="性能优化">性能优化</h2>
+
+<h2 id="底层结构-索引">底层结构（索引）</h2>
+
+<p>书籍：</p>
+
+<ul>
+<li>《高性能MySQL》</li>
+<li>《MySQL必知必会》</li>
+<li>《Redis实战》</li>
+</ul>
+
+<h1 id="消息队列">消息队列</h1>
+
+<ul>
+<li>rabbitmq</li>
+<li>zookeeper</li>
+</ul>
+
+<h1 id="设计模式">设计模式</h1>
+
+<p>书籍：</p>
+
+<ul>
+<li>《大话设计模式》</li>
+<li>《设计模式之禅》</li>
+</ul>
+
+<h1 id="基础工具">基础工具</h1>
+
+<h2 id="git">git</h2>
+
+<ul>
+<li><a href="https://github.com/livoras/blog/issues/7#issue-105082853">https://github.com/livoras/blog/issues/7#issue-105082853</a></li>
+</ul>
+
+<h1 id="分布式系统">分布式系统</h1>
+
+<ul>
+<li>docker</li>
+<li>k8s</li>
+</ul>
+
+<h1 id="架构能力">架构能力</h1>
+
+<p>书籍：</p>
+
+<ul>
+<li>《亿级流量网站架构》</li>
+<li>《微服务设计》</li>
+<li>《图解服务器端网络架构》</li>
+</ul>
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">VGMDJ</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-03-31 23:53:58</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95/">职业发展</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/mysql%E5%AD%A6%E4%B9%A0-%E7%B4%A2%E5%BC%95/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">mysql学习-索引</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-interface/">
+            <span class="next-text nav-default">go语言学习-interface</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'vgmdj';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><div id="SOHUCS"></div>
+    <script type="text/javascript">
+    (function(){
+      if (window.location.hostname === 'localhost') return;
+
+      var appid = 'cytuCA7Jz';
+      var conf = '243262789535496f42333d52e6441b7f';
+      var width = window.innerWidth || document.documentElement.clientWidth; 
+      if (width < 960) {window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); }
+    })();
+    </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:vgmdj.wr@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/vgmdj" class="iconfont icon-github" title="github"></a>
+  <a href="https://blog.vgmdj.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+    <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">vgmdj</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?54c4a1219b45b912e867a23f5d8b675e";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>

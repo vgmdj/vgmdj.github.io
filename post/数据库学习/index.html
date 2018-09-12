@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>数据库学习 - vgmdj&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="VGMDJ" />
+  <meta name="description" content="定义 数据库(Database,简称DB): 长期存储在计算机内、有组织的、可共享的大量数据的集合 数据库管理系统(Database Management System，简称DBMS)： 位于用户与操作系统之间的一层数据管理软件，是一个大型复杂的软件系统，mysql就是一个开源的RDBMS
+介绍 
+" />
+
+  <meta name="keywords" content="vgmdj, blog, it" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.48" />
+
+
+<link rel="canonical" href="https://blog.vgmdj.cn/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="数据库学习" />
+<meta property="og:description" content="定义
+
+数据库(Database,简称DB): 长期存储在计算机内、有组织的、可共享的大量数据的集合
+数据库管理系统(Database Management System，简称DBMS)： 位于用户与操作系统之间的一层数据管理软件，是一个大型复杂的软件系统，mysql就是一个开源的RDBMS
+
+介绍
+
+
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.vgmdj.cn/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/" /><meta property="article:published_time" content="2018-03-20T00:23:50&#43;00:00"/>
+<meta property="article:modified_time" content="2018-03-20T00:23:50&#43;00:00"/>
+<meta itemprop="name" content="数据库学习">
+<meta itemprop="description" content="定义
+
+数据库(Database,简称DB): 长期存储在计算机内、有组织的、可共享的大量数据的集合
+数据库管理系统(Database Management System，简称DBMS)： 位于用户与操作系统之间的一层数据管理软件，是一个大型复杂的软件系统，mysql就是一个开源的RDBMS
+
+介绍
+
+
+
+">
+
+
+<meta itemprop="datePublished" content="2018-03-20T00:23:50&#43;00:00" />
+<meta itemprop="dateModified" content="2018-03-20T00:23:50&#43;00:00" />
+<meta itemprop="wordCount" content="1707">
+
+
+
+<meta itemprop="keywords" content="database," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="数据库学习"/>
+<meta name="twitter:description" content="定义
+
+数据库(Database,简称DB): 长期存储在计算机内、有组织的、可共享的大量数据的集合
+数据库管理系统(Database Management System，简称DBMS)： 位于用户与操作系统之间的一层数据管理软件，是一个大型复杂的软件系统，mysql就是一个开源的RDBMS
+
+介绍
+
+
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">keep thinking</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/messages/">
+        <li class="mobile-menu-item">Messages</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">keep thinking</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/messages/">Messages</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">数据库学习</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-03-20 00:23:50 </span>
+        <div class="post-category">
+            
+              <a href="/categories/database/"> database </a>
+            
+          </div>
+        <span class="more-meta"> 约 1707 字 </span>
+        <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#定义">定义</a></li>
+<li><a href="#介绍">介绍</a>
+<ul>
+<li><a href="#关系型数据库">关系型数据库</a></li>
+<li><a href="#简介">简介</a>
+<ul>
+<li><a href="#主流数据库">主流数据库</a></li>
+</ul></li>
+<li><a href="#非关系型数据库">非关系型数据库</a>
+<ul>
+<li><a href="#简介-1">简介</a></li>
+<li><a href="#分类">分类</a></li>
+</ul></li>
+<li><a href="#学习计划">学习计划</a></li>
+<li><a href="#本文参考文章">本文参考文章</a></li>
+<li><a href="#学习过程参考书籍">学习过程参考书籍</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      <h1 id="定义">定义</h1>
+
+<p>数据库(Database,简称DB): 长期存储在计算机内、有组织的、可共享的大量数据的集合
+数据库管理系统(Database Management System，简称DBMS)： 位于用户与操作系统之间的一层数据管理软件，是一个大型复杂的软件系统，mysql就是一个开源的RDBMS</p>
+
+<h1 id="介绍">介绍</h1>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/228680-448d468546343fa9?imageMogr2/auto-orient/" alt="数据库分类" /></p>
+
+<p></p>
+
+<h2 id="关系型数据库">关系型数据库</h2>
+
+<h2 id="简介">简介</h2>
+
+<p>虽然网状数据库和层次数据库已经很好的解决了数据的集中和共享问题，但是在数据库独立性和抽象级别上扔有很大欠缺。用户在对这两种数据库进行存取时，仍然需要明确数据的存储结构，指出存取路径。而关系型数据库就可以较好的解决这些问题。</p>
+
+<p>关系型数据库模型是把复杂的数据结构归结为简单的二元关系（即二维表格形式）。在关系型数据库中，对数据的操作几乎全部建立在一个或多个关系表格上，通过对这些关联的表格分类、合并、连接或选取等运算来实现数据库的管理。</p>
+
+<p>关系型数据库诞生40多年了，从理论产生发展到现实产品，例如：Oracle和MySQL，Oracle在数据库领域上升到霸主地位，形成每年高达数百亿美元的庞大产业市场。</p>
+
+<h3 id="主流数据库">主流数据库</h3>
+
+<ul>
+<li>Mysql</li>
+<li>Oracle</li>
+<li>Access</li>
+<li>SqlServer</li>
+<li>PostgreSql</li>
+</ul>
+
+<h2 id="非关系型数据库">非关系型数据库</h2>
+
+<h3 id="简介-1">简介</h3>
+
+<p>NoSQL，泛指非关系型的数据库。随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，特别是超大规模和高并发的SNS类型的web2.0纯动态网站已经显得力不从心，暴露了很多难以克服的问题，而非关系型的数据库则由于其本身的特点得到了非常迅速的发展。NoSql数据库在特定的场景下可以发挥出难以想象的高效率和高性能，它是作为对传统关系型数据库的一个有效的补充。</p>
+
+<p>NoSQL(NoSQL = Not Only SQL )，意即“不仅仅是SQL”，是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</p>
+
+<h3 id="分类">分类</h3>
+
+<ul>
+<li><p>键值存储数据库
+键值数据库就类似传统语言中使用的哈希表。可以通过key来添加、查询或者删除数据库，因为使用key主键访问，所以会获得很高的性能及扩展性。
+键值数据库主要使用一个哈希表，这个表中有一个特定的键和一个指针指向特定的数据。Key/value模型对于IT系统来说的优势在于简单、易部署、高并发。
+典型产品：Memcached、Redis</p></li>
+
+<li><p>文档存储数据库
+文档型数据库的灵感是来自于Lotus Notes办公软件，而且它同第一种键值数据库类似。该类型的数据模型是版本化的文档，半结构化的文档以特定的格式存储，比如JSON。文档型数据库可以看作是键值数据库的升级版，允许之间嵌套键值。而且文档型数据库比键值数据库的查询效率更高。
+面向文档数据库会将数据以文档形式存储。每个文档都是自包含的数据单元，是一系列数据项的集合。每个数据项都有一个名词与对应值，值既可以是简单的数据类型，如字符串、数字和日期等；也可以是复杂的类型，如有序列表和关联对象。数据存储的最小单位是文档，同一个表中存储的文档属性可以是不同的，数据可以使用XML、JSON或JSONB等多种形式存储。
+典型产品：MongoDB、CouchDB</p></li>
+
+<li><p>列存储数据库
+列存储数据库将数据存储在列族中，一个列族存储经常被一起查询的相关数据，比如人类，我们经常会查询某个人的姓名和年龄，而不是薪资。这种情况下姓名和年龄会被放到一个列族中，薪资会被放到另一个列族中。
+这种数据库通常用来应对分布式存储海量数据。
+典型产品：Cassandra、HBase</p></li>
+
+<li><p>图型数据库
+图形数据库允许我们将数据以图的方式存储。实体会被作为顶点，而实体之间的关系则会被作为边。比如我们有三个实体，Steve Jobs、Apple和Next，则会有两个“Founded by”的边将Apple和Next连接到Steve Jobs。
+典型产品：Neo4J、InforGrid</p></li>
+</ul>
+
+<h2 id="学习计划">学习计划</h2>
+
+<ul>
+<li>关系型数据库以Mysql为代表</li>
+<li>非关系型数据库中键值存储型以Redis为代表</li>
+<li>非关系型数据库中文档存储型以MongoDB为代表</li>
+<li>非关系型数据库中列存储型以Hbase为代表</li>
+</ul>
+
+<h2 id="本文参考文章">本文参考文章</h2>
+
+<p><a href="https://www.jianshu.com/p/107c6b045245">https://www.jianshu.com/p/107c6b045245</a></p>
+
+<h2 id="学习过程参考书籍">学习过程参考书籍</h2>
+
+<ul>
+<li>《Redis实战》</li>
+<li>《MongoDB权威指南》</li>
+<li>《大数据存储MongoDB实战指南》</li>
+<li>《高性能Mysql》</li>
+<li>《深入浅出Mysql》</li>
+</ul>
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">VGMDJ</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-03-20 00:23:50</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/database/">database</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/mysql%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">mysql学习-总览</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B/">
+            <span class="next-text nav-default">计算机网络学习-页面的请求过程</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'vgmdj';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><div id="SOHUCS"></div>
+    <script type="text/javascript">
+    (function(){
+      if (window.location.hostname === 'localhost') return;
+
+      var appid = 'cytuCA7Jz';
+      var conf = '243262789535496f42333d52e6441b7f';
+      var width = window.innerWidth || document.documentElement.clientWidth; 
+      if (width < 960) {window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); }
+    })();
+    </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:vgmdj.wr@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/vgmdj" class="iconfont icon-github" title="github"></a>
+  <a href="https://blog.vgmdj.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+    <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">vgmdj</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?54c4a1219b45b912e867a23f5d8b675e";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
