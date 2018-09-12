@@ -390,17 +390,25 @@ kubectl edit node &lt;node-name&gt;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><div id="SOHUCS"></div>
-    <script type="text/javascript">
-    (function(){
-      if (window.location.hostname === 'localhost') return;
-
-      var appid = 'cytuCA7Jz';
-      var conf = '243262789535496f42333d52e6441b7f';
-      var width = window.innerWidth || document.documentElement.clientWidth; 
-      if (width < 960) {window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); }
-    })();
-    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><div id="comments-gitment"></div>
+  <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
+    <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    id: '2018-05-01 14:52:51 \x2b0000 UTC',
+    title: '容器学习-k8s插件',
+    link: decodeURI(location.href),
+    desc: '\x3ch2 id=\x22应用插件\x22\x3e应用插件\x3c\/h2\x3e\n\n\x3cp\x3e安装完k8s后，仅仅只是第一步，我们还需要一系列的插件来提供对集群的管理，以提高效率\x3c\/p\x3e\n\n\x3cul\x3e\n\x3cli\x3etraefik ingress，提供负载均衡和统一的对外暴露端口\x3c\/li\x3e\n\x3cli\x3eheapster插件，提供监控系统\x3c\/li\x3e\n\x3cli\x3edashboard插件，用于显示当前资源使用情况\x3c\/li\x3e\n\x3cli\x3eEFK插件，ElasticSearch\x2bFluentd\x2bKibana，用于日志的收集分析和搜索\x3c\/li\x3e\n\x3c\/ul\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
+    owner: 'vgmdj',
+    repo: 'vgmdj.github.io',
+    oauth: {
+      client_id: '5d2055566b8bc0909598',
+      client_secret: '71dfa873dd8de422f4e17dbedd9307bbb7e35c96'
+    }
+  })
+  gitment.render('comments-gitment')
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 

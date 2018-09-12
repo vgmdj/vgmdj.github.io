@@ -440,17 +440,25 @@ this is sub operation, 2-1=1
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><div id="SOHUCS"></div>
-    <script type="text/javascript">
-    (function(){
-      if (window.location.hostname === 'localhost') return;
-
-      var appid = 'cytuCA7Jz';
-      var conf = '243262789535496f42333d52e6441b7f';
-      var width = window.innerWidth || document.documentElement.clientWidth; 
-      if (width < 960) {window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); }
-    })();
-    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><div id="comments-gitment"></div>
+  <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
+    <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    id: '2017-07-01 18:39:52 \x2b0000 UTC',
+    title: '设计模式学习-简单工厂模式',
+    link: decodeURI(location.href),
+    desc: '\x3ch2 id=\x22简单工厂模式-simple-factory\x22\x3e简单工厂模式(Simple Factory)\x3c\/h2\x3e\n\n\x3cp\x3e工厂模式是对象的生产器，解耦用户对具体对象的依赖。\n通过封闭、继承、多态把程序的耦合度降低，使程序更加的灵活，容易修改，并易于复用。\n简单工厂模式中，各种运算方法类实现了运算接口，在业务上如果想添加一种运算方法，只需要增加一个实现运算接口的类，并且在工厂类中添加一个类型判断。\n这种设计适合于业务类型并不是很多的情况，如果业务类型非常多，那么在工作类中就会有一个很长的switch\x26hellip;case结构，这时候使用方法工厂模式会比较合适。\x3c\/p\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
+    owner: 'vgmdj',
+    repo: 'vgmdj.github.io',
+    oauth: {
+      client_id: '5d2055566b8bc0909598',
+      client_secret: '71dfa873dd8de422f4e17dbedd9307bbb7e35c96'
+    }
+  })
+  gitment.render('comments-gitment')
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 
