@@ -529,30 +529,12 @@ commit
       if (window.location.hostname === 'localhost') return;
 
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      var disqus_shortname = 'vgmdj';
+      var disqus_shortname = 'blog-vgmdj-cn.disqus.com';
       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><div id="comments-gitment"></div>
-  <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
-    <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
-  <script type="text/javascript">
-  const gitment = new Gitment({
-    id: '2018-03-22 15:23:50 \x2b0000 UTC',
-    title: 'mysql学习-事务',
-    link: decodeURI(location.href),
-    desc: '\x3ch1 id=\x22定义\x22\x3e定义\x3c\/h1\x3e\n\n\x3cp\x3e事务(transaction)是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位。同时，事务也是恢复和并发控制的基本单位。\x3c\/p\x3e\n\n\x3ch1 id=\x22事务特性-acid\x22\x3e事务特性(acid)\x3c\/h1\x3e\n\n\x3ch2 id=\x22四大特性\x22\x3e四大特性\x3c\/h2\x3e\n\n\x3cul\x3e\n\x3cli\x3e\x3cp\x3e原子性(atomicity)\n　原子性是指事务包含的所有操作要么全部操作，要么全部不做，事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。\x3c\/p\x3e\x3c\/li\x3e\n\n\x3cli\x3e\x3cp\x3e一致性(consistency)\n一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。\n　拿转账来说，假设用户A和用户B两者的钱加起来一共是5000，那么不管A和B之间如何转账，转几次账，事务结束后两个用户的钱相加起来应该还得是5000，这就是事务的一致性\x3c\/p\x3e\x3c\/li\x3e\n\n\x3cli\x3e\x3cp\x3e隔离性(isolation)\n隔离性是当多个用户并发访问数据库时，比如操作同一张表时，数据库为每一个用户开启的事务，不能被其他事务的操作所干扰，多个并发事务之间要相互隔离。\n　即要达到这么一种效果：对于任意两个并发的事务T1和T2，在事务T1看来，T2要么在T1开始之前就已经结束，要么在T1结束之后才开始，这样每个事务都感觉不到有其他事务在并发地执行。\x3c\/p\x3e\x3c\/li\x3e\n\n\x3cli\x3e\x3cp\x3e持久性(durability)\n持久性是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，即便是在数据库系统遇到故障的情况下也不会丢失提交事务的操作。\x3c\/p\x3e\x3c\/li\x3e\n\x3c\/ul\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
-    owner: 'vgmdj',
-    repo: 'vgmdj.github.io',
-    oauth: {
-      client_id: '5d2055566b8bc0909598',
-      client_secret: '71dfa873dd8de422f4e17dbedd9307bbb7e35c96'
-    }
-  })
-  gitment.render('comments-gitment')
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
   
 

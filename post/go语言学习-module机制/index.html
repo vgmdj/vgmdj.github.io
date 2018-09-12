@@ -380,30 +380,12 @@ build test: cannot find module for path gitee.com/banyan_tree_in_beijing/gomodte
       if (window.location.hostname === 'localhost') return;
 
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      var disqus_shortname = 'vgmdj';
+      var disqus_shortname = 'blog-vgmdj-cn.disqus.com';
       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><div id="comments-gitment"></div>
-  <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
-    <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
-  <script type="text/javascript">
-  const gitment = new Gitment({
-    id: '2018-08-28 10:23:01 \x2b0000 UTC',
-    title: 'go语言学习-module机制',
-    link: decodeURI(location.href),
-    desc: '\x3ch1 id=\x22module机制\x22\x3eModule机制\x3c\/h1\x3e\n\n\x3cp\x3eGo Module是Go1.11正式推出的包管理机制，不同于以往基于GOPATH和Vendor的项目构建，其主要是通过$GOPATH\/pkg\/mod下的缓存包来对项目进行构建。\n一如所有的Go新添加功能，Go Module可以通过GO111MODULE来控制是否启用，GO111MODULE有三种类型\x3c\/p\x3e\n\n\x3cul\x3e\n\x3cli\x3eon 所有的构建，都使用Module机制\x3c\/li\x3e\n\x3cli\x3eoff 所有的构建，都不使用Module机制，而是使用GOPATH和Vendor\x3c\/li\x3e\n\x3cli\x3eauto 在GOPATH下的项目，不使用Module机制，不在GOPATH下的项目使用\x3c\/li\x3e\n\x3c\/ul\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
-    owner: 'vgmdj',
-    repo: 'vgmdj.github.io',
-    oauth: {
-      client_id: '5d2055566b8bc0909598',
-      client_secret: '71dfa873dd8de422f4e17dbedd9307bbb7e35c96'
-    }
-  })
-  gitment.render('comments-gitment')
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
   
 

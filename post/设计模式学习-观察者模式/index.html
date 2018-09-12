@@ -432,30 +432,12 @@ this is observer ob2 and the event is event2
       if (window.location.hostname === 'localhost') return;
 
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      var disqus_shortname = 'vgmdj';
+      var disqus_shortname = 'blog-vgmdj-cn.disqus.com';
       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><div id="comments-gitment"></div>
-  <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
-    <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
-  <script type="text/javascript">
-  const gitment = new Gitment({
-    id: '2018-07-24 13:44:23 \x2b0000 UTC',
-    title: '设计模式学习-观察者模式',
-    link: decodeURI(location.href),
-    desc: '\x3ch2 id=\x22观察者模式-observer\x22\x3e观察者模式(Observer)\x3c\/h2\x3e\n\n\x3cp\x3e将一个系统分割成一系列相互协作的类有一个很不好的副作用，那就是需要维护相关对象间的一致性，我们不希望为了维持一致性而使各类紧密耦合，这样会给维护、扩展和重用都带来不便。\n观察者模式所做的工作其实就是在解除耦合，让耦合的双方都依赖于抽象，而不是依赖于具体，从而使得稳中有降自的变化都不会影响另一边的变化。\x3c\/p\x3e\n\n\x3cul\x3e\n\x3cli\x3e\x3cp\x3eSubject(观察目标)\n被观察目标知道它的观察者，可以有任意多个观察者观察同一目标。需要提供注册、删除、通知观察者的接口\x3c\/p\x3e\x3c\/li\x3e\n\n\x3cli\x3e\x3cp\x3eConcreSubject(具体目标)\n用于存放各ConcreObserver对象\x3c\/p\x3e\x3c\/li\x3e\n\n\x3cli\x3e\x3cp\x3eObserver(观察者)\n为那些在目标发生改时需获得通知的对象定义一个更新接口。当它的状态发生改变时，向它的各个观察者发出通知\x3c\/p\x3e\x3c\/li\x3e\n\n\x3cli\x3e\x3cp\x3eConcreObserver(具体观察者)\n维护一个指向ConcreSubject对象的引用。存储有关状态，这些状态应与目标的状态保持一致。实现Observer的更新接口以使自身的状态与目标的状态保持一致\x3c\/p\x3e\x3c\/li\x3e\n\x3c\/ul\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
-    owner: 'vgmdj',
-    repo: 'vgmdj.github.io',
-    oauth: {
-      client_id: '5d2055566b8bc0909598',
-      client_secret: '71dfa873dd8de422f4e17dbedd9307bbb7e35c96'
-    }
-  })
-  gitment.render('comments-gitment')
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
   
 

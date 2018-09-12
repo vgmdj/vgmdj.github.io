@@ -349,30 +349,12 @@ ACID和BASE代表了两种截然相反的设计哲学
       if (window.location.hostname === 'localhost') return;
 
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      var disqus_shortname = 'vgmdj';
+      var disqus_shortname = 'blog-vgmdj-cn.disqus.com';
       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><div id="comments-gitment"></div>
-  <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
-    <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
-  <script type="text/javascript">
-  const gitment = new Gitment({
-    id: '2018-05-14 14:38:21 \x2b0000 UTC',
-    title: '微服务学习-数据一致性理论',
-    link: decodeURI(location.href),
-    desc: '\x3ch1 id=\x22简述\x22\x3e简述\x3c\/h1\x3e\n\n\x3cp\x3e分布式系统架构中，分布式事务问题是一个绕不过去的挑战。而微服务架构的流行，让分布式事问题日益突出！\n对于单体应用而言，所有的数据库操作都在一起，可以很简单的使用本地事务，来保证数据的ACID。\n但是对于分布式系统，系统由多个独立的服务组成，那么如何解决分布式调用时候数据的一致性就成了一个问题。\n具体业务场景如下，比如一个业务操作，如果同时调用服务 A、B、C，需要满足要么同时成功；要么同时失败。A、B、C 可能是多个不同部门开发、部署在不同服务器上的远程服务。\x3c\/p\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
-    owner: 'vgmdj',
-    repo: 'vgmdj.github.io',
-    oauth: {
-      client_id: '5d2055566b8bc0909598',
-      client_secret: '71dfa873dd8de422f4e17dbedd9307bbb7e35c96'
-    }
-  })
-  gitment.render('comments-gitment')
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
   
 
