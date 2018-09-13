@@ -60,7 +60,7 @@
 
 <meta itemprop="datePublished" content="2018-09-12T11:10:51&#43;00:00" />
 <meta itemprop="dateModified" content="2018-09-12T11:10:51&#43;00:00" />
-<meta itemprop="wordCount" content="653">
+<meta itemprop="wordCount" content="830">
 
 
 
@@ -147,7 +147,7 @@
               <a href="/categories/%E7%AB%99%E7%82%B9%E5%BB%BA%E8%AE%BE/"> 站点建设 </a>
             
           </div>
-        <span class="more-meta"> 约 653 字 </span>
+        <span class="more-meta"> 约 830 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -164,6 +164,7 @@
 <li><a href="#简述">简述</a></li>
 <li><a href="#hugo安装">hugo安装</a></li>
 <li><a href="#hugo剩余环境建立">hugo剩余环境建立</a></li>
+<li><a href="#hugo部署脚本">hugo部署脚本</a></li>
 <li><a href="#hexo-文章转入-hugo">hexo 文章转入 hugo</a></li>
 </ul>
 </nav>
@@ -224,6 +225,37 @@ hugo
 发布部署，就是将public下的内容用于展示
 可以将public下内容全部传到 github page仓库，再利用webhook进行更新服务器中的内容
 也可以直接利用github的page
+
+</code></pre>
+
+<h1 id="hugo部署脚本">hugo部署脚本</h1>
+
+<p>hugo没找到自动部署的方式，就自己写了一个，反正也不难
+需要放在和config.toml同一级目录，即public上一级目录下</p>
+
+<pre><code>#!/bin/bash
+cd public
+
+#添加所有修改
+git add -A .
+
+# 设置提交说明，格式为 Site updated: 2006-01-02 15:04:05
+time=$(date &quot;+%Y-%m-%d %H:%M:%S&quot;)
+commit=&quot;Site updated:&quot;$time
+echo $commit
+
+#提交
+git commit -m &quot;$commit&quot;
+
+#推送到master分支上
+git push origin master
+
+</code></pre>
+
+<p>创建完脚本以后，不要忘了加权限</p>
+
+<pre><code>chmod 777 xxx
+xxx是脚本名，加不成功，用sudo以管理员身份来加权限
 
 </code></pre>
 
