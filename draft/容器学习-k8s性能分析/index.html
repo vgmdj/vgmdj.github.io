@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>容器学习-k8s性能分析 - vgmdj&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="VGMDJ" />
+  <meta name="description" content="性能分析 基础概念 关于并发用户数和qps，自己一直被这两个概念纠结，阅读了一下相关资料，总结如下：并发用户数和qps两个概念没有直接关系，但是" />
+
+  <meta name="keywords" content="vgmdj, blog, it" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.48" />
+
+
+<link rel="canonical" href="https://blog.vgmdj.cn/draft/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="容器学习-k8s性能分析" />
+<meta property="og:description" content="性能分析 基础概念 关于并发用户数和qps，自己一直被这两个概念纠结，阅读了一下相关资料，总结如下：并发用户数和qps两个概念没有直接关系，但是" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.vgmdj.cn/draft/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/" /><meta property="article:published_time" content="2018-05-04T18:28:51&#43;00:00"/>
+<meta property="article:modified_time" content="2018-05-04T18:28:51&#43;00:00"/>
+<meta itemprop="name" content="容器学习-k8s性能分析">
+<meta itemprop="description" content="性能分析 基础概念 关于并发用户数和qps，自己一直被这两个概念纠结，阅读了一下相关资料，总结如下：并发用户数和qps两个概念没有直接关系，但是">
+
+
+<meta itemprop="datePublished" content="2018-05-04T18:28:51&#43;00:00" />
+<meta itemprop="dateModified" content="2018-05-04T18:28:51&#43;00:00" />
+<meta itemprop="wordCount" content="4175">
+
+
+
+<meta itemprop="keywords" content="k8s,分布式系统," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="容器学习-k8s性能分析"/>
+<meta name="twitter:description" content="性能分析 基础概念 关于并发用户数和qps，自己一直被这两个概念纠结，阅读了一下相关资料，总结如下：并发用户数和qps两个概念没有直接关系，但是"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">keep thinking</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/messages/">
+        <li class="mobile-menu-item">Messages</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">keep thinking</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/messages/">Messages</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+      
+
+<h1 id="性能分析">性能分析</h1>
+
+<h1 id="基础概念">基础概念</h1>
+
+<p>关于并发用户数和qps，自己一直被这两个概念纠结，阅读了一下相关资料，总结如下：并发用户数和qps两个概念没有直接关系，但是如果要说qps时，一定需要指明是多少并发用户数下的qps，否则豪无意义，因为单用户数的40qps和20并发用户数下的40qps是两个不同的概念。前者说明该应用可以在一秒内串行执行40个请求，而后者说明在并发20个请求的情况下，一秒内该应用能处理40个请求</p>
+
+<pre><code>
+并发连接数 = pv / 统计时间 * 页面衍生连接次数 * http响应时间 * 因数 / 其他web服务器 数量
+
+pv = 并发连接数 * 统计时间 * 其他web服务器 数量/ 页面衍生连接次数 / http响应时间 / 因数
+
+首先介绍一下pv量：
+PV(访问量)：即Page View, 即页面浏览量或点击量，用户每次刷新即被计算一次。
+UV(独立访客)：即Unique Visitor,访问您网站的一台电脑客户端为一个访客。00:00-24:00内相同的客户
+端只被计算一次。
+IP(独立IP)：即Internet Protocol,指独立IP数。00:00-24:00内相同IP地址之被计算一次。
+
+解释：  统计时间 : pv统计的总时间，单位秒，要计算一天的pv就是86400秒  页面衍生连接次数: 一个html页面可能会请求好几次http连接，如外部的css, js ,图片等,可以估算一下，或者用10,可根据实际情况改变  http响应时间: 可以使用1秒或更少,可根据实际情况改变  因数: 一般使用5即可,可根据实际情况计算后推出  其他web服务器 数量: 其他web服务器 数量
+
+* “页面衍生连接次数”，”http响应时间”，”因数”这三个参数要根据实际情况分析计算后，确定一个适合的值
+
+推算一下。单台机器1000并发的情况下，一天是1,728,000的pv(1秒响应，10个衍生连接，因子为5的情况下) ======================================================================
+
+例子：
+
+保证每天多少pv的并发连接数的计算公式是：  并发连接数＝ pv / 统计时间(一天是86400) * 页面衍生连接次数 * http响应时间 * 因数(5) / 其他web服务器 数量
+
+保证4千万pv的并发连接数：  (40000000pv / 86400秒 * 10个派生连接数 * 5秒内响应 * 5倍峰值) / 6台其他web服务器 = 19290连接数
+
+面试时，面试官问道：1亿个pv，如何确定并发用户数？  一时想不起来具体的公式，就记得80/20原则，就回答了一些。又说了一些原来我们公司会提供峰值的方法，确定最后施压的用户数。
+
+）80~20原则：但是在现实生活中，以上两种情况发生的概率很小。根据统计学原理，采用80~20原则计算并发用户数。 PV*0.8/（8*60*60*0.2）=并发连接数，即每秒中有两个用户并发。
+
+
+
+网站流量是指什么? ip和pv呢？  通常说的网站流量（traffic）是指网站的访问量，是用来描述访问一个网站的用户数量以及用户所浏览的网页数量等指标，常用的统计指标包括网站的独立用户数量、总用户数量（含重复访问者）、网页浏览数量、每个用户的页面浏览数量、用户在网站的平均停留时间等。
+
+网站访问统计分析的基础是获取网站流量的基本数据，根据网上营销新观察的相关文章，网站流量统计指标大致可以分为三类，每类包含若干数量的统计指标。具体的网站流量统计是通过不同的ip登陆网站来计算的，也就是说。一天内同一台机器登陆网站的次数不论是多少，在流量统计中只记为一次有效登陆，这种计算方法可以较为科学 的计算出有多少人登陆过该网站，有效的防止了有意的对网站进行刷新从而增加自己网站的点击率。
+
+网站流量指标
+
+网站流量统计指标常用来对网站效果进行评价，主要指标包括：  ·独立访问者数量（unique visitors）；  ·重复访问者数量（repeat visitors）  ·页面浏览数（page views）；  ·每个访问者的页面浏览数（page views per user）；  ·某些具体文件/页面的统计指标，如页面显示次数、文件下载次数等。
+
+ip 是使用不同ip上网的人访问你网站的人数，也就是上面的独立访问者数量。  一般来说是24小时同一ip不重复记录的, 也应该24小时不重复记录。（其实ip也不一定就是独立访问者数量，因为有的用户是公用一个ip的,但大致上可以认为就是今日的独立访问者数量。）
+
+pv 则是上面的页面浏览数，是指这些访问者一共浏览了多少次你网站的页面，他是会重复记录的，你点这个网站10个页面，他就会记录10次。
+
+所以pv一定是&gt;=ip的，如一个网站今天的流量统计是100ip 200pv就是说今天有大致100个独立访问者，一共访问了200次页面，平均每个用户访问页面数量是 pv/ip=2 ，一般来说这个数字越大说明网站内容越吸引用户，但也和网站本身的页面有关。
+
+吞吐量（tps)＝活动的用户数/响应时间  活动用户＝并发用户*[响应时间/（响应时间+思考时间）]  吞吐量（tps)=并发用户/（响应时间+思考时间）  由此推出：  并发用户＝活动用户+吞吐量*思考时间  并发用户＝活动用户*（1+思考时间/响应时间）  并发用户＝吞吐量*（响应时间+思考时间）
+
+并发连接数与pv的换算公式  oncurrent connections＝pv / seconds *（para connect per a page) * (time to react) * (factor) / (web hosts)
+
+pv = concurrent connections * seconds * (web hosts)/ (para connect per a page)/ (time to react)/ (factor)
+
+concurrent connections：并发连接数
+
+seconds: pv统计的总时间，单位秒，要计算一天的pv就是86400秒
+
+para connect per a page: 页面衍生连接次数。一个html页面可能会请求好几次http连接，如外部的css, js ,图片等。可以估算一下
+
+
+
+此文来自: 马开东博客 转载请注明出处 网址： http://www.makaidong.com
+
+，或者用10。可根据实际情况改变
+
+
+
+time to react：http响应时间，可以使用1秒或更少。可根据实际情况改变
+
+factor：因数，一般使用5即可。可根据实际情况计算后推出
+
+web hosts：其他web服务器 数量
+
+* para connect per a page，time to react，factor这三个参数要根据实际情况分析计算后，确定一个适合的值
+
+推算一下。单台机器1000并发的情况下，一天是1,728,000的pv(1秒响应，10个衍生连接，因子为5的情况下)
+
+==================================================================================
+
+术语说明：  qps = req/sec = 请求数/秒
+
+【qps计算pv和机器的方式】
+
+qps统计方式 [一般使用 http_load 进行统计]  qps = 总请求数 / ( 进程总数 * 请求时间 )  qps: 单个进程每秒请求服务器的成功次数
+
+单台服务器每天pv计算  公式1：每天总pv = qps * 3600 * 6  公式2：每天总pv = qps * 3600 * 8
+
+服务器计算  服务器数量 = ceil( 每天总pv / 单台服务器每天总pv )
+
+【峰值qps和机器计算公式】
+
+原理：每天80%的访问集中在20%的时间里，这20%时间叫做峰值时间  公式：( 总pv数 * 80% ) / ( 每天秒数 * 20% ) = 峰值时间每秒请求数(qps)  机器：峰值时间每秒qps / 单台机器的qps = 需要的机器
+
+问：每天300w pv 的在单台机器上，这台机器需要多少qps？  答：( 3000000 * 0.8 ) / (86400 * 0.2 ) = 139 (qps)
+
+问：如果一台机器的qps是58，需要几台机器来支持？  答：139 / 58 = 3
+
+ps: 在实际情况中，会把这个考虑的更多一点，就是把qps再往多了调一调，以防万
+
+ps：下面是性能测试的主要概念和计算公式，记录下：
+
+一．系统吞度量要素：
+
+  一个系统的吞度量（承压能力）与request对cpu的消耗、外部接口、io等等紧密关联。
+
+单个reqeust 对cpu消耗越高，外部系统接口、io影响速度越慢，系统吞吐能力越低，反之越高。
+
+系统吞吐量几个重要参数：qps（tps）、并发数、响应时间
+
+        qps（tps）：每秒钟request/事务 数量
+
+        并发数： 系统同时处理的request/事务数
+
+        响应时间：  一般取平均响应时间
+
+（很多人经常会把并发数和tps理解混淆）
+
+理解了上面三个要素的意义之后，就能推算出它们之间的关系：
+
+qps（tps）= 并发数/平均响应时间
+
+        一个系统吞吐量通常由qps（tps）、并发数两个因素决定，每套系统这两个值都
+
+
+
+此文来自: 马开东博客 转载请注明出处 网址： http://www.makaidong.com
+
+有一个相对极限值，在应用场景访问压力下，只要某一项达到系统最高值，系统的吞吐量就上不去了，如果压力继续增大，系统的吞吐量反而会下降，原因是系统超负荷工作，上下文切换、内存等等其它消耗导致系统性能下降。
+
+
+决定系统响应时间要素
+
+我们做项目要排计划，可以多人同时并发做多项任务，也可以一个人或者多个人串行工作，始终会有一条关键路径，这条路径就是项目的工期。
+
+系统一次调用的响应时间跟项目计划一样，也有一条关键路径，这个关键路径是就是系统影响时间；
+
+关键路径是有cpu运算、io、外部系统响应等等组成。
+
+二．系统吞吐量评估：
+
+我们在做系统设计的时候就需要考虑cpu运算、io、外部系统响应因素造成的影响以及对系统性能的初步预估。
+
+而通常境况下，我们面对需求，我们评估出来的出来qps、并发数之外，还有另外一个维度：日pv。
+
+通过观察系统的访问日志发现，在用户量很大的情况下，各个时间周期内的同一时间段的访问流量几乎一样。比如工作日的每天早上。只要能拿到日流量图和qps我们就可以推算日流量。
+
+通常的技术方法：
+
+        1. 找出系统的最高tps和日pv，这两个要素有相对比较稳定的关系（除了放假、季节性因素影响之外）
+
+        2. 通过压力测试或者经验预估，得出最高tps，然后跟进1的关系，计算出系统最高的日吞吐量。b2b中文和淘宝 面对的客户群不一样，这两个客户群的网络行为不应用，他们之间的tps和pv关系比例也不一样。
+
+a)淘宝
+
+淘宝 的tps和pv之间的关系通常为  最高tps：pv大约为 1 : 11*3600 （相当于按最高tps访问11个小时，这个是商品详情的场景，不同的应用场景会有一些不同）
+
+b) b2b中文站
+
+b2b的tps和pv之间的关系不同的系统不同的应用场景比例变化比较大，粗略估计在1 : 8个小时左右的关系（09年对offerdetail的流量分析数据）。旺铺和offerdetail这两个比例相差很大，可能是因为爬虫暂的比例较高的原因导致。
+
+在淘宝 环境下，假设我们压力测试出的tps为100，那么这个系统的日吞吐量=100*11*3600=396万
+
+这个是在简单（单一url）的情况下，有些页面，一个页面有多个request，系统的实际吞吐量还要小。
+
+无论有无思考时间（t_think），测试所得的tps值和并发虚拟用户数(u_concurrent)、loadrunner读取的交易响应时间（t_response）之间有以下关系（稳定运行情况下）：
+tps=u_concurrent / (t_response+t_think)。
+
+并发数、qps、平均响应时间三者之间关系
+
+</code></pre>
+
+<h1 id="工具">工具</h1>
+
+<h2 id="ab">ab</h2>
+
+<h2 id="locust">locust</h2>
+
+  </div>
+</article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'blog-vgmdj-cn';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:vgmdj.wr@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/vgmdj" class="iconfont icon-github" title="github"></a>
+  <a href="https://blog.vgmdj.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+    <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">vgmdj</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?54c4a1219b45b912e867a23f5d8b675e";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>vgmdj</copyright>
-    <lastBuildDate>Tue, 28 Aug 2018 10:23:01 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Sep 2018 11:10:51 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.vgmdj.cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo博客建立</title>
+      <link>https://blog.vgmdj.cn/post/hugo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%8B/</link>
+      <pubDate>Wed, 12 Sep 2018 11:10:51 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/hugo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%8B/</guid>
+      <description>简述 随着文章数量的增长，hexo的生成速度也越来越慢，最终还是决定转入golang编写的静态博客框架hugo，从体验上来讲，功能基本都一致，</description>
+    </item>
     
     <item>
       <title>go语言学习-module机制</title>
