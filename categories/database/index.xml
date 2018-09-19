@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>vgmdj</copyright>
-    <lastBuildDate>Thu, 02 Aug 2018 13:30:50 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Jul 2018 10:24:51 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.vgmdj.cn/categories/database/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>redis学习-数据类型</title>
-      <link>https://blog.vgmdj.cn/draft/redis%E5%AD%A6%E4%B9%A0-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
-      <pubDate>Thu, 02 Aug 2018 13:30:50 +0000</pubDate>
-      
-      <guid>https://blog.vgmdj.cn/draft/redis%E5%AD%A6%E4%B9%A0-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
-      <description>前言 总结一下，redis在日常使用中，数据类型的各使用场景 String 字符串类型 HashMap 哈希映射表 List 双向链表 Set 集合 Sorted Set 有序集合</description>
-    </item>
     
     <item>
       <title>efk学习-ElasticSearch</title>
@@ -66,51 +57,6 @@
 &lt;p&gt;索引可以包含一个或多个列的值，如果索引包含多个列，那么列的顺序也十分重要，因为MySQL只能高效地使用索引的最左前缀列。创建一个包含两个列的索引，和创建两个只包含一列的索引是大不相同的。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>mysql学习-高级查询</title>
-      <link>https://blog.vgmdj.cn/draft/mysql%E5%AD%A6%E4%B9%A0-%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2/</link>
-      <pubDate>Thu, 05 Apr 2018 10:00:49 +0000</pubDate>
-      
-      <guid>https://blog.vgmdj.cn/draft/mysql%E5%AD%A6%E4%B9%A0-%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2/</guid>
-      <description>连接查询 联合查询 子查询</description>
-    </item>
-    
-    <item>
-      <title>mysql学习-优化</title>
-      <link>https://blog.vgmdj.cn/draft/mysql%E5%AD%A6%E4%B9%A0-%E4%BC%98%E5%8C%96/</link>
-      <pubDate>Mon, 02 Apr 2018 22:00:50 +0000</pubDate>
-      
-      <guid>https://blog.vgmdj.cn/draft/mysql%E5%AD%A6%E4%B9%A0-%E4%BC%98%E5%8C%96/</guid>
-      <description>数据库优化 数据库优化必要性，主要方式 explain分析 使用explain非常简单，只需要在查询语句前加上explain即可，但是需要注意的是</description>
-    </item>
-    
-    <item>
-      <title>redis学习-持久化</title>
-      <link>https://blog.vgmdj.cn/draft/redis%E5%AD%A6%E4%B9%A0-%E6%8C%81%E4%B9%85%E5%8C%96/</link>
-      <pubDate>Mon, 02 Apr 2018 13:30:50 +0000</pubDate>
-      
-      <guid>https://blog.vgmdj.cn/draft/redis%E5%AD%A6%E4%B9%A0-%E6%8C%81%E4%B9%85%E5%8C%96/</guid>
-      <description>简述 Redis作为内存型数据库，其数据被缓存在内存中，为了使Redis重启后数据不丢失，就需要已某种方式把数据持久化到磁盘中。Redis持久</description>
-    </item>
-    
-    <item>
-      <title>redis学习-总览</title>
-      <link>https://blog.vgmdj.cn/draft/redis%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
-      <pubDate>Mon, 02 Apr 2018 12:30:50 +0000</pubDate>
-      
-      <guid>https://blog.vgmdj.cn/draft/redis%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
-      <description>简述 Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。 现阶段其主要的应用场景是作为缓存使用 特点 Redis 与其他 key - value 缓存产</description>
-    </item>
-    
-    <item>
-      <title>mysql学习-主从同步</title>
-      <link>https://blog.vgmdj.cn/draft/mysql%E5%AD%A6%E4%B9%A0-%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/</link>
-      <pubDate>Fri, 23 Mar 2018 15:23:50 +0000</pubDate>
-      
-      <guid>https://blog.vgmdj.cn/draft/mysql%E5%AD%A6%E4%B9%A0-%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/</guid>
-      <description>介绍</description>
     </item>
     
     <item>
