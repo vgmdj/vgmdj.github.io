@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>消息队列 on vgmdj&#39;s blog</title>
+    <link>https://blog.vgmdj.cn/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</link>
+    <description>Recent content in 消息队列 on vgmdj&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>vgmdj</copyright>
+    <lastBuildDate>Mon, 18 Jun 2018 23:50:51 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.vgmdj.cn/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>消息队列学习-RabbitMQ健康检查</title>
+      <link>https://blog.vgmdj.cn/post/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%AD%A6%E4%B9%A0-RabbitMQ%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/</link>
+      <pubDate>Mon, 18 Jun 2018 23:50:51 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%AD%A6%E4%B9%A0-RabbitMQ%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/</guid>
+      <description>&lt;h1 id=&#34;rest-api-监测&#34;&gt;Rest API 监测&lt;/h1&gt;
+
+&lt;p&gt;需要注意的是RabbitMQ中对外提供的Rest API接口，是Management Plugin所提供的，如果没有安装这个插件的话，则需要使用amqp的方式&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;vhost 检查
+用于检测vhost的运行情况，如果正常，则会收到 “ok”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;路径： /api/aliveness-test/{:vhost}
+返回：
+    {
+      status: &amp;quot;ok&amp;quot;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

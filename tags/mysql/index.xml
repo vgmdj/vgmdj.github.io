@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mysql on vgmdj&#39;s blog</title>
+    <link>https://blog.vgmdj.cn/tags/mysql/</link>
+    <description>Recent content in Mysql on vgmdj&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>vgmdj</copyright>
+    <lastBuildDate>Fri, 06 Apr 2018 10:00:49 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.vgmdj.cn/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mysql学习-索引</title>
+      <link>https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E7%B4%A2%E5%BC%95/</link>
+      <pubDate>Fri, 06 Apr 2018 10:00:49 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E7%B4%A2%E5%BC%95/</guid>
+      <description>&lt;h1 id=&#34;索引&#34;&gt;索引&lt;/h1&gt;
+
+&lt;p&gt;索引是存储引擎找到记录的一种数据结构，而索引优化是对查询性能优化最有效的手段。其类似于一本书的目录部分，如果想在一本书中找到某个特定主题，一般会先看书中的“索引部分”，找到对应的页码。&lt;/p&gt;
+
+&lt;p&gt;在MySQL中，存储引擎用类似的方法使用索引，其先在索引中找到对应值，然后根据匹配的索引记录找到对应的数据行。&lt;/p&gt;
+
+&lt;p&gt;索引可以包含一个或多个列的值，如果索引包含多个列，那么列的顺序也十分重要，因为MySQL只能高效地使用索引的最左前缀列。创建一个包含两个列的索引，和创建两个只包含一列的索引是大不相同的。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mysql学习-事务</title>
+      <link>https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E5%8A%A1/</link>
+      <pubDate>Thu, 22 Mar 2018 15:23:50 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E5%8A%A1/</guid>
+      <description>&lt;h1 id=&#34;定义&#34;&gt;定义&lt;/h1&gt;
+
+&lt;p&gt;事务(transaction)是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位。同时，事务也是恢复和并发控制的基本单位。&lt;/p&gt;
+
+&lt;h1 id=&#34;事务特性-acid&#34;&gt;事务特性(acid)&lt;/h1&gt;
+
+&lt;h2 id=&#34;四大特性&#34;&gt;四大特性&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原子性(atomicity)
+　原子性是指事务包含的所有操作要么全部操作，要么全部不做，事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;一致性(consistency)
+一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。
+　拿转账来说，假设用户A和用户B两者的钱加起来一共是5000，那么不管A和B之间如何转账，转几次账，事务结束后两个用户的钱相加起来应该还得是5000，这就是事务的一致性&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;隔离性(isolation)
+隔离性是当多个用户并发访问数据库时，比如操作同一张表时，数据库为每一个用户开启的事务，不能被其他事务的操作所干扰，多个并发事务之间要相互隔离。
+　即要达到这么一种效果：对于任意两个并发的事务T1和T2，在事务T1看来，T2要么在T1开始之前就已经结束，要么在T1结束之后才开始，这样每个事务都感觉不到有其他事务在并发地执行。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;持久性(durability)
+持久性是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，即便是在数据库系统遇到故障的情况下也不会丢失提交事务的操作。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mysql学习-总览</title>
+      <link>https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
+      <pubDate>Wed, 21 Mar 2018 15:23:50 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
+      <description>&lt;h2 id=&#34;简述&#34;&gt;简述&lt;/h2&gt;
+
+&lt;p&gt;数据库(Database,简称DB): 长期存储在计算机内、有组织的、可共享的大量数据的集合
+数据库管理系统(Database Management System，简称DBMS)： 位于用户与操作系统之间的一层数据管理软件，是一个大型复杂的软件系统，mysql就是一个开源的RDBMS
+因所有的关系型数据库操作及功能都很类似，所以深入研究Mysql，可知识迁移到其他数据库中&lt;/p&gt;
+
+&lt;h2 id=&#34;书籍推荐&#34;&gt;书籍推荐：&lt;/h2&gt;
+
+&lt;p&gt;《高性能mysql》、《深入浅出MYSQL》、《MySQL性能调优与架构设计》&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>go语言学习-map - vgmdj&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="VGMDJ" />
+  <meta name="description" content="环境 go版本 1.10
+
+" />
+
+  <meta name="keywords" content="vgmdj, blog, it" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.48" />
+
+
+<link rel="canonical" href="https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-map/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="go语言学习-map" />
+<meta property="og:description" content="环境
+
+go版本 1.10
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-map/" /><meta property="article:published_time" content="2018-03-30T13:23:51&#43;00:00"/>
+<meta property="article:modified_time" content="2018-03-30T15:23:58&#43;00:00"/>
+<meta itemprop="name" content="go语言学习-map">
+<meta itemprop="description" content="环境
+
+go版本 1.10
+
+">
+
+
+<meta itemprop="datePublished" content="2018-03-30T13:23:51&#43;00:00" />
+<meta itemprop="dateModified" content="2018-03-30T13:23:51&#43;00:00" />
+<meta itemprop="wordCount" content="2279">
+
+
+
+<meta itemprop="keywords" content="Golang,学习," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="go语言学习-map"/>
+<meta name="twitter:description" content="环境
+
+go版本 1.10
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">keep thinking</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/messages/">
+        <li class="mobile-menu-item">Messages</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">keep thinking</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/messages/">Messages</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">go语言学习-map</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-03-30 13:23:51 </span>
+        <div class="post-category">
+            
+              <a href="/categories/Golang/"> Golang </a>
+            
+          </div>
+        <span class="more-meta"> 约 2279 字 </span>
+        <span class="more-meta"> 预计阅读 5 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#环境">环境</a></li>
+<li><a href="#hashmap和hashtable">HashMap和HashTable</a></li>
+<li><a href="#go-map一般操作">go map一般操作</a></li>
+<li><a href="#go-map并发线程操作">go map并发线程操作</a></li>
+<li><a href="#go-map的遍历">go map的遍历</a></li>
+<li><a href="#go-map结构">go map结构</a>
+<ul>
+<li><a href="#header">header</a></li>
+<li><a href="#bucket">bucket</a></li>
+</ul></li>
+<li><a href="#map-操作解析">map 操作解析</a>
+<ul>
+<li><a href="#确定buckets">确定buckets</a></li>
+<li><a href="#增量扩容">增量扩容</a></li>
+<li><a href="#增删改查">增删改查</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      <h2 id="环境">环境</h2>
+
+<p>go版本 1.10</p>
+
+<p></p>
+
+<h2 id="hashmap和hashtable">HashMap和HashTable</h2>
+
+<p>线性表中，数组查询方便，链表插入、删除方便，而HashTable则是结合了两者的优点，使得在所有操作上都是 O(1) 的时间复杂度，效率非常高
+HashMap是基于HashTable的 Map 接口的实现，其去掉了线程同步的操作，因而效率要更高一些，所以说HashTable是线程安全的，而HashMap则非线程安全。
+go语言中的map类型就是使用的HashMap,即go中的map非线程安全，不能放在多个goroutine中，只能自己维护线程安全</p>
+
+<h2 id="go-map一般操作">go map一般操作</h2>
+
+<pre><code>//创建map
+a := make(map[string]string)
+//存入
+a[&quot;first&quot;] = &quot;first&quot;
+//读取
+fmt.Println(a[&quot;first&quot;])
+</code></pre>
+
+<p>需要注意的是，并不是所有的类型都可以作为key值，在Go的语言规范中已精确定义，只有能比较是否相等的类型才可以作为key值，key的类型可以是：
+- 布尔值
+- 数字
+- 字符串
+- 指针
+- 通道
+- 接口类型
+- 结构体</p>
+
+<p>只包含上述类型的数组。
+不能是：
+- slice
+- map
+- function
+Key类型只要能支持==和!=操作符，即可以做为Key，当两个值==时，则认为是同一个Key。</p>
+
+<h2 id="go-map并发线程操作">go map并发线程操作</h2>
+
+<ul>
+<li>结构</li>
+</ul>
+
+<pre><code>var counter = struct{
+    sync.RWMutex
+    m map[string]int
+}{m: make(map[string]int)}
+
+</code></pre>
+
+<ul>
+<li>读</li>
+</ul>
+
+<pre><code>counter.RLock()
+n := counter.m[&quot;some_key&quot;]
+counter.RUnlock()
+fmt.Println(&quot;some_key:&quot;, n)
+</code></pre>
+
+<ul>
+<li>写</li>
+</ul>
+
+<pre><code>counter.Lock()
+counter.m[&quot;some_key&quot;]++
+counter.Unlock()
+</code></pre>
+
+<h2 id="go-map的遍历">go map的遍历</h2>
+
+<p>go语言中map存放是无序的，即如果对一个map进行输出，其并不会按照输入的顺序，而是随机的
+那么如果想要实现map的一个有序的输出，就需要指定一组确立顺序的key</p>
+
+<pre><code>import &quot;sort&quot;
+
+var m map[int]string
+var keys []int
+for k := range m {
+    keys = append(keys, k)
+}
+sort.Ints(keys)
+for _, k := range keys {
+    fmt.Println(&quot;Key:&quot;, k, &quot;Value:&quot;, m[k])
+}
+
+</code></pre>
+
+<h2 id="go-map结构">go map结构</h2>
+
+<p>map实现可在/runtime/hashmap.go里查看</p>
+
+<h3 id="header">header</h3>
+
+<pre><code>// A header for a Go map.
+type hmap struct {
+	// Note: the format of the Hmap is encoded in ../../cmd/internal/gc/reflect.go and
+	// ../reflect/type.go. Don't change this structure without also changing that code!
+	count     int // # live cells == size of map.  Must be first (used by len() builtin)
+	flags     uint8
+	B         uint8  // log_2 of # of buckets (can hold up to loadFactor * 2^B items)
+	noverflow uint16 // approximate number of overflow buckets; see incrnoverflow for details
+	hash0     uint32 // hash seed
+
+	buckets    unsafe.Pointer // array of 2^B Buckets. may be nil if count==0.
+	oldbuckets unsafe.Pointer // previous bucket array of half the size, non-nil only when growing
+	nevacuate  uintptr        // progress counter for evacuation (buckets less than this have been evacuated)
+
+	extra *mapextra // optional fields
+}
+</code></pre>
+
+<ul>
+<li>count 提供给len()使用，用来记录map的大小，可以统计kv对的个数</li>
+<li>B map的容量，表示当前可以放入 loadFactor * 2^B 个item，2^B 即为buckets的数量</li>
+<li>buckets 桶，指向实际存储空间</li>
+<li>oldbuckets 只有在扩容时使用，其余情况下为空。如果当前哈希表正在扩容中，则oldbuckets不为空，并且buckets大小是oldbuckets大小的两倍。</li>
+<li>noverflow 溢出桶的大小</li>
+</ul>
+
+<p>由注释我们可以看到，这是Go map的header，map类型就是一个hash表的结构，数据被发放进buckets数组中，每个bucket包含有8个键值对，当溢出时，将再生成一个bucket，并将之链接到之前的bucket上</p>
+
+<h3 id="bucket">bucket</h3>
+
+<p>这里是map中每个bucket的结构，可以看出，是一个 8个单位长度的uint8数组</p>
+
+<pre><code>// A bucket for a Go map.
+type bmap struct {
+	// tophash generally contains the top byte of the hash value
+	// for each key in this bucket. If tophash[0] &lt; minTopHash,
+	// tophash[0] is a bucket evacuation state instead.
+	tophash [bucketCnt]uint8
+	// Followed by bucketCnt keys and then bucketCnt values.
+	// NOTE: packing all the keys together and then all the values together makes the
+	// code a bit more complicated than alternating key/value/key/value/... but it allows
+	// us to eliminate padding which would be needed for, e.g., map[int64]int8.
+	// Followed by an overflow pointer.
+}
+</code></pre>
+
+<p>bucketCnt 定义</p>
+
+<pre><code>const(
+  // Maximum number of key/value pairs a bucket can hold.
+  	bucketCntBits = 3
+  	bucketCnt     = 1 &lt;&lt; bucketCntBits
+)
+</code></pre>
+
+<p>可以从tophash的注释中看出，这里的key value存入顺序，不是key/value/key/value/&hellip; ， 而是key/key/key/key/value/value/value/value，这是因为考虑到map[int64]int8这种情况，存在64和8两种大小，考虑到字节对齐，会浪费很多存储空间</p>
+
+<h2 id="map-操作解析">map 操作解析</h2>
+
+<h3 id="确定buckets">确定buckets</h3>
+
+<p>hash表的bucket确定方式，一般为key值求hash后，用hash值对总的buckets数取余，即hash mod (2^B)，可优化为以下操作</p>
+
+<pre><code>// bucketShift returns 1&lt;&lt;b, optimized for code generation.
+func bucketShift(b uint8) uintptr {
+	if sys.GoarchAmd64|sys.GoarchAmd64p32|sys.Goarch386 != 0 {
+		b &amp;= sys.PtrSize*8 - 1 // help x86 archs remove shift overflow checks
+	}
+	return uintptr(1) &lt;&lt; b
+}
+
+// bucketMask returns 1&lt;&lt;b - 1, optimized for code generation.
+func bucketMask(b uint8) uintptr {
+	return bucketShift(b) - 1
+}
+
+h *hmap
+hash % (1 &lt;&lt; h.B)
+=&gt; hash &amp; bucketMask(h.B)
+</code></pre>
+
+<h3 id="增量扩容">增量扩容</h3>
+
+<p>为什么会增量扩容呢？主要是缩短map容器的响应时间。假如我们直接将map用作某个响应实时性要求非常高的web应用存储，如果不采用增量扩容，当map里面存储的元素很多之后，扩容时系统就会卡往，导致较长一段时间内无法响应请求。不过增量扩容本质上还是将总的扩容时间分摊到了每一次哈希操作上面。
+扩容会建立一个大小是原来2倍的新的表，将旧的bucket搬到新的表中之后，并不会将旧的bucket从oldbucket中删除，而是加上一个已删除的标记。
+正是由于这个工作是逐渐完成的，这样就会导致一部分数据在old table中，一部分在new table中， 所以对于hash table的insert, remove, lookup操作的处理逻辑产生影响。只有当所有的bucket都从旧表移到新表之后，才会将oldbucket释放掉。
+扩容的填充因子是多少呢？如果grow的太频繁，会造成空间的利用率很低， 如果很久才grow，会形成很多的overflow buckets，查找的效率也会下降。 这个平衡点如何选取呢(在go中，这个平衡点是有一个宏控制的(#define LOAD 6.5), 它的意思是这样的，如果table中元素的个数大于table中能容纳的元素的个数， 那么就触发一次grow动作。那么这个6.5是怎么得到的呢？原来这个值来源于作者的一个测试程序，遗憾的是没能找到相关的源码，不过作者给出了测试的结果：</p>
+
+<pre><code>// Maximum average load of a bucket that triggers growth is 6.5.
+// Represent as loadFactorNum/loadFactDen, to allow integer math.
+	loadFactorNum = 13
+	loadFactorDen = 2
+</code></pre>
+
+<pre><code>Picking loadFactor: too large and we have lots of overflow
+buckets, too small and we waste a lot of space. I wrote
+a simple program to check some stats for different loads:
+(64-bit, 8 byte keys and values)
+loadFactor    %overflow  bytes/entry     hitprobe    missprobe
+      4.00         2.13        20.77         3.00         4.00
+      4.50         4.05        17.30         3.25         4.50
+      5.00         6.85        14.77         3.50         5.00
+      5.50        10.55        12.94         3.75         5.50
+      6.00        15.27        11.67         4.00         6.00
+      6.50        20.90        10.79         4.25         6.50
+      7.00        27.14        10.15         4.50         7.00
+      7.50        34.03         9.73         4.75         7.50
+      8.00        41.10         9.40         5.00         8.00
+
+%overflow   = percentage of buckets which have an overflow bucket
+bytes/entry = overhead bytes used per key/value pair
+hitprobe    = # of entries to check when looking up a present key
+missprobe   = # of entries to check when looking up an absent key
+
+Keep in mind this data is for maximally loaded tables, i.e. just
+before the table grows. Typical tables will be somewhat less loaded.
+</code></pre>
+
+<h3 id="增删改查">增删改查</h3>
+
+<pre><code>未完待续
+</code></pre>
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">VGMDJ</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-03-30 15:23:58</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/Golang/">Golang</a>
+          
+          <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-interface/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">go语言学习-interface</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/">
+            <span class="next-text nav-default">服务器安全防护</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'blog-vgmdj-cn';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:vgmdj.wr@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/vgmdj" class="iconfont icon-github" title="github"></a>
+  <a href="https://blog.vgmdj.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+    <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">vgmdj</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?54c4a1219b45b912e867a23f5d8b675e";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>

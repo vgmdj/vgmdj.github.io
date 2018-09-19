@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机网络 on vgmdj&#39;s blog</title>
+    <link>https://blog.vgmdj.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+    <description>Recent content in 计算机网络 on vgmdj&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>vgmdj</copyright>
+    <lastBuildDate>Thu, 08 Mar 2018 13:42:29 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.vgmdj.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>计算机网络学习-页面的请求过程</title>
+      <link>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Thu, 08 Mar 2018 13:42:29 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B/</guid>
+      <description>&lt;p&gt;我们在学校上网时一次网页请求的过程是什么呢?
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>计算机网络学习-socket套接字分析</title>
+      <link>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-socket%E5%A5%97%E6%8E%A5%E5%AD%97%E5%88%86%E6%9E%90/</link>
+      <pubDate>Thu, 08 Mar 2018 13:42:05 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-socket%E5%A5%97%E6%8E%A5%E5%AD%97%E5%88%86%E6%9E%90/</guid>
+      <description>&lt;h2 id=&#34;tcp实验&#34;&gt;TCP实验：&lt;/h2&gt;
+
+&lt;h3 id=&#34;tcp客户端套接字程序&#34;&gt;TCP客户端套接字程序&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;import java.io.*;
+import java.net.*;
+class TCPClient{
+  public static void main(String argv[]) throws Exception
+  {
+     String sentence;
+     String modifiedSentence;
+     BufferedReader inFromUser =
+        new BufferedReader(
+              new InputStreamReader(System.in));
+     Socket ClientSocket = new Socket(&amp;quot;222.194.1.36&amp;quot;,6789);
+     DataOutputStream outToServer =
+        new DataOutputStream(
+              ClientSocket.getOutputStream());
+     BufferedReader inFromServer =
+        new BufferedReader(new InputStreamReader(
+               ClientSocket.getInputStream()));
+     sentence =inFromUser.readLine();
+     outToServer.writeBytes(sentence + &#39;\n&#39;);
+     modifiedSentence = inFromServer.readLine();
+     System.out.println(&amp;quot;FROM SERVER:&amp;quot;+
+                           modifiedSentence);
+     ClientSocket.close();
+   }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>计算机网络学习-协议分析</title>
+      <link>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/</link>
+      <pubDate>Thu, 08 Mar 2018 13:40:56 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/</guid>
+      <description>&lt;h2 id=&#34;协议分层&#34;&gt;协议分层&lt;/h2&gt;
+
+&lt;p&gt;互联网协议分为五层，各层的所有协议被称为协议栈。一般采用自顶向下的方法，首先处理应用层，然后向下进行处理&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;应用层
+运输层
+网络层
+链路层
+物理层
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>计算机网络学习-测试通信</title>
+      <link>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E6%B5%8B%E8%AF%95%E9%80%9A%E4%BF%A1/</link>
+      <pubDate>Thu, 08 Mar 2018 13:39:52 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E6%B5%8B%E8%AF%95%E9%80%9A%E4%BF%A1/</guid>
+      <description>&lt;p&gt;之前学习网络的时候做的一些总结，现在正好整理一下，再加深一下记忆&lt;/p&gt;
+
+&lt;h1 id=&#34;测试连接通信主要有命令&#34;&gt;测试连接通信主要有命令&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ping&lt;/li&gt;
+&lt;li&gt;arp&lt;/li&gt;
+&lt;li&gt;ipconfig&lt;/li&gt;
+&lt;li&gt;tracert&lt;/li&gt;
+&lt;li&gt;netstat&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

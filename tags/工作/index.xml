@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工作 on vgmdj&#39;s blog</title>
+    <link>https://blog.vgmdj.cn/tags/%E5%B7%A5%E4%BD%9C/</link>
+    <description>Recent content in 工作 on vgmdj&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>vgmdj</copyright>
+    <lastBuildDate>Mon, 23 Apr 2018 16:23:50 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.vgmdj.cn/tags/%E5%B7%A5%E4%BD%9C/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>微信开发问题小结</title>
+      <link>https://blog.vgmdj.cn/post/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Mon, 23 Apr 2018 16:23:50 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+
+&lt;p&gt;微信公众号开发告一段落，在这里总结一下期间遇到的各种问题&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>我的职业发展之路</title>
+      <link>https://blog.vgmdj.cn/post/%E6%88%91%E7%9A%84%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/</link>
+      <pubDate>Sun, 05 Mar 2017 16:23:51 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E6%88%91%E7%9A%84%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/</guid>
+      <description>&lt;h2 id=&#34;毕业选择&#34;&gt;毕业选择&lt;/h2&gt;
+
+&lt;p&gt;随着毕业的临近，每天都会一次又一次的问自己，到底想干什么？
+- 程序员
+  使用大学里学到的技能，为自己赚点饭钱，不停挑战自己的极限，最终成为一个在计算机领域专家
+  优点：各方面还算熟悉，总归是一直在计算机专业环境下，无论是想学哪块，相信都不会太难
+  缺点：方面不明确，行业前景看不清，没有领路人
+- 公务员
+  就在老家，房价便宜，生活没有压力，富不起来，但也不可能饿着，身边朋友多，生活自在悠闲
+  优点：安逸，没必要为了生存一天到晚的忙碌和委屈求全
+  缺点：有上限，从性格、资源等各个方面都不相信自己有官场升职的潜力
+- 转行干土木
+  依靠家里的资源，不停的学习，最终自己出来单独接项目，成为光荣的包工头
+  优点：与当程序员正相反，家里大多是这一行，发展会很顺利，基本不会走弯路
+  缺点：各方面都不熟悉，最开始无论是想学哪一块，都会很费劲&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

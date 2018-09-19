@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>算法 on vgmdj&#39;s blog</title>
+    <link>https://blog.vgmdj.cn/tags/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on vgmdj&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>vgmdj</copyright>
+    <lastBuildDate>Sat, 18 Mar 2017 16:23:50 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.vgmdj.cn/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>算法学习-排序</title>
+      <link>https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Sat, 18 Mar 2017 16:23:50 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E6%8E%92%E5%BA%8F/</guid>
+      <description>&lt;h2 id=&#34;总述&#34;&gt;总述&lt;/h2&gt;
+
+&lt;p&gt;算法的排序，一方面作为其他算法的基础，一方面也体现了一些重要的算法的思想，需要我们好好掌握
+本章代码的go语言实现都可见于： &lt;a href=&#34;https://github.com/vgmdj/go_practice/tree/master/algorithm/sort&#34;&gt;https://github.com/vgmdj/go_practice/tree/master/algorithm/sort&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;冒泡排序&lt;/li&gt;
+&lt;li&gt;选择排序&lt;/li&gt;
+&lt;li&gt;插入排序&lt;/li&gt;
+&lt;li&gt;快速排序&lt;/li&gt;
+&lt;li&gt;归并排序&lt;/li&gt;
+&lt;li&gt;堆排序&lt;/li&gt;
+&lt;li&gt;希尔排序&lt;/li&gt;
+&lt;li&gt;计数排序&lt;/li&gt;
+&lt;li&gt;基数排序&lt;/li&gt;
+&lt;li&gt;桶排序&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>算法学习-总览</title>
+      <link>https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
+      <pubDate>Sat, 04 Mar 2017 16:23:50 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
+      <description>&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+
+&lt;p&gt;算法是程序员实力体现的一部分，在日常工作中，不停寻求最优算法，应该是程序员的基本修奍了
+下面先做一些总结，留着以后复习使用&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

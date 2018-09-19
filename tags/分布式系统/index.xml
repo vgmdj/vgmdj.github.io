@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>分布式系统 on vgmdj&#39;s blog</title>
+    <link>https://blog.vgmdj.cn/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/</link>
+    <description>Recent content in 分布式系统 on vgmdj&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>vgmdj</copyright>
+    <lastBuildDate>Mon, 14 May 2018 14:38:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.vgmdj.cn/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>微服务学习-数据一致性理论</title>
+      <link>https://blog.vgmdj.cn/post/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AD%A6%E4%B9%A0-%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7%E7%90%86%E8%AE%BA/</link>
+      <pubDate>Mon, 14 May 2018 14:38:21 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AD%A6%E4%B9%A0-%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7%E7%90%86%E8%AE%BA/</guid>
+      <description>&lt;h1 id=&#34;简述&#34;&gt;简述&lt;/h1&gt;
+
+&lt;p&gt;分布式系统架构中，分布式事务问题是一个绕不过去的挑战。而微服务架构的流行，让分布式事问题日益突出！
+对于单体应用而言，所有的数据库操作都在一起，可以很简单的使用本地事务，来保证数据的ACID。
+但是对于分布式系统，系统由多个独立的服务组成，那么如何解决分布式调用时候数据的一致性就成了一个问题。
+具体业务场景如下，比如一个业务操作，如果同时调用服务 A、B、C，需要满足要么同时成功；要么同时失败。A、B、C 可能是多个不同部门开发、部署在不同服务器上的远程服务。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>微服务学习-总览</title>
+      <link>https://blog.vgmdj.cn/post/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
+      <pubDate>Fri, 11 May 2018 14:31:31 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
+      <description>&lt;h1 id=&#34;简述&#34;&gt;简述&lt;/h1&gt;
+
+&lt;p&gt;使用基于微服务的方式使得应用程序开发变得更快更容易管理，它只需要较少的人力就能实现更多的功能，可以更快更容易地部署。把应用程序设计成一套微服务，更加容易在多台具有负载均衡的服务器上运行，使其能够轻松应对需求高峰、由于时间推移而平稳增长的需求和由于硬件或者软件问题导致的宕机事故。&lt;/p&gt;
+
+&lt;p&gt;微服务，从本质意义上看，还是SOA架构。但内涵有所不同，微服务并不绑定某种特殊的技术，在一个微服务的系统中，可以有Java编写的服务，也可以有Python编写的服务，他们是靠Restful架构风格统一成一个系统的。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>容器学习-k8s插件</title>
+      <link>https://blog.vgmdj.cn/post/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Tue, 01 May 2018 14:52:51 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E6%8F%92%E4%BB%B6/</guid>
+      <description>&lt;h2 id=&#34;应用插件&#34;&gt;应用插件&lt;/h2&gt;
+
+&lt;p&gt;安装完k8s后，仅仅只是第一步，我们还需要一系列的插件来提供对集群的管理，以提高效率&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;traefik ingress，提供负载均衡和统一的对外暴露端口&lt;/li&gt;
+&lt;li&gt;heapster插件，提供监控系统&lt;/li&gt;
+&lt;li&gt;dashboard插件，用于显示当前资源使用情况&lt;/li&gt;
+&lt;li&gt;EFK插件，ElasticSearch+Fluentd+Kibana，用于日志的收集分析和搜索&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>容器学习-k8s搭建</title>
+      <link>https://blog.vgmdj.cn/post/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Thu, 26 Apr 2018 14:28:51 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E6%90%AD%E5%BB%BA/</guid>
+      <description>&lt;h1 id=&#34;kubernetes-学习&#34;&gt;kubernetes 学习&lt;/h1&gt;
+
+&lt;p&gt;目标，搭建好环境，使k8s集群运行起来，在其上部署一个服务，并可以正常访问
+当然，单单一个k8s搭建完成还是不够的，还需要一系统的应用来保证服务的高可用，如负载均衡，多master防单点故障等
+会在之后进行分析&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
