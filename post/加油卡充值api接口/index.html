@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="VGMDJ" />
-  <meta name="description" content="加油卡充值API接口 接口调用前，请先联系客服人员，索取地址，分配appid和key，以及配置ip白名单等。加油卡完成网上充值后，需到所充值油" />
+  <meta name="description" content="加油卡充值API接口 接口调用前，请先联系客服人员，索取地址，开通对应充值权限，分配appid和key，以及配置ip白名单。加油卡完成网上充值" />
 
   <meta name="keywords" content="vgmdj, blog, it" />
 
@@ -50,24 +50,24 @@
 
 
 <meta property="og:title" content="加油卡充值api接口" />
-<meta property="og:description" content="加油卡充值API接口 接口调用前，请先联系客服人员，索取地址，分配appid和key，以及配置ip白名单等。加油卡完成网上充值后，需到所充值油" />
+<meta property="og:description" content="加油卡充值API接口 接口调用前，请先联系客服人员，索取地址，开通对应充值权限，分配appid和key，以及配置ip白名单。加油卡完成网上充值" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.vgmdj.cn/post/%E5%8A%A0%E6%B2%B9%E5%8D%A1%E5%85%85%E5%80%BCapi%E6%8E%A5%E5%8F%A3/" /><meta property="article:published_time" content="2018-09-17T12:30:50&#43;00:00"/>
 <meta property="article:modified_time" content="2018-09-17T12:30:50&#43;00:00"/>
 <meta itemprop="name" content="加油卡充值api接口">
-<meta itemprop="description" content="加油卡充值API接口 接口调用前，请先联系客服人员，索取地址，分配appid和key，以及配置ip白名单等。加油卡完成网上充值后，需到所充值油">
+<meta itemprop="description" content="加油卡充值API接口 接口调用前，请先联系客服人员，索取地址，开通对应充值权限，分配appid和key，以及配置ip白名单。加油卡完成网上充值">
 
 
 <meta itemprop="datePublished" content="2018-09-17T12:30:50&#43;00:00" />
 <meta itemprop="dateModified" content="2018-09-17T12:30:50&#43;00:00" />
-<meta itemprop="wordCount" content="1690">
+<meta itemprop="wordCount" content="2867">
 
 
 
 <meta itemprop="keywords" content="工作," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="加油卡充值api接口"/>
-<meta name="twitter:description" content="加油卡充值API接口 接口调用前，请先联系客服人员，索取地址，分配appid和key，以及配置ip白名单等。加油卡完成网上充值后，需到所充值油"/>
+<meta name="twitter:description" content="加油卡充值API接口 接口调用前，请先联系客服人员，索取地址，开通对应充值权限，分配appid和key，以及配置ip白名单。加油卡完成网上充值"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -147,8 +147,8 @@
               <a href="/categories/%E5%B7%A5%E4%BD%9C/"> 工作 </a>
             
           </div>
-        <span class="more-meta"> 约 1690 字 </span>
-        <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span class="more-meta"> 约 2867 字 </span>
+        <span class="more-meta"> 预计阅读 6 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -167,6 +167,8 @@
 <li><a href="#充值结果通知">充值结果通知</a></li>
 <li><a href="#订单查询">订单查询</a></li>
 <li><a href="#签名方式">签名方式</a></li>
+<li><a href="#错误码">错误码</a></li>
+<li><a href="#常见问题">常见问题</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -182,7 +184,7 @@
 
 <h1 id="加油卡充值api接口">加油卡充值API接口</h1>
 
-<p>接口调用前，请先联系客服人员，索取地址，分配appid和key，以及配置ip白名单等。加油卡完成网上充值后，需到所充值油卡当地加油站请工作 人员进行激活(圈存)操作，否则充值金额将无法生效。发票等相关问题请联系客服。</p>
+<p>接口调用前，请先联系客服人员，<strong>索取地址，开通对应充值权限，分配appid和key，以及配置ip白名单</strong>。加油卡完成网上充值后，需到所充值油卡当地加油站请工作 人员进行激活(圈存)操作，否则充值金额将无法生效。发票等相关问题请联系客服。</p>
 
 <p>22:40-1:00 属于系统维护时间，此时间段内提交的申请，会延时至1:01 进行处理。如果在此时间段内进行充值，请耐心等待回调通知，不必进行大量查询。</p>
 
@@ -240,7 +242,7 @@
 
 <tr>
 <td align="left">timestamp</td>
-<td align="left">int</td>
+<td align="left">string</td>
 <td align="left">Y</td>
 <td align="left">商户订单提交时间戳，时间误差应控制在上下五分钟以内</td>
 </tr>
@@ -357,7 +359,7 @@
 <td align="left">cash</td>
 <td align="left">string</td>
 <td align="left">Y</td>
-<td align="left">扣除费用</td>
+<td align="left">扣除费用(例如，余额120元，充值100元，实扣110元，那么充值后结余10元)</td>
 </tr>
 
 <tr>
@@ -365,6 +367,20 @@
 <td align="left">string</td>
 <td align="left">Y</td>
 <td align="left">扣除后结余， 注：不应作为最终凭证，只应作为提醒参考</td>
+</tr>
+
+<tr>
+<td align="left">credit</td>
+<td align="left">string</td>
+<td align="left">Y</td>
+<td align="left">信用额度，余额扣除后可以使用信用额度支付</td>
+</tr>
+
+<tr>
+<td align="left">timestamp</td>
+<td align="left">string</td>
+<td align="left">Y</td>
+<td align="left">回复时间戳</td>
 </tr>
 </tbody>
 </table>
@@ -459,7 +475,7 @@
 <td align="left">status</td>
 <td align="left">string</td>
 <td align="left">Y</td>
-<td align="left">订单状态 <br> - 0 充值成功 <br>- 1 充值失败 <br> -2  充值中</td>
+<td align="left">订单状态 <br> - 0 充值成功 <br>- 1 充值失败 <br> - 2  充值中</td>
 </tr>
 
 <tr>
@@ -480,7 +496,21 @@
 <td align="left">cash</td>
 <td align="left">string</td>
 <td align="left">Y</td>
-<td align="left">扣除费用</td>
+<td align="left">扣除费用(例如，余额120元，充值100元，实扣110元，那么充值后结余10元)</td>
+</tr>
+
+<tr>
+<td align="left">create_time</td>
+<td align="left">string</td>
+<td align="left">Y</td>
+<td align="left">订单创建时间，例 2018-09-10 00:00:00</td>
+</tr>
+
+<tr>
+<td align="left">update_time</td>
+<td align="left">string</td>
+<td align="left">Y</td>
+<td align="left">订单更新时间，订单最新更新时间 ；如订单状态为充值成功，即为充值成功时间；如订单状态为充值中，则为开始充值时间</td>
 </tr>
 
 <tr>
@@ -488,6 +518,13 @@
 <td align="left">string</td>
 <td align="left">Y</td>
 <td align="left">充值详情，如果充值成功，则提示 <strong>充值成功</strong> ,否则提示充值失败详情</td>
+</tr>
+
+<tr>
+<td align="left">timestamp</td>
+<td align="left">string</td>
+<td align="left">Y</td>
+<td align="left">回复时间戳</td>
 </tr>
 </tbody>
 </table>
@@ -534,7 +571,7 @@
 
 <tr>
 <td align="left">timestamp</td>
-<td align="left">int</td>
+<td align="left">string</td>
 <td align="left">Y</td>
 <td align="left">商户订单提交时间戳，时间误差应控制在上下五分钟以内</td>
 </tr>
@@ -651,7 +688,21 @@
 <td align="left">cash</td>
 <td align="left">string</td>
 <td align="left">Y</td>
-<td align="left">扣除费用</td>
+<td align="left">扣除费用(例如，余额120元，充值100元，实扣110元，那么充值后结余10元)</td>
+</tr>
+
+<tr>
+<td align="left">create_time</td>
+<td align="left">string</td>
+<td align="left">Y</td>
+<td align="left">订单创建时间，例 2018-09-10 00:00:00</td>
+</tr>
+
+<tr>
+<td align="left">update_time</td>
+<td align="left">string</td>
+<td align="left">Y</td>
+<td align="left">订单更新时间，订单最新更新时间 ；如订单状态为充值成功，即为充值成功时间；如订单状态为充值中，则为开始充值时间</td>
 </tr>
 
 <tr>
@@ -659,6 +710,20 @@
 <td align="left">string</td>
 <td align="left">Y</td>
 <td align="left">扣除后结余， 注：不应作为最终凭证，只应作为提醒参考</td>
+</tr>
+
+<tr>
+<td align="left">credit</td>
+<td align="left">string</td>
+<td align="left">Y</td>
+<td align="left">信用额度，余额扣除后可以使用信用额度支付</td>
+</tr>
+
+<tr>
+<td align="left">timestamp</td>
+<td align="left">string</td>
+<td align="left">Y</td>
+<td align="left">回复时间戳</td>
 </tr>
 </tbody>
 </table>
@@ -669,35 +734,212 @@
 
 <h2 id="签名方式">签名方式</h2>
 
-<p>订单签名需要将 分配的md5key加入到 [Data]中的 kv对，再以key排序，并连接value，然后用md5生成32位小写字符串
-举例：</p>
+<ul>
+<li>提交数据</li>
+</ul>
+
+<p>数据签名方式为提交数据除“sign”本身外的所有key-value键值对，将分配的md5key加入进去后，以key值进行排序，再将value进行拼接，最后再用进行md5转换为32位小写</p>
+
+<p>举例：</p>
 
 <pre><code>充值提交数据：
 app_id: AppID
 out_order_no: OutOrderNo
 user_card_id: 1234567890123456789
-amount: 100
-timestamp: 1234567890
+amount: 10000
+timestamp: 1537425980
 
 用户md5key: Md5Key
 
+加入md5key后将key排序：
+amount app_id md5key out_order_no timestamp user_card_id
+
 以key排序后，生成待签名字符串为：
-100AppIDMd5KeyOutOrderNo15374259801234567890123456789Md5Key
+10000AppIDMd5KeyOutOrderNo15374259801234567890123456789
 
 md5 生成32位小写签名字符串
-bfa5fe2e79b2c190fbfe4228fb044a33
+6bc6fbeecc874533ca0d87e9964fe936
 
 最终提交数据
 {
-  &quot;amount&quot;:&quot;100&quot;,
+  &quot;amount&quot;:&quot;10000&quot;,
   &quot;app_id&quot;:&quot;AppID&quot;,
   &quot;out_order_no&quot;:&quot;OutOrderNo&quot;,
   &quot;user_card_id&quot;:&quot;1234567890123456789&quot;,
   &quot;timestamp&quot;:&quot;1537425980&quot;,
-  &quot;sign&quot;:&quot;bfa5fe2e79b2c190fbfe4228fb044a33&quot;
+  &quot;sign&quot;:&quot;6bc6fbeecc874533ca0d87e9964fe936&quot;
 }
 
 </code></pre>
+
+<ul>
+<li>验证签名</li>
+</ul>
+
+<p>订单签名需要将 分配的md5key加入到 [Data]中的 kv对，再以key排序，并连接value，然后用md5生成32位小写字符串与返回的sign进行比较。</p>
+
+<p>需要注意的是，只有[Data]中的数据才会参与签名</p>
+
+<p>举例：</p>
+
+<pre><code>提交结果后收到的回复数据：
+{
+  &quot;code&quot;:0,
+  &quot;msg&quot;:&quot;成功&quot;,
+  &quot;data&quot;:{
+    &quot;amount&quot;:&quot;10000&quot;,
+    &quot;balance&quot;:&quot;0&quot;,
+    &quot;cash&quot;:&quot;12000&quot;,
+    &quot;credit&quot;:&quot;24000&quot;,
+    &quot;order_no&quot;:&quot;5ba9f91fe9f2122a4cc2561b&quot;,
+    &quot;out_order_no&quot;:&quot;OutOrderNo&quot;,
+    &quot;product&quot;:&quot;加油充值100元&quot;,
+    &quot;result_code&quot;:&quot;SUCCESS&quot;,
+    &quot;result_msg&quot;:&quot;SUCCESS&quot;,
+    &quot;timestamp&quot;:&quot;1537866018&quot;,
+    &quot;user_card_id&quot;:&quot;1234567890123456789&quot;
+  },
+  &quot;sign&quot;:&quot;df9915b578e9090e516ebaa0e83f821e&quot;
+}
+
+md5key : Md5Key
+
+data中数据加入md5key后以key排序：
+amount balance cash credit md5key order_no out_order_no product result_code result_msg timestamp user_card_id
+
+拼接value字符串为：
+1000001200024000Md5Key5ba9f91fe9f2122a4cc2561bOutOrderNo加油充值100元SUCCESSSUCCESS15378660181234567890123456789
+
+md5转换后：
+df9915b578e9090e516ebaa0e83f821e
+
+与返回sign对比
+一致，验签成功
+
+
+</code></pre>
+
+<hr />
+
+<h2 id="错误码">错误码</h2>
+
+<table>
+<thead>
+<tr>
+<th align="left">错误码</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">0</td>
+<td align="left">成功（系统收到请求）</td>
+</tr>
+
+<tr>
+<td align="left">10001</td>
+<td align="left">错误R MD5KEY</td>
+</tr>
+
+<tr>
+<td align="left">10003</td>
+<td align="left">错误的APPID</td>
+</tr>
+
+<tr>
+<td align="left">10008</td>
+<td align="left">被禁止的IP</td>
+</tr>
+
+<tr>
+<td align="left">10021</td>
+<td align="left">当前IP请求超过限制</td>
+</tr>
+
+<tr>
+<td align="left">10023</td>
+<td align="left">当前APPID请求超过次数限制</td>
+</tr>
+
+<tr>
+<td align="left">10024</td>
+<td align="left">系统内部异常(调用充值类业务时，请务必联系客服或通过订单查询接口检测订单，避免造成损失)</td>
+</tr>
+
+<tr>
+<td align="left">10029</td>
+<td align="left">充值通道异常（请联系客服检测订单）</td>
+</tr>
+
+<tr>
+<td align="left">10030</td>
+<td align="left">接口维护</td>
+</tr>
+
+<tr>
+<td align="left">10041</td>
+<td align="left">接口停用</td>
+</tr>
+
+<tr>
+<td align="left">20000</td>
+<td align="left">输入参数格式错误</td>
+</tr>
+
+<tr>
+<td align="left">20001</td>
+<td align="left">错误的充值金额</td>
+</tr>
+
+<tr>
+<td align="left">20007</td>
+<td align="left">检验值sign错误</td>
+</tr>
+
+<tr>
+<td align="left">20009</td>
+<td align="left">当前账户可用余额不足</td>
+</tr>
+
+<tr>
+<td align="left">20015</td>
+<td align="left">请求充值失败，请重试</td>
+</tr>
+
+<tr>
+<td align="left">20016</td>
+<td align="left">重复的订单号（需要自行进行二次确认，是否进行失败处理）</td>
+</tr>
+
+<tr>
+<td align="left">20027</td>
+<td align="left">订单号不存在</td>
+</tr>
+
+<tr>
+<td align="left">20038</td>
+<td align="left">订单无效/受理失败</td>
+</tr>
+
+<tr>
+<td align="left">20039</td>
+<td align="left">不合规范的订单号</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2 id="常见问题">常见问题</h2>
+
+<ul>
+<li><p>20000 输入参数格式错误<br>
+一般是由于发送的数据不是json格式所造成的，请检查所发送的数据格式，并确定Content-Type 为 application/json， 发送http方法为post</p></li>
+
+<li><p>20039 不合规范的订单号<br>
+一般是由于字段大小写不一致所造成，请确认发送的json数据中 key值的大小写，如请不要将 app_id 写成 AppID, AppId, app_ID, app_Id等格式</p></li>
+</ul>
 
     </div>
 
