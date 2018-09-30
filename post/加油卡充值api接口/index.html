@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="VGMDJ" />
-  <meta name="description" content="加油卡充值API接口 接口调用前，请先联系客服人员，索取地址，开通对应充值权限，分配appid和key，以及配置ip白名单。加油卡完成网上充值" />
+  <meta name="description" content="加油卡充值API接口 接口调用前，请先联系客服人员，开通对应充值权限，分配appid和key，以及配置ip白名单。加油卡完成网上充值后，需到所" />
 
   <meta name="keywords" content="vgmdj, blog, it" />
 
@@ -50,24 +50,24 @@
 
 
 <meta property="og:title" content="加油卡充值api接口" />
-<meta property="og:description" content="加油卡充值API接口 接口调用前，请先联系客服人员，索取地址，开通对应充值权限，分配appid和key，以及配置ip白名单。加油卡完成网上充值" />
+<meta property="og:description" content="加油卡充值API接口 接口调用前，请先联系客服人员，开通对应充值权限，分配appid和key，以及配置ip白名单。加油卡完成网上充值后，需到所" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.vgmdj.cn/post/%E5%8A%A0%E6%B2%B9%E5%8D%A1%E5%85%85%E5%80%BCapi%E6%8E%A5%E5%8F%A3/" /><meta property="article:published_time" content="2018-09-17T12:30:50&#43;00:00"/>
 <meta property="article:modified_time" content="2018-09-17T12:30:50&#43;00:00"/>
 <meta itemprop="name" content="加油卡充值api接口">
-<meta itemprop="description" content="加油卡充值API接口 接口调用前，请先联系客服人员，索取地址，开通对应充值权限，分配appid和key，以及配置ip白名单。加油卡完成网上充值">
+<meta itemprop="description" content="加油卡充值API接口 接口调用前，请先联系客服人员，开通对应充值权限，分配appid和key，以及配置ip白名单。加油卡完成网上充值后，需到所">
 
 
 <meta itemprop="datePublished" content="2018-09-17T12:30:50&#43;00:00" />
 <meta itemprop="dateModified" content="2018-09-17T12:30:50&#43;00:00" />
-<meta itemprop="wordCount" content="2867">
+<meta itemprop="wordCount" content="2891">
 
 
 
 <meta itemprop="keywords" content="工作," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="加油卡充值api接口"/>
-<meta name="twitter:description" content="加油卡充值API接口 接口调用前，请先联系客服人员，索取地址，开通对应充值权限，分配appid和key，以及配置ip白名单。加油卡完成网上充值"/>
+<meta name="twitter:description" content="加油卡充值API接口 接口调用前，请先联系客服人员，开通对应充值权限，分配appid和key，以及配置ip白名单。加油卡完成网上充值后，需到所"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -147,7 +147,7 @@
               <a href="/categories/%E5%B7%A5%E4%BD%9C/"> 工作 </a>
             
           </div>
-        <span class="more-meta"> 约 2867 字 </span>
+        <span class="more-meta"> 约 2891 字 </span>
         <span class="more-meta"> 预计阅读 6 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -169,6 +169,7 @@
 <li><a href="#签名方式">签名方式</a></li>
 <li><a href="#错误码">错误码</a></li>
 <li><a href="#常见问题">常见问题</a></li>
+<li><a href="#咨询联系微信">咨询联系微信：</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -184,7 +185,7 @@
 
 <h1 id="加油卡充值api接口">加油卡充值API接口</h1>
 
-<p>接口调用前，请先联系客服人员，<strong>索取地址，开通对应充值权限，分配appid和key，以及配置ip白名单</strong>。加油卡完成网上充值后，需到所充值油卡当地加油站请工作 人员进行激活(圈存)操作，否则充值金额将无法生效。发票等相关问题请联系客服。</p>
+<p>接口调用前，请先联系客服人员，<strong>开通对应充值权限，分配appid和key，以及配置ip白名单</strong>。加油卡完成网上充值后，需到所充值油卡当地加油站请工作 人员进行激活(圈存)操作，否则充值金额将无法生效。发票等相关问题请联系客服。</p>
 
 <p>22:40-1:00 属于系统维护时间，此时间段内提交的申请，会延时至1:01 进行处理。如果在此时间段内进行充值，请耐心等待回调通知，不必进行大量查询。</p>
 
@@ -193,7 +194,7 @@
 <h2 id="充值请求提交">充值请求提交</h2>
 
 <ul>
-<li>接口地址： /api/charge</li>
+<li>接口地址： <a href="https://api.85sh.com/oil/charge">https://api.85sh.com/oil/charge</a></li>
 <li>请求方式： POST</li>
 <li>返回格式： json</li>
 <li>备注：<strong>如果充值过程中，遇到http网络状态异常或返回系统异常，请务必通过订单查询接口检测订单或联系客服，不要直接做失败处理，避免造成不必要的损失!!!</strong></li>
@@ -361,20 +362,6 @@
 </tr>
 
 <tr>
-<td align="left">balance</td>
-<td align="left">string</td>
-<td align="left">Y</td>
-<td align="left">扣除后结余， 注：不应作为最终凭证，只应作为提醒参考</td>
-</tr>
-
-<tr>
-<td align="left">credit</td>
-<td align="left">string</td>
-<td align="left">Y</td>
-<td align="left">信用额度，余额扣除后可以使用信用额度支付</td>
-</tr>
-
-<tr>
 <td align="left">timestamp</td>
 <td align="left">string</td>
 <td align="left">Y</td>
@@ -530,7 +517,7 @@
 <h2 id="订单查询">订单查询</h2>
 
 <ul>
-<li>接口地址： /api/select</li>
+<li>接口地址： <a href="https://api.85sh.com/oil/select">https://api.85sh.com/oil/select</a></li>
 <li>请求方式： POST</li>
 <li>返回格式： json</li>
 <li>备注：<strong>一般用于结果通知未能正常处理后的补救，需要注意的是，系统维护时间内提交成功后，等待时间会延长，最长等待时间约为100分钟，如100分钟后仍未收结果，且订单查询异常，请联系客服人员进行处理</strong></li>
@@ -931,7 +918,17 @@ df9915b578e9090e516ebaa0e83f821e
 
 <li><p>20039 不合规范的订单号<br>
 一般是由于字段大小写不一致所造成，请确认发送的json数据中 key值的大小写，如请不要将 app_id 写成 AppID, AppId, app_ID, app_Id等格式</p></li>
+
+<li><p>20007 检验值sign错误<br>
+需注意是否加入md5key，注意只是value进行拼接</p></li>
+
+<li><p>20001 错误的充值金额<br>
+需注意可充值的金额范围，同时注意是以分为单位，而不是元</p></li>
 </ul>
+
+<h2 id="咨询联系微信">咨询联系微信：</h2>
+
+<p><a href="/wechat/WechatQrcode.jepg">!wechat</a></p>
 
     </div>
 
