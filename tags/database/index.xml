@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Database on vgmdj&#39;s blog</title>
+    <title>database on vgmdj&#39;s blog</title>
     <link>https://blog.vgmdj.cn/tags/database/</link>
-    <description>Recent content in Database on vgmdj&#39;s blog</description>
+    <description>Recent content in database on vgmdj&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>vgmdj</copyright>
@@ -90,6 +90,15 @@
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mysql学习-事务</title>
+      <link>https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E9%94%81/</link>
+      <pubDate>Thu, 22 Mar 2018 11:22:49 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E9%94%81/</guid>
+      <description>锁 并发任务的顺序实现，最终还是要落到锁上，由锁来控制实现。 根据锁的粒度划分，有行级锁，表级锁，页级锁三种 根据锁的类型划分，可以分为共享锁，互</description>
     </item>
     
     <item>

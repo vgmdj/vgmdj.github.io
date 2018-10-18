@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.48" />
+<meta name="generator" content="Hugo 0.49.2" />
 
 
 <link rel="canonical" href="https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E5%8A%A1/" />
@@ -84,6 +84,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E5%8A%A1/" /><meta property="article:published_time" content="2018-03-22T15:23:50&#43;00:00"/>
 <meta property="article:modified_time" content="2018-03-22T17:23:50&#43;00:00"/>
+
 <meta itemprop="name" content="mysql学习-事务">
 <meta itemprop="description" content="定义
 
@@ -114,7 +115,7 @@
 
 <meta itemprop="datePublished" content="2018-03-22T15:23:50&#43;00:00" />
 <meta itemprop="dateModified" content="2018-03-22T15:23:50&#43;00:00" />
-<meta itemprop="wordCount" content="3150">
+<meta itemprop="wordCount" content="3182">
 
 
 
@@ -225,7 +226,7 @@
               <a href="/categories/database/"> database </a>
             
           </div>
-        <span class="more-meta"> 约 3150 字 </span>
+        <span class="more-meta"> 约 3182 字 </span>
         <span class="more-meta"> 预计阅读 7 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -245,20 +246,16 @@
 <li><a href="#四大特性">四大特性</a></li>
 <li><a href="#区分数据库的原子性和一致性">区分数据库的原子性和一致性</a></li>
 </ul></li>
+<li><a href="#mysql日志">mysql日志</a>
+<ul>
+<li><a href="#redo-log">redo log</a></li>
+<li><a href="#undo-log">undo log</a></li>
+</ul></li>
 <li><a href="#事务隔离">事务隔离</a>
 <ul>
 <li><a href="#事务的四大隔离等级">事务的四大隔离等级</a></li>
 <li><a href="#并发下事务可能出现的问题">并发下事务可能出现的问题</a></li>
 <li><a href="#隔离级别的例子">隔离级别的例子</a></li>
-</ul></li>
-<li><a href="#锁">锁</a>
-<ul>
-<li><a href="#共享锁">共享锁</a></li>
-<li><a href="#互斥锁">互斥锁</a></li>
-<li><a href="#悲观锁">悲观锁</a></li>
-<li><a href="#乐观锁">乐观锁</a></li>
-<li><a href="#mvcc">mvcc</a></li>
-<li><a href="#死锁">死锁</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -305,7 +302,36 @@
 <p>2、查B现有账户，然后加1000,更新B账户 (B=B+1000)</p>
 
 <p>原子性是说，如果提交时，1,2都操作了，要么成功，要么失败回滚
-一致性是说，如果操作了，但没有提交时系统崩溃，此时原子性满足了，但处于不一致的状态（只有事务的开始，没有事务的结束），所以要进行回滚，回退到上一个一致性的状态</p>
+而所谓的一致性，一定是两个结果的比较，才能有是否 <strong>一致</strong> 一说，更多的体现的是预期的结果和数据库最终结果是否是一致的。</p>
+
+<ul>
+<li>如果把事务开始前和事务完成后称为一致性状态，1，2语句后但未进行提交时，崩溃了，那么此时全未提交，仍满足原子性，数据库会放弃未提交的事务，以满足一致性，让数据库中实际数据和预期的结果（未执行到提交成功）一致</li>
+<li>而如果在提交成功后，还未来得及由脏页刷回磁盘就发生故障，那么如果没有任何机制，预期结果（成功提交）和实际数据就会不一致，所以数据库就会使用redo log file进行恢复，以使预期和数据库数据一致，来满足一致性</li>
+<li>如果对于A=A-1000操作而言，先读A的值，再进行计算减1000后的值，再更新A为计算后的值，如果没有任何机制，在计算前发生了一个更新操作，在执行更新A=A-1000后，这个更新就会被覆盖，所以会有不同的隔离级别来保证结果符合预期。</li>
+</ul>
+
+<h1 id="mysql日志">mysql日志</h1>
+
+<p>在mysql中有重做日志（redo log）、回滚日志（undo log）、二进制日志（binlog）、错误日志（errorlog）、慢查询日志（slow query log）、一般查询日志（general log），中继日志（relay log）六种。而在与事务息息相关的是redo log， undo log, 正确的理解这两种log，对于理解事务的有着很大的帮助。</p>
+
+<h2 id="redo-log">redo log</h2>
+
+<p>持久性要求只要事务提交，那么数据库中的改变就是永久的。在mysql中是使用redo log（重做日志）实现事务的持久性，即事务ACID中的D。</p>
+
+<p>redo log 由两部分组成，一是内存中的重做日志缓冲（redo log buffer），其是易失的。二是重做日志文件（redo log file），其是持久的。</p>
+
+<p>redo log file的写入规则有三种，
+- Master Thread 每秒一次执行刷新log buffer到redo log file
+- 事务在提交时，执行刷新
+- 当buffer可用空间少于一半时，进行刷新</p>
+
+<p>对应到一个事务的流程中，就是在事务开始时，会先将每一个操作都提交到redo log buffer中，事务过程中，buffer中的内容可能会在Master Thread刷新时或者由于buffer空间减小到一半时刷新入redo log file中。在最终提交时，会确认将所有的操作写入到redo log file中，再修改内存数据页，形成脏页，由后台慢慢刷回到磁盘中，并更新刷入点（Checkpoint），这就是所谓的预写式日志（Write-Ahead Logging）。</p>
+
+<p>在发生故障时，会重新生成Checkpoint后的脏页，再等待慢慢刷回磁盘</p>
+
+<h2 id="undo-log">undo log</h2>
+
+<p>undo log用于回滚,其实现方式为，在事务执行之前，先保留一份原始数据存进undo log里，如果数据修改过程中出现异常，那么就会使用undo log实现回滚操作，以保证数据的一致性</p>
 
 <h1 id="事务隔离">事务隔离</h1>
 
@@ -370,110 +396,6 @@ repeatable read 是mysql的默认隔离级别</p></li>
 </ul>
 
 <p>总的来说，事务隔离级别越高，越能保证数据的完整性和一致性，但是付出的代价却是并发的性能</p>
-
-<h1 id="锁">锁</h1>
-
-<h2 id="共享锁">共享锁</h2>
-
-<p>被加锁的对象可以被持锁事务读取，但是不能被修改，其他事务也可以在上面再加共享锁。</p>
-
-<pre><code>select * from table where ? lock in share mode
-</code></pre>
-
-<h2 id="互斥锁">互斥锁</h2>
-
-<p>被加锁的对象只能被持有锁的事务读取和修改，其他事务无法在该对象上加其他锁，也不能读取和修改该对象</p>
-
-<pre><code>select * from table where ? for update;
-insert into table values (…);
-update table set ? where ?;
-delete from table where ?;
-
-</code></pre>
-
-<p>对于增删改也是用的互斥锁是因为，MySQL Server会根据where条件，读取第一条满足条件的记录，然后InnoDB引擎会将第一条记录返回，并加锁 (current read)。待MySQL Server收到这条加锁的记录之后，会再发起一个Update请求，更新这条记录。一条记录操作完成，再读取下一条记录，直至没有满足条件的记录为止。因此，Update操作内部，就包含了一个当前读。同理，Delete操作也一样。Insert操作会稍微有些不同，简单来说，就是Insert操作可能会触发Unique Key的冲突检查，也会进行一个当前读。</p>
-
-<h2 id="悲观锁">悲观锁</h2>
-
-<p>应用层面的并发控制方式
-每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁，这样别人想拿这个数据就会block直到它拿到锁。传统的关系型数据库里边就用到了很多这种锁机制，比如行锁，表锁等，读锁，写锁等，都是在做操作之前先上锁</p>
-
-<h2 id="乐观锁">乐观锁</h2>
-
-<p>应用层面的并发控制方式
-每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间别人有没有去更新这个数据，可以使用版本号等机制。乐观锁适用于多读的应用类型，这样可以提高吞吐量，像数据库如果提供类似于write_condition机制的其实都是提供的乐观锁</p>
-
-<p>两种锁各有优缺点，不可认为一种好于另一种，像乐观锁适用于写比较少的情况下，即冲突真的很少发生的时候，这样可以省去了锁的开销，加大了系统的整个吞吐量。但如果经常产生冲突，上层应用会不断的进行retry，这样反倒是降低了性能，所以这种情况下用悲观锁就比较合适</p>
-
-<h2 id="mvcc">mvcc</h2>
-
-<p>Multiversion concurrency control 即多版本并发控制，乐观锁的一种实现，一般使用时间戳或版本号来标识一次修改，在修改时，验证之前是否已有其他修改提交</p>
-
-<table>
-<thead>
-<tr>
-<th align="left">事务A</th>
-<th align="left">事务B</th>
-<th align="left">备注</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left">start transaction;</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-
-<tr>
-<td align="left">select a,version from test where id=1;</td>
-<td align="left"></td>
-<td align="left">a=0, version=0</td>
-</tr>
-
-<tr>
-<td align="left"></td>
-<td align="left">update test set a=1, version=1 where id=1;</td>
-<td align="left">a=1, version=1</td>
-</tr>
-
-<tr>
-<td align="left">update test set a=2 where version=0;</td>
-<td align="left"></td>
-<td align="left">发现冲突，更新失败</td>
-</tr>
-
-<tr>
-<td align="left">rollback</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="死锁">死锁</h2>
-
-<p>两个事务需求的资源被对方所持有，进入了相互等待状态</p>
-
-<ul>
-<li>T1时 事务A锁定a，事务B锁定b</li>
-<li>T2时 事务A执行锁定b，但被事务B持有，进入等待
-  事务B执行锁定a，但被事务A持有，进入等待</li>
-<li>形成死锁</li>
-</ul>
-
-<pre><code>事务A
-start transaction
-update a
-update b
-commit
-
-事务B
-start transaction
-update b
-update a
-commit
-</code></pre>
     </div>
 
     
@@ -511,8 +433,8 @@ commit
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/mysql%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/">
-            <span class="next-text nav-default">mysql学习-总览</span>
+          <a class="next" href="/post/mysql%E5%AD%A6%E4%B9%A0-%E9%94%81/">
+            <span class="next-text nav-default">mysql学习-事务</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
