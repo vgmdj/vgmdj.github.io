@@ -13,12 +13,22 @@
     
     
     <item>
-      <title>算法学习-排序</title>
+      <title>算法学习-二叉树遍历</title>
       <link>https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/</link>
       <pubDate>Tue, 02 Oct 2018 15:23:50 +0000</pubDate>
       
       <guid>https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/</guid>
-      <description>二叉树 回顾整理二叉树遍历相关内容。 对于二叉树而言，其遍历有两种方式，一种是深度优先，即先优先向下进行遍历，一种是广度优先，逐层向下遍历。 源码</description>
+      <description>&lt;h1 id=&#34;二叉树&#34;&gt;二叉树&lt;/h1&gt;
+
+&lt;p&gt;回顾整理二叉树遍历相关内容。
+对于二叉树而言，其遍历有两种方式，一种是深度优先，即先优先向下进行遍历，一种是广度优先，逐层向下遍历。&lt;/p&gt;
+
+&lt;h1 id=&#34;源码地址&#34;&gt;源码地址&lt;/h1&gt;
+
+&lt;p&gt;实现语言为 Golang
+&lt;a href=&#34;https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal&#34;&gt;https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

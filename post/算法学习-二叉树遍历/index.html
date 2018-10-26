@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>算法学习-排序 - vgmdj&#39;s blog</title>
+  <title>算法学习-二叉树遍历 - vgmdj&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,10 @@
 
 
 <meta name="author" content="VGMDJ" />
-  <meta name="description" content="二叉树 回顾整理二叉树遍历相关内容。 对于二叉树而言，其遍历有两种方式，一种是深度优先，即先优先向下进行遍历，一种是广度优先，逐层向下遍历。 源码" />
+  <meta name="description" content="二叉树 回顾整理二叉树遍历相关内容。 对于二叉树而言，其遍历有两种方式，一种是深度优先，即先优先向下进行遍历，一种是广度优先，逐层向下遍历。
+源码地址 实现语言为 Golang https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal
+
+" />
 
   <meta name="keywords" content="vgmdj, blog, it" />
 
@@ -49,26 +52,56 @@
 
 
 
-<meta property="og:title" content="算法学习-排序" />
-<meta property="og:description" content="二叉树 回顾整理二叉树遍历相关内容。 对于二叉树而言，其遍历有两种方式，一种是深度优先，即先优先向下进行遍历，一种是广度优先，逐层向下遍历。 源码" />
+<meta property="og:title" content="算法学习-二叉树遍历" />
+<meta property="og:description" content="二叉树
+
+回顾整理二叉树遍历相关内容。
+对于二叉树而言，其遍历有两种方式，一种是深度优先，即先优先向下进行遍历，一种是广度优先，逐层向下遍历。
+
+源码地址
+
+实现语言为 Golang
+https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal
+
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/" /><meta property="article:published_time" content="2018-10-02T15:23:50&#43;00:00"/>
 <meta property="article:modified_time" content="2018-10-03T15:23:50&#43;00:00"/>
 
-<meta itemprop="name" content="算法学习-排序">
-<meta itemprop="description" content="二叉树 回顾整理二叉树遍历相关内容。 对于二叉树而言，其遍历有两种方式，一种是深度优先，即先优先向下进行遍历，一种是广度优先，逐层向下遍历。 源码">
+<meta itemprop="name" content="算法学习-二叉树遍历">
+<meta itemprop="description" content="二叉树
+
+回顾整理二叉树遍历相关内容。
+对于二叉树而言，其遍历有两种方式，一种是深度优先，即先优先向下进行遍历，一种是广度优先，逐层向下遍历。
+
+源码地址
+
+实现语言为 Golang
+https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal
+
+">
 
 
 <meta itemprop="datePublished" content="2018-10-02T15:23:50&#43;00:00" />
 <meta itemprop="dateModified" content="2018-10-02T15:23:50&#43;00:00" />
-<meta itemprop="wordCount" content="762">
+<meta itemprop="wordCount" content="768">
 
 
 
 <meta itemprop="keywords" content="学习,算法," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="算法学习-排序"/>
-<meta name="twitter:description" content="二叉树 回顾整理二叉树遍历相关内容。 对于二叉树而言，其遍历有两种方式，一种是深度优先，即先优先向下进行遍历，一种是广度优先，逐层向下遍历。 源码"/>
+<meta name="twitter:title" content="算法学习-二叉树遍历"/>
+<meta name="twitter:description" content="二叉树
+
+回顾整理二叉树遍历相关内容。
+对于二叉树而言，其遍历有两种方式，一种是深度优先，即先优先向下进行遍历，一种是广度优先，逐层向下遍历。
+
+源码地址
+
+实现语言为 Golang
+https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal
+
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -139,7 +172,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">算法学习-排序</h1>
+      <h1 class="post-title">算法学习-二叉树遍历</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2018-10-02 15:23:50 </span>
@@ -148,7 +181,7 @@
               <a href="/categories/%E7%AE%97%E6%B3%95/"> 算法 </a>
             
           </div>
-        <span class="more-meta"> 约 762 字 </span>
+        <span class="more-meta"> 约 768 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -186,16 +219,17 @@
 
     
     <div class="post-content">
-      
-
-<h1 id="二叉树">二叉树</h1>
+      <h1 id="二叉树">二叉树</h1>
 
 <p>回顾整理二叉树遍历相关内容。
 对于二叉树而言，其遍历有两种方式，一种是深度优先，即先优先向下进行遍历，一种是广度优先，逐层向下遍历。</p>
 
 <h1 id="源码地址">源码地址</h1>
 
-<p><a href="https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal">https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal</a></p>
+<p>实现语言为 Golang
+<a href="https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal">https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal</a></p>
+
+<p></p>
 
 <h1 id="二叉树结构">二叉树结构</h1>
 
@@ -420,7 +454,6 @@ func PostOrderNonRecursive(root *Tree) []int {
 <li>深度优先主要借助栈来实现</li>
 <li>广度优先主要借助队列来实现</li>
 </ul>
-
     </div>
 
     
