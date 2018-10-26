@@ -54,7 +54,7 @@
 <meta property="og:description" content="vgmdj&#39;s blog" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.vgmdj.cn/" />
-<meta property="og:updated_time" content="2018-06-18T23:50:51&#43;00:00"/>
+<meta property="og:updated_time" content="2018-07-12T10:24:51&#43;00:00"/>
 
 <meta itemprop="name" content="vgmdj&#39;s blog">
 <meta itemprop="description" content="vgmdj&#39;s blog">
@@ -136,6 +136,38 @@
     
       <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/efk%E5%AD%A6%E4%B9%A0-ElasticSearch/">efk学习-ElasticSearch</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-07-12 10:24:51 </span>
+      <div class="post-category">
+          
+            <a href="/categories/database/"> database </a>
+          
+        </div>
+      <span class="more-meta"> 约 208 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <h1 id="基本操作">基本操作</h1>
+
+<h2 id="增删改查">增删改查</h2>
+
+<p>增删改查是数据库的基础操作方法。ES 虽然不是数据库，但是很多场合下，都被人们当做一个文档型 NoSQL 数据库在使用，原因自然是因为在接口和分布式架构层面的相似性。虽然在 Elastic Stack 场景下，数据的写入和查询，分别由 Fluntd(Logstash) 和 Kibana 代劳，作为测试、调研和排错时的基本功，还是需要了解一下 ES 的增删改查用法的。</p>
+
+<p></p>
+    </div>
+    <div class="read-more">
+      <a href="/post/efk%E5%AD%A6%E4%B9%A0-ElasticSearch/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%AD%A6%E4%B9%A0-RabbitMQ%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/">消息队列学习-RabbitMQ健康检查</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2018-06-18 23:50:51 </span>
@@ -210,7 +242,7 @@
     
       <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7%E7%90%86%E8%AE%BA/">分布式学习-数据一致性理论</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/">分布式学习-分布式事务</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2018-05-14 14:38:21 </span>
       <div class="post-category">
@@ -218,8 +250,8 @@
             <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"> 分布式系统 </a>
           
         </div>
-      <span class="more-meta"> 约 2505 字 </span>
-      <span class="more-meta"> 预计阅读 5 分钟 </span>
+      <span class="more-meta"> 约 2506 字 </span>
+      <span class="more-meta"> 预计阅读 6 分钟 </span>
     </div>
   </header>
   
@@ -227,7 +259,7 @@
     <div class="post-summary">
       <h1 id="简述">简述</h1>
 
-<p>分布式系统架构中，分布式事务问题是一个绕不过去的挑战。而微服务架构的流行，让分布式事问题日益突出！
+<p>分布式系统架构中，分布式事务问题是一个绕不过去的挑战。而微服务架构的流行，让分布式事务问题日益突出！
 对于单体应用而言，所有的数据库操作都在一起，可以很简单的使用本地事务，来保证数据的ACID。
 但是对于分布式系统，系统由多个独立的服务组成，那么如何解决分布式调用时候数据的一致性就成了一个问题。
 具体业务场景如下，比如一个业务操作，如果同时调用服务 A、B、C，需要满足要么同时成功；要么同时失败。A、B、C 可能是多个不同部门开发、部署在不同服务器上的远程服务。</p>
@@ -235,7 +267,7 @@
 <p></p>
     </div>
     <div class="read-more">
-      <a href="/post/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7%E7%90%86%E8%AE%BA/" class="read-more-link">阅读更多</a>
+      <a href="/post/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
@@ -268,43 +300,6 @@
     </div>
     <div class="read-more">
       <a href="/post/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E6%8F%92%E4%BB%B6/">容器学习-k8s插件</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-05-01 14:52:51 </span>
-      <div class="post-category">
-          
-            <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"> 分布式系统 </a>
-          
-        </div>
-      <span class="more-meta"> 约 936 字 </span>
-      <span class="more-meta"> 预计阅读 2 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h2 id="应用插件">应用插件</h2>
-
-<p>安装完k8s后，仅仅只是第一步，我们还需要一系列的插件来提供对集群的管理，以提高效率</p>
-
-<ul>
-<li>traefik ingress，提供负载均衡和统一的对外暴露端口</li>
-<li>heapster插件，提供监控系统</li>
-<li>dashboard插件，用于显示当前资源使用情况</li>
-<li>EFK插件，ElasticSearch+Fluentd+Kibana，用于日志的收集分析和搜索</li>
-</ul>
-
-<p></p>
-    </div>
-    <div class="read-more">
-      <a href="/post/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E6%8F%92%E4%BB%B6/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

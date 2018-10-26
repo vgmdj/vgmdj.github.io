@@ -13,14 +13,14 @@
     
     
     <item>
-      <title>分布式学习-数据一致性理论</title>
-      <link>https://blog.vgmdj.cn/post/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7%E7%90%86%E8%AE%BA/</link>
+      <title>分布式学习-分布式事务</title>
+      <link>https://blog.vgmdj.cn/post/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</link>
       <pubDate>Mon, 14 May 2018 14:38:21 +0000</pubDate>
       
-      <guid>https://blog.vgmdj.cn/post/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7%E7%90%86%E8%AE%BA/</guid>
+      <guid>https://blog.vgmdj.cn/post/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</guid>
       <description>&lt;h1 id=&#34;简述&#34;&gt;简述&lt;/h1&gt;
 
-&lt;p&gt;分布式系统架构中，分布式事务问题是一个绕不过去的挑战。而微服务架构的流行，让分布式事问题日益突出！
+&lt;p&gt;分布式系统架构中，分布式事务问题是一个绕不过去的挑战。而微服务架构的流行，让分布式事务问题日益突出！
 对于单体应用而言，所有的数据库操作都在一起，可以很简单的使用本地事务，来保证数据的ACID。
 但是对于分布式系统，系统由多个独立的服务组成，那么如何解决分布式调用时候数据的一致性就成了一个问题。
 具体业务场景如下，比如一个业务操作，如果同时调用服务 A、B、C，需要满足要么同时成功；要么同时失败。A、B、C 可能是多个不同部门开发、部署在不同服务器上的远程服务。&lt;/p&gt;
