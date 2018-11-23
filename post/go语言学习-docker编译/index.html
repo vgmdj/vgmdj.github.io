@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>算法学习-二叉树遍历 - vgmdj&#39;s blog</title>
+  <title>go语言学习-docker编译 - vgmdj&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,9 +17,9 @@
 
 
 <meta name="author" content="VGMDJ" />
-  <meta name="description" content="二叉树 回顾整理二叉树遍历相关内容。 对于二叉树而言，其遍历有两种方式，一种是深度优先，即先优先向下进行遍历，一种是广度优先，逐层向下遍历。
-源码地址 实现语言为 Golang https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal
-
+  <meta name="description" content="前言 GO本身是支持交叉编译的，且很方便，只需设置几个环境变量即可，但是对于使用了CGO的代码来说，交叉编译就不可行了，替代方案就是使用docker来完成编译。
+交叉编译 Go本身支持交叉编译，只需设置三个参数即可
+ CGO_ENABLED 是否启用CGO GOOS 目标运行环境操作系统 GOARCH 目标运行环境  
 " />
 
   <meta name="keywords" content="vgmdj, blog, it" />
@@ -32,7 +32,7 @@
 <meta name="generator" content="Hugo 0.49.2" />
 
 
-<link rel="canonical" href="https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/" />
+<link rel="canonical" href="https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-docker%E7%BC%96%E8%AF%91/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -52,54 +52,66 @@
 
 
 
-<meta property="og:title" content="算法学习-二叉树遍历" />
-<meta property="og:description" content="二叉树
+<meta property="og:title" content="go语言学习-docker编译" />
+<meta property="og:description" content="前言
 
-回顾整理二叉树遍历相关内容。
-对于二叉树而言，其遍历有两种方式，一种是深度优先，即先优先向下进行遍历，一种是广度优先，逐层向下遍历。
+GO本身是支持交叉编译的，且很方便，只需设置几个环境变量即可，但是对于使用了CGO的代码来说，交叉编译就不可行了，替代方案就是使用docker来完成编译。
 
-源码地址
+交叉编译
 
-实现语言为 Golang
-https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal
+Go本身支持交叉编译，只需设置三个参数即可
+
+
+CGO_ENABLED   是否启用CGO
+GOOS          目标运行环境操作系统
+GOARCH        目标运行环境
+
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/" /><meta property="article:published_time" content="2018-10-02T15:23:50&#43;00:00"/>
-<meta property="article:modified_time" content="2018-10-03T15:23:50&#43;00:00"/>
+<meta property="og:url" content="https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-docker%E7%BC%96%E8%AF%91/" /><meta property="article:published_time" content="2018-11-23T11:49:12&#43;08:00"/>
+<meta property="article:modified_time" content="2018-11-23T12:21:58&#43;00:00"/>
 
-<meta itemprop="name" content="算法学习-二叉树遍历">
-<meta itemprop="description" content="二叉树
+<meta itemprop="name" content="go语言学习-docker编译">
+<meta itemprop="description" content="前言
 
-回顾整理二叉树遍历相关内容。
-对于二叉树而言，其遍历有两种方式，一种是深度优先，即先优先向下进行遍历，一种是广度优先，逐层向下遍历。
+GO本身是支持交叉编译的，且很方便，只需设置几个环境变量即可，但是对于使用了CGO的代码来说，交叉编译就不可行了，替代方案就是使用docker来完成编译。
 
-源码地址
+交叉编译
 
-实现语言为 Golang
-https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal
+Go本身支持交叉编译，只需设置三个参数即可
+
+
+CGO_ENABLED   是否启用CGO
+GOOS          目标运行环境操作系统
+GOARCH        目标运行环境
+
 
 ">
 
 
-<meta itemprop="datePublished" content="2018-10-02T15:23:50&#43;00:00" />
-<meta itemprop="dateModified" content="2018-10-02T15:23:50&#43;00:00" />
-<meta itemprop="wordCount" content="768">
+<meta itemprop="datePublished" content="2018-11-23T11:49:12&#43;08:00" />
+<meta itemprop="dateModified" content="2018-11-23T11:49:12&#43;08:00" />
+<meta itemprop="wordCount" content="677">
 
 
 
-<meta itemprop="keywords" content="学习,算法," />
+<meta itemprop="keywords" content="Golang,学习," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="算法学习-二叉树遍历"/>
-<meta name="twitter:description" content="二叉树
+<meta name="twitter:title" content="go语言学习-docker编译"/>
+<meta name="twitter:description" content="前言
 
-回顾整理二叉树遍历相关内容。
-对于二叉树而言，其遍历有两种方式，一种是深度优先，即先优先向下进行遍历，一种是广度优先，逐层向下遍历。
+GO本身是支持交叉编译的，且很方便，只需设置几个环境变量即可，但是对于使用了CGO的代码来说，交叉编译就不可行了，替代方案就是使用docker来完成编译。
 
-源码地址
+交叉编译
 
-实现语言为 Golang
-https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal
+Go本身支持交叉编译，只需设置三个参数即可
+
+
+CGO_ENABLED   是否启用CGO
+GOOS          目标运行环境操作系统
+GOARCH        目标运行环境
+
 
 "/>
 
@@ -172,16 +184,16 @@ https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">算法学习-二叉树遍历</h1>
+      <h1 class="post-title">go语言学习-docker编译</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-10-02 15:23:50 </span>
+        <span class="post-time"> 2018-11-23 11:49:12 </span>
         <div class="post-category">
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/"> 算法 </a>
+              <a href="/categories/Golang/"> Golang </a>
             
           </div>
-        <span class="more-meta"> 约 768 字 </span>
+        <span class="more-meta"> 约 677 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -195,20 +207,19 @@ https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#二叉树">二叉树</a></li>
-<li><a href="#源码地址">源码地址</a></li>
-<li><a href="#二叉树结构">二叉树结构</a></li>
-<li><a href="#深度优先搜索">深度优先搜索</a>
+<li><a href="#前言">前言</a></li>
+<li><a href="#交叉编译">交叉编译</a>
 <ul>
-<li><a href="#前序递归">前序递归</a></li>
-<li><a href="#前序非递归">前序非递归</a></li>
-<li><a href="#中序递归">中序递归</a></li>
-<li><a href="#中序非递归">中序非递归</a></li>
-<li><a href="#后序递归">后序递归</a></li>
-<li><a href="#后序非递归">后序非递归</a></li>
+<li><a href="#cgo-enabled">CGO_ENABLED</a></li>
+<li><a href="#goos">GOOS</a></li>
+<li><a href="#goarch">GOARCH</a></li>
+<li><a href="#举例">举例</a></li>
 </ul></li>
-<li><a href="#广度优先搜索-层次遍历">广度优先搜索（层次遍历）</a></li>
-<li><a href="#总结">总结</a></li>
+<li><a href="#docker-编译">docker编译</a>
+<ul>
+<li><a href="#举例-1">举例</a></li>
+<li><a href="#例2-无需gobashpath">例2-无需GOBASHPATH</a></li>
+</ul></li>
 </ul>
 </nav>
   </div>
@@ -219,241 +230,129 @@ https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal
 
     
     <div class="post-content">
-      <h1 id="二叉树">二叉树</h1>
+      <h1 id="前言">前言</h1>
 
-<p>回顾整理二叉树遍历相关内容。
-对于二叉树而言，其遍历有两种方式，一种是深度优先，即先优先向下进行遍历，一种是广度优先，逐层向下遍历。</p>
+<p>GO本身是支持交叉编译的，且很方便，只需设置几个环境变量即可，但是对于使用了CGO的代码来说，交叉编译就不可行了，替代方案就是使用docker来完成编译。</p>
 
-<h1 id="源码地址">源码地址</h1>
+<h1 id="交叉编译">交叉编译</h1>
 
-<p>实现语言为 Golang
-<a href="https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal">https://github.com/vgmdj/go_practice/tree/master/algorithm/tree_traversal</a></p>
+<p>Go本身支持交叉编译，只需设置三个参数即可</p>
+
+<ul>
+<li>CGO_ENABLED   是否启用CGO</li>
+<li>GOOS          目标运行环境操作系统</li>
+<li>GOARCH        目标运行环境</li>
+</ul>
 
 <p></p>
 
-<h1 id="二叉树结构">二叉树结构</h1>
+<h2 id="cgo-enabled">CGO_ENABLED</h2>
 
-<pre><code>type Tree struct {
-	Val   int
-	Left  *Tree
-	Right *Tree
-}
-</code></pre>
+<p>如果使用了CGO是不支持交叉编译的，所以统一设置为0</p>
 
-<h1 id="深度优先搜索">深度优先搜索</h1>
+<h2 id="goos">GOOS</h2>
 
-<p>Deepth-First-Search DFS， 对于深度优先而言，又有三种方式，即前序，中序和后序。前中后序之间的前中后，指的是根结点的位置。</p>
-
-<h2 id="前序递归">前序递归</h2>
-
-<pre><code>func PreOrder(root *Tree) []int {
-var result []int
-if root == nil {
-  return result
-}
-
-result = append(result, root.Val)
-result = append(result, PreOrder(root.Left)...)
-result = append(result, PreOrder(root.Right)...)
-
-return result
-
-}
-
-</code></pre>
-
-<h2 id="前序非递归">前序非递归</h2>
-
-<pre><code>
-func PreOrderNonRecursive(root *Tree) []int {
-	var result []int
-	if root == nil {
-		return result
-	}
-
-	stack := list.New()
-	p := root
-
-	for p != nil || stack.Len() != 0 {
-		for p != nil {
-			result = append(result, p.Val)
-			stack.PushBack(p)
-			p = p.Left
-		}
-
-		if stack.Len() != 0 {
-			node := stack.Back()
-			stack.Remove(node)
-
-			p = node.Value.(*Tree).Right
-		}
-	}
-
-	return result
-}
-
-</code></pre>
-
-<h2 id="中序递归">中序递归</h2>
-
-<pre><code>func InOrder(root *Tree) []int {
-	var result []int
-	if root == nil {
-		return nil
-	}
-
-	result = append(result, PreOrder(root.Left)...)
-	result = append(result, root.Val)
-	result = append(result, PreOrder(root.Right)...)
-
-	return result
-
-}
-
-</code></pre>
-
-<h2 id="中序非递归">中序非递归</h2>
-
-<pre><code>
-func InOrderNonRecursive(root *Tree) []int {
-	var result []int
-	if root == nil {
-		return result
-	}
-
-	stack := list.New()
-	p := root
-
-	for p != nil || stack.Len() != 0 {
-		for p != nil {
-			stack.PushBack(p)
-			p = p.Left
-
-		}
-
-		if stack.Len()  != 0 {
-			node := stack.Back()
-			stack.Remove(node)
-
-			result = append(result, node.Value.(*Tree).Val)
-
-			p = node.Value.(*Tree).Right
-
-		}
-
-	}
-
-	return result
-}
-
-
-</code></pre>
-
-<h2 id="后序递归">后序递归</h2>
-
-<pre><code>func PostOrder(root *Tree) []int {
-	var result []int
-	if root == nil {
-		return nil
-	}
-
-	result = append(result, PreOrder(root.Left)...)
-	result = append(result, PreOrder(root.Right)...)
-	result = append(result, root.Val)
-
-	return result
-
-}
-
-
-</code></pre>
-
-<h2 id="后序非递归">后序非递归</h2>
-
-<pre><code>
-func PostOrderNonRecursive(root *Tree) []int {
-	var result []int
-	if root == nil {
-		return result
-	}
-
-	stack := list.New()
-	p := root
-	lastVisit := new(Tree)
-
-	for p != nil || stack.Len() != 0 {
-		for p != nil {
-			stack.PushBack(p)
-			p = p.Left
-
-		}
-
-		if stack.Len() != 0 {
-			node := stack.Back()
-			if node.Value.(*Tree).Right != nil &amp;&amp; lastVisit != node.Value.(*Tree).Right {
-				p = node.Value.(*Tree).Right
-				continue
-			}
-
-			result = append(result, node.Value.(*Tree).Val)
-			stack.Remove(node)
-			lastVisit = node.Value.(*Tree)
-
-		}
-
-	}
-
-	return result
-}
-
-
-</code></pre>
-
-<h1 id="广度优先搜索-层次遍历">广度优先搜索（层次遍历）</h1>
-
-<p>Breadth-First-Search BFS 或者说是 Level Traversal，对于广度优先而言，其基于队列的数据结构，可以很简单的实现出来</p>
-
-<pre><code>func LevelTraversal(root *Tree) []int {
-	var result []int
-	if root == nil {
-		return result
-	}
-
-	queue := list.New()
-	queue.PushBack(root)
-
-	for queue.Len() != 0 {
-		node := queue.Front()
-		nTree := node.Value.(*Tree)
-		queue.Remove(node)
-		if nTree == nil {
-			continue
-		}
-
-		result = append(result, nTree.Val)
-		queue.PushBack(nTree.Left)
-		queue.PushBack(nTree.Right)
-
-	}
-
-	return result
-
-}
-
-</code></pre>
-
-<p>需要注意在for循环里，不能直接用 node.Value.(*Tree) == nil 来判断，因为interface特性，会认为其不为 nil，哪怕nTree为nil。
-详细内容，可以参考 <a href="/post/go语言学习-interface">go interface机制</a>，这里侧重算法，不再细讲。</p>
-
-<h1 id="总结">总结</h1>
+<p>GOOS 对应的系统参数是：</p>
 
 <ul>
-<li>二叉树遍历分为两种，一种是深度优先，一种是广度优先</li>
-<li>深度优先分为前，中，后序三种实现方式</li>
-<li>深度优先可以使用递归和非递归两种方式实现</li>
-<li>深度优先主要借助栈来实现</li>
-<li>广度优先主要借助队列来实现</li>
+<li>darwin 对应Mac系统</li>
+<li>linux  对应linux系统</li>
+<li>windows 对应windows系统</li>
 </ul>
+
+<h2 id="goarch">GOARCH</h2>
+
+<ul>
+<li>386</li>
+<li>amd64</li>
+<li>arm
+和自己的平台相关，一般使用386编译32位运行程序，amd64编译64位运行程序</li>
+</ul>
+
+<h2 id="举例">举例</h2>
+
+<p>mac平台下，编译linux运行程序</p>
+
+<pre><code>export CGO_ENABLED=0
+export GOOS=linux
+export GOARCH=amd64
+
+</code></pre>
+
+<p>windows平台下，编译linux运行程序</p>
+
+<pre><code>SET CGO_ENABLED=0
+SET GOOS=linux
+SET GOARCH=amd64
+</code></pre>
+
+<h1 id="docker-编译">docker编译</h1>
+
+<p>对于CGO是无法使用交叉编译的，那么此时最好的替代方案，基本就是使用docker来编译了。
+原理上讲，就是使用对应平台的golang镜像，然后将代码和GOPATH都映射到容器里，最终在容器内编译。
+分享一下自己的执行脚本 dgo</p>
+
+<pre><code>#!/bin/bash
+dir=`pwd`
+array=(${dir//// })
+num=${#array[@]}
+project=${array[$num-1]}
+
+echo prepare to go install in $dir/src/$1
+
+if [ ! -d $GOBASHPATH ] ;then
+    sudo docker run -it --rm -v $dir:/golang golang \
+    sh -c &quot;export GOPATH=/golang &amp;&amp; cd /golang/src/$1 &amp;&amp; go install&quot;
+    exit
+fi
+
+sudo docker run -it --rm -v $dir:/golang -v $GOBASHPATH:/gobashpath golang \
+sh -c &quot;export GOPATH=/golang:/gobashpath &amp;&amp; cd /golang/src/$1 &amp;&amp; go install&quot;
+
+</code></pre>
+
+<p>如果是多个GOPATH，那么项目目录外的，就设置为GOBASHPATH，然后在项目目录下，运行脚本，之后进入bin目录下，就可以找到可执行文件。</p>
+
+<h2 id="举例-1">举例</h2>
+
+<p>项目目录：
+/vgmdj/test
+  - bin
+  - pkg
+  - src
+    - controller
+    - model
+    - test
+      - main.go</p>
+
+<p>/vgmdj/goextra
+  - github.com
+    - vgmdj
+      - utils</p>
+
+<p>如果controller里用到了 github.com/vgmdj/utils 包，那么就需要先设置</p>
+
+<pre><code>GOBASHPATH=/vgmdj/goextra
+</code></pre>
+
+<p>然后在/vgmdj/test下执行</p>
+
+<pre><code>dgo test
+</code></pre>
+
+<h2 id="例2-无需gobashpath">例2-无需GOBASHPATH</h2>
+
+<p>/vgmdj/go
+  - src
+    - github.com
+      - vgmdj
+        - test
+          - main.go</p>
+
+<p>只需在/vgmdj/go下执行</p>
+
+<pre><code>dgo github.com/vgmdj/test
+</code></pre>
     </div>
 
     
@@ -464,7 +363,7 @@ func PostOrderNonRecursive(root *Tree) []int {
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-10-03 15:23:50</span>
+    <span class="item-content">2018-11-23 12:21:58</span>
   </p>
   
   
@@ -476,23 +375,18 @@ func PostOrderNonRecursive(root *Tree) []int {
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+          <a href="/tags/Golang/">Golang</a>
           
-          <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+          <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-docker%E7%BC%96%E8%AF%91/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">go语言学习-docker编译</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/hugo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%8B/">
-            <span class="next-text nav-default">Hugo博客建立</span>
+          <a class="next" href="/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/">
+            <span class="next-text nav-default">算法学习-二叉树遍历</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
