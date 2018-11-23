@@ -92,7 +92,7 @@ GOARCH        目标运行环境
 
 <meta itemprop="datePublished" content="2018-11-23T11:49:12&#43;08:00" />
 <meta itemprop="dateModified" content="2018-11-23T11:49:12&#43;08:00" />
-<meta itemprop="wordCount" content="662">
+<meta itemprop="wordCount" content="677">
 
 
 
@@ -193,7 +193,7 @@ GOARCH        目标运行环境
               <a href="/categories/Golang/"> Golang </a>
             
           </div>
-        <span class="more-meta"> 约 662 字 </span>
+        <span class="more-meta"> 约 677 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -317,31 +317,20 @@ sh -c &quot;export GOPATH=/golang:/gobashpath &amp;&amp; cd /golang/src/$1 &amp;
 
 <p>项目目录：</p>
 
-<p>/vgmdj/test</p>
+<pre><code>/vgmdj/test
+  - bin
+  - pkg
+  - src
+    - controller
+    - model
+    - test
+      - main.go
 
-<ul>
-<li>bin</li>
-<li>pkg</li>
-<li>src
-
-<ul>
-<li>controller</li>
-<li>model</li>
-<li>test</li>
-<li>main.go</li>
-</ul></li>
-</ul>
-
-<p>/vgmdj/goextra</p>
-
-<ul>
-<li>github.com
-
-<ul>
-<li>vgmdj</li>
-<li>utils</li>
-</ul></li>
-</ul>
+/vgmdj/goextra
+  - github.com
+    - vgmdj
+      - utils
+</code></pre>
 
 <p>如果controller里用到了 github.com/vgmdj/utils 包，那么就需要先设置</p>
 
@@ -355,21 +344,13 @@ sh -c &quot;export GOPATH=/golang:/gobashpath &amp;&amp; cd /golang/src/$1 &amp;
 
 <h2 id="例2-无需gobashpath">例2-无需GOBASHPATH</h2>
 
-<p>/vgmdj/go</p>
-
-<ul>
-<li>src
-
-<ul>
-<li>github.com</li>
-<li>vgmdj
-
-<ul>
-<li>test</li>
-<li>main.go</li>
-</ul></li>
-</ul></li>
-</ul>
+<pre><code>/vgmdj/go
+  - src
+    - github.com
+      - vgmdj
+        - test
+          - main.go
+</code></pre>
 
 <p>只需在/vgmdj/go下执行</p>
 
