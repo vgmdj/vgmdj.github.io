@@ -95,7 +95,7 @@ vhost 检查
 
 <meta itemprop="datePublished" content="2018-06-18T23:50:51&#43;00:00" />
 <meta itemprop="dateModified" content="2018-06-18T23:50:51&#43;00:00" />
-<meta itemprop="wordCount" content="1138">
+<meta itemprop="wordCount" content="1211">
 
 
 
@@ -198,7 +198,7 @@ vhost 检查
               <a href="/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"> 消息队列 </a>
             
           </div>
-        <span class="more-meta"> 约 1138 字 </span>
+        <span class="more-meta"> 约 1211 字 </span>
         <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -214,7 +214,11 @@ vhost 检查
 <ul>
 <li><a href="#rest-api-监测">Rest API 监测</a></li>
 <li><a href="#amqp模拟检测">AMQP模拟检测</a></li>
-<li><a href="#确保消费者运行状态">确保消费者运行状态</a></li>
+<li><a href="#确保消费者运行状态">确保消费者运行状态</a>
+<ul>
+<li><a href="#基于amqp模拟检测">基于AMQP模拟检测</a></li>
+<li><a href="#基于rest-api-监测">基于Rest API 监测</a></li>
+</ul></li>
 <li><a href="#消息队列阈值基准经验法则">消息队列阈值基准经验法则</a></li>
 <li><a href="#重连">重连</a></li>
 </ul>
@@ -274,11 +278,61 @@ Queue struct{
 <h1 id="确保消费者运行状态">确保消费者运行状态</h1>
 
 <p>对于生产者而言，如果发送失败，则说明此时有异常出现，之后就可以尝试进行修复。
-但是对于消费者而言，如果中途网络不稳定导致连接断掉，并不能直接就检测出此时的状态。
-因此，一般采用的方式，是监测队列的消息数量。消费者的推荐编写方式是，在正确的处理完消息后再进行ack，那么在处理完成之前消息处于unacked状态，如果消费者忽然挂掉，消息会重新进入队列处于ready状态，所以，可以通过监测当前队列下ready和unacked消息的数量来判断，如果ready超过阈值，而unacked仍为0,说明此时消费者已经不存在了，需要重新创建一个消费者。
-致于阈值的创建范围，则可以根据实际的需要情况来设置。
-需要注意的是，如果采用AMQP的方式来获取队列中的消息数量，则只能获取当前队列中ready消息的数量，没法得知unacked状态的消息数量。这样，对于消息堆积的情况，就会没法区分究竟是由于消费者崩溃造还是由于消费者未能正确的ack消息所造成的。
-如果Rest API queue检查的方式，则没有这方面的问题。</p>
+对于消费者而言，如果中途网络不稳定导致连接断掉，并不能直接就检测出此时的状态。
+这时有两种方式进行监测，但是一般更推荐使用AMQP，直接去获取队列的消费者。</p>
+
+<h2 id="基于amqp模拟检测">基于AMQP模拟检测</h2>
+
+<p>基于AMQP协议，可以使用官方提供的 QueueDeclarePassive 方法来获取队列消费者的数量，如果数量出现异常，可自行进行处理。</p>
+
+<pre><code>/*
+QueueDeclarePassive is functionally and parametrically equivalent to
+QueueDeclare, except that it sets the &quot;passive&quot; attribute to true. A passive
+queue is assumed by RabbitMQ to already exist, and attempting to connect to a
+non-existent queue will cause RabbitMQ to throw an exception. This function
+can be used to test for the existence of a queue.
+*/
+
+func (ch *Channel) QueueDeclarePassive(name string, durable, autoDelete, exclusive, noWait bool, args Table) (Queue, error) {
+	if err := args.Validate(); err != nil {
+		return Queue{}, err
+	}
+
+	req := &amp;queueDeclare{
+		Queue:      name,
+		Passive:    true,
+		Durable:    durable,
+		AutoDelete: autoDelete,
+		Exclusive:  exclusive,
+		NoWait:     noWait,
+		Arguments:  args,
+	}
+	res := &amp;queueDeclareOk{}
+
+	if err := ch.call(req, res); err != nil {
+		return Queue{}, err
+	}
+
+	if req.wait() {
+		return Queue{
+			Name:      res.Queue,
+			Messages:  int(res.MessageCount),
+			Consumers: int(res.ConsumerCount),
+		}, nil
+	}
+
+	return Queue{Name: name}, nil
+}
+
+</code></pre>
+
+<h2 id="基于rest-api-监测">基于Rest API 监测</h2>
+
+<p>对于消费者的推荐编写方式是，在正确的处理完消息后再进行ack，那么在处理完成之前消息处于unacked状态，如果消费者忽然挂掉，消息会重新进入队列处于ready状态。</p>
+
+<p>所以，可以通过监测当前队列下ready和unacked消息的数量来判断，如果ready超过阈值，而unacked仍为0,说明此时消费者已经不存在了，需要重新创建一个消费者。</p>
+
+<p>至于阈值的创建范围，则可以根据实际的需要情况来设置。</p>
 
 <h1 id="消息队列阈值基准经验法则">消息队列阈值基准经验法则</h1>
 
