@@ -54,7 +54,7 @@
 <meta property="og:description" content="vgmdj&#39;s blog" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.vgmdj.cn/" />
-<meta property="og:updated_time" content="2018-03-22T11:22:49&#43;00:00"/>
+<meta property="og:updated_time" content="2018-03-22T15:23:50&#43;00:00"/>
 
 <meta itemprop="name" content="vgmdj&#39;s blog">
 <meta itemprop="description" content="vgmdj&#39;s blog">
@@ -133,6 +133,56 @@
   <section id="posts" class="posts">
     
     
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/mysql%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E5%8A%A1/">mysql学习-事务</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-03-22 15:23:50 </span>
+      <div class="post-category">
+          
+            <a href="/categories/database/"> database </a>
+          
+        </div>
+      <span class="more-meta"> 约 3182 字 </span>
+      <span class="more-meta"> 预计阅读 7 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <h1 id="定义">定义</h1>
+
+<p>事务(transaction)是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位。同时，事务也是恢复和并发控制的基本单位。</p>
+
+<h1 id="事务特性-acid">事务特性(acid)</h1>
+
+<h2 id="四大特性">四大特性</h2>
+
+<ul>
+<li><p>原子性(atomicity)
+　原子性是指事务包含的所有操作要么全部操作，要么全部不做，事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。</p></li>
+
+<li><p>一致性(consistency)
+一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。
+　拿转账来说，假设用户A和用户B两者的钱加起来一共是5000，那么不管A和B之间如何转账，转几次账，事务结束后两个用户的钱相加起来应该还得是5000，这就是事务的一致性</p></li>
+
+<li><p>隔离性(isolation)
+隔离性是当多个用户并发访问数据库时，比如操作同一张表时，数据库为每一个用户开启的事务，不能被其他事务的操作所干扰，多个并发事务之间要相互隔离。
+　即要达到这么一种效果：对于任意两个并发的事务T1和T2，在事务T1看来，T2要么在T1开始之前就已经结束，要么在T1结束之后才开始，这样每个事务都感觉不到有其他事务在并发地执行。</p></li>
+
+<li><p>持久性(durability)
+持久性是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，即便是在数据库系统遇到故障的情况下也不会丢失提交事务的操作。</p></li>
+</ul>
+
+<p></p>
+    </div>
+    <div class="read-more">
+      <a href="/post/mysql%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E5%8A%A1/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
     
       <article class="post">
   <header class="post-header">
@@ -253,63 +303,6 @@
     </div>
     <div class="read-more">
       <a href="/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-socket%E5%A5%97%E6%8E%A5%E5%AD%97%E5%88%86%E6%9E%90/">计算机网络学习-socket套接字分析</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-03-08 13:42:05 </span>
-      <div class="post-category">
-          
-            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"> 计算机网络 </a>
-          
-        </div>
-      <span class="more-meta"> 约 861 字 </span>
-      <span class="more-meta"> 预计阅读 2 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h2 id="tcp实验">TCP实验：</h2>
-
-<h3 id="tcp客户端套接字程序">TCP客户端套接字程序</h3>
-
-<pre><code>import java.io.*;
-import java.net.*;
-class TCPClient{
-  public static void main(String argv[]) throws Exception
-  {
-     String sentence;
-     String modifiedSentence;
-     BufferedReader inFromUser =
-        new BufferedReader(
-              new InputStreamReader(System.in));
-     Socket ClientSocket = new Socket(&quot;222.194.1.36&quot;,6789);
-     DataOutputStream outToServer =
-        new DataOutputStream(
-              ClientSocket.getOutputStream());
-     BufferedReader inFromServer =
-        new BufferedReader(new InputStreamReader(
-               ClientSocket.getInputStream()));
-     sentence =inFromUser.readLine();
-     outToServer.writeBytes(sentence + '\n');
-     modifiedSentence = inFromServer.readLine();
-     System.out.println(&quot;FROM SERVER:&quot;+
-                           modifiedSentence);
-     ClientSocket.close();
-   }
-}
-</code></pre>
-
-<p></p>
-    </div>
-    <div class="read-more">
-      <a href="/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-socket%E5%A5%97%E6%8E%A5%E5%AD%97%E5%88%86%E6%9E%90/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
