@@ -18,7 +18,7 @@
       <pubDate>Tue, 27 Nov 2018 09:32:50 +0000</pubDate>
       
       <guid>https://blog.vgmdj.cn/post/linux%E5%B8%B8%E7%94%A8%E9%83%A8%E7%BD%B2%E6%8C%87%E4%BB%A4/</guid>
-      <description>自动化部署 对于自动化部署的构建，常用的几个指令是： - ssh 远程连接并执行一些指令 - scp/rsync 文件传输 shell login shell 简单理解，就是需要登录方式进入的shell</description>
+      <description>自动化部署 对于自动化部署的构建，常用的几个指令是： ssh 远程连接并执行一些指令 scp/rsync 文件传输 shell login shell 简单理解，就是需要登录方式进入的shell，l</description>
     </item>
     
   </channel>
