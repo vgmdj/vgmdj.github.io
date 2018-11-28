@@ -61,7 +61,7 @@
 
 <meta itemprop="datePublished" content="2018-09-12T11:10:51&#43;00:00" />
 <meta itemprop="dateModified" content="2018-09-12T11:10:51&#43;00:00" />
-<meta itemprop="wordCount" content="1003">
+<meta itemprop="wordCount" content="1117">
 
 
 
@@ -148,7 +148,7 @@
               <a href="/categories/%E7%AB%99%E7%82%B9%E5%BB%BA%E8%AE%BE/"> 站点建设 </a>
             
           </div>
-        <span class="more-meta"> 约 1003 字 </span>
+        <span class="more-meta"> 约 1117 字 </span>
         <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -166,6 +166,7 @@
 <li><a href="#hugo安装">hugo安装</a></li>
 <li><a href="#hugo剩余环境建立">hugo剩余环境建立</a></li>
 <li><a href="#hugo部署脚本">hugo部署脚本</a></li>
+<li><a href="#hugo-makefile">hugo makefile</a></li>
 <li><a href="#hexo-文章转入-hugo">hexo 文章转入 hugo</a></li>
 </ul>
 </nav>
@@ -274,6 +275,44 @@ git push origin master
 
 <pre><code>chmod 777 xxx
 xxx是脚本名，加不成功，用sudo以管理员身份来加权限
+
+</code></pre>
+
+<h1 id="hugo-makefile">hugo makefile</h1>
+
+<p>需要注意的是make需要在3.81以上，一些系统自带的make需要升级一下</p>
+
+<pre><code>time := `date '+%Y-%m-%d %H:%M:%S'`
+commit := Site updated:$(time)
+
+build : clean
+	hugo
+
+clean:
+	@rm -rf public/*
+
+commit : build
+	@cd public
+	@echo &quot;deploy blog file ,&quot;$(commit)
+	@git add -A .
+	@git commit -m &quot;$(commit)&quot;
+
+push : commit
+	@cd public
+	@git push origin master
+
+deploy: push
+	@echo &quot;Deploy Success!&quot;
+
+src-deploy:
+	@echo &quot;deploy source file ,&quot;$(commit)
+	@git add -A .
+	@git commit -m &quot;$(commit)&quot;
+	@git push origin master
+
+
+.PHONY:clean build commit push deploy source-deploy
+.ONESHELL:commit push
 
 </code></pre>
 
