@@ -64,7 +64,7 @@ scp/rsync 文件传输
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.vgmdj.cn/post/linux%E5%B8%B8%E7%94%A8%E9%83%A8%E7%BD%B2%E6%8C%87%E4%BB%A4/" /><meta property="article:published_time" content="2018-11-27T09:32:50&#43;00:00"/>
-<meta property="article:modified_time" content="2018-11-27T16:07:01&#43;00:00"/>
+<meta property="article:modified_time" content="2018-11-28T15:11:01&#43;00:00"/>
 
 <meta itemprop="name" content="linux 常用部署指令">
 <meta itemprop="description" content="自动化部署
@@ -81,7 +81,7 @@ scp/rsync 文件传输
 
 <meta itemprop="datePublished" content="2018-11-27T09:32:50&#43;00:00" />
 <meta itemprop="dateModified" content="2018-11-27T09:32:50&#43;00:00" />
-<meta itemprop="wordCount" content="1686">
+<meta itemprop="wordCount" content="1862">
 
 
 
@@ -177,7 +177,7 @@ scp/rsync 文件传输
               <a href="/categories/linux/"> linux </a>
             
           </div>
-        <span class="more-meta"> 约 1686 字 </span>
+        <span class="more-meta"> 约 1862 字 </span>
         <span class="more-meta"> 预计阅读 4 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -204,6 +204,7 @@ scp/rsync 文件传输
 <li><a href="#指令">指令</a>
 <ul>
 <li><a href="#ssh远程连接取环境变量">ssh远程连接取环境变量</a></li>
+<li><a href="#ssh穿越跳板机登录远程服务器">ssh穿越跳板机登录远程服务器</a></li>
 <li><a href="#scp-rsync">scp/rsync</a></li>
 <li><a href="#rsync常用参数">rsync常用参数</a></li>
 </ul></li>
@@ -293,15 +294,14 @@ ssh 远程服务器, su 切换角色, 执行脚本文件</p></li>
 
 <p>ssh ip 后跟一条指令，会将其在远程服务器上的执行结果显示回本地，如：</p>
 
-<pre><code>ssh 10.11.22.33 date
-2018年11月27日 星期二 16时38分24秒 CST
+<pre><code>&gt; ssh 10.11.22.33 date
+&gt; 2018年11月27日 星期二 16时38分24秒 CST
 </code></pre>
 
 <p>那么指令是取环境变量，那么会怎么样呢？</p>
 
-<pre><code>ssh 10.11.22.33 'echo $GOPATH'
-
-
+<pre><code>&gt; ssh 10.11.22.33 'echo $GOPATH'
+&gt; 
 </code></pre>
 
 <p>显示为空，因为这种方式是 non-login non-interactive shell，只会读取用户目录下的 .bashrc文件，而在用户的.bashrc里，有这么一段内容</p>
@@ -315,6 +315,33 @@ ssh 远程服务器, su 切换角色, 执行脚本文件</p></li>
 
 <p>通过注释，我们可以理解，这段的意思是，如果不是交互式shell运行，就会直接返回，不会加载其下的环境变量设置。
 处理方式可以为，在这段代码的上面进行变量的声明。</p>
+
+<h2 id="ssh穿越跳板机登录远程服务器">ssh穿越跳板机登录远程服务器</h2>
+
+<p>编辑 ~/.ssh/config</p>
+
+<pre><code>Host jp-*
+	User root
+	IdentityFile ~/.ssh/id_rsa
+	ForwardAgent yes
+	ProxyCommand ssh root@vgmdj.cn -W $(echo %h|awk -F 'jp-' '{print $2}'):%p 2&gt; /dev/null
+</code></pre>
+
+<p>这里的意思是，对于jp-xxxxx，即目标机为xxxxx，使用跳板机 root@vgmdj.cn ，
+连接xxxxx时，使用</p>
+
+<ul>
+<li>User 指定用户</li>
+<li>IdentityFile 证书</li>
+<li>ForwardAgent 启用agent转发</li>
+<li>Port 指定连接的ssh端口</li>
+<li>ProxyCommand 代理连接
+
+<ul>
+<li>%h 即Host的内容，这里改为 <code>$(echo %h|awk -F 'jp-' '{print $2}')</code>
+即用awk将Host切分，只使用jp-后面的内容作为连接的地址</li>
+</ul></li>
+</ul>
 
 <h2 id="scp-rsync">scp/rsync</h2>
 
@@ -348,7 +375,7 @@ rsync不是加密传输，而scp是加密传输，使用时可以按需选择。
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-11-27 16:07:01</span>
+    <span class="item-content">2018-11-28 15:11:01</span>
   </p>
   
   
