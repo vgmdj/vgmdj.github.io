@@ -115,7 +115,7 @@
 
 <meta itemprop="datePublished" content="2018-03-22T15:23:50&#43;00:00" />
 <meta itemprop="dateModified" content="2018-03-22T15:23:50&#43;00:00" />
-<meta itemprop="wordCount" content="3182">
+<meta itemprop="wordCount" content="3184">
 
 
 
@@ -226,7 +226,7 @@
               <a href="/categories/database/"> database </a>
             
           </div>
-        <span class="more-meta"> 约 3182 字 </span>
+        <span class="more-meta"> 约 3184 字 </span>
         <span class="more-meta"> 预计阅读 7 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -373,7 +373,7 @@ repeatable read 是mysql的默认隔离级别</p></li>
 一个事务在自己没有更新数据库数据的情况，同一个查询操作执行两次或多次的结果应该是一致的；如果不一致，就说明为不可重复读。
 如果事务A读取第一次后，事务B对数据进行修改并提交，事务A再次读取后，数据就会不一致</p></li>
 
-<li><p>4 幻读（Phantom Read）
+<li><p>4、 幻读（Phantom Read）
 事务A读的时候读出了15条记录，事务B在事务A执行的过程中增加了1条，事务A再读的时候就变成了16条，这种情况就叫做幻影读。
 幻读和不可重复读都是读取了另一条已经提交的事务（这点就脏读不同），所不同的是不可重复读查询的都是同一个数据项，而幻读针对的是一批数据整体（比如数据的个数）。</p></li>
 </ul>
@@ -395,7 +395,7 @@ repeatable read 是mysql的默认隔离级别</p></li>
 <li>serializable下： 因B操作未提交，所以无法按照以上顺序执行</li>
 </ul>
 
-<p>总的来说，事务隔离级别越高，越能保证数据的完整性和一致性，但是付出的代价却是并发的性能</p>
+<p>总的来说，事务隔离级别越高，越能保证数据的完整性和一致性，但是付出的代价却是并发的性能。</p>
     </div>
 
     
