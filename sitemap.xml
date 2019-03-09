@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.vgmdj.cn/post/influxdb%E5%AD%A6%E4%B9%A0-%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2018-12-15T14:30:58+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.vgmdj.cn/post/linux%E5%B8%B8%E7%94%A8%E9%83%A8%E7%BD%B2%E6%8C%87%E4%BB%A4/</loc>
     <lastmod>2018-11-28T15:11:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -346,7 +353,7 @@
   
   <url>
     <loc>https://blog.vgmdj.cn/post/</loc>
-    <lastmod>2018-11-28T15:11:12+00:00</lastmod>
+    <lastmod>2018-12-15T14:30:58+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -367,14 +374,14 @@
   
   <url>
     <loc>https://blog.vgmdj.cn/tags/database/</loc>
-    <lastmod>2018-07-12T14:30:58+00:00</lastmod>
+    <lastmod>2018-12-15T14:30:58+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.vgmdj.cn/categories/database/</loc>
-    <lastmod>2018-07-12T14:30:58+00:00</lastmod>
+    <lastmod>2018-12-15T14:30:58+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -403,6 +410,13 @@
   <url>
     <loc>https://blog.vgmdj.cn/tags/hugo/</loc>
     <lastmod>2018-11-27T16:47:34+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vgmdj.cn/tags/influxdb/</loc>
+    <lastmod>2018-12-15T14:30:58+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -437,7 +451,7 @@
   
   <url>
     <loc>https://blog.vgmdj.cn/</loc>
-    <lastmod>2018-11-28T15:11:12+00:00</lastmod>
+    <lastmod>2018-12-15T14:30:58+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
