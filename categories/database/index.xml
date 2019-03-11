@@ -31,6 +31,19 @@
     </item>
     
     <item>
+      <title>influxdb学习-总览</title>
+      <link>https://blog.vgmdj.cn/post/influxdb%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
+      <pubDate>Sat, 08 Dec 2018 18:05:20 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/influxdb%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
+      <description>&lt;h1 id=&#34;简述&#34;&gt;简述&lt;/h1&gt;
+
+&lt;p&gt;influxdb是用go编写的一种时序型数据库，调用使用http协议，特别适用于数据随时间进行更新，且几乎不更新或删除的场景，如实时监控、资产追踪等。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>efk学习-ElasticSearch</title>
       <link>https://blog.vgmdj.cn/post/efk%E5%AD%A6%E4%B9%A0-ElasticSearch/</link>
       <pubDate>Thu, 12 Jul 2018 10:24:51 +0000</pubDate>
