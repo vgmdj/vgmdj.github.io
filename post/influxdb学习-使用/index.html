@@ -81,7 +81,7 @@ docker pull influxdb
 
 <meta itemprop="datePublished" content="2018-12-14T17:31:15&#43;00:00" />
 <meta itemprop="dateModified" content="2018-12-14T17:31:15&#43;00:00" />
-<meta itemprop="wordCount" content="521">
+<meta itemprop="wordCount" content="533">
 
 
 
@@ -177,7 +177,7 @@ docker pull influxdb
               <a href="/categories/database/"> database </a>
             
           </div>
-        <span class="more-meta"> 约 521 字 </span>
+        <span class="more-meta"> 约 533 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -203,6 +203,7 @@ docker pull influxdb
 </ul></li>
 <li><a href="#基本操作">基本操作</a>
 <ul>
+<li><a href="#时间格式">时间格式</a></li>
 <li><a href="#查询函数">查询函数</a></li>
 <li><a href="#数据保留策略">数据保留策略</a></li>
 <li><a href="#数据删除">数据删除</a></li>
@@ -249,6 +250,15 @@ docker pull influxdb
 </code></pre>
 
 <h1 id="基本操作">基本操作</h1>
+
+<h2 id="时间格式">时间格式</h2>
+
+<pre><code>influx -precision rfc3339
+或
+
+influx
+&gt; precision rfc3339
+</code></pre>
 
 <h2 id="查询函数">查询函数</h2>
 
