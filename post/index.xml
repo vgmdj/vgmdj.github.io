@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>vgmdj</copyright>
-    <lastBuildDate>Fri, 14 Dec 2018 17:31:15 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Jan 2019 14:12:23 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.vgmdj.cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>influxdb学习-连续查询</title>
+      <link>https://blog.vgmdj.cn/post/inflxdb%E5%AD%A6%E4%B9%A0-%E8%BF%9E%E7%BB%AD%E6%9F%A5%E8%AF%A2/</link>
+      <pubDate>Wed, 16 Jan 2019 14:12:23 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/inflxdb%E5%AD%A6%E4%B9%A0-%E8%BF%9E%E7%BB%AD%E6%9F%A5%E8%AF%A2/</guid>
+      <description>CONTINUOUS QUERIES influxdb 连续查询功能常与过期机制结合使用，降低时间精度来，以达到提升查询效率，压缩空间的目的。 查看所有的连续查询 SHOW CONTINUOUS QUERIES 语法 基础语法 CREATE CONTINUOUS QUERY &amp;lt;cq_name&amp;gt; ON &amp;lt;database_name&amp;gt;</description>
+    </item>
     
     <item>
       <title>influxdb-使用</title>

@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.vgmdj.cn/post/inflxdb%E5%AD%A6%E4%B9%A0-%E8%BF%9E%E7%BB%AD%E6%9F%A5%E8%AF%A2/</loc>
+    <lastmod>2019-01-16T14:12:23+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.vgmdj.cn/post/influxdb%E5%AD%A6%E4%B9%A0-%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2018-12-15T14:30:58+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -360,7 +367,7 @@
   
   <url>
     <loc>https://blog.vgmdj.cn/post/</loc>
-    <lastmod>2018-12-15T14:30:58+00:00</lastmod>
+    <lastmod>2019-01-16T14:12:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -381,14 +388,14 @@
   
   <url>
     <loc>https://blog.vgmdj.cn/tags/database/</loc>
-    <lastmod>2018-12-15T14:30:58+00:00</lastmod>
+    <lastmod>2019-01-16T14:12:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.vgmdj.cn/categories/database/</loc>
-    <lastmod>2018-12-15T14:30:58+00:00</lastmod>
+    <lastmod>2019-01-16T14:12:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -423,7 +430,7 @@
   
   <url>
     <loc>https://blog.vgmdj.cn/tags/influxdb/</loc>
-    <lastmod>2018-12-15T14:30:58+00:00</lastmod>
+    <lastmod>2019-01-16T14:12:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -458,7 +465,7 @@
   
   <url>
     <loc>https://blog.vgmdj.cn/</loc>
-    <lastmod>2018-12-15T14:30:58+00:00</lastmod>
+    <lastmod>2019-01-16T14:12:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
