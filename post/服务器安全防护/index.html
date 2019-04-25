@@ -80,7 +80,7 @@
 
 <meta itemprop="datePublished" content="2018-03-27T13:23:51&#43;00:00" />
 <meta itemprop="dateModified" content="2018-03-27T13:23:51&#43;00:00" />
-<meta itemprop="wordCount" content="811">
+<meta itemprop="wordCount" content="1225">
 
 
 
@@ -175,8 +175,8 @@
               <a href="/categories/%E7%AB%99%E7%82%B9%E5%BB%BA%E8%AE%BE/"> 站点建设 </a>
             
           </div>
-        <span class="more-meta"> 约 811 字 </span>
-        <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span class="more-meta"> 约 1225 字 </span>
+        <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -202,7 +202,10 @@
 </ul></li>
 <li><a href="#修改ssh端口号">修改ssh端口号</a></li>
 <li><a href="#关闭密码登录">关闭密码登录</a></li>
-<li><a href="#修改mqsql端口">修改mqsql端口</a></li>
+<li><a href="#关闭不需要的服务和端口">关闭不需要的服务和端口</a></li>
+<li><a href="#自定义端口">自定义端口</a></li>
+<li><a href="#定期对服务器进行备份">定期对服务器进行备份</a></li>
+<li><a href="#监测系统日志">监测系统日志</a></li>
 <li><a href="#修改安全组策略">修改安全组策略</a></li>
 </ul></li>
 </ul>
@@ -379,15 +382,15 @@ systemctl restart sshd
 <li>修改/etc/ssh/sshd_config</li>
 </ul>
 
-<pre><code># 以下两项设置允许使用常用客户端免密登录
-RSAAuthentication yes           #开启rsa验证
-PubkeyAuthentication yes        #开启公钥验证
+<pre><code>  # 以下两项设置允许使用常用客户端免密登录
+  RSAAuthentication yes           #开启rsa验证
+  PubkeyAuthentication yes        #开启公钥验证
 
-# 允许root账户登录
-PermitRootLogin yes
+  # 允许root账户登录
+  PermitRootLogin yes
 
-# 不允许密码登录
-PasswordAuthentication no
+  # 不允许密码登录
+  PasswordAuthentication no
 
 </code></pre>
 
@@ -395,16 +398,42 @@ PasswordAuthentication no
 <li>重启服务</li>
 </ul>
 
-<pre><code>/etc/init.d/sshd restart
+<pre><code>  /etc/init.d/sshd restart
 </code></pre>
 
-<h2 id="修改mqsql端口">修改mqsql端口</h2>
+<h2 id="关闭不需要的服务和端口">关闭不需要的服务和端口</h2>
 
-<p>docker run 时-p 映射时改一下</p>
+<p>服务器操作系统在安装时，会启动一些不需要的服务，这样会占用系统的资源，而且也会增加系统的安全隐患。对于一段时间内完全不会用到的服务器，可以完全关闭;对于期间要使用的服务器，也应该关闭不需要的服务，如Telnet等。另外，还要关掉没有必要开的TCP端口。</p>
+
+<h2 id="自定义端口">自定义端口</h2>
+
+<p>不使用默认的端口，而是使用自定义的端口号
+如：</p>
+
+<ul>
+<li>mysql 3306 =&gt; 6033</li>
+<li>rabbit 5672 =&gt; 2765</li>
+<li>redis 6379 =&gt; 9736</li>
+</ul>
+
+<blockquote>
+<p>端口映射只是举例，应以自己实际情况为准</p>
+</blockquote>
+
+<h2 id="定期对服务器进行备份">定期对服务器进行备份</h2>
+
+<p>为防止不能预料的系统故障或用户不小心的非法操作，必须对系统进行安全备份。除了对全系统进行每月一次的备份外，还应对修改过的数据进行每周一次的备份。同时，应该将修改过的重要系统文件存放在不同服务器上，以便出现系统崩溃时(通常是硬盘出错)，可以及时地将系统恢复到正常状态。</p>
+
+<h2 id="监测系统日志">监测系统日志</h2>
+
+<p>通过运行系统日志程序，系统会记录下所有用户使用系统的情形，包括最近登录时间、使用的账号、进行的活动等。日志程序会定期生成报表，通过对报表进行分析，可以知道是否有异常现象。</p>
 
 <h2 id="修改安全组策略">修改安全组策略</h2>
 
-<p>可根据服务商进行选择</p>
+<ul>
+<li>限制对外开放端口</li>
+<li>限制来访问ip</li>
+</ul>
     </div>
 
     
