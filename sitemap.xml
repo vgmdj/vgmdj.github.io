@@ -3,6 +3,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.vgmdj.cn/post/grpc%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</loc>
+    <lastmod>2019-04-27T10:00:01+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vgmdj.cn/post/linux%E5%AD%A6%E4%B9%A0-awk%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2019-01-28T18:32:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.vgmdj.cn/post/inflxdb%E5%AD%A6%E4%B9%A0-%E8%BF%9E%E7%BB%AD%E6%9F%A5%E8%AF%A2/</loc>
     <lastmod>2019-01-16T14:12:23+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -367,7 +381,7 @@
   
   <url>
     <loc>https://blog.vgmdj.cn/post/</loc>
-    <lastmod>2019-01-16T14:12:23+00:00</lastmod>
+    <lastmod>2019-04-27T10:00:01+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -415,6 +429,20 @@
   </url>
   
   <url>
+    <loc>https://blog.vgmdj.cn/tags/grpc/</loc>
+    <lastmod>2019-04-27T10:00:01+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vgmdj.cn/categories/grpc/</loc>
+    <lastmod>2019-04-27T10:00:01+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.vgmdj.cn/tags/hexo/</loc>
     <lastmod>2018-03-06T16:23:50+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -444,14 +472,14 @@
   
   <url>
     <loc>https://blog.vgmdj.cn/tags/linux/</loc>
-    <lastmod>2018-11-28T15:11:12+00:00</lastmod>
+    <lastmod>2019-01-28T18:32:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.vgmdj.cn/categories/linux/</loc>
-    <lastmod>2018-11-28T15:11:12+00:00</lastmod>
+    <lastmod>2019-01-28T18:32:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -464,8 +492,15 @@
   </url>
   
   <url>
+    <loc>https://blog.vgmdj.cn/tags/rpc/</loc>
+    <lastmod>2019-04-27T10:00:01+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.vgmdj.cn/</loc>
-    <lastmod>2019-01-16T14:12:23+00:00</lastmod>
+    <lastmod>2019-04-27T10:00:01+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -486,7 +521,7 @@
   
   <url>
     <loc>https://blog.vgmdj.cn/tags/%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2018-11-28T15:11:12+00:00</lastmod>
+    <lastmod>2019-01-28T18:32:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

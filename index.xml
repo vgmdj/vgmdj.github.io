@@ -7,10 +7,47 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>vgmdj</copyright>
-    <lastBuildDate>Wed, 16 Jan 2019 14:12:23 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 27 Apr 2019 08:16:21 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.vgmdj.cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>grpc学习-总览</title>
+      <link>https://blog.vgmdj.cn/post/grpc%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
+      <pubDate>Sat, 27 Apr 2019 08:16:21 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/grpc%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
+      <description>&lt;h1 id=&#34;总览&#34;&gt;总览&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GRPC&lt;/li&gt;
+&lt;li&gt;protocol-buffers&lt;/li&gt;
+&lt;li&gt;protoc&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>linux学习-awk命令</title>
+      <link>https://blog.vgmdj.cn/post/linux%E5%AD%A6%E4%B9%A0-awk%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Mon, 28 Jan 2019 16:23:04 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/linux%E5%AD%A6%E4%B9%A0-awk%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;h1 id=&#34;awk命令&#34;&gt;awk命令&lt;/h1&gt;
+
+&lt;h1 id=&#34;常用命令参数&#34;&gt;常用命令参数&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;-F fs   fs指定输入分隔符，fs可以是字符串或正则表达式，如-F:&lt;/li&gt;
+&lt;li&gt;-v var=value   赋值一个用户定义变量，将外部变量传递给awk&lt;/li&gt;
+&lt;li&gt;-f scripfile  从脚本文件中读取awk命令&lt;/li&gt;
+&lt;li&gt;-m[fr] val   对val值设置内在限制，-mf选项限制分配给val的最大块数目；-mr选项限制记录的最大数目。这两个功能是Bell实验室版awk的扩展功能，在标准awk中不适用。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>influxdb学习-连续查询</title>

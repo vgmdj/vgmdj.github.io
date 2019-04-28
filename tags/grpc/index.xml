@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>grpc on vgmdj&#39;s blog</title>
+    <link>https://blog.vgmdj.cn/tags/grpc/</link>
+    <description>Recent content in grpc on vgmdj&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>vgmdj</copyright>
+    <lastBuildDate>Sat, 27 Apr 2019 08:16:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.vgmdj.cn/tags/grpc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>grpc学习-总览</title>
+      <link>https://blog.vgmdj.cn/post/grpc%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
+      <pubDate>Sat, 27 Apr 2019 08:16:21 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/grpc%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
+      <description>&lt;h1 id=&#34;总览&#34;&gt;总览&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GRPC&lt;/li&gt;
+&lt;li&gt;protocol-buffers&lt;/li&gt;
+&lt;li&gt;protoc&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
