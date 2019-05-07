@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>容器学习-k8s证书更换 - vgmdj&#39;s blog</title>
+  <title>linux学习-grep命令 - vgmdj&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,9 +17,7 @@
 
 
 <meta name="author" content="VGMDJ" />
-  <meta name="description" content="k8s证书更换 一般正常安装k8s集群，集群证书的有效期是一年，包括以下证书：
- apiserver apiserver-kubelet-client apiserver-etcd-client front-proxy-client etcd/server etcd/peer etcd/healthcheck-client  
-" />
+  <meta name="description" content="grep命令 grep（global search regular expression(RE) and print out the line，全面搜索正则表达式并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索" />
 
   <meta name="keywords" content="vgmdj, blog, it" />
 
@@ -31,7 +29,7 @@
 <meta name="generator" content="Hugo 0.49.2" />
 
 
-<link rel="canonical" href="https://blog.vgmdj.cn/post/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E8%AF%81%E4%B9%A6%E6%9B%B4%E6%8D%A2/" />
+<link rel="canonical" href="https://blog.vgmdj.cn/post/linux%E5%AD%A6%E4%B9%A0-grep%E5%91%BD%E4%BB%A4/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -51,68 +49,26 @@
 
 
 
-<meta property="og:title" content="容器学习-k8s证书更换" />
-<meta property="og:description" content="k8s证书更换
-
-一般正常安装k8s集群，集群证书的有效期是一年，包括以下证书：
-
-
-apiserver
-apiserver-kubelet-client
-apiserver-etcd-client
-front-proxy-client
-etcd/server
-etcd/peer
-etcd/healthcheck-client
-
-
-" />
+<meta property="og:title" content="linux学习-grep命令" />
+<meta property="og:description" content="grep命令 grep（global search regular expression(RE) and print out the line，全面搜索正则表达式并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.vgmdj.cn/post/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E8%AF%81%E4%B9%A6%E6%9B%B4%E6%8D%A2/" /><meta property="article:published_time" content="2019-04-29T09:14:15&#43;00:00"/>
-<meta property="article:modified_time" content="2019-04-29T10:47:12&#43;00:00"/>
+<meta property="og:url" content="https://blog.vgmdj.cn/post/linux%E5%AD%A6%E4%B9%A0-grep%E5%91%BD%E4%BB%A4/" /><meta property="article:published_time" content="2019-01-28T13:46:02&#43;00:00"/>
+<meta property="article:modified_time" content="2019-01-28T14:31:25&#43;00:00"/>
 
-<meta itemprop="name" content="容器学习-k8s证书更换">
-<meta itemprop="description" content="k8s证书更换
-
-一般正常安装k8s集群，集群证书的有效期是一年，包括以下证书：
+<meta itemprop="name" content="linux学习-grep命令">
+<meta itemprop="description" content="grep命令 grep（global search regular expression(RE) and print out the line，全面搜索正则表达式并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索">
 
 
-apiserver
-apiserver-kubelet-client
-apiserver-etcd-client
-front-proxy-client
-etcd/server
-etcd/peer
-etcd/healthcheck-client
-
-
-">
-
-
-<meta itemprop="datePublished" content="2019-04-29T09:14:15&#43;00:00" />
-<meta itemprop="dateModified" content="2019-04-29T09:14:15&#43;00:00" />
-<meta itemprop="wordCount" content="496">
+<meta itemprop="datePublished" content="2019-01-28T13:46:02&#43;00:00" />
+<meta itemprop="dateModified" content="2019-01-28T13:46:02&#43;00:00" />
+<meta itemprop="wordCount" content="965">
 
 
 
-<meta itemprop="keywords" content="k8s,分布式系统," />
+<meta itemprop="keywords" content="linux,命令," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="容器学习-k8s证书更换"/>
-<meta name="twitter:description" content="k8s证书更换
-
-一般正常安装k8s集群，集群证书的有效期是一年，包括以下证书：
-
-
-apiserver
-apiserver-kubelet-client
-apiserver-etcd-client
-front-proxy-client
-etcd/server
-etcd/peer
-etcd/healthcheck-client
-
-
-"/>
+<meta name="twitter:title" content="linux学习-grep命令"/>
+<meta name="twitter:description" content="grep命令 grep（global search regular expression(RE) and print out the line，全面搜索正则表达式并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -183,17 +139,17 @@ etcd/healthcheck-client
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">容器学习-k8s证书更换</h1>
+      <h1 class="post-title">linux学习-grep命令</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-04-29 09:14:15 </span>
+        <span class="post-time"> 2019-01-28 13:46:02 </span>
         <div class="post-category">
             
-              <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"> 分布式系统 </a>
+              <a href="/categories/linux/"> linux </a>
             
           </div>
-        <span class="more-meta"> 约 496 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span class="more-meta"> 约 965 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -206,26 +162,9 @@ etcd/healthcheck-client
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#k8s证书-更换">k8s证书更换</a></li>
-<li><a href="#证书过期问题解决办法">证书过期问题解决办法</a></li>
-<li><a href="#过期表现">过期表现</a></li>
-<li><a href="#cfssl安装">cfssl安装</a></li>
-<li><a href="#操作-步骤">操作步骤</a>
-<ul>
-<li><a href="#删除apiserver证书">删除apiserver证书</a></li>
-<li><a href="#删除front-proxy-client证书">删除front-proxy-client证书</a></li>
-<li><a href="#删除etcd证书">删除etcd证书</a></li>
-<li><a href="#配置代理">配置代理</a></li>
-<li><a href="#重新生成证书">重新生成证书</a></li>
-<li><a href="#删除配置文件">删除配置文件</a></li>
-<li><a href="#重新生成配置文件">重新生成配置文件</a></li>
-<li><a href="#重启kubelet">重启kubelet</a></li>
-</ul></li>
-<li><a href="#新-slave-节点加入">新 slave 节点加入</a>
-<ul>
-<li><a href="#生成token">生成token</a></li>
-<li><a href="#ssh到要新加入节点运行指令">ssh到要新加入节点运行指令</a></li>
-</ul></li>
+<li><a href="#grep命令">grep命令</a></li>
+<li><a href="#测试用例">测试用例</a></li>
+<li><a href="#选项">选项</a></li>
 </ul>
 </nav>
   </div>
@@ -236,148 +175,92 @@ etcd/healthcheck-client
 
     
     <div class="post-content">
-      <h1 id="k8s证书-更换">k8s证书更换</h1>
+      
 
-<p>一般正常安装k8s集群，集群证书的有效期是一年，包括以下证书：</p>
+<h1 id="grep命令">grep命令</h1>
 
-<ul>
-<li>apiserver</li>
-<li>apiserver-kubelet-client</li>
-<li>apiserver-etcd-client</li>
-<li>front-proxy-client</li>
-<li>etcd/server</li>
-<li>etcd/peer</li>
-<li>etcd/healthcheck-client</li>
-</ul>
+<p>grep（global search regular expression(RE) and print out the line，全面搜索正则表达式并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。</p>
 
-<p></p>
-
-<h1 id="证书过期问题解决办法">证书过期问题解决办法</h1>
+<h1 id="测试用例">测试用例</h1>
 
 <ul>
-<li>升级k8s集群，这是推荐方式</li>
-<li>重新生成证书，这是懒人方式</li>
+<li>testout.txt
+date 命令，每分钟执行一次的结果，共49622行</li>
 </ul>
 
-<h1 id="过期表现">过期表现</h1>
+<pre><code>以前十行为例：
+
+2018年 12月 12日 星期三 14:53:01 CST
+2018年 12月 12日 星期三 14:54:01 CST
+2018年 12月 12日 星期三 14:55:01 CST
+2018年 12月 12日 星期三 14:56:01 CST
+2018年 12月 12日 星期三 14:57:01 CST
+2018年 12月 12日 星期三 14:58:01 CST
+2018年 12月 12日 星期三 14:59:01 CST
+2018年 12月 12日 星期三 15:00:01 CST
+2018年 12月 12日 星期三 15:01:01 CST
+2018年 12月 12日 星期三 15:02:01 CST
+</code></pre>
+
+<h1 id="选项">选项</h1>
 
 <ul>
-<li>kubectl 命令报错</li>
+<li>-c 计算符合范本样式的列数。</li>
 </ul>
 
-<pre><code>$ kubectl get pods
- Unable to connect to the server: x509: certificate has expired or is not yet valid
- 或
- The connection to the server xxxxxx:6443 was refused - did you specify the right host or port?
+<pre><code>grep -c &quot;2018年 12月 14日&quot; testout.txt
+1440 #24*60=1440
 
- ps：因证书过期，apiserver可能会挂掉，
- 如果存活，会报第一个错，
- 如果挂掉，会报第二个错
+等同于：
+grep &quot;2018年 12月 14日&quot; testout.txt |wc -l
 </code></pre>
 
 <ul>
-<li>证书时间
-cfssl-certinfo -cert /etc/kubernetes/pki/apiserver.crt | grep not</li>
+<li>-A&lt;显示列数&gt; 除了显示符合范本样式的那一行之外，并显示该行之后的内容。</li>
 </ul>
 
-<pre><code>&quot;not_before&quot;: &quot;2017-04-26T14:03:35Z&quot;,
-&quot;not_after&quot;: &quot;2018-04-23T06:57:24Z&quot;,
+<pre><code>grep -A 0 &quot;2018年 12月 14日 星期五 23:00:01&quot; testout.txt
+2018年 12月 14日 星期五 23:00:01 CST
+
+grep -A 2 &quot;2018年 12月 14日 星期五 23:00:01&quot; testout.txt
+2018年 12月 14日 星期五 23:00:01 CST
+2018年 12月 14日 星期五 23:01:01 CST
+2018年 12月 14日 星期五 23:02:01 CST
 </code></pre>
 
-<h1 id="cfssl安装">cfssl安装</h1>
+<ul>
+<li>-C&lt;显示列数&gt;或-&lt;显示列数&gt;  除了显示符合范本样式的那一列之外，并显示该列之前后的内容。</li>
+</ul>
 
-<pre><code>
-wget https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
-
-wget https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
-
-wget https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64
-
-chmod +x cfssl_linux-amd64 cfssljson_linux-amd64 cfssl-certinfo_linux-amd64
-
-mv cfssl_linux-amd64 /usr/local/bin/cfssl
-
-mv cfssljson_linux-amd64 /usr/local/bin/cfssljson
-
-mv cfssl-certinfo_linux-amd64 /usr/bin/cfssl-certinfo
-</code></pre>
-
-<h1 id="操作-步骤">操作步骤</h1>
-
-<h2 id="删除apiserver证书">删除apiserver证书</h2>
-
-<pre><code>rm -f /etc/kubernetes/pki/apiserver*
-</code></pre>
-
-<h2 id="删除front-proxy-client证书">删除front-proxy-client证书</h2>
-
-<pre><code>rm -f /etc/kubernetes/pki/front-proxy-client.*
-</code></pre>
-
-<h2 id="删除etcd证书">删除etcd证书</h2>
-
-<pre><code>rm -rf /etc/kubernetes/pki/etcd/healthcheck-client.*
-rm -rf /etc/kubernetes/pki/etcd/server.*
-rm -rf /etc/kubernetes/pki/etcd/peer.*
-</code></pre>
-
-<h2 id="配置代理">配置代理</h2>
-
-<p>因kubeadm alpha phase certs 会访问 <a href="https://dl.k8s.io">https://dl.k8s.io</a> ,然后跳转到 <a href="https://storage.googleapis.com/kubernetes-release">https://storage.googleapis.com/kubernetes-release</a> ，所以需要配置代理。</p>
-
-<pre><code>#代理地址以实际为准
-export http_proxy=socks5://127.0.0.1:1080
-export https_proxy=socks5://127.0.0.1:1080
-</code></pre>
-
-<h2 id="重新生成证书">重新生成证书</h2>
-
-<pre><code>kubeadm alpha phase certs apiserver --apiserver-cert-extra-sans xxxxxx --apiserver-advertise-address xxxxxx
-
-kubeadm alpha phase certs apiserver-kubelet-client
-
-kubeadm alpha phase certs front-proxy-client
-
-kubeadm alpha phase certs apiserver-etcd-client
-
-kubeadm alpha phase certs etcd-healthcheck-client
-
-kubeadm alpha phase certs etcd-server
-
-kubeadm alpha phase certs etcd-peer
-</code></pre>
-
-<h2 id="删除配置文件">删除配置文件</h2>
-
-<pre><code>rm -f /etc/kubernetes/\*.conf
-</code></pre>
-
-<h2 id="重新生成配置文件">重新生成配置文件</h2>
-
-<pre><code>kubeadm alpha phase kubeconfig all --apiserver-advertise-address xxxxxx
-</code></pre>
-
-<h2 id="重启kubelet">重启kubelet</h2>
-
-<pre><code>systemctl restart kubelet
-</code></pre>
-
-<h1 id="新-slave-节点加入">新 slave 节点加入</h1>
-
-<h2 id="生成token">生成token</h2>
-
-<pre><code>在master节点上
-
-$ kubeadm token create --print-join-command
-</code></pre>
-
-<p>运行后会创建有效期一天的token，并打印出 <strong>kubeadm join</strong> 指令</p>
-
-<h2 id="ssh到要新加入节点运行指令">ssh到要新加入节点运行指令</h2>
-
-<pre><code>$ kubeadm join ...... # 上一步打印出的指令
+<pre><code>grep -C 2 &quot;2018年 12月 14日 星期五 23:00:01&quot; testout.txt
+2018年 12月 14日 星期五 22:58:01 CST
+2018年 12月 14日 星期五 22:59:01 CST
+2018年 12月 14日 星期五 23:00:01 CST
+2018年 12月 14日 星期五 23:01:01 CST
+2018年 12月 14日 星期五 23:02:01 CST
 
 </code></pre>
+
+<ul>
+<li>-P 支持Perl正则表达式</li>
+<li>-E 支持扩展正则表达式</li>
+<li>-F 不支持正则表达式，将模式按照字面意思匹配</li>
+<li>-e 匹配模板，多次使用模板之间关系为 &lsquo;或&rsquo;</li>
+<li>-l 只列出含有匹配的文本行的文件的文件名，而不显示具体的匹配内容</li>
+<li>-L 列出文件内容不符合指定的范本样式的文件名称。</li>
+<li>-n 列出所有的匹配的文本行，并显示行号</li>
+<li>-v 只显示不匹配的文本行</li>
+<li>-R/-r 递归搜索，搜索当前目录和子目录</li>
+<li>-q 不显示任何信息。</li>
+<li>-h 在显示符合范本样式的那一列之前，不标示该列所属的文件名称。</li>
+<li>-H 在显示符合范本样式的那一列之前，标示该列的文件名称。</li>
+<li>-i/-y 忽略字符大小写的差别。</li>
+<li>-w 只显示全字符合的列。</li>
+<li>-s 不显示错误信息。</li>
+<li>-x 整行内容完全匹配</li>
+<li>-o 只输出文件中匹配到的部分。</li>
+</ul>
+
     </div>
 
     
@@ -388,7 +271,7 @@ $ kubeadm token create --print-join-command
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2019-04-29 10:47:12</span>
+    <span class="item-content">2019-01-28 14:31:25</span>
   </p>
   
   
@@ -400,23 +283,23 @@ $ kubeadm token create --print-join-command
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="/tags/k8s/">k8s</a>
+          <a href="/tags/linux/">linux</a>
           
-          <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/">分布式系统</a>
+          <a href="/tags/%E5%91%BD%E4%BB%A4/">命令</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-%E8%A3%85%E6%9C%BA%E5%8D%95/">
+          <a class="prev" href="/post/linux%E5%AD%A6%E4%B9%A0-awk%E5%91%BD%E4%BB%A4/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">go语言学习-装机单</span>
+            <span class="prev-text nav-default">linux学习-awk命令</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/grpc%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/">
-            <span class="next-text nav-default">grpc学习-总览</span>
+          <a class="next" href="/post/inflxdb%E5%AD%A6%E4%B9%A0-%E8%BF%9E%E7%BB%AD%E6%9F%A5%E8%AF%A2/">
+            <span class="next-text nav-default">influxdb学习-连续查询</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
