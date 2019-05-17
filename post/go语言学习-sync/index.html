@@ -67,7 +67,7 @@ sync包是go提供的实现锁机制的集合
 
 <meta itemprop="datePublished" content="2017-08-02T13:23:51&#43;00:00" />
 <meta itemprop="dateModified" content="2017-08-02T13:23:51&#43;00:00" />
-<meta itemprop="wordCount" content="1841">
+<meta itemprop="wordCount" content="1918">
 
 
 
@@ -157,7 +157,7 @@ sync包是go提供的实现锁机制的集合
               <a href="/categories/Golang/"> Golang </a>
             
           </div>
-        <span class="more-meta"> 约 1841 字 </span>
+        <span class="more-meta"> 约 1918 字 </span>
         <span class="more-meta"> 预计阅读 4 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -426,7 +426,8 @@ func main() {
 <h2 id="sync-pool">sync.Pool</h2>
 
 <p>临时对象池，当多个goroutine都需要创建同一个对象的时候，如果goroutine过多，可能导致对象的创建数目剧增。 而对象又是占用内存的，进而导致的就是内存回收的GC压力徒增。造成“并发大－占用内存大－GC缓慢－处理并发能力降低－并发更大”这样的恶性循环。 在这个时候，我们非常迫切需要有一个对象池，每个goroutine不再自己单独创建对象，而是从对象池中获取出一个对象（如果池中已经有的话）。 这就是sync.Pool出现的目的了。
-sync.Pool的使用非常简单，提供两个方法:Get和Put 和一个初始化回调函数New。</p>
+sync.Pool的使用非常简单，提供两个方法:Get和Put 和一个初始化回调函数New。
+需要注意的是，因为sync.Pool 没有关于容量的限制，所以其中保存的任何项都可能随时不做通知的释放掉，所以不适合用于像socket长连接或数据库连接池。</p>
     </div>
 
     
