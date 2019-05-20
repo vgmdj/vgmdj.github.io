@@ -17,9 +17,9 @@
 
 
 <meta name="author" content="VGMDJ" />
-  <meta name="description" content="观察者模式(Observer) 将一个系统分割成一系列相互协作的类有一个很不好的副作用，那就是需要维护相关对象间的一致性，我们不希望为了维持一致性而使各类紧密耦合，这样会给维护、扩展和重用都带来不便。 观察者模式所做的工作其实就是在解除耦合，让耦合的双方都依赖于抽象，而不是依赖于具体，从而使得稳中有降自的变化都不会影响另一边的变化。
- Subject(观察目标) 被观察目标知道它的观察者，可以有任意多个观察者观察同一目标。需要提供注册、删除、通知观察者的接口
- ConcreSubject(具体目标) 用于存放各ConcreObserver对象
+  <meta name="description" content="观察者模式(Observer) 将一个系统分割成一系列相互协作的类有一个很不好的副作用，那就是需要维护相关对象间的一致性，我们不希望为了维持一致性而使各类紧密耦合，这样会给维护、扩展和重用都带来不便。 观察者模式所做的工作其实就是在解除耦合，让耦合的双方都依赖于抽象，而不是依赖于具体，从而使得各自的变化都不会影响另一边的变化。
+ Subject(主题) 观察者感兴趣的抽象主题，条件达成后，可对所属主题的观察者进行通知。需要提供注册、删除、通知观察者的接口
+ ConcreSubject(具体主题) 用于存放各ConcreObserver对象
  Observer(观察者) 为那些在目标发生改时需获得通知的对象定义一个更新接口。当它的状态发生改变时，向它的各个观察者发出通知
  ConcreObserver(具体观察者) 维护一个指向ConcreSubject对象的引用。存储有关状态，这些状态应与目标的状态保持一致。实现Observer的更新接口以使自身的状态与目标的状态保持一致
   
@@ -59,13 +59,13 @@
 <meta property="og:description" content="观察者模式(Observer)
 
 将一个系统分割成一系列相互协作的类有一个很不好的副作用，那就是需要维护相关对象间的一致性，我们不希望为了维持一致性而使各类紧密耦合，这样会给维护、扩展和重用都带来不便。
-观察者模式所做的工作其实就是在解除耦合，让耦合的双方都依赖于抽象，而不是依赖于具体，从而使得稳中有降自的变化都不会影响另一边的变化。
+观察者模式所做的工作其实就是在解除耦合，让耦合的双方都依赖于抽象，而不是依赖于具体，从而使得各自的变化都不会影响另一边的变化。
 
 
-Subject(观察目标)
-被观察目标知道它的观察者，可以有任意多个观察者观察同一目标。需要提供注册、删除、通知观察者的接口
+Subject(主题)
+观察者感兴趣的抽象主题，条件达成后，可对所属主题的观察者进行通知。需要提供注册、删除、通知观察者的接口
 
-ConcreSubject(具体目标)
+ConcreSubject(具体主题)
 用于存放各ConcreObserver对象
 
 Observer(观察者)
@@ -84,13 +84,13 @@ ConcreObserver(具体观察者)
 <meta itemprop="description" content="观察者模式(Observer)
 
 将一个系统分割成一系列相互协作的类有一个很不好的副作用，那就是需要维护相关对象间的一致性，我们不希望为了维持一致性而使各类紧密耦合，这样会给维护、扩展和重用都带来不便。
-观察者模式所做的工作其实就是在解除耦合，让耦合的双方都依赖于抽象，而不是依赖于具体，从而使得稳中有降自的变化都不会影响另一边的变化。
+观察者模式所做的工作其实就是在解除耦合，让耦合的双方都依赖于抽象，而不是依赖于具体，从而使得各自的变化都不会影响另一边的变化。
 
 
-Subject(观察目标)
-被观察目标知道它的观察者，可以有任意多个观察者观察同一目标。需要提供注册、删除、通知观察者的接口
+Subject(主题)
+观察者感兴趣的抽象主题，条件达成后，可对所属主题的观察者进行通知。需要提供注册、删除、通知观察者的接口
 
-ConcreSubject(具体目标)
+ConcreSubject(具体主题)
 用于存放各ConcreObserver对象
 
 Observer(观察者)
@@ -105,7 +105,7 @@ ConcreObserver(具体观察者)
 
 <meta itemprop="datePublished" content="2018-07-24T13:44:23&#43;00:00" />
 <meta itemprop="dateModified" content="2018-07-24T13:44:23&#43;00:00" />
-<meta itemprop="wordCount" content="897">
+<meta itemprop="wordCount" content="890">
 
 
 
@@ -115,13 +115,13 @@ ConcreObserver(具体观察者)
 <meta name="twitter:description" content="观察者模式(Observer)
 
 将一个系统分割成一系列相互协作的类有一个很不好的副作用，那就是需要维护相关对象间的一致性，我们不希望为了维持一致性而使各类紧密耦合，这样会给维护、扩展和重用都带来不便。
-观察者模式所做的工作其实就是在解除耦合，让耦合的双方都依赖于抽象，而不是依赖于具体，从而使得稳中有降自的变化都不会影响另一边的变化。
+观察者模式所做的工作其实就是在解除耦合，让耦合的双方都依赖于抽象，而不是依赖于具体，从而使得各自的变化都不会影响另一边的变化。
 
 
-Subject(观察目标)
-被观察目标知道它的观察者，可以有任意多个观察者观察同一目标。需要提供注册、删除、通知观察者的接口
+Subject(主题)
+观察者感兴趣的抽象主题，条件达成后，可对所属主题的观察者进行通知。需要提供注册、删除、通知观察者的接口
 
-ConcreSubject(具体目标)
+ConcreSubject(具体主题)
 用于存放各ConcreObserver对象
 
 Observer(观察者)
@@ -211,7 +211,7 @@ ConcreObserver(具体观察者)
               <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"> 设计模式 </a>
             
           </div>
-        <span class="more-meta"> 约 897 字 </span>
+        <span class="more-meta"> 约 890 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -247,13 +247,13 @@ ConcreObserver(具体观察者)
       <h2 id="观察者模式-observer">观察者模式(Observer)</h2>
 
 <p>将一个系统分割成一系列相互协作的类有一个很不好的副作用，那就是需要维护相关对象间的一致性，我们不希望为了维持一致性而使各类紧密耦合，这样会给维护、扩展和重用都带来不便。
-观察者模式所做的工作其实就是在解除耦合，让耦合的双方都依赖于抽象，而不是依赖于具体，从而使得稳中有降自的变化都不会影响另一边的变化。</p>
+观察者模式所做的工作其实就是在解除耦合，让耦合的双方都依赖于抽象，而不是依赖于具体，从而使得各自的变化都不会影响另一边的变化。</p>
 
 <ul>
-<li><p>Subject(观察目标)
-被观察目标知道它的观察者，可以有任意多个观察者观察同一目标。需要提供注册、删除、通知观察者的接口</p></li>
+<li><p>Subject(主题)
+观察者感兴趣的抽象主题，条件达成后，可对所属主题的观察者进行通知。需要提供注册、删除、通知观察者的接口</p></li>
 
-<li><p>ConcreSubject(具体目标)
+<li><p>ConcreSubject(具体主题)
 用于存放各ConcreObserver对象</p></li>
 
 <li><p>Observer(观察者)
@@ -272,25 +272,32 @@ golang相关实现例子:  <a href="https://github.com/vgmdj/go_practice/tree/ma
 
 <h2 id="使用场景">使用场景</h2>
 
-<p>当一个对象的改变需要同时改变其他对象，同时不想关注具体有多少对象有待改变的时候</p>
+<p>当多个对象对同一个事件感兴趣，但多个对象间相互独立</p>
 
 <h2 id="优势">优势</h2>
 
-<p>充分解除目标和观察者类之间的耦合，实现了表现层和数据逻辑层的分离，并定义了稳定的消息更新传递机制，抽象了更新接口，使得可以有各种不同的表示层作为具体观察者角色。</p>
+<p>充分解除主题和观察者类之间的耦合，实现了表现层和数据逻辑层的分离，并定义了稳定的消息更新传递机制，抽象了更新接口，使得可以有各种不同的表示层作为具体观察者角色。</p>
 
 <h2 id="实际应用场景">实际应用场景</h2>
 
-<p>轮询查询的场景，使用消息通知来代替。
-类比例子 &ndash; 取快递</p>
+<p>交易订单处理</p>
 
-<ul>
-<li>快递 - 目标</li>
-<li>代收点 - 具体目标</li>
-<li>代收点管理员 - 观察者</li>
-<li>取件人 - 具体观察者
-不采用观察者模式，取件方式变成每隔一断时间，去代收点问一次，是否已到件
-采用观察者模式，给代收点管理员给电话，一旦到件，则给取件人打电话通知来取</li>
-</ul>
+<p>事件：下单成功
+主题：订单处理
+具体主题：下单成功处理
+观察者：通知
+具体观察者：短信通知
+具体观察者：邮件通知
+观察者：记录
+具体观察者：支付记录
+具体观察者：交易记录</p>
+
+<p>事件：交易成功
+主题：订单处理
+具体主题：交易成功处理
+观察者：通知
+具体观察者：短信通知
+具体观察者：邮件通知</p>
 
 <h2 id="例子">例子</h2>
 
@@ -354,19 +361,19 @@ func (co *ConcreteObserver) Update(event Event) {
 </ul>
 
 <pre><code>  ob1 := &amp;ConcreteObserver{ID: &quot;ob1&quot;}
-	ob2 := &amp;ConcreteObserver{ID: &quot;ob2&quot;}
+  ob2 := &amp;ConcreteObserver{ID: &quot;ob2&quot;}
 
-	sb := ConcreteSubject{}
-	sb.Register(ob1)
-	sb.Register(ob2)
+  sb := ConcreteSubject{}
+  sb.Register(ob1)
+  sb.Register(ob2)
 
-	event1 := Event{Data: &quot;event1&quot;}
-	sb.Notify(event1)
+  event1 := Event{Data: &quot;event1&quot;}
+  sb.Notify(event1)
 
-	sb.Destroy(ob1)
+  sb.Destroy(ob1)
 
-	event2 := Event{Data: &quot;event2&quot;}
-	sb.Notify(event2)
+  event2 := Event{Data: &quot;event2&quot;}
+  sb.Notify(event2)
 
 </code></pre>
 
