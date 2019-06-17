@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="VGMDJ" />
-  <meta name="description" content="TCP实验： TCP客户端套接字程序 import java.io.*; import java.net.*; class TCPClient{ public static void main(String argv[]) throws Exception { String sentence; String modifiedSentence; BufferedReader inFromUser = new BufferedReader( new InputStreamReader(System.in)); Socket ClientSocket = new Socket(&amp;quot;222.194.1.36&amp;quot;,6789); DataOutputStream outToServer = new DataOutputStream( ClientSocket.getOutputStream()); BufferedReader inFromServer = new BufferedReader(new InputStreamReader( ClientSocket.getInputStream())); sentence =inFromUser.readLine(); outToServer.writeBytes(sentence &#43; &#39;\n&#39;); modifiedSentence = inFromServer.readLine(); System.out.println(&amp;quot;FROM SERVER:&amp;quot;&#43; modifiedSentence); ClientSocket.close(); } }  
+  <meta name="description" content="TCP TCP客户端套接字程序 import java.io.*; import java.net.*; class TCPClient{ public static void main(String argv[]) throws Exception { String sentence; String modifiedSentence; BufferedReader inFromUser = new BufferedReader( new InputStreamReader(System.in)); Socket ClientSocket = new Socket(&amp;quot;222.194.1.36&amp;quot;,6789); DataOutputStream outToServer = new DataOutputStream( ClientSocket.getOutputStream()); BufferedReader inFromServer = new BufferedReader(new InputStreamReader( ClientSocket.getInputStream())); sentence =inFromUser.readLine(); outToServer.writeBytes(sentence &#43; &#39;\n&#39;); modifiedSentence = inFromServer.readLine(); System.out.println(&amp;quot;FROM SERVER:&amp;quot;&#43; modifiedSentence); ClientSocket.close(); } }  
 " />
 
   <meta name="keywords" content="vgmdj, blog, it" />
@@ -51,7 +51,7 @@
 
 
 <meta property="og:title" content="计算机网络学习-socket套接字分析" />
-<meta property="og:description" content="TCP实验：
+<meta property="og:description" content="TCP
 
 TCP客户端套接字程序
 
@@ -88,7 +88,7 @@ class TCPClient{
 <meta property="article:modified_time" content="2018-03-08T14:39:52&#43;00:00"/>
 
 <meta itemprop="name" content="计算机网络学习-socket套接字分析">
-<meta itemprop="description" content="TCP实验：
+<meta itemprop="description" content="TCP
 
 TCP客户端套接字程序
 
@@ -124,14 +124,14 @@ class TCPClient{
 
 <meta itemprop="datePublished" content="2018-03-08T13:42:05&#43;00:00" />
 <meta itemprop="dateModified" content="2018-03-08T13:42:05&#43;00:00" />
-<meta itemprop="wordCount" content="861">
+<meta itemprop="wordCount" content="926">
 
 
 
 <meta itemprop="keywords" content="学习,计算机网络," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="计算机网络学习-socket套接字分析"/>
-<meta name="twitter:description" content="TCP实验：
+<meta name="twitter:description" content="TCP
 
 TCP客户端套接字程序
 
@@ -242,7 +242,7 @@ class TCPClient{
               <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"> 计算机网络 </a>
             
           </div>
-        <span class="more-meta"> 约 861 字 </span>
+        <span class="more-meta"> 约 926 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -258,13 +258,13 @@ class TCPClient{
 <ul>
 <li>
 <ul>
-<li><a href="#tcp实验">TCP实验：</a>
+<li><a href="#tcp">TCP</a>
 <ul>
 <li><a href="#tcp客户端套接字程序">TCP客户端套接字程序</a></li>
 <li><a href="#tcp服务器端套接字程序">TCP服务器端套接字程序</a></li>
-<li><a href="#tcp连接分析">TCP连接分析：</a></li>
+<li><a href="#tcp连接分析">TCP连接分析</a></li>
 </ul></li>
-<li><a href="#udp实验">UDP实验：</a>
+<li><a href="#udp">UDP</a>
 <ul>
 <li><a href="#udp客户端套接字程序">UDP客户端套接字程序</a></li>
 <li><a href="#udp服务器端套接字程序">UDP服务器端套接字程序</a></li>
@@ -282,7 +282,7 @@ class TCPClient{
 
     
     <div class="post-content">
-      <h2 id="tcp实验">TCP实验：</h2>
+      <h2 id="tcp">TCP</h2>
 
 <h3 id="tcp客户端套接字程序">TCP客户端套接字程序</h3>
 
@@ -347,21 +347,23 @@ class TCPServer{
 <p><img src="/计算机网络学习-socket套接字分析/tcp1.png" alt="tcp" />
 <img src="/计算机网络学习-socket套接字分析/tcp2.png" alt="tcp" /></p>
 
-<h3 id="tcp连接分析">TCP连接分析：</h3>
+<h3 id="tcp连接分析">TCP连接分析</h3>
 
 <ul>
-<li><p>1、 客户端：握手请求seq=0,len=0，syn=1
+<li><p>1、 客户端：握手请求seq=0,len=0，syn=1<br>
 syn=1，标志着这是一次握手请求，且客户端设置初始seq=0，发送数据len=0</p></li>
 
-<li><p>2、 服务器端：握手应答 seq=0 ,ack =1, len=0，syn=1
-syn=1，这是属于握手应答，且服务端初始seq=0，ack=（客户端的）seq+len+1，发送数据len=0</p></li>
+<li><p>2、 服务器端：握手应答 seq=0 ,ack =1, len=0，syn=1<br>
+syn=1,ack=1, 标志着这是属于握手应答，且服务端初始seq=0，ack=（客户端的）seq+len+1，发送数据len=0</p></li>
 
-<li><p>3、 客户端：接收到应答 seq =1, ack =1, len=0
+<li><p>3、 客户端：接收到应答 seq =1, ack =1, len=0<br>
 seq=（客户端上次的）seq+len+1, ack=（服务端的）seq+len+1</p></li>
 
-<li><p>4、 客户端：发送数据请求 seq =1 ,ack = 1 ,len =1</p></li>
+<li><p>4、 客户端：发送数据请求 seq =1 ,ack = 1 ,len =1<br>
+seq=（客户端上次的）seq+len, ack=（服务端的）seq+len</p></li>
 
-<li><p>5、 服务器端：接收请求 seq =1 ,ack =2 ,len =0</p></li>
+<li><p>5、 服务器端：接收请求 seq =1 ,ack =2 ,len =0<br>
+seq=（服务端上次的）seq+len, ack=（客户端的）seq+len 注：下同</p></li>
 
 <li><p>6、 客户端：发送数据 seq =2, ack =1, len =14</p></li>
 
@@ -378,7 +380,7 @@ seq=（客户端上次的）seq+len+1, ack=（服务端的）seq+len+1</p></li>
 
 <p>客户端关闭连接，但服务器端仍保持监听，则服务器端没有进行请求关闭连接的请求。</p>
 
-<h2 id="udp实验">UDP实验：</h2>
+<h2 id="udp">UDP</h2>
 
 <h3 id="udp客户端套接字程序">UDP客户端套接字程序</h3>
 

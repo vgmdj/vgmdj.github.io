@@ -54,7 +54,7 @@
 <meta property="og:description" content="vgmdj&#39;s blog" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.vgmdj.cn/" />
-<meta property="og:updated_time" content="2018-03-31T23:18:51&#43;00:00"/>
+<meta property="og:updated_time" content="2018-04-06T10:00:49&#43;00:00"/>
 
 <meta itemprop="name" content="vgmdj&#39;s blog">
 <meta itemprop="description" content="vgmdj&#39;s blog">
@@ -133,6 +133,66 @@
   <section id="posts" class="posts">
     
     
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/mysql%E5%AD%A6%E4%B9%A0-%E7%B4%A2%E5%BC%95/">mysql学习-索引</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-04-06 10:00:49 </span>
+      <div class="post-category">
+          
+            <a href="/categories/database/"> database </a>
+          
+        </div>
+      <span class="more-meta"> 约 4918 字 </span>
+      <span class="more-meta"> 预计阅读 10 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <h1 id="索引">索引</h1>
+
+<p>索引是存储引擎找到记录的一种数据结构，而索引优化是对查询性能优化最有效的手段。其类似于一本书的目录部分，如果想在一本书中找到某个特定主题，一般会先看书中的“索引部分”，找到对应的页码。</p>
+
+<p>在MySQL中，存储引擎用类似的方法使用索引，其先在索引中找到对应值，然后根据匹配的索引记录找到对应的数据行。</p>
+
+<p>索引可以包含一个或多个列的值，如果索引包含多个列，那么列的顺序也十分重要，因为MySQL只能高效地使用索引的最左前缀列。创建一个包含两个列的索引，和创建两个只包含一列的索引是大不相同的。</p>
+
+<p></p>
+    </div>
+    <div class="read-more">
+      <a href="/post/mysql%E5%AD%A6%E4%B9%A0-%E7%B4%A2%E5%BC%95/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6/">go语言学习-并发控制</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-04-01 09:57:51 </span>
+      <div class="post-category">
+          
+            <a href="/categories/Golang/"> Golang </a>
+          
+        </div>
+      <span class="more-meta"> 约 3255 字 </span>
+      <span class="more-meta"> 预计阅读 7 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <h1 id="介绍">介绍</h1>
+    </div>
+    <div class="read-more">
+      <a href="/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
     
       <article class="post">
   <header class="post-header">
@@ -221,90 +281,6 @@
     </div>
     <div class="read-more">
       <a href="/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-map/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/">服务器安全防护</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-03-27 13:23:51 </span>
-      <div class="post-category">
-          
-            <a href="/categories/%E7%AB%99%E7%82%B9%E5%BB%BA%E8%AE%BE/"> 站点建设 </a>
-          
-        </div>
-      <span class="more-meta"> 约 1225 字 </span>
-      <span class="more-meta"> 预计阅读 3 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h2 id="服务器安全">服务器安全</h2>
-
-<p>一段时间没去打理我的服务器，只是搭个ss，当科学工具用，今天忽然收到服务商的电话，说是服务器上存在不合法行为，还吓我一跳，觉着现在都查这么严格，自建梯子都不行了。实际在管理平台上一看日志，才知道说是服务器存在安全问题，应该是已经被黑掉，在不停的试探别的ip的22端口，总计被监测到400多万次行为，看来当真是有挺长一段时间没管理了。。。</p>
-
-<h2 id="主要被攻击方式">主要被攻击方式</h2>
-
-<p>从日志中可以看到，应该主要是扫描加暴力破解的方式，所以理所当然的应对手段就是，开启防火墙，改ssh端口，改mysql端口，开启安全组，之前是觉着被攻击的机率太低了，现在看来，再低机率也不应该懈怠</p>
-
-<p></p>
-    </div>
-    <div class="read-more">
-      <a href="/post/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/mysql%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E5%8A%A1/">mysql学习-事务</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-03-22 15:23:50 </span>
-      <div class="post-category">
-          
-            <a href="/categories/database/"> database </a>
-          
-        </div>
-      <span class="more-meta"> 约 3184 字 </span>
-      <span class="more-meta"> 预计阅读 7 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h1 id="定义">定义</h1>
-
-<p>事务(transaction)是用户定义的一个数据库操作序列，这些操作要么全做，要么全不做，是一个不可分割的工作单位。同时，事务也是恢复和并发控制的基本单位。</p>
-
-<h1 id="事务特性-acid">事务特性(acid)</h1>
-
-<h2 id="四大特性">四大特性</h2>
-
-<ul>
-<li><p>原子性(atomicity)
-　原子性是指事务包含的所有操作要么全部操作，要么全部不做，事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。</p></li>
-
-<li><p>一致性(consistency)
-一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。
-　拿转账来说，假设用户A和用户B两者的钱加起来一共是5000，那么不管A和B之间如何转账，转几次账，事务结束后两个用户的钱相加起来应该还得是5000，这就是事务的一致性</p></li>
-
-<li><p>隔离性(isolation)
-隔离性是当多个用户并发访问数据库时，比如操作同一张表时，数据库为每一个用户开启的事务，不能被其他事务的操作所干扰，多个并发事务之间要相互隔离。
-　即要达到这么一种效果：对于任意两个并发的事务T1和T2，在事务T1看来，T2要么在T1开始之前就已经结束，要么在T1结束之后才开始，这样每个事务都感觉不到有其他事务在并发地执行。</p></li>
-
-<li><p>持久性(durability)
-持久性是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，即便是在数据库系统遇到故障的情况下也不会丢失提交事务的操作。</p></li>
-</ul>
-
-<p></p>
-    </div>
-    <div class="read-more">
-      <a href="/post/mysql%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E5%8A%A1/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

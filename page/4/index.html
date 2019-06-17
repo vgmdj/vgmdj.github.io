@@ -54,7 +54,7 @@
 <meta property="og:description" content="vgmdj&#39;s blog" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.vgmdj.cn/" />
-<meta property="og:updated_time" content="2018-07-12T10:24:51&#43;00:00"/>
+<meta property="og:updated_time" content="2018-07-24T13:44:23&#43;00:00"/>
 
 <meta itemprop="name" content="vgmdj&#39;s blog">
 <meta itemprop="description" content="vgmdj&#39;s blog">
@@ -133,6 +133,51 @@
   <section id="posts" class="posts">
     
     
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">设计模式学习-观察者模式</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-07-24 13:44:23 </span>
+      <div class="post-category">
+          
+            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"> 设计模式 </a>
+          
+        </div>
+      <span class="more-meta"> 约 890 字 </span>
+      <span class="more-meta"> 预计阅读 2 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <h2 id="观察者模式-observer">观察者模式(Observer)</h2>
+
+<p>将一个系统分割成一系列相互协作的类有一个很不好的副作用，那就是需要维护相关对象间的一致性，我们不希望为了维持一致性而使各类紧密耦合，这样会给维护、扩展和重用都带来不便。
+观察者模式所做的工作其实就是在解除耦合，让耦合的双方都依赖于抽象，而不是依赖于具体，从而使得各自的变化都不会影响另一边的变化。</p>
+
+<ul>
+<li><p>Subject(主题)
+观察者感兴趣的抽象主题，条件达成后，可对所属主题的观察者进行通知。需要提供注册、删除、通知观察者的接口</p></li>
+
+<li><p>ConcreSubject(具体主题)
+用于存放各ConcreObserver对象</p></li>
+
+<li><p>Observer(观察者)
+为那些在目标发生改时需获得通知的对象定义一个更新接口。当它的状态发生改变时，向它的各个观察者发出通知</p></li>
+
+<li><p>ConcreObserver(具体观察者)
+维护一个指向ConcreSubject对象的引用。存储有关状态，这些状态应与目标的状态保持一致。实现Observer的更新接口以使自身的状态与目标的状态保持一致</p></li>
+</ul>
+
+<p></p>
+    </div>
+    <div class="read-more">
+      <a href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
     
       <article class="post">
   <header class="post-header">
@@ -268,38 +313,6 @@
     </div>
     <div class="read-more">
       <a href="/post/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/">微服务学习-总览</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-05-11 14:31:31 </span>
-      <div class="post-category">
-          
-            <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"> 微服务 </a>
-          
-        </div>
-      <span class="more-meta"> 约 2796 字 </span>
-      <span class="more-meta"> 预计阅读 6 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h1 id="简述">简述</h1>
-
-<p>使用基于微服务的方式使得应用程序开发变得更快更容易管理，它只需要较少的人力就能实现更多的功能，可以更快更容易地部署。把应用程序设计成一套微服务，更加容易在多台具有负载均衡的服务器上运行，使其能够轻松应对需求高峰、由于时间推移而平稳增长的需求和由于硬件或者软件问题导致的宕机事故。</p>
-
-<p>微服务，从本质意义上看，还是SOA架构。但内涵有所不同，微服务并不绑定某种特殊的技术，在一个微服务的系统中，可以有Java编写的服务，也可以有Python编写的服务，他们是靠Restful架构风格统一成一个系统的。</p>
-
-<p></p>
-    </div>
-    <div class="read-more">
-      <a href="/post/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

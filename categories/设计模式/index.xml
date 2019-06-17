@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>vgmdj</copyright>
-    <lastBuildDate>Tue, 24 Jul 2018 13:44:23 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Jul 2018 18:22:28 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.vgmdj.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>设计模式学习-设计原则</title>
+      <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</link>
+      <pubDate>Wed, 25 Jul 2018 18:22:28 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</guid>
+      <description>&lt;h1 id=&#34;设计模式原则&#34;&gt;设计模式原则&lt;/h1&gt;
+
+&lt;p&gt;每个设计模式的都是为了解决一些实际开发中的问题而被设计出来，在设计的过程中，一般都会遵循以下这些原则&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>设计模式学习-观察者模式</title>
