@@ -51,6 +51,24 @@
       <guid>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-socket%E5%A5%97%E6%8E%A5%E5%AD%97%E5%88%86%E6%9E%90/</guid>
       <description>&lt;h2 id=&#34;tcp&#34;&gt;TCP&lt;/h2&gt;
 
+&lt;h3 id=&#34;tcp状态&#34;&gt;TCP状态&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://timgsa.baidu.com/timg?image&amp;amp;quality=80&amp;amp;size=b9999_10000&amp;amp;sec=1560918640995&amp;amp;di=25856014d97833f5ccf321c5e36f1de2&amp;amp;imgtype=0&amp;amp;src=http%3A%2F%2Faliyunzixunbucket.oss-cn-beijing.aliyuncs.com%2Fjpg%2F823a7efe419f312ed95b33a15c50dbc1.jpg%3Fx-oss-process%3Dimage%2Fresize%2Cp_100%2Fauto-orient%2C1%2Fquality%2Cq_90%2Fformat%2Cjpg%2Fwatermark%2Cimage_eXVuY2VzaGk%3D%2Ct_100&#34;&gt;!tcp状态转移&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CLOSED&lt;/li&gt;
+&lt;li&gt;LISTEN&lt;/li&gt;
+&lt;li&gt;SYN_SENT&lt;/li&gt;
+&lt;li&gt;SYN_REVD&lt;/li&gt;
+&lt;li&gt;ESTABLISHED&lt;/li&gt;
+&lt;li&gt;FIN_WAIT1&lt;/li&gt;
+&lt;li&gt;CLOSE_WAIT&lt;/li&gt;
+&lt;li&gt;CLOSING&lt;/li&gt;
+&lt;li&gt;FIN_WAIT2&lt;/li&gt;
+&lt;li&gt;LAST_ACK&lt;/li&gt;
+&lt;li&gt;TIME_WAIT&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h3 id=&#34;tcp客户端套接字程序&#34;&gt;TCP客户端套接字程序&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;import java.io.*;

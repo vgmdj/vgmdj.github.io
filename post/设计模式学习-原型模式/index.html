@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Hugo博客建立 - vgmdj&#39;s blog</title>
+  <title>设计模式学习-原型模式 - vgmdj&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,9 @@
 
 
 <meta name="author" content="VGMDJ" />
-  <meta name="description" content="简述 随着文章数量的增长，hexo的生成速度也越来越慢，最终还是决定转入golang编写的静态博客框架hugo，从体验上来讲，功能基本都一致，" />
+  <meta name="description" content="原型模式(Prototype) 原型模式，用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。 原型模式其实就是从一个对象再创建另一个可定制的对象，而且不需知道任何创建的细节。 需要注意的点是深拷贝和浅拷贝。
+
+" />
 
   <meta name="keywords" content="vgmdj, blog, it" />
 
@@ -29,7 +31,7 @@
 <meta name="generator" content="Hugo 0.49.2" />
 
 
-<link rel="canonical" href="https://blog.vgmdj.cn/post/hugo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%8B/" />
+<link rel="canonical" href="https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -49,26 +51,44 @@
 
 
 
-<meta property="og:title" content="Hugo博客建立" />
-<meta property="og:description" content="简述 随着文章数量的增长，hexo的生成速度也越来越慢，最终还是决定转入golang编写的静态博客框架hugo，从体验上来讲，功能基本都一致，" />
+<meta property="og:title" content="设计模式学习-原型模式" />
+<meta property="og:description" content="原型模式(Prototype)
+
+原型模式，用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。
+原型模式其实就是从一个对象再创建另一个可定制的对象，而且不需知道任何创建的细节。
+需要注意的点是深拷贝和浅拷贝。
+
+" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.vgmdj.cn/post/hugo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%8B/" /><meta property="article:published_time" content="2018-09-12T11:10:51&#43;00:00"/>
-<meta property="article:modified_time" content="2018-11-27T16:47:34&#43;00:00"/>
+<meta property="og:url" content="https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" /><meta property="article:published_time" content="2018-09-24T16:29:48&#43;00:00"/>
+<meta property="article:modified_time" content="2018-09-24T20:30:01&#43;00:00"/>
 
-<meta itemprop="name" content="Hugo博客建立">
-<meta itemprop="description" content="简述 随着文章数量的增长，hexo的生成速度也越来越慢，最终还是决定转入golang编写的静态博客框架hugo，从体验上来讲，功能基本都一致，">
+<meta itemprop="name" content="设计模式学习-原型模式">
+<meta itemprop="description" content="原型模式(Prototype)
+
+原型模式，用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。
+原型模式其实就是从一个对象再创建另一个可定制的对象，而且不需知道任何创建的细节。
+需要注意的点是深拷贝和浅拷贝。
+
+">
 
 
-<meta itemprop="datePublished" content="2018-09-12T11:10:51&#43;00:00" />
-<meta itemprop="dateModified" content="2018-09-12T11:10:51&#43;00:00" />
-<meta itemprop="wordCount" content="1232">
+<meta itemprop="datePublished" content="2018-09-24T16:29:48&#43;00:00" />
+<meta itemprop="dateModified" content="2018-09-24T16:29:48&#43;00:00" />
+<meta itemprop="wordCount" content="708">
 
 
 
-<meta itemprop="keywords" content="github,blog,hugo," />
+<meta itemprop="keywords" content="学习,设计模式," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Hugo博客建立"/>
-<meta name="twitter:description" content="简述 随着文章数量的增长，hexo的生成速度也越来越慢，最终还是决定转入golang编写的静态博客框架hugo，从体验上来讲，功能基本都一致，"/>
+<meta name="twitter:title" content="设计模式学习-原型模式"/>
+<meta name="twitter:description" content="原型模式(Prototype)
+
+原型模式，用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。
+原型模式其实就是从一个对象再创建另一个可定制的对象，而且不需知道任何创建的细节。
+需要注意的点是深拷贝和浅拷贝。
+
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -139,17 +159,17 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Hugo博客建立</h1>
+      <h1 class="post-title">设计模式学习-原型模式</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-09-12 11:10:51 </span>
+        <span class="post-time"> 2018-09-24 16:29:48 </span>
         <div class="post-category">
             
-              <a href="/categories/%E7%AB%99%E7%82%B9%E5%BB%BA%E8%AE%BE/"> 站点建设 </a>
+              <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"> 设计模式 </a>
             
           </div>
-        <span class="more-meta"> 约 1232 字 </span>
-        <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span class="more-meta"> 约 708 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -162,12 +182,14 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#简述">简述</a></li>
-<li><a href="#hugo安装">hugo安装</a></li>
-<li><a href="#hugo剩余环境建立">hugo剩余环境建立</a></li>
-<li><a href="#hugo部署脚本">hugo部署脚本</a></li>
-<li><a href="#hugo-makefile-自动部署">hugo makefile 自动部署</a></li>
-<li><a href="#hexo-文章转入-hugo">hexo 文章转入 hugo</a></li>
+<li>
+<ul>
+<li><a href="#原型模式-prototype">原型模式(Prototype)</a></li>
+<li><a href="#资料推荐">资料推荐</a></li>
+<li><a href="#优点">优点</a></li>
+<li><a href="#适用场景">适用场景</a></li>
+<li><a href="#例子">例子</a></li>
+</ul></li>
 </ul>
 </nav>
   </div>
@@ -178,179 +200,101 @@
 
     
     <div class="post-content">
-      
+      <h2 id="原型模式-prototype">原型模式(Prototype)</h2>
 
-<h1 id="简述">简述</h1>
+<p>原型模式，用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。
+原型模式其实就是从一个对象再创建另一个可定制的对象，而且不需知道任何创建的细节。
+需要注意的点是深拷贝和浅拷贝。</p>
 
-<p>随着文章数量的增长，hexo的生成速度也越来越慢，最终还是决定转入golang编写的静态博客框架hugo，从体验上来讲，功能基本都一致，各种主题风格也都可以找到自己满意的，生成速度天差地远，go在这块还是比较6的。</p>
+<p></p>
 
-<h1 id="hugo安装">hugo安装</h1>
+<h2 id="资料推荐">资料推荐</h2>
 
-<ul>
-<li>mac下</li>
-</ul>
+<p>书籍：《大话设计模式》，《设计模式之禅》
+golang相关实现代码:  <a href="https://github.com/vgmdj/go_practice/tree/master/design_pattern">https://github.com/vgmdj/go_practice/tree/master/design_pattern</a></p>
 
-<pre><code>brew install hugo
-</code></pre>
-
-<ul>
-<li>其他系统下
-可以从github的release页面进行下载安装， <a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a></li>
-</ul>
-
-<h1 id="hugo剩余环境建立">hugo剩余环境建立</h1>
-
-<pre><code>新建博客文件夹
-hugo new site blog
-
-进入文件夹
-cd blog
-
-新建文章并修改
-hugo new post/第一篇文章.md
-
-下载主题
-git clone https://github.com/vjeantet/hugo-theme-casper theme/casper
-
-配置信息
-cp theme/xxx/config.toml ./
-
-修改配置文件
-根据注释内容可以很好的进行修改
-
-本地测试
-hugo server       //启动后，可在1313端口预览访问
-
-生成静态页面
-hugo
-
-发布部署，就是将public下的内容用于展示
-可以将public下内容全部传到 github page仓库，再利用webhook进行更新服务器中的内容
-也可以直接利用github的page
-
-</code></pre>
-
-<h1 id="hugo部署脚本">hugo部署脚本</h1>
-
-<p>hugo没找到自动部署的方式，就自己写了一个，反正也不难
-需要放在和config.toml同一级目录，即public上一级目录下，写完博客后，直接执行即可</p>
-
-<pre><code>#!/bin/bash
-# 判断public文件夹是否存在
-hugoPath=`pwd`
-publicPath=`pwd`&quot;/public&quot;
-if [ ! -d $publicPath ];then
-  echo public not exist
-  exit
-fi
-
-# 进入public文件夹，并清空之前生成文件
-cd $publicPath
-rm -r ./*
-
-# 回到根目录，并生成新的静态文件
-cd $hugoPath
-hugo
-
-# 回到public，并进行提交
-cd $publicPath
-
-#添加所有修改
-git add -A .
-
-# 设置提交说明，格式为 Site updated: 2006-01-02 15:04:05
-time=$(date &quot;+%Y-%m-%d %H:%M:%S&quot;)
-commit=&quot;Site updated:&quot;$time
-echo $commit
-
-#提交
-git commit -m &quot;$commit&quot;
-
-#推送到master分支上
-git push origin master
-
-</code></pre>
-
-<p>创建完脚本以后，不要忘了加权限</p>
-
-<pre><code>chmod 777 xxx
-xxx是脚本名，加不成功，用sudo以管理员身份来加权限
-
-</code></pre>
-
-<h1 id="hugo-makefile-自动部署">hugo makefile 自动部署</h1>
-
-<p>需要注意的是make需要在3.81以上，一些系统自带的make需要升级一下</p>
-
-<p>在pulic下建立好博客git仓库，在根目录下建立好博客源文件仓库后，可以再建立如下 makefile 来自动部署。</p>
+<h2 id="优点">优点</h2>
 
 <ul>
-<li>make build 生成public下博文</li>
-<li>make run 在生成博文并在 localhost:1313 下建立预览</li>
-<li>make deploy 生成并自动部署到博客仓库</li>
-<li>make src-deploy 提交本地修改到源文件仓库</li>
+<li>可以隐藏对象创建的细节</li>
+<li>可以大大的提升性能</li>
 </ul>
 
-<pre><code>time := `date '+%Y-%m-%d %H:%M:%S'`
-commit := Site updated:$(time)
-
-build : clean
-	hugo
-
-clean:
-	@rm -rf public/*
-
-commit : build
-	@cd public
-	@echo &quot;deploy blog file ,&quot;$(commit)
-	@git add -A .
-	@git commit -m &quot;$(commit)&quot;
-
-push : commit
-	@cd public
-	@git push origin master
-
-deploy: push
-	@echo &quot;Deploy Success!&quot;
-
-src-deploy:
-	@echo &quot;deploy source file ,&quot;$(commit)
-	@git add -A .
-	@git commit -m &quot;$(commit)&quot;
-	@git push origin master
-
-run : clean
-	hugo server
-
-
-.PHONY:clean build commit push deploy source-deploy run
-.ONESHELL:commit push
-
-
-</code></pre>
-
-<h1 id="hexo-文章转入-hugo">hexo 文章转入 hugo</h1>
-
-<p>hugo基本上兼容hexo的格式，只有很少一部分地方有些差异</p>
+<h2 id="适用场景">适用场景</h2>
 
 <ul>
-<li><p>最近更改时间
-hexo下用updated表示，hugo用lastmod表示</p></li>
-
-<li><p>categories
-hexo下可以 key:value形式表示，hugo下默认其为多个，所以要用 key:[value1,value2]表示，当然，也可以只写一个，但是[]必须要加</p></li>
-
-<li><p>hugo 是content/post下放文章，static下放静态文件</p></li>
-
-<li><p>hexo文章的链接是time+title+.html， hugo是 /post/title ,所以之前用hexo放到搜索引擎里的链接需要提交一下死链，不然会降低网站评分</p></li>
-
-<li><p>图片的链接和hexo类似，只不过把图片文件夹放到static下，再把链接里的时间删除即可</p></li>
-
-<li><p>分类名称，hexo使用原名称，hugo会使用转成小写的名称，设置 preserveTaxonomyNames = true 来保持原大小写</p></li>
-
-<li><p>url转小写问题，使用 disablePathToLower = true 可以保持url链接的大小写</p></li>
+<li>初始化信息基本不发生变化</li>
+<li>需要根据一个类在运行时的状态动态的创建新的对象</li>
 </ul>
 
+<h2 id="例子">例子</h2>
+
+<pre><code>type Resume struct {
+	name      string
+	sex       string
+	age       int
+	education map[string]string
+	work      []WorkExperience
+}
+
+type WorkExperience struct {
+	TimeStart string
+	TimeEnd   string
+	Company   string
+}
+
+func NewResume(name, sex string, age int) *Resume {
+	return &amp;Resume{
+		name:      name,
+		sex:       sex,
+		age:       age,
+		education: make(map[string]string),
+		work:      make([]WorkExperience, 0, 3),
+	}
+}
+
+func (r *Resume) SetEducation(schoolName, schoolAddr string) {
+	r.education[&quot;SchoolName&quot;] = schoolName
+	r.education[&quot;SchoolAddr&quot;] = schoolAddr
+}
+
+func (r *Resume) AddWorkExperience(company, start, end string) {
+	r.work = append(r.work, WorkExperience{
+		TimeStart: start,
+		TimeEnd:   end,
+		Company:   company,
+	})
+
+}
+
+func (r *Resume) Clone() *Resume {
+	clone := *r
+
+	clone.work = make([]WorkExperience, len(r.work))
+	copy(clone.work, r.work)
+
+	clone.education = make(map[string]string, len(r.education))
+	for k, v := range r.education {
+		clone.education[k] = v
+	}
+
+	return &amp;clone
+
+}
+
+resume := NewResume(&quot;test&quot;, &quot;man&quot;, 18)
+resume.SetEducation(&quot;哈工大&quot;, &quot;哈尔滨&quot;)
+resume.AddWorkExperience(&quot;华为&quot;, &quot;2016年&quot;, &quot;2017年&quot;)
+
+resume2 := resume.Clone()
+resume2.SetEducation(&quot;清华&quot;, &quot;北京&quot;)
+resume2.AddWorkExperience(&quot;阿里&quot;, &quot;2017年&quot;, &quot;2018年&quot;)
+
+//out:
+//resumt:{test man 18 map[SchoolAddr:哈尔滨 SchoolName:哈工大] [{2016年 2017年 华为}]}
+//resume2:{test man 18 map[SchoolAddr:北京 SchoolName:清华] [{2016年 2017年 华为} {2017年 2018年 阿里}]}
+
+</code></pre>
     </div>
 
     
@@ -361,7 +305,7 @@ hexo下可以 key:value形式表示，hugo下默认其为多个，所以要用 k
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-11-27 16:47:34</span>
+    <span class="item-content">2018-09-24 20:30:01</span>
   </p>
   
   
@@ -373,25 +317,23 @@ hexo下可以 key:value形式表示，hugo下默认其为多个，所以要用 k
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="/tags/github/">github</a>
+          <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
           
-          <a href="/tags/blog/">blog</a>
-          
-          <a href="/tags/hugo/">hugo</a>
+          <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/">
+          <a class="prev" href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">设计模式学习-原型模式</span>
+            <span class="prev-text nav-default">设计模式学习-代理模式</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-module%E6%9C%BA%E5%88%B6/">
-            <span class="next-text nav-default">go语言学习-module机制</span>
+          <a class="next" href="/post/hugo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%8B/">
+            <span class="next-text nav-default">Hugo博客建立</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

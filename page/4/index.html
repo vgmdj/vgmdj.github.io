@@ -54,7 +54,7 @@
 <meta property="og:description" content="vgmdj&#39;s blog" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.vgmdj.cn/" />
-<meta property="og:updated_time" content="2018-07-24T13:44:23&#43;00:00"/>
+<meta property="og:updated_time" content="2018-08-20T16:29:48&#43;00:00"/>
 
 <meta itemprop="name" content="vgmdj&#39;s blog">
 <meta itemprop="description" content="vgmdj&#39;s blog">
@@ -136,6 +136,99 @@
     
       <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">设计模式学习-建造者模式</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-08-20 16:29:48 </span>
+      <div class="post-category">
+          
+            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"> 设计模式 </a>
+          
+        </div>
+      <span class="more-meta"> 约 367 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <h2 id="建造者模式-builder">建造者模式(Builder)</h2>
+
+<p>建造者模式，将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。</p>
+
+<h2 id="主要类">主要类</h2>
+
+<p>builder - 对构建过程进行抽象的接口
+director- 实际构建一个使用builder接口的对象</p>
+
+<p></p>
+    </div>
+    <div class="read-more">
+      <a href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/%E5%8A%A0%E6%B2%B9%E5%8D%A1%E5%85%85%E5%80%BCapi%E6%8E%A5%E5%8F%A3/">加油卡充值api接口</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-08-17 12:30:50 </span>
+      <div class="post-category">
+          
+            <a href="/categories/%E5%B7%A5%E4%BD%9C/"> 工作 </a>
+          
+        </div>
+      <span class="more-meta"> 约 2895 字 </span>
+      <span class="more-meta"> 预计阅读 6 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      加油卡充值API接口 接口调用前，请先联系客服人员，开通对应充值权限，分配appid和key，以及配置ip白名单。加油卡完成网上充值后，需到所
+    </div>
+    <div class="read-more">
+      <a href="/post/%E5%8A%A0%E6%B2%B9%E5%8D%A1%E5%85%85%E5%80%BCapi%E6%8E%A5%E5%8F%A3/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/">设计模式学习-装饰模式</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-07-26 18:03:47 </span>
+      <div class="post-category">
+          
+            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"> 设计模式 </a>
+          
+        </div>
+      <span class="more-meta"> 约 952 字 </span>
+      <span class="more-meta"> 预计阅读 2 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <h2 id="装饰模式-decorator">装饰模式(Decorator)</h2>
+
+<p>装饰模式，动态地给一个对象添加一些额外的职责，就增加功能来说，装饰模式比生成子类更为灵活。
+装饰模式是为已有功能动态地添加更多功能的一种方式。当系统需要新功能的时候，是向旧的类中添加新的代码。这些新加的代码通常装饰了原有类的核心职责或主要行为，在主类中加入了新的字段，新的方法和新的逻辑，从而增加了主类的复杂度，而这些新加往后东西仅仅是为了满足一些只在某种特定情况下才会执行的特殊行为的需要。
+装饰模式为此提供了一个非常好的解决方案，它把每个要装饰的功能放在单独的类中，并让这个类包装它所要装饰的对象，因此，当需要执行特殊行为时，客户代码就可以在运行时根据需要有选择地、按顺序地使用装饰功能包装对象了。</p>
+
+<p></p>
+    </div>
+    <div class="read-more">
+      <a href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">设计模式学习-观察者模式</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2018-07-24 13:44:23 </span>
@@ -206,113 +299,6 @@
     </div>
     <div class="read-more">
       <a href="/post/efk%E5%AD%A6%E4%B9%A0-ElasticSearch/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%AD%A6%E4%B9%A0-RabbitMQ%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/">消息队列学习-RabbitMQ健康检查</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-06-18 23:50:51 </span>
-      <div class="post-category">
-          
-            <a href="/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"> 消息队列 </a>
-          
-        </div>
-      <span class="more-meta"> 约 1211 字 </span>
-      <span class="more-meta"> 预计阅读 3 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h1 id="rest-api-监测">Rest API 监测</h1>
-
-<p>需要注意的是RabbitMQ中对外提供的Rest API接口，是Management Plugin所提供的，如果没有安装这个插件的话，则需要使用amqp的方式</p>
-
-<ul>
-<li>vhost 检查
-用于检测vhost的运行情况，如果正常，则会收到 “ok”</li>
-</ul>
-
-<pre><code>路径： /api/aliveness-test/{:vhost}
-返回：
-    {
-      status: &quot;ok&quot;
-    }
-</code></pre>
-
-<p></p>
-    </div>
-    <div class="read-more">
-      <a href="/post/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%AD%A6%E4%B9%A0-RabbitMQ%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/efk%E5%AD%A6%E4%B9%A0-%E7%AE%80%E4%BB%8B/">efk学习-简介</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-06-10 10:24:51 </span>
-      <div class="post-category">
-          
-            <a href="/categories/database/"> database </a>
-          
-        </div>
-      <span class="more-meta"> 约 834 字 </span>
-      <span class="more-meta"> 预计阅读 2 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h1 id="前言">前言</h1>
-
-<p>通常日志由服务器生成，输出到不同的文件中，一般会有系统日志、 应用日志、安全日志。这些日志分散地存储在不同的机器上。
-而当系统发生故障时，工程师需要登录到各个服务器上，使用 grep / sed / awk 等 Linux 脚本工具去日志里查找故障原因。在没有日志系统的情况下，首先需要定位处理请求的服务器，如果这台服务器部署了多个实例，则需要去每个应用实例的日志目录下去找日志文件。每个应用实例还会设置日志滚动策略（如：每天生成一个文件），还有日志压缩归档策略等。
-这样一系列流程下来，对于我们排查故障以及及时找到故障原因，造成了比较大的麻烦。因此，如果我们能把这些日志集中管理，并提供集中检索功能，不仅可以提高诊断的效率，同时对系统情况有个全面的理解，避免事后救火的被动。</p>
-
-<p></p>
-    </div>
-    <div class="read-more">
-      <a href="/post/efk%E5%AD%A6%E4%B9%A0-%E7%AE%80%E4%BB%8B/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/">分布式学习-分布式事务</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-05-14 14:38:21 </span>
-      <div class="post-category">
-          
-            <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"> 分布式系统 </a>
-          
-        </div>
-      <span class="more-meta"> 约 2506 字 </span>
-      <span class="more-meta"> 预计阅读 6 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h1 id="简述">简述</h1>
-
-<p>分布式系统架构中，分布式事务问题是一个绕不过去的挑战。而微服务架构的流行，让分布式事务问题日益突出！
-对于单体应用而言，所有的数据库操作都在一起，可以很简单的使用本地事务，来保证数据的ACID。
-但是对于分布式系统，系统由多个独立的服务组成，那么如何解决分布式调用时候数据的一致性就成了一个问题。
-具体业务场景如下，比如一个业务操作，如果同时调用服务 A、B、C，需要满足要么同时成功；要么同时失败。A、B、C 可能是多个不同部门开发、部署在不同服务器上的远程服务。</p>
-
-<p></p>
-    </div>
-    <div class="read-more">
-      <a href="/post/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

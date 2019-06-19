@@ -99,7 +99,7 @@
 
 <meta itemprop="datePublished" content="2017-03-18T16:23:50&#43;00:00" />
 <meta itemprop="dateModified" content="2017-03-18T16:23:50&#43;00:00" />
-<meta itemprop="wordCount" content="1089">
+<meta itemprop="wordCount" content="1486">
 
 
 
@@ -204,7 +204,7 @@
               <a href="/categories/%E7%AE%97%E6%B3%95/"> 算法 </a>
             
           </div>
-        <span class="more-meta"> 约 1089 字 </span>
+        <span class="more-meta"> 约 1486 字 </span>
         <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -390,8 +390,101 @@ func merge(nums1 []int, nums2 []int) []int {
 
 <p>利用堆的特性，父结点的值会比左右孩子结点的值大或小，那么每次将根结点取出，再对余下的结点堆化，重复这一过程，即可完成排序。</p>
 
-<p>完全二叉树和数组的对应：<br>
-一般使用数组来存储堆，而堆又是一个完全二叉树，</p>
+<p>完全二叉树和数组的对应：</p>
+
+<pre><code>对于数组而言，以0开始，若用数组来存储堆，因堆是一个完全二叉树，所以可以表示为：
+root : i
+root-&gt;left : 2*i+1
+root-&gt;right: 2*i+2
+</code></pre>
+
+<ul>
+<li>时间复杂度： O(nlogn)</li>
+<li>空间复杂度： O(1)</li>
+<li>稳定性： 不稳定</li>
+</ul>
+
+<p>代码</p>
+
+<pre><code>/*
+堆排序分为两个部分，第一个部分是初始化，第二个部分是堆恢复
+
+初始化：
+	从最后一个非叶子结点开始进行调整，每次调整后，如果以当前结点为根结点，则这个结点也是以这个结点为根的堆的根结点
+
+调整：
+	将根结点与最后一个结点进行互换，同时，将除最后一个结点外的部分进行堆调整恢复
+
+之所以和最后一个结点进行进行互换，是因为，这样和初始化的最后一步类似，可以复用过程
+
+*/
+
+func HeapSort(values []int) {
+	heapInit(values)
+	//for i := len(values) - 1; i &gt; 0; i-- {
+	//	values[0], values[i] = values[i], values[0]
+	//	minHeapify(values, 0, i-1)
+	//}
+
+	for i := len(values) - 1; i &gt; 0; i-- {
+		values[0], values[i] = values[i], values[0]
+		maxHeapify(values, 0, i-1)
+	}
+
+}
+
+func heapInit(values []int) {
+	for i := len(values)/2 - 1; i &gt;= 0; i-- {
+		//minHeapify(values, i, len(values)-1)
+		maxHeapify(values, i, len(values)-1)
+	}
+}
+
+func maxHeapify(nums []int, start, end int) {
+	father := start
+	child := 2*father + 1
+
+	for child &lt;= end {
+		if child+1 &lt;= end &amp;&amp; nums[child] &lt; nums[child+1] {
+			child++
+		}
+
+		if nums[father] &gt;= nums[child] {
+			return
+		}
+
+		nums[father], nums[child] = nums[child], nums[father]
+		father = child
+		child = 2*father + 1
+
+	}
+
+}
+
+func minHeapify(nums []int, start, end int) {
+	root := start
+	node := 2*root + 1
+
+	for node &lt;= end {
+		if node+1 &lt;= end &amp;&amp; nums[node+1] &lt; nums[node] {
+			node++
+		}
+
+		if nums[root] &lt;= nums[node] {
+			return
+		}
+
+		nums[root], nums[node] = nums[node], nums[root]
+		root = node
+		node = 2*root + 1
+
+	}
+
+}
+
+
+
+</code></pre>
     </div>
 
     

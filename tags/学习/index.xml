@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>vgmdj</copyright>
-    <lastBuildDate>Mon, 06 May 2019 18:32:15 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Nov 2018 18:32:15 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.vgmdj.cn/tags/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>go语言学习-装机单</title>
       <link>https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-%E8%A3%85%E6%9C%BA%E5%8D%95/</link>
-      <pubDate>Mon, 06 May 2019 18:32:15 +0000</pubDate>
+      <pubDate>Wed, 28 Nov 2018 18:32:15 +0000</pubDate>
       
       <guid>https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-%E8%A3%85%E6%9C%BA%E5%8D%95/</guid>
       <description>&lt;h1 id=&#34;开发装机单&#34;&gt;开发装机单&lt;/h1&gt;
@@ -68,6 +68,42 @@
     </item>
     
     <item>
+      <title>设计模式学习-代理模式</title>
+      <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Mon, 24 Sep 2018 16:29:48 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</guid>
+      <description>&lt;h2 id=&#34;代理模式-proxy&#34;&gt;代理模式(Proxy)&lt;/h2&gt;
+
+&lt;p&gt;代理模式，为其他对象提供一种代理以控制对这个对象的访问。&lt;/p&gt;
+
+&lt;h2 id=&#34;主要类&#34;&gt;主要类&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;subjuct - interface 主体接口&lt;/li&gt;
+&lt;li&gt;concreteSubject - 具体实现的主体&lt;/li&gt;
+&lt;li&gt;proxy - 实现主体的代理&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>设计模式学习-原型模式</title>
+      <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Mon, 24 Sep 2018 16:29:48 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <description>&lt;h2 id=&#34;原型模式-prototype&#34;&gt;原型模式(Prototype)&lt;/h2&gt;
+
+&lt;p&gt;原型模式，用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。
+原型模式其实就是从一个对象再创建另一个可定制的对象，而且不需知道任何创建的细节。
+需要注意的点是深拷贝和浅拷贝。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>go语言学习-module机制</title>
       <link>https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-module%E6%9C%BA%E5%88%B6/</link>
       <pubDate>Tue, 28 Aug 2018 10:23:01 +0000</pubDate>
@@ -88,14 +124,34 @@
     </item>
     
     <item>
-      <title>设计模式学习-设计原则</title>
-      <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</link>
-      <pubDate>Wed, 25 Jul 2018 18:22:28 +0000</pubDate>
+      <title>设计模式学习-建造者模式</title>
+      <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Mon, 20 Aug 2018 16:29:48 +0000</pubDate>
       
-      <guid>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</guid>
-      <description>&lt;h1 id=&#34;设计模式原则&#34;&gt;设计模式原则&lt;/h1&gt;
+      <guid>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
+      <description>&lt;h2 id=&#34;建造者模式-builder&#34;&gt;建造者模式(Builder)&lt;/h2&gt;
 
-&lt;p&gt;每个设计模式的都是为了解决一些实际开发中的问题而被设计出来，在设计的过程中，一般都会遵循以下这些原则&lt;/p&gt;
+&lt;p&gt;建造者模式，将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。&lt;/p&gt;
+
+&lt;h2 id=&#34;主要类&#34;&gt;主要类&lt;/h2&gt;
+
+&lt;p&gt;builder - 对构建过程进行抽象的接口
+director- 实际构建一个使用builder接口的对象&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>设计模式学习-装饰模式</title>
+      <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Thu, 26 Jul 2018 18:03:47 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/</guid>
+      <description>&lt;h2 id=&#34;装饰模式-decorator&#34;&gt;装饰模式(Decorator)&lt;/h2&gt;
+
+&lt;p&gt;装饰模式，动态地给一个对象添加一些额外的职责，就增加功能来说，装饰模式比生成子类更为灵活。
+装饰模式是为已有功能动态地添加更多功能的一种方式。当系统需要新功能的时候，是向旧的类中添加新的代码。这些新加的代码通常装饰了原有类的核心职责或主要行为，在主类中加入了新的字段，新的方法和新的逻辑，从而增加了主类的复杂度，而这些新加往后东西仅仅是为了满足一些只在某种特定情况下才会执行的特殊行为的需要。
+装饰模式为此提供了一个非常好的解决方案，它把每个要装饰的功能放在单独的类中，并让这个类包装它所要装饰的对象，因此，当需要执行特殊行为时，客户代码就可以在运行时根据需要有选择地、按顺序地使用装饰功能包装对象了。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -273,6 +329,24 @@
       <guid>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-socket%E5%A5%97%E6%8E%A5%E5%AD%97%E5%88%86%E6%9E%90/</guid>
       <description>&lt;h2 id=&#34;tcp&#34;&gt;TCP&lt;/h2&gt;
 
+&lt;h3 id=&#34;tcp状态&#34;&gt;TCP状态&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://timgsa.baidu.com/timg?image&amp;amp;quality=80&amp;amp;size=b9999_10000&amp;amp;sec=1560918640995&amp;amp;di=25856014d97833f5ccf321c5e36f1de2&amp;amp;imgtype=0&amp;amp;src=http%3A%2F%2Faliyunzixunbucket.oss-cn-beijing.aliyuncs.com%2Fjpg%2F823a7efe419f312ed95b33a15c50dbc1.jpg%3Fx-oss-process%3Dimage%2Fresize%2Cp_100%2Fauto-orient%2C1%2Fquality%2Cq_90%2Fformat%2Cjpg%2Fwatermark%2Cimage_eXVuY2VzaGk%3D%2Ct_100&#34;&gt;!tcp状态转移&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CLOSED&lt;/li&gt;
+&lt;li&gt;LISTEN&lt;/li&gt;
+&lt;li&gt;SYN_SENT&lt;/li&gt;
+&lt;li&gt;SYN_REVD&lt;/li&gt;
+&lt;li&gt;ESTABLISHED&lt;/li&gt;
+&lt;li&gt;FIN_WAIT1&lt;/li&gt;
+&lt;li&gt;CLOSE_WAIT&lt;/li&gt;
+&lt;li&gt;CLOSING&lt;/li&gt;
+&lt;li&gt;FIN_WAIT2&lt;/li&gt;
+&lt;li&gt;LAST_ACK&lt;/li&gt;
+&lt;li&gt;TIME_WAIT&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h3 id=&#34;tcp客户端套接字程序&#34;&gt;TCP客户端套接字程序&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;import java.io.*;
@@ -445,7 +519,20 @@ golang相关实现例子:  &lt;a href=&#34;https://github.com/vgmdj/go_practice/
 &lt;p&gt;工厂模式是对象的生产器，解耦用户对具体对象的依赖。
 通过封闭、继承、多态把程序的耦合度降低，使程序更加的灵活，容易修改，并易于复用。
 简单工厂模式中，各种运算方法类实现了运算接口，在业务上如果想添加一种运算方法，只需要增加一个实现运算接口的类，并且在工厂类中添加一个类型判断。
-这种设计适合于业务类型并不是很多的情况，如果业务类型非常多，那么在工作类中就会有一个很长的switch&amp;hellip;case结构，这时候使用方法工厂模式会比较合适。&lt;/p&gt;
+这种设计适合于业务类型并不是很多的情况，如果业务类型非常多，那么在工作类中就会有一个很长的switch&amp;hellip;case结构，这时候使用工厂方法模式会比较合适。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>设计模式学习-设计原则</title>
+      <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</link>
+      <pubDate>Sat, 01 Jul 2017 14:50:28 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</guid>
+      <description>&lt;h1 id=&#34;设计模式原则&#34;&gt;设计模式原则&lt;/h1&gt;
+
+&lt;p&gt;每个设计模式的都是为了解决一些实际开发中的问题而被设计出来，在设计的过程中，一般都会遵循以下这些原则&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
