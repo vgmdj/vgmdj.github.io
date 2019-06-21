@@ -17,6 +17,13 @@
   </url>
   
   <url>
+    <loc>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2019-02-18T20:30:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.vgmdj.cn/post/linux%E5%AD%A6%E4%B9%A0-awk%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2019-01-28T18:32:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -591,7 +598,7 @@
   
   <url>
     <loc>https://blog.vgmdj.cn/tags/%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-11-29T09:59:01+00:00</lastmod>
+    <lastmod>2019-02-18T20:30:47+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -703,14 +710,14 @@
   
   <url>
     <loc>https://blog.vgmdj.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2018-09-24T20:30:01+00:00</lastmod>
+    <lastmod>2019-02-18T20:30:47+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.vgmdj.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2018-09-24T20:30:01+00:00</lastmod>
+    <lastmod>2019-02-18T20:30:47+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

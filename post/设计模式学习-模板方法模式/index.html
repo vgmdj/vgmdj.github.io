@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>linux学习-awk命令 - vgmdj&#39;s blog</title>
+  <title>设计模式学习-模板方法模式 - vgmdj&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,8 @@
 
 
 <meta name="author" content="VGMDJ" />
-  <meta name="description" content="awk命令 常用命令参数  -F fs fs指定输入分隔符，fs可以是字符串或正则表达式，如-F: -v var=value 赋值一个用户定义变量，将外部变量传递给awk -f scripfile 从脚本文件中读取awk命令 -m[fr] val 对val值设置内在限制，-mf选项限制分配给val的最大块数目；-mr选项限制记录的最大数目。这两个功能是Bell实验室版awk的扩展功能，在标准awk中不适用。  
+  <meta name="description" content="模板方法模式(TemplateMethod) 定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。
+特点  模板方法模式是通过把不变行为搬移到超类，去除子类中的重复代码，再将一些具体的步骤延迟下放到子类中。 模板方法模式就是提供了一个很好的代码复用平台。 当不变的和可变的行为在方法的子类实现中混合在一起的时候，不变的行为就会在子类中重复出现。通过模板方法模式把这些行为搬移到单一的地方，这样就帮助子类摆脱重复的不变行为的纠缠。  
 " />
 
   <meta name="keywords" content="vgmdj, blog, it" />
@@ -30,7 +31,7 @@
 <meta name="generator" content="Hugo 0.49.2" />
 
 
-<link rel="canonical" href="https://blog.vgmdj.cn/post/linux%E5%AD%A6%E4%B9%A0-awk%E5%91%BD%E4%BB%A4/" />
+<link rel="canonical" href="https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -50,56 +51,59 @@
 
 
 
-<meta property="og:title" content="linux学习-awk命令" />
-<meta property="og:description" content="awk命令
+<meta property="og:title" content="设计模式学习-模板方法模式" />
+<meta property="og:description" content="模板方法模式(TemplateMethod)
 
-常用命令参数
+定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。
+
+特点
 
 
--F fs   fs指定输入分隔符，fs可以是字符串或正则表达式，如-F:
--v var=value   赋值一个用户定义变量，将外部变量传递给awk
--f scripfile  从脚本文件中读取awk命令
--m[fr] val   对val值设置内在限制，-mf选项限制分配给val的最大块数目；-mr选项限制记录的最大数目。这两个功能是Bell实验室版awk的扩展功能，在标准awk中不适用。
+模板方法模式是通过把不变行为搬移到超类，去除子类中的重复代码，再将一些具体的步骤延迟下放到子类中。
+模板方法模式就是提供了一个很好的代码复用平台。
+当不变的和可变的行为在方法的子类实现中混合在一起的时候，不变的行为就会在子类中重复出现。通过模板方法模式把这些行为搬移到单一的地方，这样就帮助子类摆脱重复的不变行为的纠缠。
 
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.vgmdj.cn/post/linux%E5%AD%A6%E4%B9%A0-awk%E5%91%BD%E4%BB%A4/" /><meta property="article:published_time" content="2019-01-28T16:23:04&#43;00:00"/>
-<meta property="article:modified_time" content="2019-01-28T18:32:12&#43;00:00"/>
+<meta property="og:url" content="https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" /><meta property="article:published_time" content="2019-02-18T13:40:48&#43;00:00"/>
+<meta property="article:modified_time" content="2019-02-18T20:30:47&#43;00:00"/>
 
-<meta itemprop="name" content="linux学习-awk命令">
-<meta itemprop="description" content="awk命令
+<meta itemprop="name" content="设计模式学习-模板方法模式">
+<meta itemprop="description" content="模板方法模式(TemplateMethod)
 
-常用命令参数
+定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。
+
+特点
 
 
--F fs   fs指定输入分隔符，fs可以是字符串或正则表达式，如-F:
--v var=value   赋值一个用户定义变量，将外部变量传递给awk
--f scripfile  从脚本文件中读取awk命令
--m[fr] val   对val值设置内在限制，-mf选项限制分配给val的最大块数目；-mr选项限制记录的最大数目。这两个功能是Bell实验室版awk的扩展功能，在标准awk中不适用。
+模板方法模式是通过把不变行为搬移到超类，去除子类中的重复代码，再将一些具体的步骤延迟下放到子类中。
+模板方法模式就是提供了一个很好的代码复用平台。
+当不变的和可变的行为在方法的子类实现中混合在一起的时候，不变的行为就会在子类中重复出现。通过模板方法模式把这些行为搬移到单一的地方，这样就帮助子类摆脱重复的不变行为的纠缠。
 
 
 ">
 
 
-<meta itemprop="datePublished" content="2019-01-28T16:23:04&#43;00:00" />
-<meta itemprop="dateModified" content="2019-01-28T16:23:04&#43;00:00" />
-<meta itemprop="wordCount" content="949">
+<meta itemprop="datePublished" content="2019-02-18T13:40:48&#43;00:00" />
+<meta itemprop="dateModified" content="2019-02-18T13:40:48&#43;00:00" />
+<meta itemprop="wordCount" content="517">
 
 
 
-<meta itemprop="keywords" content="linux,命令," />
+<meta itemprop="keywords" content="学习,设计模式," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="linux学习-awk命令"/>
-<meta name="twitter:description" content="awk命令
+<meta name="twitter:title" content="设计模式学习-模板方法模式"/>
+<meta name="twitter:description" content="模板方法模式(TemplateMethod)
 
-常用命令参数
+定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。
+
+特点
 
 
--F fs   fs指定输入分隔符，fs可以是字符串或正则表达式，如-F:
--v var=value   赋值一个用户定义变量，将外部变量传递给awk
--f scripfile  从脚本文件中读取awk命令
--m[fr] val   对val值设置内在限制，-mf选项限制分配给val的最大块数目；-mr选项限制记录的最大数目。这两个功能是Bell实验室版awk的扩展功能，在标准awk中不适用。
+模板方法模式是通过把不变行为搬移到超类，去除子类中的重复代码，再将一些具体的步骤延迟下放到子类中。
+模板方法模式就是提供了一个很好的代码复用平台。
+当不变的和可变的行为在方法的子类实现中混合在一起的时候，不变的行为就会在子类中重复出现。通过模板方法模式把这些行为搬移到单一的地方，这样就帮助子类摆脱重复的不变行为的纠缠。
 
 
 "/>
@@ -173,16 +177,16 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">linux学习-awk命令</h1>
+      <h1 class="post-title">设计模式学习-模板方法模式</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-01-28 16:23:04 </span>
+        <span class="post-time"> 2019-02-18 13:40:48 </span>
         <div class="post-category">
             
-              <a href="/categories/linux/"> linux </a>
+              <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"> 设计模式 </a>
             
           </div>
-        <span class="more-meta"> 约 949 字 </span>
+        <span class="more-meta"> 约 517 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -196,11 +200,15 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#awk命令">awk命令</a></li>
-<li><a href="#常用命令参数">常用命令参数</a></li>
-<li><a href="#常用组合-print">常用组合-print</a></li>
-<li><a href="#语法形式">语法形式</a></li>
-<li><a href="#工作原理">工作原理</a></li>
+<li>
+<ul>
+<li><a href="#模板方法模式-templatemethod">模板方法模式(TemplateMethod)</a></li>
+<li><a href="#特点">特点</a></li>
+<li><a href="#资料推荐">资料推荐</a></li>
+<li><a href="#优点">优点</a></li>
+<li><a href="#golang版本支持">golang版本支持</a></li>
+<li><a href="#例子">例子</a></li>
+</ul></li>
 </ul>
 </nav>
   </div>
@@ -211,96 +219,115 @@
 
     
     <div class="post-content">
-      <h1 id="awk命令">awk命令</h1>
+      <h2 id="模板方法模式-templatemethod">模板方法模式(TemplateMethod)</h2>
 
-<h1 id="常用命令参数">常用命令参数</h1>
+<p>定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。</p>
+
+<h2 id="特点">特点</h2>
 
 <ul>
-<li>-F fs   fs指定输入分隔符，fs可以是字符串或正则表达式，如-F:</li>
-<li>-v var=value   赋值一个用户定义变量，将外部变量传递给awk</li>
-<li>-f scripfile  从脚本文件中读取awk命令</li>
-<li>-m[fr] val   对val值设置内在限制，-mf选项限制分配给val的最大块数目；-mr选项限制记录的最大数目。这两个功能是Bell实验室版awk的扩展功能，在标准awk中不适用。</li>
+<li>模板方法模式是通过把不变行为搬移到超类，去除子类中的重复代码，再将一些具体的步骤延迟下放到子类中。</li>
+<li>模板方法模式就是提供了一个很好的代码复用平台。</li>
+<li>当不变的和可变的行为在方法的子类实现中混合在一起的时候，不变的行为就会在子类中重复出现。通过模板方法模式把这些行为搬移到单一的地方，这样就帮助子类摆脱重复的不变行为的纠缠。</li>
 </ul>
 
 <p></p>
 
-<h1 id="常用组合-print">常用组合-print</h1>
+<h2 id="资料推荐">资料推荐</h2>
 
-<p>printf 是linux 下的格式化输出命令,有点儿类似于python 和c 语言的printf 命令，常与awk一起组合使用。</p>
+<p>书籍：《大话设计模式》，《设计模式之禅》
+golang相关实现代码:  <a href="https://github.com/vgmdj/go_practice/tree/master/design_pattern">https://github.com/vgmdj/go_practice/tree/master/design_pattern</a></p>
 
-<ul>
-<li><p>%d: Decimal 十进制整数 &ndash; 对应位置参数必须是十进制整数，否则报错！</p></li>
-
-<li><p>%s: String 字符串 &ndash; 对应位置参数必须是字符串或者字符型，否则报错！</p></li>
-
-<li><p>%c: Char 字符 &ndash; 对应位置参数必须是字符串或者字符型，否则报错！</p></li>
-</ul>
-
-<pre><code>  printf &quot;%c\n&quot; def&quot;
-  d #输出为第一个字符
-
-</code></pre>
+<h2 id="优点">优点</h2>
 
 <ul>
-<li><p>%f: Float 浮点 &ndash; 对应位置参数必须是数字型，否则报错！</p></li>
-
-<li><p>%x: 不带正负号的十六进制.使用a至f表示10至15</p></li>
-
-<li><p>%X: 不带正负号的十六进制.使用A至F表示10至15</p></li>
-
-<li><p>0: 以零填补输出,而非空白.这仅发生在字段宽度大于转换后的情况</p></li>
+<li>提供代码复用平台</li>
+<li>帮助子类摆脱重复的不变行为</li>
 </ul>
 
-<pre><code>  printf &quot;%05d\n&quot; 15
-  00015 #输出补齐5位
+<h2 id="golang版本支持">golang版本支持</h2>
+
+<p>模板方法主要是用到了类的继承和多态，但在go里面，由于go使用的是匿名组合的方式，所以需要做一些特殊处理，而不能直接使用。</p>
+
+<h2 id="例子">例子</h2>
+
+<pre><code>type IHummerModel interface {
+	Start()
+	Stop()
+	Alarm()
+	EngineBoom()
+}
+
+type HummerModel struct {
+	model IHummerModel
+}
+
+func (hm *HummerModel) Run() {
+	hm.model.Start()
+	hm.model.EngineBoom()
+	hm.model.Alarm()
+	hm.model.Stop()
+}
+
+type HummerH1Model struct {
+	HummerModel
+}
+
+func NewHummerH1Model() *HummerModel {
+	return &amp;HummerModel{
+		&amp;HummerH1Model{},
+	}
+}
+
+func (h1 *HummerH1Model) Start() {
+	fmt.Println(&quot;hummer h1 start&quot;)
+}
+
+func (h1 *HummerH1Model) EngineBoom() {
+	fmt.Println(&quot;hummer h1 engine boom&quot;)
+}
+
+func (h1 *HummerH1Model) Alarm() {
+	fmt.Println(&quot;hummer h1 alarm&quot;)
+}
+
+func (h1 *HummerH1Model) Stop() {
+	fmt.Println(&quot;hummer h1 stop&quot;)
+}
+
+type HummerH2Model struct {
+	HummerModel
+}
+
+func NewHummerH2Model() *HummerModel {
+	return &amp;HummerModel{
+		&amp;HummerH2Model{},
+	}
+}
+
+func (h2 *HummerH2Model) Start() {
+	fmt.Println(&quot;hummer h2 start&quot;)
+}
+
+func (h2 *HummerH2Model) EngineBoom() {
+	fmt.Println(&quot;hummer h2 engine boom&quot;)
+}
+
+func (h2 *HummerH2Model) Alarm() {
+	fmt.Println(&quot;hummer h2 alarm&quot;)
+}
+
+func (h2 *HummerH2Model) Stop() {
+	fmt.Println(&quot;hummer h2 stop&quot;)
+}
+
+h1 := NewHummerH1Model()
+h1.Run()
+
+h2 := NewHummerH2Model()
+h2.Run()
+
 </code></pre>
-
-<ul>
-<li>+: 总是在数值之前放置一个正号或负号,即便是正值也是</li>
-</ul>
-
-<pre><code>  printf &quot;%+d,%+d\n&quot; 15 -15  
-  +15,-15 #输出带正负号的数值
-</code></pre>
-
-<ul>
-<li>空格: 在正值前置一个空格,在负值前置一个负号</li>
-</ul>
-
-<pre><code>  printf &quot;% d,% d\n&quot; 15 -15  
-  15,-15 #输出带空格或负号的数值
-</code></pre>
-
-<ul>
-<li>-:    将字段里已格式化的值向左对齐</li>
-</ul>
-
-<pre><code>  printf &quot;|%-10s| |%10s|\n&quot; hello world
-  |hello     | |     world| #输出%-10s 为左对齐，占10位
-</code></pre>
-
-<h1 id="语法形式">语法形式</h1>
-
-<pre><code>awk [options] 'script' var=value file(s)
-awk [options] -f scriptfile var=value file(s)
-</code></pre>
-
-<h1 id="工作原理">工作原理</h1>
-
-<pre><code>awk 'BEGIN{ commands } pattern{ commands } END{ commands }'
-</code></pre>
-
-<ul>
-<li>第一步：执行BEGIN{ commands }语句块中的语句；</li>
-<li>第二步：从文件或标准输入(stdin)读取一行，然后执行pattern{ commands }语句块，它逐行扫描文件，从第一行到最后一行重复这个过程，直到文件全部被读取完毕。</li>
-<li>第三步：当读至输入流末尾时，执行END{ commands }语句块。</li>
-</ul>
-
-<p>BEGIN语句块在awk开始从输入流中读取行之前被执行，这是一个可选的语句块，比如变量初始化、打印输出表格的表头等语句通常可以写在BEGIN语句块中。</p>
-
-<p>END语句块在awk从输入流中读取完所有的行之后即被执行，比如打印所有行的分析结果这类信息汇总都是在END语句块中完成，它也是一个可选语句块。</p>
-
-<p>pattern语句块中的通用命令是最重要的部分，它也是可选的。如果没有提供pattern语句块，则默认执行{ print }，即打印每一个读取到的行，awk读取的每一行都会执行该语句块。</p>
     </div>
 
     
@@ -311,7 +338,7 @@ awk [options] -f scriptfile var=value file(s)
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2019-01-28 18:32:12</span>
+    <span class="item-content">2019-02-18 20:30:47</span>
   </p>
   
   
@@ -323,23 +350,23 @@ awk [options] -f scriptfile var=value file(s)
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="/tags/linux/">linux</a>
+          <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
           
-          <a href="/tags/%E5%91%BD%E4%BB%A4/">命令</a>
+          <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/">
+          <a class="prev" href="/post/grpc%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">设计模式学习-模板方法模式</span>
+            <span class="prev-text nav-default">grpc学习-总览</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/linux%E5%AD%A6%E4%B9%A0-grep%E5%91%BD%E4%BB%A4/">
-            <span class="next-text nav-default">linux学习-grep命令</span>
+          <a class="next" href="/post/linux%E5%AD%A6%E4%B9%A0-awk%E5%91%BD%E4%BB%A4/">
+            <span class="next-text nav-default">linux学习-awk命令</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

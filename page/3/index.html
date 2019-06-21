@@ -54,7 +54,7 @@
 <meta property="og:description" content="vgmdj&#39;s blog" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.vgmdj.cn/" />
-<meta property="og:updated_time" content="2018-10-02T15:23:50&#43;00:00"/>
+<meta property="og:updated_time" content="2018-11-23T11:49:12&#43;08:00"/>
 
 <meta itemprop="name" content="vgmdj&#39;s blog">
 <meta itemprop="description" content="vgmdj&#39;s blog">
@@ -133,6 +133,46 @@
   <section id="posts" class="posts">
     
     
+    
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-docker%E7%BC%96%E8%AF%91/">go语言学习-docker编译</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-11-23 11:49:12 </span>
+      <div class="post-category">
+          
+            <a href="/categories/Golang/"> Golang </a>
+          
+        </div>
+      <span class="more-meta"> 约 677 字 </span>
+      <span class="more-meta"> 预计阅读 2 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <h1 id="前言">前言</h1>
+
+<p>GO本身是支持交叉编译的，且很方便，只需设置几个环境变量即可，但是对于使用了CGO的代码来说，交叉编译就不可行了，替代方案就是使用docker来完成编译。</p>
+
+<h1 id="交叉编译">交叉编译</h1>
+
+<p>Go本身支持交叉编译，只需设置三个参数即可</p>
+
+<ul>
+<li>CGO_ENABLED   是否启用CGO</li>
+<li>GOOS          目标运行环境操作系统</li>
+<li>GOARCH        目标运行环境</li>
+</ul>
+
+<p></p>
+    </div>
+    <div class="read-more">
+      <a href="/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-docker%E7%BC%96%E8%AF%91/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
     
       <article class="post">
   <header class="post-header">
@@ -261,43 +301,6 @@
     </div>
     <div class="read-more">
       <a href="/post/hugo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%8B/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-module%E6%9C%BA%E5%88%B6/">go语言学习-module机制</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-08-28 10:23:01 </span>
-      <div class="post-category">
-          
-            <a href="/categories/Golang/"> Golang </a>
-          
-        </div>
-      <span class="more-meta"> 约 1346 字 </span>
-      <span class="more-meta"> 预计阅读 3 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h1 id="module机制">Module机制</h1>
-
-<p>Go Module是Go1.11正式推出的包管理机制，不同于以往基于GOPATH和Vendor的项目构建，其主要是通过$GOPATH/pkg/mod下的缓存包来对项目进行构建。
-一如所有的Go新添加功能，Go Module可以通过GO111MODULE来控制是否启用，GO111MODULE有三种类型</p>
-
-<ul>
-<li>on 所有的构建，都使用Module机制</li>
-<li>off 所有的构建，都不使用Module机制，而是使用GOPATH和Vendor</li>
-<li>auto 在GOPATH下的项目，不使用Module机制，不在GOPATH下的项目使用</li>
-</ul>
-
-<p></p>
-    </div>
-    <div class="read-more">
-      <a href="/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-module%E6%9C%BA%E5%88%B6/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

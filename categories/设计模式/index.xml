@@ -7,10 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>vgmdj</copyright>
-    <lastBuildDate>Mon, 24 Sep 2018 16:29:48 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 Feb 2019 13:40:48 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.vgmdj.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>设计模式学习-模板方法模式</title>
+      <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Mon, 18 Feb 2019 13:40:48 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</guid>
+      <description>&lt;h2 id=&#34;模板方法模式-templatemethod&#34;&gt;模板方法模式(TemplateMethod)&lt;/h2&gt;
+
+&lt;p&gt;定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。&lt;/p&gt;
+
+&lt;h2 id=&#34;特点&#34;&gt;特点&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;模板方法模式是通过把不变行为搬移到超类，去除子类中的重复代码，再将一些具体的步骤延迟下放到子类中。&lt;/li&gt;
+&lt;li&gt;模板方法模式就是提供了一个很好的代码复用平台。&lt;/li&gt;
+&lt;li&gt;当不变的和可变的行为在方法的子类实现中混合在一起的时候，不变的行为就会在子类中重复出现。通过模板方法模式把这些行为搬移到单一的地方，这样就帮助子类摆脱重复的不变行为的纠缠。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>设计模式学习-代理模式</title>
