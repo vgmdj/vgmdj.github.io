@@ -17,8 +17,9 @@
 
 
 <meta name="author" content="VGMDJ" />
-  <meta name="description" content="总述 算法的排序，一方面作为其他算法的基础，一方面也体现了一些重要的算法的思想，需要我们好好掌握 本章代码的go语言实现都可见于： https://github.com/vgmdj/go_practice/tree/master/algorithm/sort
- 冒泡排序 选择排序 插入排序 快速排序 归并排序 堆排序 希尔排序 计数排序 基数排序 桶排序  
+  <meta name="description" content="总述 算法的排序，一方面作为其他算法的基础，一方面也体现了一些重要的算法的思想，需要我们好好掌握。 排序是根据某种标准将一组记录重排的过程，是最常见的计算任务之一。
+设有一个序列{a1, a2, a3,&amp;hellip; an},对于序列中任意两个元素ai,aj，若iaj，则说明ai和aj是一对逆序对。 实际上，排序过程就是调整记录的初始序列中逆序对的过程。 本章代码的go语言实现都可见于： https://github.com/vgmdj/go_practice/tree/master/algorithm/sort
+
 " />
 
   <meta name="keywords" content="vgmdj, blog, it" />
@@ -54,52 +55,34 @@
 <meta property="og:title" content="算法学习-排序" />
 <meta property="og:description" content="总述
 
-算法的排序，一方面作为其他算法的基础，一方面也体现了一些重要的算法的思想，需要我们好好掌握
+算法的排序，一方面作为其他算法的基础，一方面也体现了一些重要的算法的思想，需要我们好好掌握。
+排序是根据某种标准将一组记录重排的过程，是最常见的计算任务之一。
+
+设有一个序列{a1, a2, a3,&hellip; an},对于序列中任意两个元素ai,aj，若iaj，则说明ai和aj是一对逆序对。
+实际上，排序过程就是调整记录的初始序列中逆序对的过程。
 本章代码的go语言实现都可见于： https://github.com/vgmdj/go_practice/tree/master/algorithm/sort
-
-
-冒泡排序
-选择排序
-插入排序
-快速排序
-归并排序
-堆排序
-希尔排序
-计数排序
-基数排序
-桶排序
-
 
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E6%8E%92%E5%BA%8F/" /><meta property="article:published_time" content="2017-03-18T16:23:50&#43;00:00"/>
-<meta property="article:modified_time" content="2017-03-18T16:23:50&#43;00:00"/>
+<meta property="article:modified_time" content="2019-05-18T16:23:50&#43;00:00"/>
 
 <meta itemprop="name" content="算法学习-排序">
 <meta itemprop="description" content="总述
 
-算法的排序，一方面作为其他算法的基础，一方面也体现了一些重要的算法的思想，需要我们好好掌握
+算法的排序，一方面作为其他算法的基础，一方面也体现了一些重要的算法的思想，需要我们好好掌握。
+排序是根据某种标准将一组记录重排的过程，是最常见的计算任务之一。
+
+设有一个序列{a1, a2, a3,&hellip; an},对于序列中任意两个元素ai,aj，若iaj，则说明ai和aj是一对逆序对。
+实际上，排序过程就是调整记录的初始序列中逆序对的过程。
 本章代码的go语言实现都可见于： https://github.com/vgmdj/go_practice/tree/master/algorithm/sort
-
-
-冒泡排序
-选择排序
-插入排序
-快速排序
-归并排序
-堆排序
-希尔排序
-计数排序
-基数排序
-桶排序
-
 
 ">
 
 
 <meta itemprop="datePublished" content="2017-03-18T16:23:50&#43;00:00" />
 <meta itemprop="dateModified" content="2017-03-18T16:23:50&#43;00:00" />
-<meta itemprop="wordCount" content="1486">
+<meta itemprop="wordCount" content="2170">
 
 
 
@@ -108,21 +91,12 @@
 <meta name="twitter:title" content="算法学习-排序"/>
 <meta name="twitter:description" content="总述
 
-算法的排序，一方面作为其他算法的基础，一方面也体现了一些重要的算法的思想，需要我们好好掌握
+算法的排序，一方面作为其他算法的基础，一方面也体现了一些重要的算法的思想，需要我们好好掌握。
+排序是根据某种标准将一组记录重排的过程，是最常见的计算任务之一。
+
+设有一个序列{a1, a2, a3,&hellip; an},对于序列中任意两个元素ai,aj，若iaj，则说明ai和aj是一对逆序对。
+实际上，排序过程就是调整记录的初始序列中逆序对的过程。
 本章代码的go语言实现都可见于： https://github.com/vgmdj/go_practice/tree/master/algorithm/sort
-
-
-冒泡排序
-选择排序
-插入排序
-快速排序
-归并排序
-堆排序
-希尔排序
-计数排序
-基数排序
-桶排序
-
 
 "/>
 
@@ -204,8 +178,8 @@
               <a href="/categories/%E7%AE%97%E6%B3%95/"> 算法 </a>
             
           </div>
-        <span class="more-meta"> 约 1486 字 </span>
-        <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span class="more-meta"> 约 2170 字 </span>
+        <span class="more-meta"> 预计阅读 5 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -221,11 +195,15 @@
 <li>
 <ul>
 <li><a href="#总述">总述</a></li>
+<li><a href="#排序的稳定性">排序的稳定性</a></li>
+<li><a href="#复杂度">复杂度</a></li>
+<li><a href="#分类">分类</a></li>
 <li><a href="#冒泡排序-选择排序">冒泡排序、选择排序</a></li>
 <li><a href="#插入排序">插入排序</a></li>
 <li><a href="#快速排序">快速排序</a></li>
 <li><a href="#归并排序">归并排序</a></li>
 <li><a href="#堆排序">堆排序</a></li>
+<li><a href="#基数排序">基数排序</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -239,23 +217,31 @@
     <div class="post-content">
       <h2 id="总述">总述</h2>
 
-<p>算法的排序，一方面作为其他算法的基础，一方面也体现了一些重要的算法的思想，需要我们好好掌握
+<p>算法的排序，一方面作为其他算法的基础，一方面也体现了一些重要的算法的思想，需要我们好好掌握。
+排序是根据某种标准将一组记录重排的过程，是最常见的计算任务之一。</p>
+
+<p>设有一个序列{a1, a2, a3,&hellip; an},对于序列中任意两个元素ai,aj，若i<j,ai>aj，则说明ai和aj是一对逆序对。
+实际上，排序过程就是调整记录的初始序列中逆序对的过程。
 本章代码的go语言实现都可见于： <a href="https://github.com/vgmdj/go_practice/tree/master/algorithm/sort">https://github.com/vgmdj/go_practice/tree/master/algorithm/sort</a></p>
 
-<ul>
-<li>冒泡排序</li>
-<li>选择排序</li>
-<li>插入排序</li>
-<li>快速排序</li>
-<li>归并排序</li>
-<li>堆排序</li>
-<li>希尔排序</li>
-<li>计数排序</li>
-<li>基数排序</li>
-<li>桶排序</li>
-</ul>
-
 <p></p>
+
+<h2 id="排序的稳定性">排序的稳定性</h2>
+
+<p>若对于关键字值 Ki = Kj (0&lt;=i, j &lt;= n-1,i!=j)，在排序前记录序列中的 Ri 位于 Rj 之前 ，在排序后的序列中Ri 仍位于 Rj 之前，那么称所用的排序方法是稳定的。</p>
+
+<h2 id="复杂度">复杂度</h2>
+
+<p>关键字值的比较次数与记录的移动次数决定着排序算法的时间复杂度。排序算法的时间复杂度又细分为最优时间复杂度、平均时间复杂度和最差时间复杂度。
+排序过程中除待排序记录所占空间外分配的工作空间为其空间复杂度。</p>
+
+<h2 id="分类">分类</h2>
+
+<p>根据排序记录的数量多少，又可以把排序分为内部排序和外部排序。</p>
+
+<p>内部排序是指待排序的记录能够全部存储在计算机内存中并能完成排序的过程。</p>
+
+<p>外部排序是指记录数量过大，不能全部保存在内存中而需要借助于外存才能完成的排序是外部排序，简称为外排序。</p>
 
 <h2 id="冒泡排序-选择排序">冒泡排序、选择排序</h2>
 
@@ -485,6 +471,64 @@ func minHeapify(nums []int, start, end int) {
 
 
 </code></pre>
+
+<h2 id="基数排序">基数排序</h2>
+
+<p>基数排序不同于其他的通过关键字间比较和移动来实现排序的算法，基数排序主要是借助多关键字排序的思想对单逻辑关键字进行排序的方法。
+为实现多关键字排序，可分为最高位优先法(Most Significant Digit first)，简称 MSD 法，和最低位优先法(Least Sigificant Digit first)，简称 LSD 法。</p>
+
+<p>若实现的方式不同，则时间复杂度和空间复杂度也不相同，若设 d 为关键字个数，则
+- 时间复杂度： O(d*n)
+- 空间复杂度： O(n)
+- 稳定性： 稳定</p>
+
+<pre><code>func RadixSort(nums []int) {
+	base, length := 1, getLen(nums)
+
+	for i := 1; i &lt;= length; i++ {
+		radixSort(nums, base)
+		base *= 10
+	}
+
+}
+
+func getLen(nums []int) int {
+	max, length := math.MinInt32, 0
+
+	for _, v := range nums {
+		if v &gt; max {
+			max = v
+		}
+	}
+
+	for max != 0 {
+		max /= 10
+		length++
+	}
+
+	return length
+}
+
+func radixSort(nums []int, base int) {
+	bucket := make([][]int, 10)
+
+	for _, v := range nums {
+		k := v / base % 10
+		bucket[k] = append(bucket[k], v)
+
+	}
+
+	index := 0
+	for _, group := range bucket {
+		for _, v := range group {
+			nums[index] = v
+			index++
+		}
+	}
+
+}
+
+</code></pre>
     </div>
 
     
@@ -495,7 +539,7 @@ func minHeapify(nums []int, start, end int) {
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2017-03-18 16:23:50</span>
+    <span class="item-content">2019-05-18 16:23:50</span>
   </p>
   
   

@@ -69,6 +69,31 @@
 &lt;li&gt;TIME_WAIT&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h3 id=&#34;tcp-计时器&#34;&gt;TCP 计时器&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;超时重传计时器&lt;/li&gt;
+&lt;li&gt;持续计时器&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;tcp-可靠数据传输&#34;&gt;TCP 可靠数据传输&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;流量控制
+
+&lt;ul&gt;
+&lt;li&gt;滑动窗口协议&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;拥塞控制
+
+&lt;ul&gt;
+&lt;li&gt;慢开始&lt;/li&gt;
+&lt;li&gt;拥塞避免&lt;/li&gt;
+&lt;li&gt;快重传&lt;/li&gt;
+&lt;li&gt;快恢复&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h3 id=&#34;tcp客户端套接字程序&#34;&gt;TCP客户端套接字程序&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;import java.io.*;

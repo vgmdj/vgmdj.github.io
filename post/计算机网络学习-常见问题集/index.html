@@ -87,7 +87,7 @@ A告诉B，初始成功
 
 <meta itemprop="datePublished" content="2018-04-12T15:37:05&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-12T15:37:05&#43;00:00" />
-<meta itemprop="wordCount" content="974">
+<meta itemprop="wordCount" content="1126">
 
 
 
@@ -186,8 +186,8 @@ A告诉B，初始成功
               <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"> 计算机网络 </a>
             
           </div>
-        <span class="more-meta"> 约 974 字 </span>
-        <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span class="more-meta"> 约 1126 字 </span>
+        <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -203,10 +203,12 @@ A告诉B，初始成功
 <li><a href="#tcp">tcp</a>
 <ul>
 <li><a href="#为什么不是两次握手或者是四次握手">为什么不是两次握手或者是四次握手</a></li>
+<li><a href="#第三次握手能不能带数据">第三次握手能不能带数据</a></li>
 <li><a href="#为什么不是三次挥手或五次挥手">为什么不是三次挥手或五次挥手</a></li>
 <li><a href="#服务端只监听一个端口-如何唯一确定一个tcp连接">服务端只监听一个端口，如何唯一确定一个tcp连接</a></li>
 <li><a href="#服务端怎么避免tcp长连接造成的资源浪费">服务端怎么避免tcp长连接造成的资源浪费</a></li>
 <li><a href="#tcp-time-out状态的作用是什么">tcp TIME_OUT状态的作用是什么</a></li>
+<li><a href="#tcp-出现大量的close-wait状态">tcp 出现大量的CLOSE_WAIT状态</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -240,6 +242,12 @@ A告诉B，初始成功
 <li>如果是两次握手，发生数据延迟，A向B发送的第一次请求在实际请求过期后，才传给B，B收到请求并进行确认，并给A发数据，由于A此次请求已过期，所以不会理会，那么这次B的资源，即服务器资源会产生很大的浪费。</li>
 </ul>
 
+<h2 id="第三次握手能不能带数据">第三次握手能不能带数据</h2>
+
+<p>结论是可以携带数据，但一般不会出现这种情况。
+详细内容可见
+ <a href="http://www.0xffffff.org/2015/04/15/36-The-TCP-three-way-handshake-with-data/">http://www.0xffffff.org/2015/04/15/36-The-TCP-three-way-handshake-with-data/</a></p>
+
 <h2 id="为什么不是三次挥手或五次挥手">为什么不是三次挥手或五次挥手</h2>
 
 <p>三次会有浪费或无法确认的情况发生，五次则多了，具体可见：
@@ -271,6 +279,10 @@ A告诉B，初始成功
 假如之前有数据包因各种原因而没有到达服务端 ，此时如果新创建一个连接，还是使用这个四元组，那么之前的数据包到达服务端后，就会被当成正常的数据进行处理，服务端会对这个“正常”的数据包进行回复，而客户端此时也无法分辨出是否正常，就会造成新建立连接的数据错乱。<br>
 而如果有TIME_OUT的状态，则网络上的数据消失之前，都不会再复用这个socket（ip+port），此时无论是之前的客户端的数据，还是服务端的数据到达另一端后，都会被回复RST，从而确保数据的正常可靠。</li>
 </ul>
+
+<h2 id="tcp-出现大量的close-wait状态">tcp 出现大量的CLOSE_WAIT状态</h2>
+
+<p>CLOSE_WAIT状态是接收到 主动关闭请求的FIN后变成的状态，之后在处理完数据发送FIN后，变更为LAST_ACK，所以出现的原因一般是由于程序中没有对TCP连接进行关闭处理造成的。</p>
     </div>
 
     

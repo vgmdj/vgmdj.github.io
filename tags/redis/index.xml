@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>redis on vgmdj&#39;s blog</title>
+    <link>https://blog.vgmdj.cn/tags/redis/</link>
+    <description>Recent content in redis on vgmdj&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>vgmdj</copyright>
+    <lastBuildDate>Mon, 21 May 2018 10:46:12 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.vgmdj.cn/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>js学习-总览</title>
+      <link>https://blog.vgmdj.cn/post/redis%E5%AD%A6%E4%B9%A0-LRU/</link>
+      <pubDate>Mon, 21 May 2018 10:46:12 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/redis%E5%AD%A6%E4%B9%A0-LRU/</guid>
+      <description>&lt;h1 id=&#34;过期策略&#34;&gt;过期策略&lt;/h1&gt;
+
+&lt;p&gt;在使用redis作为缓存的场景下，内存淘汰策略决定的redis的内存使用效率。在大部分场景下，我们会采用LRU(Least Recently Used)来作为redis的淘汰策略。&lt;/p&gt;
+
+&lt;h1 id=&#34;lru&#34;&gt;LRU&lt;/h1&gt;
+
+&lt;p&gt;LRU Least Recently Used，即淘汰最久未使用的策略，
+一般使用hashmap+双向链表作为实现方式，&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

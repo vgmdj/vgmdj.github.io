@@ -39,21 +39,12 @@
       <guid>https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E6%8E%92%E5%BA%8F/</guid>
       <description>&lt;h2 id=&#34;总述&#34;&gt;总述&lt;/h2&gt;
 
-&lt;p&gt;算法的排序，一方面作为其他算法的基础，一方面也体现了一些重要的算法的思想，需要我们好好掌握
-本章代码的go语言实现都可见于： &lt;a href=&#34;https://github.com/vgmdj/go_practice/tree/master/algorithm/sort&#34;&gt;https://github.com/vgmdj/go_practice/tree/master/algorithm/sort&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;算法的排序，一方面作为其他算法的基础，一方面也体现了一些重要的算法的思想，需要我们好好掌握。
+排序是根据某种标准将一组记录重排的过程，是最常见的计算任务之一。&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;冒泡排序&lt;/li&gt;
-&lt;li&gt;选择排序&lt;/li&gt;
-&lt;li&gt;插入排序&lt;/li&gt;
-&lt;li&gt;快速排序&lt;/li&gt;
-&lt;li&gt;归并排序&lt;/li&gt;
-&lt;li&gt;堆排序&lt;/li&gt;
-&lt;li&gt;希尔排序&lt;/li&gt;
-&lt;li&gt;计数排序&lt;/li&gt;
-&lt;li&gt;基数排序&lt;/li&gt;
-&lt;li&gt;桶排序&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;设有一个序列{a1, a2, a3,&amp;hellip; an},对于序列中任意两个元素ai,aj，若i&lt;j,ai&gt;aj，则说明ai和aj是一对逆序对。
+实际上，排序过程就是调整记录的初始序列中逆序对的过程。
+本章代码的go语言实现都可见于： &lt;a href=&#34;https://github.com/vgmdj/go_practice/tree/master/algorithm/sort&#34;&gt;https://github.com/vgmdj/go_practice/tree/master/algorithm/sort&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

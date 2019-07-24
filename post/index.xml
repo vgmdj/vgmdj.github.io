@@ -7,10 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>vgmdj</copyright>
-    <lastBuildDate>Mon, 29 Apr 2019 09:14:15 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jul 2019 10:46:12 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.vgmdj.cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>js学习-总览</title>
+      <link>https://blog.vgmdj.cn/post/js%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
+      <pubDate>Tue, 16 Jul 2019 10:46:12 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/js%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
+      <description>&lt;h1 id=&#34;javascript&#34;&gt;JavaScript&lt;/h1&gt;
+
+&lt;p&gt;JavaScript 是一种可以给网站增加交互性的编程语言。JavaScript 是一种客户端语言，也就是说，设计它的目的是在用户的机器上而不是服务器上执行任务。因此，JavaScript 有一些固有的限制，这些限制主要出于如下安全原因。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;JavaScript 不允许写服务器机器上的文件。&lt;/li&gt;
+&lt;li&gt;JavaScript 不能关闭不是由它自己打开的窗口。这是为了避免一个站点关闭其他任何站点的窗口，从而独占浏览器。&lt;/li&gt;
+&lt;li&gt;JavaScript 不能从来自另一个服务器的已经打开的网页中读取信息。换句话说，网页不能读取已经打开的其他窗口中的信息，因此无法探察访问这个站点的使用者还在访问其他哪些站点。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>容器学习-k8s证书更换</title>
@@ -406,6 +425,24 @@ director- 实际构建一个使用builder接口的对象&lt;/p&gt;
     </item>
     
     <item>
+      <title>js学习-总览</title>
+      <link>https://blog.vgmdj.cn/post/redis%E5%AD%A6%E4%B9%A0-LRU/</link>
+      <pubDate>Mon, 21 May 2018 10:46:12 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/redis%E5%AD%A6%E4%B9%A0-LRU/</guid>
+      <description>&lt;h1 id=&#34;过期策略&#34;&gt;过期策略&lt;/h1&gt;
+
+&lt;p&gt;在使用redis作为缓存的场景下，内存淘汰策略决定的redis的内存使用效率。在大部分场景下，我们会采用LRU(Least Recently Used)来作为redis的淘汰策略。&lt;/p&gt;
+
+&lt;h1 id=&#34;lru&#34;&gt;LRU&lt;/h1&gt;
+
+&lt;p&gt;LRU Least Recently Used，即淘汰最久未使用的策略，
+一般使用hashmap+双向链表作为实现方式，&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>分布式学习-分布式事务</title>
       <link>https://blog.vgmdj.cn/post/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</link>
       <pubDate>Mon, 14 May 2018 14:38:21 +0000</pubDate>
@@ -704,6 +741,31 @@ director- 实际构建一个使用builder接口的对象&lt;/p&gt;
 &lt;li&gt;TIME_WAIT&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h3 id=&#34;tcp-计时器&#34;&gt;TCP 计时器&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;超时重传计时器&lt;/li&gt;
+&lt;li&gt;持续计时器&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;tcp-可靠数据传输&#34;&gt;TCP 可靠数据传输&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;流量控制
+
+&lt;ul&gt;
+&lt;li&gt;滑动窗口协议&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;拥塞控制
+
+&lt;ul&gt;
+&lt;li&gt;慢开始&lt;/li&gt;
+&lt;li&gt;拥塞避免&lt;/li&gt;
+&lt;li&gt;快重传&lt;/li&gt;
+&lt;li&gt;快恢复&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h3 id=&#34;tcp客户端套接字程序&#34;&gt;TCP客户端套接字程序&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;import java.io.*;
@@ -950,21 +1012,12 @@ golang相关实现例子:  &lt;a href=&#34;https://github.com/vgmdj/go_practice/
       <guid>https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E6%8E%92%E5%BA%8F/</guid>
       <description>&lt;h2 id=&#34;总述&#34;&gt;总述&lt;/h2&gt;
 
-&lt;p&gt;算法的排序，一方面作为其他算法的基础，一方面也体现了一些重要的算法的思想，需要我们好好掌握
-本章代码的go语言实现都可见于： &lt;a href=&#34;https://github.com/vgmdj/go_practice/tree/master/algorithm/sort&#34;&gt;https://github.com/vgmdj/go_practice/tree/master/algorithm/sort&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;算法的排序，一方面作为其他算法的基础，一方面也体现了一些重要的算法的思想，需要我们好好掌握。
+排序是根据某种标准将一组记录重排的过程，是最常见的计算任务之一。&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;冒泡排序&lt;/li&gt;
-&lt;li&gt;选择排序&lt;/li&gt;
-&lt;li&gt;插入排序&lt;/li&gt;
-&lt;li&gt;快速排序&lt;/li&gt;
-&lt;li&gt;归并排序&lt;/li&gt;
-&lt;li&gt;堆排序&lt;/li&gt;
-&lt;li&gt;希尔排序&lt;/li&gt;
-&lt;li&gt;计数排序&lt;/li&gt;
-&lt;li&gt;基数排序&lt;/li&gt;
-&lt;li&gt;桶排序&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;设有一个序列{a1, a2, a3,&amp;hellip; an},对于序列中任意两个元素ai,aj，若i&lt;j,ai&gt;aj，则说明ai和aj是一对逆序对。
+实际上，排序过程就是调整记录的初始序列中逆序对的过程。
+本章代码的go语言实现都可见于： &lt;a href=&#34;https://github.com/vgmdj/go_practice/tree/master/algorithm/sort&#34;&gt;https://github.com/vgmdj/go_practice/tree/master/algorithm/sort&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

@@ -83,6 +83,24 @@
     </item>
     
     <item>
+      <title>js学习-总览</title>
+      <link>https://blog.vgmdj.cn/post/redis%E5%AD%A6%E4%B9%A0-LRU/</link>
+      <pubDate>Mon, 21 May 2018 10:46:12 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/redis%E5%AD%A6%E4%B9%A0-LRU/</guid>
+      <description>&lt;h1 id=&#34;过期策略&#34;&gt;过期策略&lt;/h1&gt;
+
+&lt;p&gt;在使用redis作为缓存的场景下，内存淘汰策略决定的redis的内存使用效率。在大部分场景下，我们会采用LRU(Least Recently Used)来作为redis的淘汰策略。&lt;/p&gt;
+
+&lt;h1 id=&#34;lru&#34;&gt;LRU&lt;/h1&gt;
+
+&lt;p&gt;LRU Least Recently Used，即淘汰最久未使用的策略，
+一般使用hashmap+双向链表作为实现方式，&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>mysql学习-索引</title>
       <link>https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E7%B4%A2%E5%BC%95/</link>
       <pubDate>Fri, 06 Apr 2018 10:00:49 +0000</pubDate>

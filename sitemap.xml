@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.vgmdj.cn/post/js%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</loc>
+    <lastmod>2019-07-16T15:27:15+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.vgmdj.cn/post/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E8%AF%81%E4%B9%A6%E6%9B%B4%E6%8D%A2/</loc>
     <lastmod>2019-04-29T10:47:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -159,6 +166,13 @@
   <url>
     <loc>https://blog.vgmdj.cn/post/efk%E5%AD%A6%E4%B9%A0-%E7%AE%80%E4%BB%8B/</loc>
     <lastmod>2018-06-10T14:30:58+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vgmdj.cn/post/redis%E5%AD%A6%E4%B9%A0-LRU/</loc>
+    <lastmod>2018-05-21T15:27:15+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -389,7 +403,7 @@
   
   <url>
     <loc>https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E6%8E%92%E5%BA%8F/</loc>
-    <lastmod>2017-03-18T16:23:50+00:00</lastmod>
+    <lastmod>2019-05-18T16:23:50+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -451,7 +465,7 @@
   
   <url>
     <loc>https://blog.vgmdj.cn/post/</loc>
-    <lastmod>2019-04-29T10:47:12+00:00</lastmod>
+    <lastmod>2019-07-16T15:27:15+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -534,6 +548,20 @@
   </url>
   
   <url>
+    <loc>https://blog.vgmdj.cn/tags/js/</loc>
+    <lastmod>2019-07-16T15:27:15+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vgmdj.cn/categories/js/</loc>
+    <lastmod>2019-07-16T15:27:15+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.vgmdj.cn/tags/k8s/</loc>
     <lastmod>2019-04-29T10:47:12+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -562,6 +590,13 @@
   </url>
   
   <url>
+    <loc>https://blog.vgmdj.cn/tags/redis/</loc>
+    <lastmod>2018-05-21T15:27:15+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.vgmdj.cn/tags/rpc/</loc>
     <lastmod>2019-04-27T10:00:01+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -570,7 +605,7 @@
   
   <url>
     <loc>https://blog.vgmdj.cn/</loc>
-    <lastmod>2019-04-29T10:47:12+00:00</lastmod>
+    <lastmod>2019-07-16T15:27:15+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -598,7 +633,7 @@
   
   <url>
     <loc>https://blog.vgmdj.cn/tags/%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2019-02-18T20:30:47+00:00</lastmod>
+    <lastmod>2019-07-16T15:27:15+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

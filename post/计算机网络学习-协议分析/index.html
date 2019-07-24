@@ -85,7 +85,7 @@
 
 <meta itemprop="datePublished" content="2018-03-08T13:40:56&#43;00:00" />
 <meta itemprop="dateModified" content="2018-03-08T13:40:56&#43;00:00" />
-<meta itemprop="wordCount" content="4452">
+<meta itemprop="wordCount" content="4679">
 
 
 
@@ -183,8 +183,8 @@
               <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"> 计算机网络 </a>
             
           </div>
-        <span class="more-meta"> 约 4452 字 </span>
-        <span class="more-meta"> 预计阅读 9 分钟 </span>
+        <span class="more-meta"> 约 4679 字 </span>
+        <span class="more-meta"> 预计阅读 10 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -200,6 +200,7 @@
 <li>
 <ul>
 <li><a href="#协议分层">协议分层</a></li>
+<li><a href="#各层中间设备">各层中间设备</a></li>
 <li><a href="#传输层协议分析">传输层协议分析</a>
 <ul>
 <li><a href="#tcp">tcp</a>
@@ -275,6 +276,23 @@
 链路层
 物理层
 </code></pre>
+
+<h2 id="各层中间设备">各层中间设备</h2>
+
+<ul>
+<li>物理层使用的中间设备叫 <strong>转发器（中继器）</strong>(repeater)，用于放大信号，扩展传输距离。
+
+<ul>
+<li><strong>集线器</strong>(hub)，是一种多端口转发器，采用广播方式发送数据，所有端口共用一个信道带宽</li>
+</ul></li>
+<li>数据链路层使用的中间设备叫 <strong>网桥或桥接器</strong>(bridge)
+
+<ul>
+<li><strong>交换机</strong>(switch)，是一种多端口网桥，可以提供点对点的连接，数据包只会发送到目的端口，则不会向所有端口发送</li>
+</ul></li>
+<li>网络层使用的中间设备叫 <strong>路由器</strong>(router)</li>
+<li>在网络层以上使用的中间设备叫 <strong>网关</strong>(gateway)</li>
+</ul>
 
 <h2 id="传输层协议分析">传输层协议分析</h2>
 
@@ -440,11 +458,11 @@ ssl证书中会包含网站基本信息，ca机构，证书编号，服务器的
 
 <h4 id="四次握手">四次握手</h4>
 
-<p>https的握手过程，包含两部分</p>
+<p>https的握手过程，包含两部分，一共七次</p>
 
 <ul>
 <li>tcp三次握手</li>
-<li>ssl/tls 一次握手</li>
+<li>ssl/tls 四次握手</li>
 </ul>
 
 <p>其中SSL/TLS 握手过程包括</p>

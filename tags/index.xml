@@ -94,6 +94,15 @@
     </item>
     
     <item>
+      <title>js</title>
+      <link>https://blog.vgmdj.cn/tags/js/</link>
+      <pubDate>Tue, 16 Jul 2019 10:46:12 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/tags/js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>k8s</title>
       <link>https://blog.vgmdj.cn/tags/k8s/</link>
       <pubDate>Mon, 29 Apr 2019 09:14:15 +0000</pubDate>
@@ -117,6 +126,15 @@
       <pubDate>Fri, 06 Apr 2018 10:00:49 +0000</pubDate>
       
       <guid>https://blog.vgmdj.cn/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redis</title>
+      <link>https://blog.vgmdj.cn/tags/redis/</link>
+      <pubDate>Mon, 21 May 2018 10:46:12 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/tags/redis/</guid>
       <description></description>
     </item>
     
@@ -150,7 +168,7 @@
     <item>
       <title>学习</title>
       <link>https://blog.vgmdj.cn/tags/%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Mon, 18 Feb 2019 13:40:48 +0000</pubDate>
+      <pubDate>Tue, 16 Jul 2019 10:46:12 +0000</pubDate>
       
       <guid>https://blog.vgmdj.cn/tags/%E5%AD%A6%E4%B9%A0/</guid>
       <description></description>
