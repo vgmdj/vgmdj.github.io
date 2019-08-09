@@ -18,6 +18,7 @@
 
 <meta name="author" content="VGMDJ" />
   <meta name="description" content="环境 go版本 1.10
+Map go语言中的map类型底层使用的是链式哈希表结构,且go中的map非线程安全，不能放在多个goroutine中，只能自己维护线程安全。 如果想要线程安全的 map，可以使用sync 包里的 Map 。
 
 " />
 
@@ -56,6 +57,11 @@
 
 go版本 1.10
 
+Map
+
+go语言中的map类型底层使用的是链式哈希表结构,且go中的map非线程安全，不能放在多个goroutine中，只能自己维护线程安全。
+如果想要线程安全的 map，可以使用sync 包里的 Map 。
+
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-map/" /><meta property="article:published_time" content="2018-03-30T13:23:51&#43;00:00"/>
@@ -66,12 +72,17 @@ go版本 1.10
 
 go版本 1.10
 
+Map
+
+go语言中的map类型底层使用的是链式哈希表结构,且go中的map非线程安全，不能放在多个goroutine中，只能自己维护线程安全。
+如果想要线程安全的 map，可以使用sync 包里的 Map 。
+
 ">
 
 
 <meta itemprop="datePublished" content="2018-03-30T13:23:51&#43;00:00" />
 <meta itemprop="dateModified" content="2018-03-30T13:23:51&#43;00:00" />
-<meta itemprop="wordCount" content="2279">
+<meta itemprop="wordCount" content="2142">
 
 
 
@@ -81,6 +92,11 @@ go版本 1.10
 <meta name="twitter:description" content="环境
 
 go版本 1.10
+
+Map
+
+go语言中的map类型底层使用的是链式哈希表结构,且go中的map非线程安全，不能放在多个goroutine中，只能自己维护线程安全。
+如果想要线程安全的 map，可以使用sync 包里的 Map 。
 
 "/>
 
@@ -162,7 +178,7 @@ go版本 1.10
               <a href="/categories/Golang/"> Golang </a>
             
           </div>
-        <span class="more-meta"> 约 2279 字 </span>
+        <span class="more-meta"> 约 2142 字 </span>
         <span class="more-meta"> 预计阅读 5 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -179,7 +195,7 @@ go版本 1.10
 <li>
 <ul>
 <li><a href="#环境">环境</a></li>
-<li><a href="#hashmap和hashtable">HashMap和HashTable</a></li>
+<li><a href="#map">Map</a></li>
 <li><a href="#go-map一般操作">go map一般操作</a></li>
 <li><a href="#go-map并发线程操作">go map并发线程操作</a></li>
 <li><a href="#go-map的遍历">go map的遍历</a></li>
@@ -209,13 +225,12 @@ go版本 1.10
 
 <p>go版本 1.10</p>
 
+<h2 id="map">Map</h2>
+
+<p>go语言中的map类型底层使用的是链式哈希表结构,且go中的map非线程安全，不能放在多个goroutine中，只能自己维护线程安全。
+如果想要线程安全的 map，可以使用sync 包里的 Map 。</p>
+
 <p></p>
-
-<h2 id="hashmap和hashtable">HashMap和HashTable</h2>
-
-<p>线性表中，数组查询方便，链表插入、删除方便，而HashTable则是结合了两者的优点，使得在所有操作上都是 O(1) 的时间复杂度，效率非常高
-HashMap是基于HashTable的 Map 接口的实现，其去掉了线程同步的操作，因而效率要更高一些，所以说HashTable是线程安全的，而HashMap则非线程安全。
-go语言中的map类型就是使用的HashMap,即go中的map非线程安全，不能放在多个goroutine中，只能自己维护线程安全</p>
 
 <h2 id="go-map一般操作">go map一般操作</h2>
 

@@ -100,6 +100,11 @@
 
 &lt;p&gt;go版本 1.10&lt;/p&gt;
 
+&lt;h2 id=&#34;map&#34;&gt;Map&lt;/h2&gt;
+
+&lt;p&gt;go语言中的map类型底层使用的是链式哈希表结构,且go中的map非线程安全，不能放在多个goroutine中，只能自己维护线程安全。
+如果想要线程安全的 map，可以使用sync 包里的 Map 。&lt;/p&gt;
+
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     

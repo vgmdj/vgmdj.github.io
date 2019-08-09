@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>vgmdj</copyright>
-    <lastBuildDate>Tue, 16 Jul 2019 10:46:12 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jul 2019 16:23:51 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.vgmdj.cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>健身学习</title>
+      <link>https://blog.vgmdj.cn/post/%E5%81%A5%E8%BA%AB%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Wed, 24 Jul 2019 16:23:51 +0000</pubDate>
+      
+      <guid>https://blog.vgmdj.cn/post/%E5%81%A5%E8%BA%AB%E5%AD%A6%E4%B9%A0/</guid>
+      <description>&lt;h1 id=&#34;健身学习&#34;&gt;健身学习&lt;/h1&gt;
+
+&lt;p&gt;健身可使用自重和器械，都可以对自身进行锻炼，但也有些不同之处。在此记录的，是健身学习的总结和经验，学习和实践时间尚短，需要不时的来更新和更正，切记，切记。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>js学习-总览</title>
@@ -605,6 +618,11 @@ director- 实际构建一个使用builder接口的对象&lt;/p&gt;
       <description>&lt;h2 id=&#34;环境&#34;&gt;环境&lt;/h2&gt;
 
 &lt;p&gt;go版本 1.10&lt;/p&gt;
+
+&lt;h2 id=&#34;map&#34;&gt;Map&lt;/h2&gt;
+
+&lt;p&gt;go语言中的map类型底层使用的是链式哈希表结构,且go中的map非线程安全，不能放在多个goroutine中，只能自己维护线程安全。
+如果想要线程安全的 map，可以使用sync 包里的 Map 。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
