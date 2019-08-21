@@ -17,8 +17,7 @@
 
 
 <meta name="author" content="VGMDJ" />
-  <meta name="description" content="协议分层 互联网协议分为五层，各层的所有协议被称为协议栈。一般采用自顶向下的方法，首先处理应用层，然后向下进行处理
-应用层 运输层 网络层 链路层 物理层  
+  <meta name="description" content="计算机网络分类  按分布范围分类：广域网、城域网、局域网、个人区域网 按拓扑结构分类：星形网络、总线形网络、环形网络、网状形网络 按传输技术分类：广播式网络、点对点网络 按使用者分类：公用网、专用网 按数据交换技术分类：电路交换网、报文交换网、分级交换网  
 " />
 
   <meta name="keywords" content="vgmdj, blog, it" />
@@ -52,15 +51,14 @@
 
 
 <meta property="og:title" content="计算机网络学习-协议分析" />
-<meta property="og:description" content="协议分层
+<meta property="og:description" content="计算机网络分类
 
-互联网协议分为五层，各层的所有协议被称为协议栈。一般采用自顶向下的方法，首先处理应用层，然后向下进行处理
 
-应用层
-运输层
-网络层
-链路层
-物理层
+按分布范围分类：广域网、城域网、局域网、个人区域网
+按拓扑结构分类：星形网络、总线形网络、环形网络、网状形网络
+按传输技术分类：广播式网络、点对点网络
+按使用者分类：公用网、专用网
+按数据交换技术分类：电路交换网、报文交换网、分级交换网
 
 
 " />
@@ -69,15 +67,14 @@
 <meta property="article:modified_time" content="2018-04-10T14:39:52&#43;00:00"/>
 
 <meta itemprop="name" content="计算机网络学习-协议分析">
-<meta itemprop="description" content="协议分层
+<meta itemprop="description" content="计算机网络分类
 
-互联网协议分为五层，各层的所有协议被称为协议栈。一般采用自顶向下的方法，首先处理应用层，然后向下进行处理
 
-应用层
-运输层
-网络层
-链路层
-物理层
+按分布范围分类：广域网、城域网、局域网、个人区域网
+按拓扑结构分类：星形网络、总线形网络、环形网络、网状形网络
+按传输技术分类：广播式网络、点对点网络
+按使用者分类：公用网、专用网
+按数据交换技术分类：电路交换网、报文交换网、分级交换网
 
 
 ">
@@ -85,22 +82,21 @@
 
 <meta itemprop="datePublished" content="2018-03-08T13:40:56&#43;00:00" />
 <meta itemprop="dateModified" content="2018-03-08T13:40:56&#43;00:00" />
-<meta itemprop="wordCount" content="4679">
+<meta itemprop="wordCount" content="4800">
 
 
 
 <meta itemprop="keywords" content="学习,计算机网络," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="计算机网络学习-协议分析"/>
-<meta name="twitter:description" content="协议分层
+<meta name="twitter:description" content="计算机网络分类
 
-互联网协议分为五层，各层的所有协议被称为协议栈。一般采用自顶向下的方法，首先处理应用层，然后向下进行处理
 
-应用层
-运输层
-网络层
-链路层
-物理层
+按分布范围分类：广域网、城域网、局域网、个人区域网
+按拓扑结构分类：星形网络、总线形网络、环形网络、网状形网络
+按传输技术分类：广播式网络、点对点网络
+按使用者分类：公用网、专用网
+按数据交换技术分类：电路交换网、报文交换网、分级交换网
 
 
 "/>
@@ -183,7 +179,7 @@
               <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"> 计算机网络 </a>
             
           </div>
-        <span class="more-meta"> 约 4679 字 </span>
+        <span class="more-meta"> 约 4800 字 </span>
         <span class="more-meta"> 预计阅读 10 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -199,6 +195,7 @@
 <ul>
 <li>
 <ul>
+<li><a href="#计算机网络分类">计算机网络分类</a></li>
 <li><a href="#协议分层">协议分层</a></li>
 <li><a href="#各层中间设备">各层中间设备</a></li>
 <li><a href="#传输层协议分析">传输层协议分析</a>
@@ -253,7 +250,19 @@
 
     
     <div class="post-content">
-      <h2 id="协议分层">协议分层</h2>
+      <h2 id="计算机网络分类">计算机网络分类</h2>
+
+<ul>
+<li>按分布范围分类：广域网、城域网、局域网、个人区域网</li>
+<li>按拓扑结构分类：星形网络、总线形网络、环形网络、网状形网络</li>
+<li>按传输技术分类：广播式网络、点对点网络</li>
+<li>按使用者分类：公用网、专用网</li>
+<li>按数据交换技术分类：电路交换网、报文交换网、分级交换网</li>
+</ul>
+
+<p></p>
+
+<h2 id="协议分层">协议分层</h2>
 
 <p>互联网协议分为五层，各层的所有协议被称为协议栈。一般采用自顶向下的方法，首先处理应用层，然后向下进行处理</p>
 
@@ -263,8 +272,6 @@
 链路层
 物理层
 </code></pre>
-
-<p></p>
 
 <p>国际标准化组织（ISO）提出了计算机网络的七层模型，即开放式互连模型（OSI），并未被使用。</p>
 

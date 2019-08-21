@@ -468,16 +468,15 @@ class TCPClient{
       <pubDate>Thu, 08 Mar 2018 13:40:56 +0000</pubDate>
       
       <guid>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/</guid>
-      <description>&lt;h2 id=&#34;协议分层&#34;&gt;协议分层&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;计算机网络分类&#34;&gt;计算机网络分类&lt;/h2&gt;
 
-&lt;p&gt;互联网协议分为五层，各层的所有协议被称为协议栈。一般采用自顶向下的方法，首先处理应用层，然后向下进行处理&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;应用层
-运输层
-网络层
-链路层
-物理层
-&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;按分布范围分类：广域网、城域网、局域网、个人区域网&lt;/li&gt;
+&lt;li&gt;按拓扑结构分类：星形网络、总线形网络、环形网络、网状形网络&lt;/li&gt;
+&lt;li&gt;按传输技术分类：广播式网络、点对点网络&lt;/li&gt;
+&lt;li&gt;按使用者分类：公用网、专用网&lt;/li&gt;
+&lt;li&gt;按数据交换技术分类：电路交换网、报文交换网、分级交换网&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
