@@ -174,7 +174,7 @@
             <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"> 计算机网络 </a>
           
         </div>
-      <span class="more-meta"> 约 1126 字 </span>
+      <span class="more-meta"> 约 1123 字 </span>
       <span class="more-meta"> 预计阅读 3 分钟 </span>
     </div>
   </header>
@@ -185,12 +185,20 @@
 
 <h2 id="为什么不是两次握手或者是四次握手">为什么不是两次握手或者是四次握手</h2>
 
-<p>主旨就是握手过程中，就是在商议A与B之间的初始通信序列号</p>
+<p>主旨就是握手过程中，商议A与B之间的初始通信序列号</p>
 
 <ul>
 <li>A告诉B自己序列号</li>
 <li>B告诉A，收到且发送自己序列号</li>
 <li>A告诉B，初始成功</li>
+</ul>
+
+<p>如果两次，无法保证成功，四次则多了，具体可见：
+<a href="https://www.zhihu.com/question/24853633">https://www.zhihu.com/question/24853633</a></p>
+
+<ul>
+<li>如果是两次握手，B没法确认连接已建立，如果A向B发数据，那么data+ack，可以正常进行；如果是B向A发数据，B不知道A是否已接收这次的SEQ，所以没法确认是发送data还是重传SEQ。</li>
+<li>如果是两次握手，发生数据延迟，A向B发送的第一次请求在实际请求过期后，才传给B，B收到请求并进行确认，并给A发数据，由于A此次请求已过期，所以不会理会，那么这次B的资源，即服务器资源会产生很大的浪费。</li>
 </ul>
 
 <p></p>

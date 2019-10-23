@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</loc>
+    <lastmod>2019-07-18T14:39:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.vgmdj.cn/post/js%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</loc>
     <lastmod>2019-07-16T15:27:15+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -131,13 +138,6 @@
   <url>
     <loc>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2018-08-20T20:30:01+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.vgmdj.cn/post/%E5%8A%A0%E6%B2%B9%E5%8D%A1%E5%85%85%E5%80%BCapi%E6%8E%A5%E5%8F%A3/</loc>
-    <lastmod>2018-08-17T12:30:50+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -654,14 +654,14 @@
   
   <url>
     <loc>https://blog.vgmdj.cn/tags/%E5%B7%A5%E4%BD%9C/</loc>
-    <lastmod>2018-08-17T12:30:50+00:00</lastmod>
+    <lastmod>2018-05-16T09:26:01+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.vgmdj.cn/categories/%E5%B7%A5%E4%BD%9C/</loc>
-    <lastmod>2018-08-17T12:30:50+00:00</lastmod>
+    <lastmod>2018-05-16T09:26:01+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -752,14 +752,14 @@
   
   <url>
     <loc>https://blog.vgmdj.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2018-04-12T19:38:16+00:00</lastmod>
+    <lastmod>2019-07-18T14:39:52+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.vgmdj.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2018-04-12T19:38:16+00:00</lastmod>
+    <lastmod>2019-07-18T14:39:52+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
