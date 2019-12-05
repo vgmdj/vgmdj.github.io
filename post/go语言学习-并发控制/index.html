@@ -61,7 +61,7 @@
 
 <meta itemprop="datePublished" content="2018-04-01T09:57:51&#43;08:00" />
 <meta itemprop="dateModified" content="2018-04-01T09:57:51&#43;08:00" />
-<meta itemprop="wordCount" content="3259">
+<meta itemprop="wordCount" content="4132">
 
 
 
@@ -148,8 +148,8 @@
               <a href="/categories/Golang/"> Golang </a>
             
           </div>
-        <span class="more-meta"> 约 3259 字 </span>
-        <span class="more-meta"> 预计阅读 7 分钟 </span>
+        <span class="more-meta"> 约 4132 字 </span>
+        <span class="more-meta"> 预计阅读 9 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -173,6 +173,8 @@
 <li><a href="#串行程序和并发程序">串行程序和并发程序</a></li>
 <li><a href="#并发-concurrency-程序和并行-parallelism-程序">并发（Concurrency）程序和并行（Parallelism）程序</a></li>
 <li><a href="#csp模型">CSP模型</a></li>
+<li><a href="#mpg-模型">MPG 模型</a></li>
+<li><a href="#io-模型">IO 模型</a></li>
 </ul></li>
 <li><a href="#channel">Channel</a>
 <ul>
@@ -216,6 +218,8 @@
 <li><p>线程是进程的一个实体，是CPU分派和调度的基本单位，它是比进程更小的能独立运行的基本单位。线程自己基本上不拥有系统资源,只拥有一点在运行中必不可少的资源(如程序计数器,一组寄存器和栈),但是它可与同属一个进程的其他的线程共享进程所拥有的全部资源。线程间通信主要通过共享内存，上下文切换很快，资源开销较少，但相比进程不够稳定容易丢失数据。</p></li>
 
 <li><p>协程是一种用户态的轻量级线程，协程的调度完全由用户控制。协程拥有自己的寄存器上下文和栈。协程调度切换时，将寄存器上下文和栈保存到其他地方，在切回来的时候，恢复先前保存的寄存器上下文和栈，直接操作栈则基本没有内核切换的开销，可以不加锁的访问全局变量，所以上下文的切换非常快。</p></li>
+
+<li><p>goroutine 是 golang 在语言级别实现的一种协程，拥有协程的所有特性，由 go 的运行时(runtime) 管理，</p></li>
 </ul>
 
 <h2 id="进程与子进程">进程与子进程</h2>
@@ -279,6 +283,26 @@ init进程是内核启动的第一个用户级进程。init有许多很重要的
 <h2 id="csp模型">CSP模型</h2>
 
 <p>Go语言的并发同步模型来自 <strong>通信顺序进程</strong>（Communicating Sequential Processes）这么一个消息传递模型，其通过在goroutine之间传递数据来传递消息，而不是对数据进行加锁来实现同步访问。</p>
+
+<h2 id="mpg-模型">MPG 模型</h2>
+
+<ul>
+<li>M (Machine)，用于代表内核线程，M 主要用于与内核映射，并负责运行 G</li>
+<li>P (processor)，代表一个 G 运行所需的资源（上下文环境）</li>
+<li>G (Goroutine)，代表一个 Go 代码片段，是对其的一个封装</li>
+</ul>
+
+<p>当 M 因系统调用而阻塞（准确的说，是它运行的 G 进入了系统调用）的时候，运行时系统就会将该 M 和与之关联的 P 分享开来。这时，如果这个 P 的可运行 G 队列中还有未被运行的 G，那么运行进系统就会找到一个空闲的 M，或创建一个新的 M，并与该 P 关联以满足这些 G 的需要。</p>
+
+<h2 id="io-模型">IO 模型</h2>
+
+<ul>
+<li>阻塞 IO (Blocking IO, BIO)，任何一个系统调用都会产生一个由用户态到内核态切换，再从内核态到用户态的切换过程。而进程上下文切换是通过系统中断来实现的，需要保存当前进程的上下文状态，这是一个成本很高的过程。</li>
+<li>非阻塞 IO (Non-blocking IO, NIO)，即需要由用户不停地询问内核某种操作是否准备就绪。也就是我们常说的轮询(Polling)，这也是一个比较浪费 CPU 的过程。</li>
+<li>IO 复用，主要依赖操作系统提供的 select 和 poll 机制。这里同样会阻塞进程，但是这里进程是阻塞在 select 和 poll 两个系统调上，而不是阻塞在真正的 IO 操作上，另外还有一点不同于阻塞 IO 的是，尽管看起来 IO 复用阻塞了两次，但第一次阻塞是在 select 上时，select 可以监控多个套接口 IO 操作是否准备完成，而不是像阻塞 IO 那样，一次只能监控一个套接口。</li>
+<li>信号驱动 IO，信号驱动 IO 就是说我们可以通过 sigaction 系统调用注册一个信号处理程序，然后主程序可以继续向下执行，当我们所监控的套接口的 IO 操作准备就绪时，由内核通知触发前面注册的信号处理程序执行，然后将我们所需要的数据从内核空间拷贝到用户空间。</li>
+<li>异步 IO (Asynchronous IO, AIO)，与信号驱动 IO 最主要的区别就是信号驱动 IO 是内核通知我们何时可以进行IO操作，而异步 IO 则是告诉我们 IO 操作何时完成。具体来说，就是信号驱动 IO 中，当内核通知信号处理程序时，信号处理程序仍然需要阻塞在从内核空间缓冲区拷贝数据到用户空间缓存区这个阶段。而异步 IO 则是等IO 操作完成后，由内核告诉我们，可以进行下面的操作了。</li>
+</ul>
 
 <h1 id="channel">Channel</h1>
 
