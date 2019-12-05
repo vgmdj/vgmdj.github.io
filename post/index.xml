@@ -26,15 +26,6 @@
     </item>
     
     <item>
-      <title>计算机网络学习-基本概念</title>
-      <link>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
-      <pubDate>Thu, 18 Jul 2019 13:40:56 +0000</pubDate>
-      
-      <guid>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
-      <description>各层完成的主要功能 差错控制，使相应层次对等方的通信更加可靠 流量控制，发送的发送速率必须使接收方来得及接收，不要太快 分段和重装，发送端将要发送</description>
-    </item>
-    
-    <item>
       <title>js学习-总览</title>
       <link>https://blog.vgmdj.cn/post/js%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
       <pubDate>Tue, 16 Jul 2019 10:46:12 +0000</pubDate>
