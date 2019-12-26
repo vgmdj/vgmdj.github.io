@@ -81,7 +81,7 @@
 
 <meta itemprop="datePublished" content="2018-04-06T10:00:49&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-06T10:00:49&#43;00:00" />
-<meta itemprop="wordCount" content="4918">
+<meta itemprop="wordCount" content="5267">
 
 
 
@@ -176,8 +176,8 @@
               <a href="/categories/database/"> database </a>
             
           </div>
-        <span class="more-meta"> 约 4918 字 </span>
-        <span class="more-meta"> 预计阅读 10 分钟 </span>
+        <span class="more-meta"> 约 5267 字 </span>
+        <span class="more-meta"> 预计阅读 11 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -197,6 +197,7 @@
 <li><a href="#根据数据结构划分">根据数据结构划分</a></li>
 <li><a href="#b-tree索引-和-hash索引对比">B-Tree索引 和 Hash索引对比</a></li>
 <li><a href="#b-tree-和-b-tree-比较">B-Tree 和 B+Tree 比较</a></li>
+<li><a href="#innodb-与-myisam-比较">InnoDB 与 MyISAM 比较</a></li>
 </ul></li>
 <li><a href="#索引的优缺点">索引的优缺点</a>
 <ul>
@@ -289,6 +290,16 @@
 <h2 id="b-tree-和-b-tree-比较">B-Tree 和 B+Tree 比较</h2>
 
 <p><a href="http://blog.codinglabs.org/articles/theory-of-mysql-index.html">http://blog.codinglabs.org/articles/theory-of-mysql-index.html</a></p>
+
+<h2 id="innodb-与-myisam-比较">InnoDB 与 MyISAM 比较</h2>
+
+<ul>
+<li>InnoDB 支持事务，MyISAM 不支持事务</li>
+<li>InnoDB 支持外键，而 MyISAM 不支持</li>
+<li>InnoDB 是聚集索引，MyISAM 是非聚集索引。聚簇索引的文件存放在主键索引的叶子节点上，因此 InnoDB 必须要有主键，通过主键索引效率很高。但是辅助索引需要两次查询，先查询到主键，然后再通过主键查询到数据。因此，主键不应该过大，因为主键太大，其他索引也都会很大。而 MyISAM 是非聚集索引，数据文件是分离的，索引保存的是数据文件的指针。主键索引和辅助索引是独立的。</li>
+<li>InnoDB 不保存表的具体行数，执行 <code>select count(*) from table</code> 时需要全表扫描。而MyISAM 用一个变量保存了整个表的行数，执行上述语句时只需要读出该变量即可，速度很快</li>
+<li>InnoDB 最小的锁粒度是行锁，MyISAM 最小的锁粒度是表锁。一个更新语句会锁住整张表，导致其他查询和更新都会被阻塞，因此并发访问受限</li>
+</ul>
 
 <h1 id="索引的优缺点">索引的优缺点</h1>
 
@@ -442,10 +453,11 @@ from sakila.city_demo;
 
 <p>选取 <a href="https://segmentfault.com/q/1010000000342176">https://segmentfault.com/q/1010000000342176</a> 中的例子：</p>
 
-<pre><code>对于联合索引（a,b,c)
+<pre><code>对于联合索引（a,b,c)，只有
+(a), (a,b), (a,b,c)起作用
 
 优: select * from test where a=10 and b&gt;50 差: select * from test where
-a50
+b=50
 
 优: select * from test order by a 差: select * from test order by b 差:
 select * from test order by c
