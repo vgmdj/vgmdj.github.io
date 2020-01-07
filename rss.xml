@@ -23,15 +23,15 @@
         
             <copyright>[VGMDJ.WR](https://blog.vgmdj.cn)</copyright>
         
-        <lastBuildDate>Wed, 08 Jan 2020 00:35:54 +0800</lastBuildDate>
+        <lastBuildDate>Wed, 08 Jan 2020 00:46:29 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://blog.vgmdj.cn/rss.xml" />
         
         
             <item>
                 <title>2019年度总结</title>
-                <link>https://blog.vgmdj.cn/posts/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</guid>
+                <link>https://blog.vgmdj.cn/post/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</guid>
                 <pubDate>Thu, 26 Dec 2019 19:53:52 +0800</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -195,8 +195,8 @@
         
             <item>
                 <title>健身学习</title>
-                <link>https://blog.vgmdj.cn/posts/%E5%81%A5%E8%BA%AB%E5%AD%A6%E4%B9%A0/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E5%81%A5%E8%BA%AB%E5%AD%A6%E4%B9%A0/</guid>
+                <link>https://blog.vgmdj.cn/post/%E5%81%A5%E8%BA%AB%E5%AD%A6%E4%B9%A0/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E5%81%A5%E8%BA%AB%E5%AD%A6%E4%B9%A0/</guid>
                 <pubDate>Wed, 24 Jul 2019 16:23:51 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -339,8 +339,8 @@
         
             <item>
                 <title>js学习-总览</title>
-                <link>https://blog.vgmdj.cn/posts/js%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/js%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
+                <link>https://blog.vgmdj.cn/post/js%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/js%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
                 <pubDate>Tue, 16 Jul 2019 10:46:12 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -475,8 +475,8 @@ window.onunload = function(){};</code></pre></td></tr></table>
         
             <item>
                 <title>容器学习-k8s证书更换</title>
-                <link>https://blog.vgmdj.cn/posts/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E8%AF%81%E4%B9%A6%E6%9B%B4%E6%8D%A2/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E8%AF%81%E4%B9%A6%E6%9B%B4%E6%8D%A2/</guid>
+                <link>https://blog.vgmdj.cn/post/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E8%AF%81%E4%B9%A6%E6%9B%B4%E6%8D%A2/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E8%AF%81%E4%B9%A6%E6%9B%B4%E6%8D%A2/</guid>
                 <pubDate>Mon, 29 Apr 2019 09:14:15 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -749,8 +749,8 @@ $ kubeadm token create --print-join-command</code></pre></td></tr></table>
         
             <item>
                 <title>grpc学习-总览</title>
-                <link>https://blog.vgmdj.cn/posts/grpc%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/grpc%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
+                <link>https://blog.vgmdj.cn/post/grpc%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/grpc%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
                 <pubDate>Sat, 27 Apr 2019 08:16:21 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -1005,8 +1005,8 @@ message Reply {
         
             <item>
                 <title>设计模式学习-模板方法模式</title>
-                <link>https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</guid>
+                <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</guid>
                 <pubDate>Mon, 18 Feb 2019 13:40:48 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -1235,8 +1235,8 @@ h2.Run()</code></pre></td></tr></table>
         
             <item>
                 <title>linux学习-awk命令</title>
-                <link>https://blog.vgmdj.cn/posts/linux%E5%AD%A6%E4%B9%A0-awk%E5%91%BD%E4%BB%A4/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/linux%E5%AD%A6%E4%B9%A0-awk%E5%91%BD%E4%BB%A4/</guid>
+                <link>https://blog.vgmdj.cn/post/linux%E5%AD%A6%E4%B9%A0-awk%E5%91%BD%E4%BB%A4/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/linux%E5%AD%A6%E4%B9%A0-awk%E5%91%BD%E4%BB%A4/</guid>
                 <pubDate>Mon, 28 Jan 2019 16:23:04 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -1398,8 +1398,8 @@ awk [options] -f scriptfile var=value file(s)</code></pre></td></tr></table>
         
             <item>
                 <title>linux学习-grep命令</title>
-                <link>https://blog.vgmdj.cn/posts/linux%E5%AD%A6%E4%B9%A0-grep%E5%91%BD%E4%BB%A4/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/linux%E5%AD%A6%E4%B9%A0-grep%E5%91%BD%E4%BB%A4/</guid>
+                <link>https://blog.vgmdj.cn/post/linux%E5%AD%A6%E4%B9%A0-grep%E5%91%BD%E4%BB%A4/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/linux%E5%AD%A6%E4%B9%A0-grep%E5%91%BD%E4%BB%A4/</guid>
                 <pubDate>Mon, 28 Jan 2019 13:46:02 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -1584,8 +1584,8 @@ grep -A 2 &#34;2018年 12月 14日 星期五 23:00:01&#34; testout.txt
         
             <item>
                 <title>influxdb学习-连续查询</title>
-                <link>https://blog.vgmdj.cn/posts/inflxdb%E5%AD%A6%E4%B9%A0-%E8%BF%9E%E7%BB%AD%E6%9F%A5%E8%AF%A2/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/inflxdb%E5%AD%A6%E4%B9%A0-%E8%BF%9E%E7%BB%AD%E6%9F%A5%E8%AF%A2/</guid>
+                <link>https://blog.vgmdj.cn/post/inflxdb%E5%AD%A6%E4%B9%A0-%E8%BF%9E%E7%BB%AD%E6%9F%A5%E8%AF%A2/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/inflxdb%E5%AD%A6%E4%B9%A0-%E8%BF%9E%E7%BB%AD%E6%9F%A5%E8%AF%A2/</guid>
                 <pubDate>Wed, 16 Jan 2019 14:12:23 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -1707,8 +1707,8 @@ END</code></pre></td></tr></table>
         
             <item>
                 <title>influxdb-使用</title>
-                <link>https://blog.vgmdj.cn/posts/influxdb%E5%AD%A6%E4%B9%A0-%E4%BD%BF%E7%94%A8/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/influxdb%E5%AD%A6%E4%B9%A0-%E4%BD%BF%E7%94%A8/</guid>
+                <link>https://blog.vgmdj.cn/post/influxdb%E5%AD%A6%E4%B9%A0-%E4%BD%BF%E7%94%A8/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/influxdb%E5%AD%A6%E4%B9%A0-%E4%BD%BF%E7%94%A8/</guid>
                 <pubDate>Fri, 14 Dec 2018 17:31:15 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -1943,8 +1943,8 @@ drop retention policy &#34;name&#34; on &#34;db&#34;</code></pre></td></tr></tab
         
             <item>
                 <title>influxdb学习-总览</title>
-                <link>https://blog.vgmdj.cn/posts/influxdb%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/influxdb%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
+                <link>https://blog.vgmdj.cn/post/influxdb%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/influxdb%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
                 <pubDate>Sat, 08 Dec 2018 18:05:20 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -2058,8 +2058,8 @@ tags的排列组合</li>
         
             <item>
                 <title>go语言学习-装机单</title>
-                <link>https://blog.vgmdj.cn/posts/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-%E8%A3%85%E6%9C%BA%E5%8D%95/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-%E8%A3%85%E6%9C%BA%E5%8D%95/</guid>
+                <link>https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-%E8%A3%85%E6%9C%BA%E5%8D%95/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-%E8%A3%85%E6%9C%BA%E5%8D%95/</guid>
                 <pubDate>Wed, 28 Nov 2018 18:32:15 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -2218,8 +2218,8 @@ tags的排列组合</li>
         
             <item>
                 <title>linux 常用部署指令</title>
-                <link>https://blog.vgmdj.cn/posts/linux%E5%B8%B8%E7%94%A8%E9%83%A8%E7%BD%B2%E6%8C%87%E4%BB%A4/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/linux%E5%B8%B8%E7%94%A8%E9%83%A8%E7%BD%B2%E6%8C%87%E4%BB%A4/</guid>
+                <link>https://blog.vgmdj.cn/post/linux%E5%B8%B8%E7%94%A8%E9%83%A8%E7%BD%B2%E6%8C%87%E4%BB%A4/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/linux%E5%B8%B8%E7%94%A8%E9%83%A8%E7%BD%B2%E6%8C%87%E4%BB%A4/</guid>
                 <pubDate>Tue, 27 Nov 2018 09:32:50 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -2439,8 +2439,8 @@ rsync不是加密传输，而scp是加密传输，使用时可以按需选择。
         
             <item>
                 <title>go语言学习-docker编译</title>
-                <link>https://blog.vgmdj.cn/posts/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-docker%E7%BC%96%E8%AF%91/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-docker%E7%BC%96%E8%AF%91/</guid>
+                <link>https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-docker%E7%BC%96%E8%AF%91/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-docker%E7%BC%96%E8%AF%91/</guid>
                 <pubDate>Fri, 23 Nov 2018 11:49:12 +0800</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -2675,8 +2675,8 @@ sudo docker run -it --rm -v <span class="nv">$dir</span>:/golang -v <span class=
         
             <item>
                 <title>算法学习-二叉树遍历</title>
-                <link>https://blog.vgmdj.cn/posts/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/</guid>
+                <link>https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/</guid>
                 <pubDate>Tue, 02 Oct 2018 15:23:50 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -3124,8 +3124,8 @@ return result
         
             <item>
                 <title>设计模式学习-代理模式</title>
-                <link>https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</guid>
+                <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</guid>
                 <pubDate>Mon, 24 Sep 2018 16:29:48 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -3277,8 +3277,8 @@ proxy.Request()</code></pre></td></tr></table>
         
             <item>
                 <title>设计模式学习-原型模式</title>
-                <link>https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</guid>
+                <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</guid>
                 <pubDate>Mon, 24 Sep 2018 16:29:48 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -3482,8 +3482,8 @@ resume2.AddWorkExperience(&#34;阿里&#34;, &#34;2017年&#34;, &#34;2018年&#34;
         
             <item>
                 <title>Hugo博客建立</title>
-                <link>https://blog.vgmdj.cn/posts/hugo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%8B/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/hugo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%8B/</guid>
+                <link>https://blog.vgmdj.cn/post/hugo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%8B/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/hugo%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%8B/</guid>
                 <pubDate>Wed, 12 Sep 2018 11:10:51 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -3814,8 +3814,8 @@ hexo下可以 key:value形式表示，hugo下默认其为多个，所以要用 k
         
             <item>
                 <title>go语言学习-module机制</title>
-                <link>https://blog.vgmdj.cn/posts/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-module%E6%9C%BA%E5%88%B6/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-module%E6%9C%BA%E5%88%B6/</guid>
+                <link>https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-module%E6%9C%BA%E5%88%B6/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-module%E6%9C%BA%E5%88%B6/</guid>
                 <pubDate>Tue, 28 Aug 2018 10:23:01 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -4032,8 +4032,8 @@ build test: cannot find module for path gitee.com/banyan_tree_in_beijing/gomodte
         
             <item>
                 <title>设计模式学习-建造者模式</title>
-                <link>https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
+                <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
                 <pubDate>Mon, 20 Aug 2018 16:29:48 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -4199,8 +4199,8 @@ d.Build()</code></pre></td></tr></table>
         
             <item>
                 <title>设计模式学习-装饰模式</title>
-                <link>https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/</guid>
+                <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/</guid>
                 <pubDate>Thu, 26 Jul 2018 18:03:47 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -4511,8 +4511,8 @@ bt.Show()
         
             <item>
                 <title>设计模式学习-观察者模式</title>
-                <link>https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
+                <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
                 <pubDate>Tue, 24 Jul 2018 13:44:23 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -4764,8 +4764,8 @@ this is observer ob2 and the event is event2</code></pre></td></tr></table>
         
             <item>
                 <title>efk学习-ElasticSearch</title>
-                <link>https://blog.vgmdj.cn/posts/efk%E5%AD%A6%E4%B9%A0-elasticsearch/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/efk%E5%AD%A6%E4%B9%A0-elasticsearch/</guid>
+                <link>https://blog.vgmdj.cn/post/efk%E5%AD%A6%E4%B9%A0-elasticsearch/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/efk%E5%AD%A6%E4%B9%A0-elasticsearch/</guid>
                 <pubDate>Thu, 12 Jul 2018 10:24:51 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -4886,8 +4886,8 @@ this is observer ob2 and the event is event2</code></pre></td></tr></table>
         
             <item>
                 <title>消息队列学习-RabbitMQ健康检查</title>
-                <link>https://blog.vgmdj.cn/posts/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%AD%A6%E4%B9%A0-rabbitmq%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%AD%A6%E4%B9%A0-rabbitmq%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/</guid>
+                <link>https://blog.vgmdj.cn/post/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%AD%A6%E4%B9%A0-rabbitmq%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%AD%A6%E4%B9%A0-rabbitmq%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/</guid>
                 <pubDate>Mon, 18 Jun 2018 23:50:51 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -5111,8 +5111,8 @@ func (ch *Channel) QueueDeclarePassive(name string, durable, autoDelete, exclusi
         
             <item>
                 <title>efk学习-简介</title>
-                <link>https://blog.vgmdj.cn/posts/efk%E5%AD%A6%E4%B9%A0-%E7%AE%80%E4%BB%8B/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/efk%E5%AD%A6%E4%B9%A0-%E7%AE%80%E4%BB%8B/</guid>
+                <link>https://blog.vgmdj.cn/post/efk%E5%AD%A6%E4%B9%A0-%E7%AE%80%E4%BB%8B/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/efk%E5%AD%A6%E4%B9%A0-%E7%AE%80%E4%BB%8B/</guid>
                 <pubDate>Sun, 10 Jun 2018 10:24:51 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -5189,8 +5189,8 @@ Document下的分组，可以通过Type来筛选Document，比如天气的Docume
         
             <item>
                 <title>js学习-总览</title>
-                <link>https://blog.vgmdj.cn/posts/redis%E5%AD%A6%E4%B9%A0-lru/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/redis%E5%AD%A6%E4%B9%A0-lru/</guid>
+                <link>https://blog.vgmdj.cn/post/redis%E5%AD%A6%E4%B9%A0-lru/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/redis%E5%AD%A6%E4%B9%A0-lru/</guid>
                 <pubDate>Mon, 21 May 2018 10:46:12 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -5288,8 +5288,8 @@ Document下的分组，可以通过Type来筛选Document，比如天气的Docume
         
             <item>
                 <title>分布式学习-分布式事务</title>
-                <link>https://blog.vgmdj.cn/posts/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</guid>
+                <link>https://blog.vgmdj.cn/post/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/</guid>
                 <pubDate>Mon, 14 May 2018 14:38:21 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -5420,8 +5420,8 @@ ACID和BASE代表了两种截然相反的设计哲学
         
             <item>
                 <title>微服务学习-总览</title>
-                <link>https://blog.vgmdj.cn/posts/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
+                <link>https://blog.vgmdj.cn/post/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
                 <pubDate>Fri, 11 May 2018 14:31:31 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -5539,8 +5539,8 @@ ACID和BASE代表了两种截然相反的设计哲学
         
             <item>
                 <title>容器学习-k8s插件</title>
-                <link>https://blog.vgmdj.cn/posts/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E6%8F%92%E4%BB%B6/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E6%8F%92%E4%BB%B6/</guid>
+                <link>https://blog.vgmdj.cn/post/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E6%8F%92%E4%BB%B6/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E6%8F%92%E4%BB%B6/</guid>
                 <pubDate>Tue, 01 May 2018 14:52:51 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -5731,8 +5731,8 @@ kubectl edit node &lt;node-name&gt;</code></pre></td></tr></table>
         
             <item>
                 <title>容器学习-k8s搭建</title>
-                <link>https://blog.vgmdj.cn/posts/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E6%90%AD%E5%BB%BA/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E6%90%AD%E5%BB%BA/</guid>
+                <link>https://blog.vgmdj.cn/post/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E6%90%AD%E5%BB%BA/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E5%AE%B9%E5%99%A8%E5%AD%A6%E4%B9%A0-k8s%E6%90%AD%E5%BB%BA/</guid>
                 <pubDate>Thu, 26 Apr 2018 14:28:51 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -6086,8 +6086,8 @@ echo &#39;{
         
             <item>
                 <title>微信开发问题小结</title>
-                <link>https://blog.vgmdj.cn/posts/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93/</guid>
+                <link>https://blog.vgmdj.cn/post/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93/</guid>
                 <pubDate>Mon, 23 Apr 2018 16:23:50 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -6216,8 +6216,8 @@ func AuthCodeURL(appId, redirectURI, scope, state string) string {
         
             <item>
                 <title>计算机网络学习-常见问题集</title>
-                <link>https://blog.vgmdj.cn/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E9%9B%86/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E9%9B%86/</guid>
+                <link>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E9%9B%86/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E9%9B%86/</guid>
                 <pubDate>Thu, 12 Apr 2018 15:37:05 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -6322,8 +6322,8 @@ func AuthCodeURL(appId, redirectURI, scope, state string) string {
         
             <item>
                 <title>mysql学习-索引</title>
-                <link>https://blog.vgmdj.cn/posts/mysql%E5%AD%A6%E4%B9%A0-%E7%B4%A2%E5%BC%95/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/mysql%E5%AD%A6%E4%B9%A0-%E7%B4%A2%E5%BC%95/</guid>
+                <link>https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E7%B4%A2%E5%BC%95/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E7%B4%A2%E5%BC%95/</guid>
                 <pubDate>Fri, 06 Apr 2018 10:00:49 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -6787,8 +6787,8 @@ possible_keys: rental_date
         
             <item>
                 <title>go语言学习-并发控制</title>
-                <link>https://blog.vgmdj.cn/posts/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6/</guid>
+                <link>https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6/</guid>
                 <pubDate>Sun, 01 Apr 2018 09:57:51 +0800</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -7002,8 +7002,8 @@ fmt.Printf(&#34;ok&#34;)</code></pre></td></tr></table>
         
             <item>
                 <title>程序员进化之路-技术提升</title>
-                <link>https://blog.vgmdj.cn/posts/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BF%9B%E5%8C%96%E4%B9%8B%E8%B7%AF-%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BF%9B%E5%8C%96%E4%B9%8B%E8%B7%AF-%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/</guid>
+                <link>https://blog.vgmdj.cn/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BF%9B%E5%8C%96%E4%B9%8B%E8%B7%AF-%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%BF%9B%E5%8C%96%E4%B9%8B%E8%B7%AF-%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/</guid>
                 <pubDate>Sat, 31 Mar 2018 23:18:51 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -7206,8 +7206,8 @@ fmt.Printf(&#34;ok&#34;)</code></pre></td></tr></table>
         
             <item>
                 <title>go语言学习-interface</title>
-                <link>https://blog.vgmdj.cn/posts/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-interface/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-interface/</guid>
+                <link>https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-interface/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-interface/</guid>
                 <pubDate>Fri, 30 Mar 2018 15:41:12 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -7736,8 +7736,8 @@ func main() {
         
             <item>
                 <title>go语言学习-map</title>
-                <link>https://blog.vgmdj.cn/posts/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-map/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-map/</guid>
+                <link>https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-map/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-map/</guid>
                 <pubDate>Fri, 30 Mar 2018 13:23:51 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -8133,8 +8133,8 @@ before the table grows. Typical tables will be somewhat less loaded.</code></pre
         
             <item>
                 <title>服务器安全防护</title>
-                <link>https://blog.vgmdj.cn/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/</guid>
+                <link>https://blog.vgmdj.cn/post/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/</guid>
                 <pubDate>Tue, 27 Mar 2018 13:23:51 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -8482,8 +8482,8 @@ PasswordAuthentication no</code></pre></td></tr></table>
         
             <item>
                 <title>mysql学习-事务</title>
-                <link>https://blog.vgmdj.cn/posts/mysql%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E5%8A%A1/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/mysql%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E5%8A%A1/</guid>
+                <link>https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E5%8A%A1/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E5%8A%A1/</guid>
                 <pubDate>Thu, 22 Mar 2018 15:23:50 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -8654,8 +8654,8 @@ repeatable read 是mysql的默认隔离级别</p></li>
         
             <item>
                 <title>mysql学习-锁</title>
-                <link>https://blog.vgmdj.cn/posts/mysql%E5%AD%A6%E4%B9%A0-%E9%94%81/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/mysql%E5%AD%A6%E4%B9%A0-%E9%94%81/</guid>
+                <link>https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E9%94%81/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E9%94%81/</guid>
                 <pubDate>Thu, 22 Mar 2018 11:22:49 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -8849,8 +8849,8 @@ commit</code></pre></td></tr></table>
         
             <item>
                 <title>mysql学习-总览</title>
-                <link>https://blog.vgmdj.cn/posts/mysql%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/mysql%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
+                <link>https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/mysql%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
                 <pubDate>Wed, 21 Mar 2018 15:23:50 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -8956,8 +8956,8 @@ commit</code></pre></td></tr></table>
         
             <item>
                 <title>数据库学习</title>
-                <link>https://blog.vgmdj.cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/</guid>
+                <link>https://blog.vgmdj.cn/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0/</guid>
                 <pubDate>Tue, 20 Mar 2018 00:23:50 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -9077,8 +9077,8 @@ commit</code></pre></td></tr></table>
         
             <item>
                 <title>计算机网络学习-页面的请求过程</title>
-                <link>https://blog.vgmdj.cn/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B/</guid>
+                <link>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B/</guid>
                 <pubDate>Thu, 08 Mar 2018 13:42:29 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -9153,8 +9153,8 @@ commit</code></pre></td></tr></table>
         
             <item>
                 <title>计算机网络学习-socket套接字分析</title>
-                <link>https://blog.vgmdj.cn/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-socket%E5%A5%97%E6%8E%A5%E5%AD%97%E5%88%86%E6%9E%90/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-socket%E5%A5%97%E6%8E%A5%E5%AD%97%E5%88%86%E6%9E%90/</guid>
+                <link>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-socket%E5%A5%97%E6%8E%A5%E5%AD%97%E5%88%86%E6%9E%90/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-socket%E5%A5%97%E6%8E%A5%E5%AD%97%E5%88%86%E6%9E%90/</guid>
                 <pubDate>Thu, 08 Mar 2018 13:42:05 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -9519,8 +9519,8 @@ IPAddress,port);
         
             <item>
                 <title>计算机网络学习-协议分析</title>
-                <link>https://blog.vgmdj.cn/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/</guid>
+                <link>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/</guid>
                 <pubDate>Thu, 08 Mar 2018 13:40:56 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -9926,8 +9926,8 @@ Server Hello Done 通知客户端 Server Hello 过程结束。</li>
         
             <item>
                 <title>计算机网络学习-测试通信</title>
-                <link>https://blog.vgmdj.cn/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E6%B5%8B%E8%AF%95%E9%80%9A%E4%BF%A1/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E6%B5%8B%E8%AF%95%E9%80%9A%E4%BF%A1/</guid>
+                <link>https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E6%B5%8B%E8%AF%95%E9%80%9A%E4%BF%A1/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E6%B5%8B%E8%AF%95%E9%80%9A%E4%BF%A1/</guid>
                 <pubDate>Thu, 08 Mar 2018 13:39:52 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -10136,8 +10136,8 @@ smtp下，向目标发送的必须是base64转换后的内容。而pop3下就不
         
             <item>
                 <title>linux 常用命令</title>
-                <link>https://blog.vgmdj.cn/posts/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+                <link>https://blog.vgmdj.cn/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
                 <pubDate>Wed, 07 Mar 2018 15:23:50 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -10368,8 +10368,8 @@ git config --global --unset https.proxy</code></pre></td></tr></table>
         
             <item>
                 <title>go语言学习-sync</title>
-                <link>https://blog.vgmdj.cn/posts/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-sync/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-sync/</guid>
+                <link>https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-sync/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-sync/</guid>
                 <pubDate>Wed, 02 Aug 2017 13:23:51 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -10812,8 +10812,8 @@ sync.Pool的使用非常简单，提供两个方法:Get和Put 和一个初始化
         
             <item>
                 <title>go语言学习-总览</title>
-                <link>https://blog.vgmdj.cn/posts/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
+                <link>https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
                 <pubDate>Tue, 01 Aug 2017 13:23:51 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -10882,8 +10882,8 @@ sync.Pool的使用非常简单，提供两个方法:Get和Put 和一个初始化
         
             <item>
                 <title>设计模式学习-单例模式</title>
-                <link>https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+                <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
                 <pubDate>Wed, 05 Jul 2017 16:25:23 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -10994,8 +10994,8 @@ golang相关实现例子:  <a href="https://github.com/vgmdj/go_practice/tree/ma
         
             <item>
                 <title>设计模式学习-策略模式</title>
-                <link>https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</guid>
+                <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</guid>
                 <pubDate>Tue, 04 Jul 2017 16:25:23 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -11192,8 +11192,8 @@ golang相关实现例子:  <a href="https://github.com/vgmdj/go_practice/tree/ma
         
             <item>
                 <title>设计模式学习-抽象工厂模式</title>
-                <link>https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
+                <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
                 <pubDate>Mon, 03 Jul 2017 16:25:23 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -11516,8 +11516,8 @@ func (df DatabaseFactory) CreateDepartment() IDepartment {
         
             <item>
                 <title>设计模式学习-工厂方法模式</title>
-                <link>https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</guid>
+                <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</guid>
                 <pubDate>Sun, 02 Jul 2017 16:25:23 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -11810,8 +11810,8 @@ su.Select(user)
         
             <item>
                 <title>设计模式学习-简单工厂模式</title>
-                <link>https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
+                <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
                 <pubDate>Sat, 01 Jul 2017 18:39:52 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -12176,8 +12176,8 @@ this is sub operation, 2-1=1
         
             <item>
                 <title>设计模式学习-设计原则</title>
-                <link>https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</guid>
+                <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</guid>
                 <pubDate>Sat, 01 Jul 2017 14:50:28 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -12320,8 +12320,8 @@ this is sub operation, 2-1=1
         
             <item>
                 <title>设计模式学习-总览</title>
-                <link>https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%80%BB%E8%A7%88/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%80%BB%E8%A7%88/</guid>
+                <link>https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%80%BB%E8%A7%88/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%80%BB%E8%A7%88/</guid>
                 <pubDate>Sat, 01 Jul 2017 14:39:52 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -12439,8 +12439,8 @@ golang相关实现例子:  <a href="https://github.com/vgmdj/go_practice/tree/ma
         
             <item>
                 <title>算法学习-排序</title>
-                <link>https://blog.vgmdj.cn/posts/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E6%8E%92%E5%BA%8F/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E6%8E%92%E5%BA%8F/</guid>
+                <link>https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E6%8E%92%E5%BA%8F/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E6%8E%92%E5%BA%8F/</guid>
                 <pubDate>Sat, 18 Mar 2017 16:23:50 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -13003,8 +13003,8 @@ func radixSort(nums []int, base int) {
         
             <item>
                 <title>我的职业发展之路</title>
-                <link>https://blog.vgmdj.cn/posts/%E6%88%91%E7%9A%84%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E6%88%91%E7%9A%84%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/</guid>
+                <link>https://blog.vgmdj.cn/post/%E6%88%91%E7%9A%84%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E6%88%91%E7%9A%84%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/</guid>
                 <pubDate>Sun, 05 Mar 2017 16:23:51 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -13088,8 +13088,8 @@ func radixSort(nums []int, base int) {
         
             <item>
                 <title>算法学习-总览</title>
-                <link>https://blog.vgmdj.cn/posts/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
+                <link>https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E6%80%BB%E8%A7%88/</guid>
                 <pubDate>Sat, 04 Mar 2017 16:23:50 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -13197,8 +13197,8 @@ T(n) = aT(n/b)+O(n^c)
         
             <item>
                 <title>github&#43;hexo blog 搭建过程-配置</title>
-                <link>https://blog.vgmdj.cn/posts/github-hexo-blog-%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B-%E9%85%8D%E7%BD%AE/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/github-hexo-blog-%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B-%E9%85%8D%E7%BD%AE/</guid>
+                <link>https://blog.vgmdj.cn/post/github-hexo-blog-%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B-%E9%85%8D%E7%BD%AE/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/github-hexo-blog-%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B-%E9%85%8D%E7%BD%AE/</guid>
                 <pubDate>Sat, 04 Mar 2017 02:34:39 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -13690,8 +13690,8 @@ id: &#39;{{ page.date }}&#39;,</code></pre></td></tr></table>
         
             <item>
                 <title>github&#43;hexo blog 搭建过程-准备</title>
-                <link>https://blog.vgmdj.cn/posts/github-blog-%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B-%E5%87%86%E5%A4%87/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/github-blog-%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B-%E5%87%86%E5%A4%87/</guid>
+                <link>https://blog.vgmdj.cn/post/github-blog-%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B-%E5%87%86%E5%A4%87/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/github-blog-%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B-%E5%87%86%E5%A4%87/</guid>
                 <pubDate>Fri, 03 Mar 2017 16:23:50 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
@@ -13815,8 +13815,8 @@ ps: 最好的教程都来源于代码和注释，其次是官网，本篇只是�
         
             <item>
                 <title>Hexo 使用指南</title>
-                <link>https://blog.vgmdj.cn/posts/hexo-introduction/</link>
-                <guid isPermaLink="true">https://blog.vgmdj.cn/posts/hexo-introduction/</guid>
+                <link>https://blog.vgmdj.cn/post/hexo-introduction/</link>
+                <guid isPermaLink="true">https://blog.vgmdj.cn/post/hexo-introduction/</guid>
                 <pubDate>Thu, 02 Mar 2017 16:23:50 +0000</pubDate>
                 
                     <author>vgmdj.wr@gmail.com (VGMDJ)</author>
