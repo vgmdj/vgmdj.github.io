@@ -1,379 +1,468 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>设计模式 · vgmdj&#39;s blog</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<html lang="en-US" data-theme="light">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" /><meta name="theme-color" content="#fff" />
+        <script>
+            const userPrefers = localStorage.getItem('theme');
+            const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            const lightModeMediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+            if (userPrefers === "dark") {
+                changeModeMeta("dark");
+            } else if (userPrefers === "light") {
+                changeModeMeta("light");
+            } else if (darkModeMediaQuery.matches) {
+                changeModeMeta("dark");
+            } else if (lightModeMediaQuery.matches) {
+                changeModeMeta("light");
+            }
+            function changeModeMeta() {
+                document.documentElement.setAttribute('data-theme', arguments[0]);
+                if (arguments[0] === "dark") {
+                    changeThemeColor("#1c1c21");
+                } else {
+                    changeThemeColor("#fff");
+                }
+            }
+            function changeThemeColor() {
+                document.querySelector('meta[name="theme-color"]').setAttribute('content', arguments[0]);
+            }
+        </script>
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+    
 
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    
+    <meta name="renderer" content="webkit" />
+
+    <meta name="generator" content="Hugo 0.62.2" />
+
+    <title>Categories: 设计模式 | vgmdj&#39;s blog</title>
+
+    <link rel="stylesheet" href="/css/meme.min.8f7553b87cc8fcf4e649b2e570019a1dd7477fe8881b0a6fcf08fb3c86733d7c.css" integrity="sha256-j3VTuHzI/PTmSbLlcAGaHddHf+iIGwpvzwj7PIZzPXw=" data-instant-track />
+
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,500,700,700i|Source+Code+Pro:400,400i,700,700i|Comfortaa:700&display=swap" rel="stylesheet" />
+
+    <meta name="author" content="VGMDJ" />
+    <meta name="description" content="vgmdj&#39;s personal blog." />
+    <meta name="keywords" content="vgmdj, blog, wangrui" />
+    
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="vgmdj&#39;s blog" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="vgmdj&#39;s blog" />
+    <meta name="msapplication-starturl" content="../../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    
+
+    
+    <link rel="canonical" href="https://blog.vgmdj.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" />
 
 
-<meta name="author" content="VGMDJ" />
-  <meta name="description" content="vgmdj&#39;s blog" />
-  <meta name="keywords" content="vgmdj, blog, it" />
+
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "datePublished": "2017-07-20T20:17:43+00:00",
+        "dateModified": "2019-02-18T20:30:47+00:00",
+        "url": "https://blog.vgmdj.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/",
+        "name": "Categories: 设计模式",
+        "description": "vgmdj's personal blog.",
+        "keywords": "vgmdj, blog, wangrui",
+        "image": "https://blog.vgmdj.cn/icons/apple-touch-icon.png",
+        "license": "[VGMDJ.WR](https://blog.vgmdj.cn)",
+        "publisher": {
+            "@type": "Organization",
+            "name": "vgmdj's blog",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://blog.vgmdj.cn/icons/apple-touch-icon.png"
+            },
+            "url": "https://blog.vgmdj.cn/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://blog.vgmdj.cn/"
+        }
+    }
+</script>
+
+    
+
+
+
+<meta name="twitter:card" content="summary" />
+
+<meta name="twitter:site" content="@vgmdj" />
+<meta name="twitter:creator" content="@vgmdj" />
+
+    
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.49.2" />
-
-
-<link rel="canonical" href="https://blog.vgmdj.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" />
-<link href="https://blog.vgmdj.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.xml" rel="alternate" type="application/rss+xml" title="vgmdj&#39;s blog" />
-  <link href="https://blog.vgmdj.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.xml" rel="feed" type="application/rss+xml" title="vgmdj&#39;s blog" />
-
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-
-
-
-<script async src="////busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
-<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
-
-
-<meta property="og:title" content="设计模式" />
-<meta property="og:description" content="vgmdj&#39;s blog" />
-<meta property="og:type" content="website" />
+<meta property="og:title" content="Categories: 设计模式" />
+<meta property="og:description" content="vgmdj&#39;s personal blog." />
 <meta property="og:url" content="https://blog.vgmdj.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" />
-<meta property="og:updated_time" content="2019-02-18T13:40:48&#43;00:00"/>
+<meta property="og:site_name" content="vgmdj&#39;s blog" />
+<meta property="og:locale" content="en-US" /><meta property="og:image" content="https://blog.vgmdj.cn/icons/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
 
-<meta itemprop="name" content="设计模式">
-<meta itemprop="description" content="vgmdj&#39;s blog">
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="设计模式"/>
-<meta name="twitter:description" content="vgmdj&#39;s blog"/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
+    
 </head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">keep thinking</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/messages/">
-        <li class="mobile-menu-item">Messages</li>
-      </a><a href="/about/">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">keep thinking</a>
-</div>
 
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/messages/">Messages</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/">About</a>
-      </li>
-  </ul>
-</nav>
+    <body>
+        <div class="container">
+            
+    <header class="header">
+        <div class="site-brand">
+            
+            <a href="/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.146 26.458" class="brand"><path d="M58.216 17.03v-2.505c1.084 0 3.793.067 5.351.225l.068-.067c-.045-.204-.068-.655-.068-.858 0-.204.023-.633.068-.836l-.068-.067c-1.332.112-2.687.225-5.35.225V11.5c0-.384.022-2.438.18-2.98 3.025 0 6.457.27 6.457.27l.045-.09c-.022-.18-.045-.722-.045-.925 0-.18 0-.474.045-.79l-.045-.068c-.361.045-.88.068-1.355.068h-6.863c-.768 0-1.897-.068-1.897-.068l-.045.068c.18 1.287.271 2.822.271 4.515v5.532c0 1.693-.09 3.296-.27 4.515l.022.068s1.129-.068 1.919-.068h7.09c.473 0 .993.023 1.354.068l.045-.068c-.045-.293-.045-.587-.045-.813 0-.225.022-1.06.045-1.241l-.045-.09s-3.658.496-6.683.496c-.158-.542-.18-2.483-.18-2.867zm-20.694-3.363l-.113-.068c0-.497-.022-1.445-.045-1.648-.045-.136-.068-.226-.203-.226-.655.113-2.123.113-2.913.068l-.045.067c.158.971.248 2.71.248 4.38v1.242c0 1.694-.09 2.845-.27 4.064l.022.068s.948-.068 1.739-.068c.767 0 1.67.068 1.67.068l.045-.068c-.18-1.287-.225-2.348-.225-4.064v-2.28c.948-1.152 1.76-1.829 2.393-1.829.858 0 1.332.316 1.332 1.829v2.28c0 1.694-.09 2.845-.27 4.064l.022.068s1.016-.068 1.806-.068c.767 0 1.648.068 1.648.068l.045-.068c-.18-1.287-.27-2.348-.27-4.064v-1.987c0-.316 0-.406-.023-.677 1.083-1.197 1.58-1.445 2.46-1.445.723 0 1.242.497 1.242 2.01v2.1c0 1.693-.09 2.844-.27 4.063l.022.068s1.016-.068 1.806-.068c.768 0 1.648.068 1.648.068l.046-.068c-.181-1.287-.271-2.348-.271-4.064v-2.258c0-2.257-.79-3.59-3.229-3.59-1.129 0-2.303.452-3.59 1.807-.451-1.129-1.084-1.806-3.093-1.806-1.106 0-2.506.925-3.364 2.032zm-12.436 2.122c.068-1.106.339-1.874.677-2.348a1.645 1.645 0 0 1 1.377-.677c.904 0 1.468 1.06 1.468 3.025zm6.209 3.341c-1.061.858-2.145.926-3.093.926-1.107 0-1.92-.293-2.461-.88-.497-.542-.745-1.332-.745-2.371h2.235c2.258 0 4.2.045 4.2.045l.135-.135c0-2.823-.79-5.08-4.268-5.08-1.241 0-2.596.406-3.5 1.129-1.083.903-1.828 2.28-1.828 4.131 0 1.332.474 2.755 1.423 3.703.767.813 2.1 1.174 3.793 1.174 1.625 0 3.228-.52 4.47-1.942 0-.293-.135-.7-.361-.7zM4 6.803c-.835 4.832-2.032 10.499-2.98 14.811.248-.068.767-.068 1.038-.068.249 0 1.016 0 1.265.068.067-2.37.632-7.157 1.241-10.68l.068.023a153.476 153.476 0 0 1 4.29 10.59h1.445c1.648-3.749 3.454-7.135 5.373-10.612h.068c.43 3.567.723 6.931 1.039 10.679.338-.068 1.422-.068 1.76-.068.34 0 1.31 0 1.649.068-.7-4.9-1.197-9.257-1.784-14.811h-2.009L10.82 17.302h-.09c-1.784-3.568-3.094-6.864-4.426-10.499z"/></svg></a>
+            
+        </div>
     </header>
 
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          
+            
+    <nav class="nav">
+        <ul class="menu" id="menu">
+            
+                
+            
+            
+            
+                <li class="menu-item"><a href="/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="icon menu-item-icon"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg><span class="menu-item-name">Home</span></a>
+                </li>
+            
+                <li class="menu-item"><a href="/posts/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon menu-item-icon"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">Posts</span></a>
+                </li>
+            
+                <li class="menu-item"><a href="/categories/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon menu-item-icon"><path d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"/></svg><span class="menu-item-name">Categories</span></a>
+                </li>
+            
+                <li class="menu-item"><a href="/tags/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon menu-item-icon"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg><span class="menu-item-name">Tags</span></a>
+                </li>
+            
+                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon menu-item-icon"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">About</span></a>
+                </li>
+            
+        </ul>
+    </nav>
 
-<section id="archive" class="archive">
-  
+            
+            
     
-      <div class="archive-title category">
-        <h2 class="archive-name">设计模式</h2>
-      </div>
-    
-  
-
-  
-    <div class="archive-post">
-      <span class="archive-post-time">
-        2019-02-18 13:40:48
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" class="archive-post-link">
-          设计模式学习-模板方法模式
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <span class="archive-post-time">
-        2018-09-24 16:29:48
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" class="archive-post-link">
-          设计模式学习-原型模式
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <span class="archive-post-time">
-        2018-09-24 16:29:48
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" class="archive-post-link">
-          设计模式学习-代理模式
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <span class="archive-post-time">
-        2018-08-20 16:29:48
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/" class="archive-post-link">
-          设计模式学习-建造者模式
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <span class="archive-post-time">
-        2018-07-26 18:03:47
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/" class="archive-post-link">
-          设计模式学习-装饰模式
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <span class="archive-post-time">
-        2018-07-24 13:44:23
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" class="archive-post-link">
-          设计模式学习-观察者模式
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <span class="archive-post-time">
-        2017-07-05 16:25:23
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" class="archive-post-link">
-          设计模式学习-单例模式
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <span class="archive-post-time">
-        2017-07-04 16:25:23
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" class="archive-post-link">
-          设计模式学习-策略模式
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <span class="archive-post-time">
-        2017-07-03 16:25:23
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="archive-post-link">
-          设计模式学习-抽象工厂模式
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <span class="archive-post-time">
-        2017-07-02 16:25:23
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" class="archive-post-link">
-          设计模式学习-工厂方法模式
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <span class="archive-post-time">
-        2017-07-01 18:39:52
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="archive-post-link">
-          设计模式学习-简单工厂模式
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <span class="archive-post-time">
-        2017-07-01 14:50:28
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" class="archive-post-link">
-          设计模式学习-设计原则
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <span class="archive-post-time">
-        2017-07-01 14:39:52
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%80%BB%E8%A7%88/" class="archive-post-link">
-          设计模式学习-总览
-        </a>
-      </span>
-    </div>
-  
-</section>
-
-<nav class="pagination">
-  
-  
-</nav>
-
-        </div>
         
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:vgmdj.wr@gmail.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://github.com/vgmdj" class="iconfont icon-github" title="github"></a>
-  <a href="https://blog.vgmdj.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    主题 - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  <div class="busuanzi-footer">
-    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
-    <span class="division">|</span>
-    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
-  </div>
-
-  <span class="copyright-year">
-    &copy; 
+            
+        
+        <div id="theme-toggle" onclick="modeSwitcher()">🌞</div>
     
-      2017 - 
-    2019
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">vgmdj</span>
-  </span>
-</div>
+
+            
+    
+        <main class="main list" id="main">
+            <div class="main-inner">
+                <div class="content list-group">
+                    
+                        
+                        
+                            <h1 class="list-title">设计模式</h1>
+                        
+                    
+
+                    
+
+                    
+                    
+
+                    
+                    
+                    
+
+                    
+                    
+                        
+                        
+                    
+
+                    
+                    
+                    
+                        <ul class="list-part">
+                            
+                            
+                                
+                                
+                            
+                            
+                            
+                            
+                                
+                            
+                            
+                            <h2 class="list-year">2019<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="icon chinese-zodiac"><path d="M558 775q-7 17-4 28 3 12 15 13 9 2 19-8 10-11 14-28 4-18-6-36-9 0-25 12-9 10-13 19zm358-229q-4-7-8-10-2-2-6-5-2-2-6 0t-6 2q-2 1-4 4-1 2-4 7-1 1-1 3t2 6q2 3 9-1 10-4 10 7-1 14-13 16h-3q-3-20-38-48-53-44-153-46H562q-1 2-3 4t-3 11-4 16q-3 6 2 17t8 15q19 21 35 55 16 33 15 66v71q0 11 1 32 1 20 4 29 4 10 7 12l2 2 10 5q4 1 11-1t15-8q7-7 15-25t16-43q18 1 55 3v7q0 4 1 17 1 12 5 19t10 15q6 9 17 5 15-2 18-14t0-25q-3-14 1-28 5-13 9 11 1 10 3 31 1 9 2 11 1 6 8 9t18-1q10-4 13-14 4-8 4-27 0-18 5-43 5-24 22-50 8-10 9-39 1-28-4-35l18-9q14-8 13-21 0-7-4-15zM593 688q6-30 3-55-3-24-13-44-11-19-19-31-8-13-17-19-3-2-7-7-3-36-11-63-7-28-17-43-10-16-17-24-8-8-15-11l-6-3q8-53-18-58h-3q-3 0-7 1-5 2-10 5-5 4-9 9t-9 10-7 8-7 9q-35 0-141-2-3-11-8-18t-10-6q-2-1-4-1-7-1-12 1t-8 8-4 11-1 13q0 9 1 12t1 10q0 1 1 3h1v9q0 6 3 11-10 13-16 32-6 20-9 38-3 19-4 38-1 20-6 32-4 12-9 18-2 3-19 20-10 9-29 27-11 12-19 29-8 16-8 28v3q8 51 57 80 49 45 142 60 32 5 60 5 52 0 90-17 121-36 140-128zm-163 9q-2 0-3-1t-2-1-3-2-3-1q-5-10-2-30 3-19 15-14 13 4 19 9 5 5 3 11t-5 12q-4 5-11 10t-8 7zm-7-243q10 0 16 25-5 25-19 25-7-1-12-13v-1q-1-2-2-8-2-6 0-12 1-7 5-11t12-5zm-116-3q9 3 9 30-17 50-32 7-1-17 7-29 8-11 16-8zm-51 260q-5-10-8-23-3-14 2-24t19-9q15 1 20 10t1 18l-3 9h1q-15 21-32 19z"/></svg></h2>
+                            
+                                
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    <h3 class="list-month">February</h3>
+                                    
+    <li class="list-item">
+        <a href="/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" class="list-item-title">设计模式学习-模板方法模式</a>
+        <time datetime="2019-02-18T13:40:48+00:00" class="list-item-time">February 18</time>
+    </li>
+
+                                
+                            
+                        </ul>
+                    
+                        <ul class="list-part">
+                            
+                            
+                                
+                                
+                            
+                            
+                            
+                            
+                                
+                            
+                            
+                            <h2 class="list-year">2018<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="icon chinese-zodiac"><path d="M346 553q-4 17-17 70 38-1 66-9 13-4 27-10 16-8 34-21 31-22 91-68 32-25 53-59 22-33 31-65t12-58q3-25 3-44 0-5-1-15 10-3 20-8 9-5 15-9 4-3 11-9 3-2 10-9-24-24-47-34-22-9-37-4-14 5-26 13-12 7-18 17-1 3-5 8h-20q-24-13-63-16t-64 0q-9 1-26 3-4-25-17-35t-29-8q-15 2-30 7-14 5-25 11-4 3-10 7 2 24 43 24-8 97-58 133-8-1-24-2-13-1-18-3h-6q-4-12-9-21-5-10-11-13-4-1-12-5-5-2-8-1h-3q-17 1-26 23-10 21-11 51v5q0 27 10 55 10 31 27 54 39 45 168 45zm99-222q1-11 6-16 4-5 11-8h2l1 1q5 3 8 11t3 16v8q-3 11-19 17-13-6-12-29zm-95-12q10-7 18-2 7 5 8 31 0 15-22 23h-5q-1-3-4-14-2-7-2-15 0-9 1-14t6-9zm-33 252q-17-1-68-5-24 34-25 53 0 3-1 8-1 6 0 11 1 4-1 9t1 10 3 8 5 8q6 6 8 4 2-1 12 0 10 2 15-3 25-9 37-34 12-26 13-48 1-7 1-21zm276-74l-9 12q-6 7-26 26-19 20-43 37-23 17-58 37-35 19-74 32-61 142-77 181-8 21-12 34-4 12-9 33-5 22-3 35 2 14 11 23 18 15 61-47 43-63 68-121l15 9q-7 12-16 31-9 18-24 56-14 38-10 54 8 35 29 36 33 1 67-92 7-18 21-55 0 2 2 7 1 4 6 18 5 15 12 26t22 26q14 14 33 23 1-5 4-16 2-9 6-18 4-8 10-18t13-20q8-9 17-17t21-11q13-3 27-4t32 6q-4 0-12 1t-25 6q-18 5-31 15-13 11-25 33-11 23-9 50h-3q-2 1-8 2l-12 4q-4 1-14 4-8 2-15 5t-14 5-12 6q-4 4-9 7t-3 7q0 6 1 10 1 5 6 9t16 8q10 4 29 5 20 1 47 1 28 0 70-5t97-10q36-5 44-45 9-40-4-82-12-42-27-68-5-8-23-30-17-21-38-45-20-23-44-54-23-31-43-57-19-27-36-57-16-29-19-48zm312 184q-8 9-23 19-16 10-30 18-10 6-29 17-14 8-23 10-3 2-8 5 11 4 20 22 9 17 10 29 1 13 3 15 8 2 13 2t7-1q1-1 3-1 60-27 60-98 0-9-1-19 0-6-2-18z"/></svg></h2>
+                            
+                                
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    <h3 class="list-month">September</h3>
+                                    
+    <li class="list-item">
+        <a href="/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" class="list-item-title">设计模式学习-代理模式</a>
+        <time datetime="2018-09-24T16:29:48+00:00" class="list-item-time">September 24</time>
+    </li>
+
+    <li class="list-item">
+        <a href="/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" class="list-item-title">设计模式学习-原型模式</a>
+        <time datetime="2018-09-24T16:29:48+00:00" class="list-item-time">September 24</time>
+    </li>
+
+                                
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    <h3 class="list-month">August</h3>
+                                    
+    <li class="list-item">
+        <a href="/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/" class="list-item-title">设计模式学习-建造者模式</a>
+        <time datetime="2018-08-20T16:29:48+00:00" class="list-item-time">August 20</time>
+    </li>
+
+                                
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    <h3 class="list-month">July</h3>
+                                    
+    <li class="list-item">
+        <a href="/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/" class="list-item-title">设计模式学习-装饰模式</a>
+        <time datetime="2018-07-26T18:03:47+00:00" class="list-item-time">July 26</time>
+    </li>
+
+    <li class="list-item">
+        <a href="/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" class="list-item-title">设计模式学习-观察者模式</a>
+        <time datetime="2018-07-24T13:44:23+00:00" class="list-item-time">July 24</time>
+    </li>
+
+                                
+                            
+                        </ul>
+                    
+                        <ul class="list-part">
+                            
+                            
+                                
+                                
+                            
+                            
+                            
+                            
+                                
+                            
+                            
+                            <h2 class="list-year">2017<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="icon chinese-zodiac"><path d="M182 522q24 25 55 0 12-11 26-12 15-1 24 2t8 3v-2q5-24 33-19 14 2 23-6t11-16q1-4 3-11 7-1 14-12t10-20q1-4 3-11-5 0-15-10l-23-23q-12-14-23-28-12-14-20-23-2-3-7-10-1-8-3-32-9-6-32-7-22-1-39-1-6 1-18 2-1 1-5 3-3 1-7 4-9 6-25 17-2 1-7 6-13-3-38-8 5 8 18 33-4 5-17 23 2 0 7-2 4-1 14-2 9-1 16 0 3 0 7 2t9 7q5 6 14 18-9-4-17-6-5-1-14-4-6-1-10-1h-7q-21 14-28 22-4 4-4 7t3 4q6 3 12 4t19 1q12 0 12 1 6 1 7 5 1 5-1 8-1 1-2 4-21 10-32 25-11 16-12 31t1 28q2 12 7 21t10 9q5-1 14-9 8-8 15-13t11-2zm62-199q-8 5-25 4-1-3 0-5t3-5 5-3 7-3q2 2 4 5 1 2 4 3t2 3v1zm51-51q5-10 21-40-8 4-34 16-5-7-18-30-5 7-22 30-8-4-30-16 3 10 11 40h72zm582 117q-156-25-200 78 0-3 1-6t2-12 5-17 7-20q3-11 14-21 10-10 17-21 7-10 25-17 17-7 30-13 14-7 40-6-7-3-18-6-12-3-42-3-31 0-55 16-23 15-47 58-23 43-28 114-59-11-177-32-14-9-54-35-8 19-32 75v14h25q1 2 1 5t4 13q3 5 8 17 5 8 13 17 8 10 16 18t23 11q14 3 29 4 16 1 37-7 22-8 45-23 3 4 9 11-2 2-9 8-6 5-25 15-20 10-41 14-22 3-56-10-33-12-67-39-1-2-2-7-1-4-3-15t1-21q-1 1-3 1h-5q-5 0-7-2t-5-8 1-15q-1-1-3-2t-8-2-11-1-14 5q-8 5-13 10-3-1-9-1t-24 4q-17 4-31 18-7-2-19-5-12-2-32-1-19 1-25 13-23 55 35 121 9 9 22 25 8 10 24 29 10 12 23 25 14 14 25 22t25 10q15 2 28-2t28-17q2 4 6 10t18 16q15 11 30 14t42-11q27-13 53-47h14q7 0 16-4t18-9q10-5 24-17 14-13 25-27 10-14 24-40t25-55l24-72q3-1 11-4 7-3 25-9 19-6 36-6t38 6q20 6 35 24 13 16 21 32t13 32q6 15 7 28 0 8 2 24 1 10-1 17-2 8-2 10 4-8 14-22 35-60 14-110-10-25-38-43-27-19-60-27t-66-5q-32 3-54 18 3-4 8-9 7-6 20-18 14-14 32-23 17-9 37-16 21-7 43-2 50 8 76 26 27 19 29 35 2-4 2-12 0-10-3-27-9-54-56-61zM451 830q-8-1-29-4-6 17-24 67-42 0-55 12-4 4 0 9 3 5 33 0 7-1 7 0t-5 6q-23 20-26 43-2 12 7 12 9-1 38-40 4-6 12-16h7q4 0 7 4t7 5 6 5q1 1 2 3-3-15 0-83h17q-4-5-6-10-3-5 1-10 0-1 1-3zm-108-6q-5-4-6-10t0-9q1-1 2-4l-28-4-24 68q-42 0-56 11-4 4-1 8 4 6 35 1 7-1 7 1t-6 7q-23 19-26 43-1 12 7 11 10 0 38-41 9-12 12-14 3-3 6 0 3 2 8 4t8 5q2 1 5 5l3 2v-84h16z"/></svg></h2>
+                            
+                                
+                                    
+                                    
+                                        
+                                    
+                                    
+                                    <h3 class="list-month">July</h3>
+                                    
+    <li class="list-item">
+        <a href="/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" class="list-item-title">设计模式学习-单例模式</a>
+        <time datetime="2017-07-05T16:25:23+00:00" class="list-item-time">July 5</time>
+    </li>
+
+    <li class="list-item">
+        <a href="/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" class="list-item-title">设计模式学习-策略模式</a>
+        <time datetime="2017-07-04T16:25:23+00:00" class="list-item-time">July 4</time>
+    </li>
+
+    <li class="list-item">
+        <a href="/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="list-item-title">设计模式学习-抽象工厂模式</a>
+        <time datetime="2017-07-03T16:25:23+00:00" class="list-item-time">July 3</time>
+    </li>
+
+    <li class="list-item">
+        <a href="/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/" class="list-item-title">设计模式学习-工厂方法模式</a>
+        <time datetime="2017-07-02T16:25:23+00:00" class="list-item-time">July 2</time>
+    </li>
+
+    <li class="list-item">
+        <a href="/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="list-item-title">设计模式学习-简单工厂模式</a>
+        <time datetime="2017-07-01T18:39:52+00:00" class="list-item-time">July 1</time>
+    </li>
+
+    <li class="list-item">
+        <a href="/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" class="list-item-title">设计模式学习-设计原则</a>
+        <time datetime="2017-07-01T14:50:28+00:00" class="list-item-time">July 1</time>
+    </li>
+
+    <li class="list-item">
+        <a href="/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%80%BB%E8%A7%88/" class="list-item-title">设计模式学习-总览</a>
+        <time datetime="2017-07-01T14:39:52+00:00" class="list-item-time">July 1</time>
+    </li>
+
+                                
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </main>
+    
+
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
+
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner"><div class="site-info">©&nbsp;2017–2020&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;VGMDJ</div>
+                <div class="site-copyright"><a href="https://blog.vgmdj.cn" target="_blank">VGMDJ.WR</a></div>
+                <div class="custom-footer"><a href="http://www.beian.miit.gov.cn/" target="_blank">京ICP备17066444号-1</a></div>
+                <div class="busuanzi-site-uv-and-pv">
+                    <span id="busuanzi_container_site_uv">本站访客数&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon busuanzi-site-uv"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"/></svg>&nbsp;<span id="busuanzi_value_site_uv"></span></span>&nbsp;|&nbsp;<span id="busuanzi_container_site_pv">本站访问量&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="icon busuanzi-site-pv"><path d="M288 144a110.94 110.94 0 0 0-31.24 5 55.4 55.4 0 0 1 7.24 27 56 56 0 0 1-56 56 55.4 55.4 0 0 1-27-7.24A111.71 111.71 0 1 0 288 144zm284.52 97.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400c-98.65 0-189.09-55-237.93-144C98.91 167 189.34 112 288 112s189.09 55 237.93 144C477.1 345 386.66 400 288 400z"/></svg>&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+                </div>
+
+            
+        </div>
     </footer>
 
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
-  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+        </div>
+        <script src="/js/meme.min.28a5d4816af314c49aa3cbde0f1fcf915fde38249ea2822037483dabeba1c680.js" integrity="sha256-KKXUgWrzFMSao8veDx/PkV/eOCSeooIgN0g9q+uhxoA=" data-no-instant></script>
 
 
-<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+    <script data-no-instant>InstantClick.init();</script>
 
-<script id="baidu_analytics">
-  var _hmt = _hmt || [];
-  (function() {
-    if (window.location.hostname === 'localhost') return;
-    var hm = document.createElement("script"); hm.async = true;
-    hm.src = "https://hm.baidu.com/hm.js?54c4a1219b45b912e867a23f5d8b675e";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
+
+    <script data-no-instant>
+        InstantClick.on('change', function () {
+            backToTop();
+        });
+    </script>
+
+
+
+    <script data-no-instant>
+        InstantClick.on('change', function () {
+            const userPrefers = localStorage.getItem('theme');
+            const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            const lightModeMediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+            if (userPrefers === "dark") {
+                changeModeMeta("dark");
+                changeMode("🌙", "chroma", "chroma-dark");
+            } else if (userPrefers === "light") {
+                changeModeMeta("light");
+                changeMode("🌞", "chroma-dark", "chroma");
+            } else if (darkModeMediaQuery.matches) {
+                changeModeMeta("dark");
+                changeMode("🌙", "chroma", "chroma-dark");
+            } else if (lightModeMediaQuery.matches) {
+                changeModeMeta("light");
+                changeMode("🌞", "chroma-dark", "chroma");
+            }
+        });
+    </script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+<script>
+    var scroll = new SmoothScroll('a[href*="#"]', {
+        speedAsDuration: true
+    });
 </script>
 
-<script id="baidu_push">
-  (function(){
-    if (window.location.hostname === 'localhost') return;
-    var bp = document.createElement('script'); bp.async = true;
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-  })();
+
+
+
+
+
+
+    
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+<script>
+    mediumZoom('[data-zoomable]', {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
 </script>
 
 
 
 
-</body>
+
+
+    
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+
+
+    </body>
 </html>
