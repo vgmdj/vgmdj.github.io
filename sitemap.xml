@@ -48,22 +48,22 @@
   </url>
   
   <url>
-    <loc>https://blog.vgmdj.cn/categories/%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2019-07-24T16:23:58+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.vgmdj.cn/tags/%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2019-07-24T16:23:58+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.vgmdj.cn/tags/js/</loc>
-    <lastmod>2019-07-16T15:27:15+00:00</lastmod>
+    <loc>https://blog.vgmdj.cn/categories/%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2019-07-24T16:23:58+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.vgmdj.cn/categories/js/</loc>
+    <lastmod>2019-07-16T15:27:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.vgmdj.cn/tags/js/</loc>
     <lastmod>2019-07-16T15:27:15+00:00</lastmod>
   </url>
   
@@ -113,12 +113,12 @@
   </url>
   
   <url>
-    <loc>https://blog.vgmdj.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.vgmdj.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2020-01-08T09:21:36+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.vgmdj.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.vgmdj.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2020-01-08T09:21:36+08:00</lastmod>
   </url>
   
@@ -128,12 +128,12 @@
   </url>
   
   <url>
-    <loc>https://blog.vgmdj.cn/categories/linux/</loc>
+    <loc>https://blog.vgmdj.cn/tags/linux/</loc>
     <lastmod>2019-01-28T18:32:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.vgmdj.cn/tags/linux/</loc>
+    <loc>https://blog.vgmdj.cn/categories/linux/</loc>
     <lastmod>2019-01-28T18:32:12+00:00</lastmod>
   </url>
   
@@ -153,12 +153,12 @@
   </url>
   
   <url>
-    <loc>https://blog.vgmdj.cn/categories/database/</loc>
+    <loc>https://blog.vgmdj.cn/tags/database/</loc>
     <lastmod>2020-01-08T09:21:36+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.vgmdj.cn/tags/database/</loc>
+    <loc>https://blog.vgmdj.cn/categories/database/</loc>
     <lastmod>2020-01-08T09:21:36+08:00</lastmod>
   </url>
   
@@ -213,12 +213,12 @@
   </url>
   
   <url>
-    <loc>https://blog.vgmdj.cn/tags/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://blog.vgmdj.cn/categories/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2019-05-18T16:23:50+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.vgmdj.cn/categories/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://blog.vgmdj.cn/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2019-05-18T16:23:50+00:00</lastmod>
   </url>
   
@@ -328,12 +328,12 @@
   </url>
   
   <url>
-    <loc>https://blog.vgmdj.cn/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</loc>
+    <loc>https://blog.vgmdj.cn/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</loc>
     <lastmod>2018-05-11T21:08:58+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.vgmdj.cn/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</loc>
+    <loc>https://blog.vgmdj.cn/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</loc>
     <lastmod>2018-05-11T21:08:58+00:00</lastmod>
   </url>
   
