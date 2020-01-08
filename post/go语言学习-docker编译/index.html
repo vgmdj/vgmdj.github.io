@@ -45,26 +45,28 @@
 
     <meta name="generator" content="Hugo 0.62.2" />
 
-    <title>go语言学习-docker编译 | vgmdj&#39;s blog</title>
+    <title>go语言学习-docker编译 | WR&#39;s Blog</title>
 
-    <link rel="stylesheet" href="/css/meme.min.8f7553b87cc8fcf4e649b2e570019a1dd7477fe8881b0a6fcf08fb3c86733d7c.css" integrity="sha256-j3VTuHzI/PTmSbLlcAGaHddHf+iIGwpvzwj7PIZzPXw=" data-instant-track />
+    <link rel="stylesheet" href="/css/meme.min.71d10450741d3c21754977d49356a89ae19559aa48e1f2ecac8df44553facd3b.css" integrity="sha256-cdEEUHQdPCF1SXfUk1aomuGVWapI4fLsrI30RVP6zTs=" data-instant-track />
 
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,500,700,700i|Source+Code+Pro:400,400i,700,700i|Comfortaa:700&display=swap" rel="stylesheet" />
 
     <meta name="author" content="VGMDJ" />
+    
+    
     <meta name="description" content="前言 GO本身是支持交叉编译的，且很方便，只需设置几个环境变量即可，但是对于使用了CGO的代码来说，交叉编译就不可行了，替代方案就是使用docker来完成编译。
 交叉编译 Go本身支持交叉编译，只需设置三个参数即可
- CGO_ENABLED 是否启用CGO GOOS 目标运行环境操作系统 GOARCH 目标运行环境 " />
+ CGO_ENABLED 是否启用CGO GOOS 目标运行环境操作系统 GOARCH 目标运行环境 ……" />
     <meta name="keywords" content="golang, golang, 学习" />
     
     <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="vgmdj&#39;s blog" />
+    <meta name="apple-mobile-web-app-title" content="WR&#39;s Blog" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="application-name" content="vgmdj&#39;s blog" />
+    <meta name="application-name" content="WR&#39;s Blog" />
     <meta name="msapplication-starturl" content="../../" />
     <meta name="msapplication-TileColor" content="#fff" />
     <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
@@ -87,24 +89,15 @@
         "dateModified": "2018-11-23T12:21:58+00:00",
         "url": "https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-docker%E7%BC%96%E8%AF%91/",
         "headline": "go语言学习-docker编译",
-        "description": "前言 GO本身是支持交叉\u0008编译的，且很方便，只需设置几个环境变量即可，但是对于使用了CGO的代码来说，交叉编译就不可行了，替代方案就是使用docker来完成\u0008\u0008编译。\n交叉编译 Go本身支持交叉编译，只需设置三个参数即可\n CGO_ENABLED 是否启用CGO GOOS 目标运行环境操作系统 GOARCH 目标运行环境 ",
+        "description": "前言 GO本身是支持交叉\u0008编译的，且很方便，只需设置几个环境变量即可，但是对于使用了CGO的代码来说，交叉编译就不可行了，替代方案就是使用docker来完成\u0008\u0008编译。\n交叉编译 Go本身支持交叉编译，只需设置三个参数即可\n CGO_ENABLED 是否启用CGO GOOS 目标运行环境操作系统 GOARCH 目标运行环境 ……",
         "keywords": "golang, golang, 学习",
         "inLanguage" : "en-US",
         "articleSection": "post",
-        "wordCount":  197 ,
+        "wordCount":  719 ,
         "image": "https://blog.vgmdj.cn/icons/apple-touch-icon.png",
-        "author": {
-            "@type": "Person",
-            "description": "Keep Thinking",
-            "email": "vgmdj.wr@gmail.com",
-            "image": "https://blog.vgmdj.cn/icons/apple-touch-icon.png",
-            "url": "https://blog.vgmdj.cn/",
-            "name": "VGMDJ"
-        },
-        "license": "[VGMDJ.WR](https://blog.vgmdj.cn)",
         "publisher": {
             "@type": "Organization",
-            "name": "vgmdj's blog",
+            "name": "WR's Blog",
             "logo": {
                 "@type": "ImageObject",
                 "url": "https://blog.vgmdj.cn/icons/apple-touch-icon.png"
@@ -125,7 +118,6 @@
 <meta name="twitter:card" content="summary" />
 
 <meta name="twitter:site" content="@vgmdj" />
-<meta name="twitter:creator" content="@vgmdj" />
 
     
 
@@ -137,9 +129,9 @@
 <meta property="og:title" content="go语言学习-docker编译" />
 <meta property="og:description" content="前言 GO本身是支持交叉编译的，且很方便，只需设置几个环境变量即可，但是对于使用了CGO的代码来说，交叉编译就不可行了，替代方案就是使用docker来完成编译。
 交叉编译 Go本身支持交叉编译，只需设置三个参数即可
- CGO_ENABLED 是否启用CGO GOOS 目标运行环境操作系统 GOARCH 目标运行环境 " />
+ CGO_ENABLED 是否启用CGO GOOS 目标运行环境操作系统 GOARCH 目标运行环境 ……" />
 <meta property="og:url" content="https://blog.vgmdj.cn/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-docker%E7%BC%96%E8%AF%91/" />
-<meta property="og:site_name" content="vgmdj&#39;s blog" />
+<meta property="og:site_name" content="WR&#39;s Blog" />
 <meta property="og:locale" content="en-US" /><meta property="og:image" content="https://blog.vgmdj.cn/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2018-11-23T11:49:12+08:00" />
@@ -158,7 +150,7 @@
     <header class="header">
         <div class="site-brand">
             
-            <a href="/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.146 26.458" class="brand"><path d="M58.216 17.03v-2.505c1.084 0 3.793.067 5.351.225l.068-.067c-.045-.204-.068-.655-.068-.858 0-.204.023-.633.068-.836l-.068-.067c-1.332.112-2.687.225-5.35.225V11.5c0-.384.022-2.438.18-2.98 3.025 0 6.457.27 6.457.27l.045-.09c-.022-.18-.045-.722-.045-.925 0-.18 0-.474.045-.79l-.045-.068c-.361.045-.88.068-1.355.068h-6.863c-.768 0-1.897-.068-1.897-.068l-.045.068c.18 1.287.271 2.822.271 4.515v5.532c0 1.693-.09 3.296-.27 4.515l.022.068s1.129-.068 1.919-.068h7.09c.473 0 .993.023 1.354.068l.045-.068c-.045-.293-.045-.587-.045-.813 0-.225.022-1.06.045-1.241l-.045-.09s-3.658.496-6.683.496c-.158-.542-.18-2.483-.18-2.867zm-20.694-3.363l-.113-.068c0-.497-.022-1.445-.045-1.648-.045-.136-.068-.226-.203-.226-.655.113-2.123.113-2.913.068l-.045.067c.158.971.248 2.71.248 4.38v1.242c0 1.694-.09 2.845-.27 4.064l.022.068s.948-.068 1.739-.068c.767 0 1.67.068 1.67.068l.045-.068c-.18-1.287-.225-2.348-.225-4.064v-2.28c.948-1.152 1.76-1.829 2.393-1.829.858 0 1.332.316 1.332 1.829v2.28c0 1.694-.09 2.845-.27 4.064l.022.068s1.016-.068 1.806-.068c.767 0 1.648.068 1.648.068l.045-.068c-.18-1.287-.27-2.348-.27-4.064v-1.987c0-.316 0-.406-.023-.677 1.083-1.197 1.58-1.445 2.46-1.445.723 0 1.242.497 1.242 2.01v2.1c0 1.693-.09 2.844-.27 4.063l.022.068s1.016-.068 1.806-.068c.768 0 1.648.068 1.648.068l.046-.068c-.181-1.287-.271-2.348-.271-4.064v-2.258c0-2.257-.79-3.59-3.229-3.59-1.129 0-2.303.452-3.59 1.807-.451-1.129-1.084-1.806-3.093-1.806-1.106 0-2.506.925-3.364 2.032zm-12.436 2.122c.068-1.106.339-1.874.677-2.348a1.645 1.645 0 0 1 1.377-.677c.904 0 1.468 1.06 1.468 3.025zm6.209 3.341c-1.061.858-2.145.926-3.093.926-1.107 0-1.92-.293-2.461-.88-.497-.542-.745-1.332-.745-2.371h2.235c2.258 0 4.2.045 4.2.045l.135-.135c0-2.823-.79-5.08-4.268-5.08-1.241 0-2.596.406-3.5 1.129-1.083.903-1.828 2.28-1.828 4.131 0 1.332.474 2.755 1.423 3.703.767.813 2.1 1.174 3.793 1.174 1.625 0 3.228-.52 4.47-1.942 0-.293-.135-.7-.361-.7zM4 6.803c-.835 4.832-2.032 10.499-2.98 14.811.248-.068.767-.068 1.038-.068.249 0 1.016 0 1.265.068.067-2.37.632-7.157 1.241-10.68l.068.023a153.476 153.476 0 0 1 4.29 10.59h1.445c1.648-3.749 3.454-7.135 5.373-10.612h.068c.43 3.567.723 6.931 1.039 10.679.338-.068 1.422-.068 1.76-.068.34 0 1.31 0 1.649.068-.7-4.9-1.197-9.257-1.784-14.811h-2.009L10.82 17.302h-.09c-1.784-3.568-3.094-6.864-4.426-10.499z"/></svg></a>
+            <a href="/" class="brand">WR&#39;s Blog</a>
             
         </div>
     </header>
@@ -221,9 +213,6 @@
         <time datetime="2018-11-23T11:49:12+08:00" class="post-meta-item published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2018.11.23</time>
     
     
-        
-        <time datetime="2018-11-23T12:21:58+00:00" class="post-meta-item modified"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2018.11.23</time>
-    
     
     
         
@@ -237,11 +226,11 @@
     
     
         
-        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;197</span>
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;719</span>
     
     
         
-        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;1&nbsp;分钟</span>
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;2&nbsp;分钟</span>
     
     
         
@@ -451,20 +440,6 @@ sudo docker run -it --rm -v <span class="nv">$dir</span>:/golang -v <span class=
         
     
     
-    
-        <ul class="post-copyright">
-            <li class="copyright-item author">作者：<a href="https://blog.vgmdj.cn/" target="_blank">VGMDJ</a></li>
-            
-                
-                
-                
-                
-                <li class="copyright-item link">链接：<a href="/post/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-docker%E7%BC%96%E8%AF%91/" target="_blank">https://blog.vgmdj.cn/post/go语言学习-docker编译/</a></li>
-            
-            
-                <li class="copyright-item license">版权：<a href="https://blog.vgmdj.cn" target="_blank">VGMDJ.WR</a></li>
-            
-        </ul>
     
 
 
